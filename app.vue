@@ -1,32 +1,21 @@
 <template>
-  <div class="p-4">
-    <div class="max-w-sm rounded overflow-hidden shadow-lg mb-4">
-      <img
-        class="w-full"
-        src="https://tailwindcss.com/img/card-top.jpg"
-        alt="Sunset in the mountains"
-      >
-      <div class="px-6 py-4 pb-2">
-        <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-        <p
-          class="text-gray-700 text-base"
-        >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-      </div>
-      <div class="px-6 py-4">
-        <span class="badge mr-2">#photography</span>
-        <span class="badge mr-2">#travel</span>
-        <span class="badge">#winter</span>
-      </div>
-    </div>
+  <div class="h-screen w-screen bg-cover bg-[left_-12rem_top] md:bg-left-top bg-[url(/img/home-bg-1.jpg)]">
+    <div class="container mx-auto p-4 ">
+      <main class="container">
+        <p class="alert alert-info" role="alert"></p>
+        <p class="alert alert-danger" role="alert"></p>
+        <h1 class="text-black  text-4xl xl:text-6xl font-bold text-right mt-12 mr-12">Creative Technologist &amp;<br>
+          Software Enthusiast</h1>
 
+        <section class="m-12 text-right">
+          <p class="mb-2 text-xl xl:text-2xl">A little about who I am</p>
+          <p class="mb-2 text-xl xl:text-2xl">What I am doing right now</p>
+          <p class="mb-2 text-xl xl:text-2xl">And what I have been doing</p>
+        </section>
+
+        <div class="cloud top-0 left-0 absolute h-full w-full" style="background: url(/img/cloud.png)"></div>
+      </main>
+    </div>
   </div>
 </template>
 
-<style lang="postcss" scoped>
-.badge {
-  @apply inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700;
-  &:hover {
-    @apply bg-gray-300;
-  }
-}
-</style>

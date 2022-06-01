@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.theme-light {
+  --background: #f8f8f8;
+  --text: #313131;
+}
+
+.theme-dark {
+  --background: #313131;
+  --text: #f8f8f8;
+}
+
+
+.cloud {
+  max-height: 768px;
+  animation: animate 60s linear infinite;
+}
+
+@keyframes animate {
+  0%
+  {
+   background-position: 0px;
+  }
+  100%
+  {
+   background-position: 5440px;
+  }
+}
+
+$lightGrey:#8e9eab;
+
+h1z, px{
+  text-shadow: 2px 2px 4px white, 0 0 1em $lightGrey, 0 0 0.2em $lightGrey;
+  text-align: right;
+}
