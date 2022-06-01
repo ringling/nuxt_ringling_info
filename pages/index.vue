@@ -1,9 +1,9 @@
 <template>
   <div class="h-screen w-screen bg-cover bg-[left_-12rem_top] md:bg-left-top bg-[url(/img/home-bg-1.jpg)]">
 
-    <div class="sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-gray-900/10 dark:border-gray-50/[0.06] supports-backdrop-blur:bg-white/95 dark:bg-gray-900/75">
+    <div class="sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-gray-900/10 supports-backdrop-blur:bg-white/95">
             <div
-                class="max-w-8xl mx-auto dark:bg-gray-900/75 border-b border-gray-900/10 lg:px-8 dark:border-gray-300/10">
+                class="max-w-8xl mx-auto border-b border-gray-900/10 lg:px-8">
                 <div class="py-4  mx-4 lg:mx-0">
                     <div class="relative flex items-center">
                         <a class="mr-3 flex-none w-[2.0625rem] overflow-hidden md:w-auto" href="/">
@@ -12,14 +12,14 @@
                         </a>
                      
                         <div class="relative flex items-center mr-8 ml-8">
-                            <nav class="text-sm leading-6 font-semibold text-gray-700 dark:text-gray-200">
+                            <nav class="text-sm leading-6 font-semibold text-gray-700">
                                 <ul class="flex space-x-8">
                                     <li>
-                                        <NuxtLink class="hover:text-sky-500 dark:hover:text-sky-400"
+                                        <NuxtLink class="hover:text-sky-500"
                                             style="z-index: 1000" to="/about">About</NuxtLink>
                                     </li>
                                     <li>
-                                        <NuxtLink class="hover:text-sky-500 dark:hover:text-sky-400"
+                                        <NuxtLink class="hover:text-sky-500"
                                             style="z-index: 1000" to="/now">Now</NuxtLink>
                                     </li>
                                 </ul>
