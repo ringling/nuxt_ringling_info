@@ -13,7 +13,20 @@
 }
 
 
+h1 {
+  @apply text-gray-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white;
+}
+
+h2 {
+  @apply mt-4 text-3xl sm:text-4xl text-gray-900 font-extrabold tracking-tight dark:text-gray-50;
+}
+
+h3 {
+  @apply mb-4 text-xl text-gray-900 tracking-tight font-bold dark:text-gray-200;
+}
+
 .cloud {
+  z-index: 100;
   max-height: 768px;
   animation: animate 60s linear infinite;
 }

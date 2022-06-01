@@ -1,41 +1,14 @@
 <template>
     <div class="">
-        <div class="sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-gray-900/10 supports-backdrop-blur:bg-white/95">
-       <div
-                class="max-w-8xl mx-auto border-b border-gray-900/10 lg:px-8">
-                <div class="py-4  mx-4 lg:mx-0">
-                    <div class="relative flex items-center">
-                        <a class="mr-3 flex-none w-[2.0625rem] overflow-hidden md:w-auto" href="/">
-                            <span class="sr-only">Thomas Ringling home page</span>
-                            <img class="w-auto h-8" src="/img/logo.svg">
-                        </a>
-                     
-                        <div class="relative flex items-center mr-8 ml-8">
-                            <nav class="text-sm leading-6 font-semibold text-gray-700">
-                                <ul class="flex space-x-8">
-                                    <li>
-                                        <NuxtLink class="hover:text-sky-500"
-                                            style="z-index: 1000" to="/">Home</NuxtLink>
-                                    </li>
-                                    <li>
-                                        <NuxtLink class="hover:text-sky-500"
-                                            style="z-index: 1000" to="/now">Now</NuxtLink>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Menu/>
 
         <div class="container mx-auto p-4 ">
 
             <div>
-                <h1 class="text-black text-4xl font-bold my-4">About</h1>
+                <h1 class="m-4">About</h1>
 
 
-                <h2 class="text-black text-3xl font-bold my-4">Introduction</h2>
+                <h2 class="m-4">Introduction</h2>
                 <section class="m-8 flex flex-wrap">
 
                     <div>
@@ -75,7 +48,7 @@
                 <br>
 
 
-                <h2 class="text-black text-3xl font-bold my-4">Education</h2>
+                <h2 class="m-4">Education</h2>
                 <div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-8">
 
                     <figure
@@ -119,7 +92,7 @@
 
                 </div>
 
-                <h2 class="text-black text-3xl font-bold my-4">Languages</h2>
+                <h2 class="m-4">Languages</h2>
 
                 <div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-8">
 
@@ -165,9 +138,7 @@
 
                 </div>
 
-
-
-                <h2 class="text-black text-3xl font-bold my-4">Courses</h2>
+                <h2 class="m-4">Courses</h2>
 
                 <div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-8">
 
@@ -234,7 +205,7 @@
                 </div>
 
 
-                <h2 class="text-black text-3xl font-bold my-4">Certifications</h2>
+                <h2 class="m-4">Certifications</h2>
 
 
                 <div class="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-8">
@@ -303,11 +274,18 @@
                 </div>
 
 
-                <h2 class="text-black text-3xl font-bold my-4">Conferences</h2>
-
-
+                <h2 class="m-4">Conferences</h2>
                 <div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-8">
 
+                    <figure
+                        class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
+                        <figcaption class="flex items-center space-x-4">
+                            <div class="flex-auto">
+                                <h3>Agile Coach Camp</h3>
+                                <div class="mt-0.5">2022 - Denmark</div>
+                            </div>
+                        </figcaption>
+                    </figure>
                     <figure
                         class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
                         <figcaption class="flex items-center space-x-4">
