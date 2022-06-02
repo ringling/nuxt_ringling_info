@@ -3,16 +3,13 @@
     <Menu />
 
     <div class="container mx-auto p-4 ">
-
       <div>
         <h1 class="m-4">About</h1>
-
 
         <h2 class="m-4">Introduction</h2>
         <section class="m-8 flex flex-wrap">
 
           <div>
-
             <p class="mt-6 text-lg text-gray-600">
               Living north of Copenhagen with my wife and my daughter.
             </p>
@@ -44,226 +41,31 @@
 
         </section>
 
-
         <br>
-
 
         <h2 class="m-4">Education</h2>
         <div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-8">
-
           <Education v-for="school in schools" :item="school" v-bind:key="school.title" />
         </div>
 
-
-
         <h2 class="m-4">Languages</h2>
-
         <div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-8">
-
-
           <Language v-for="language in languages" :item="language" v-bind:key="language.language" />
-
-
         </div>
 
         <h2 class="m-4">Courses</h2>
-
         <div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-8">
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Product Owner 360</h3>
-                <div class="mt-0.5">2019 - GoAgile</div>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Lead for Greatness</h3>
-                <div class="mt-0.5">2018 - GoAgile</div>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Angular 2.0</h3>
-                <div class="mt-0.5">2016 - Trifork</div>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Stillwater Leadership</h3>
-                <div class="mt-0.5">2016 - Stillwater</div>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Graphical Facilitation</h3>
-                <div class="mt-0.5">2016 - Future Factory</div>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Agile Project Leadership</h3>
-                <div class="mt-0.5">2012 - GoAgile</div>
-              </div>
-            </figcaption>
-          </figure>
-
+          <Course v-for="course in courses" :item="course" v-bind:key="course" />
         </div>
-
 
         <h2 class="m-4">Certifications</h2>
-
-
         <div class="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-8">
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Introduction to Quantum Computing for Everyone</h3>
-                <div class="mt-0.5">2021 - edX / ChicagoX</div>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>QTM1x: The Quantum Internet and Quantum Computers: How Will They Change the World?
-                </h3>
-                <div class="mt-0.5">2021 - edX / DelftX</div>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Certified LeSS practitioner</h3>
-                <div class="mt-0.5">2021 - LeSS</div>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Certified SAfe agilist</h3>
-                <div class="mt-0.5">2016 - SAFe</div>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Professional Scrum Master</h3>
-                <div class="mt-0.5">2013 - Scrum.org</div>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Agile Foundation Leadership Focus</h3>
-                <div class="mt-0.5">2012 - DSDM</div>
-              </div>
-            </figcaption>
-          </figure>
-
+          <Course v-for="certification in certifications" :item="certification" v-bind:key="certification" />
         </div>
-
 
         <h2 class="m-4">Conferences</h2>
         <div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-8">
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Agile Coach Camp</h3>
-                <div class="mt-0.5">2022 - Denmark</div>
-              </div>
-            </figcaption>
-          </figure>
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Agile Coach Camp (co-organizer)</h3>
-                <div class="mt-0.5">2019 - Denmark</div>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Elixir Conf Europe</h3>
-                <div class="mt-0.5">2017 - Barcelona</div>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Elixir Conf Europe</h3>
-                <div class="mt-0.5">2016 - Berlin</div>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Agile Coach Camp (co-organizer)</h3>
-                <div class="mt-0.5">2016 - Denmark</div>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Agile Coach Camp</h3>
-                <div class="mt-0.5">2016 - Denmark</div>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Agile Coach Camp</h3>
-                <div class="mt-0.5">2015 - Denmark</div>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>XP Days</h3>
-                <div class="mt-0.5">2015 - Benelux</div>
-              </div>
-            </figcaption>
-          </figure>
-
+          <Conference v-for="conference in conferences" :item="conference" v-bind:key="conference" />
         </div>
       </div>
     </div>
@@ -274,30 +76,57 @@
 
 <script setup>
 
-  const languages = [
-    { "language": "Danish", "proficiency": "Native" },
-    { "language": "German", "proficiency": "Native" },
-    { "language": "English", "proficiency": "Full professional proficiency" },
-    { "language": "Japanese", "proficiency": "Elementary proficiency" }
-  ]
+const languages = [
+  { "language": "Danish", "proficiency": "Native" },
+  { "language": "German", "proficiency": "Native" },
+  { "language": "English", "proficiency": "Full professional proficiency" },
+  { "language": "Japanese", "proficiency": "Elementary proficiency" }
+]
 
-  const schools = [
-    {
-      "timespan": "2002 - 2005",
-      "school": "IT-University Copenhagen",
-      "title": "Diploma in Information Technology"
-  
-    },
-    {
-      "timespan": "1998 - 2000",
-      "school": "Lyngby Uddannelsescenter",
-      "title": "Datamatician"
-    },
-    {
-      "timespan": "1988 - 1991",
-      "school": "Deutsches Gymnasium für Nordschleswig",
-      "title": "High school"
-    }
+const schools = [
+  {
+    "timespan": "2002 - 2005",
+    "school": "IT-University Copenhagen",
+    "title": "Diploma in Information Technology"
 
-  ]
+  },
+  {
+    "timespan": "1998 - 2000",
+    "school": "Lyngby Uddannelsescenter",
+    "title": "Datamatician"
+  },
+  {
+    "timespan": "1988 - 1991",
+    "school": "Deutsches Gymnasium für Nordschleswig",
+    "title": "High school"
+  }
+
+]
+
+const courses = [
+  { "title": "Product Owner 360", "company": "GoAgile", "year": "2019" },
+  { "title": "Lead for Greatness", "company": "GoAgile", "year": "2018" },
+  { "title": "Angular 2.0", "company": "Trifork", "year": "2016" },
+  { "title": "Stillwater Leadership", "company": "Stillwater", "year": "2016" },
+  { "title": "Graphical Facilitation", "company": "Future Factory", "year": "2016" },
+  { "title": "Agile Project Leadership", "company": "GoAgile", "year": "2012" }
+]
+
+const certifications = [
+  { "title": "Introduction to Quantum Computing for Everyone", "company": "edX / ChicagoX", "year": "2021" },
+  { "title": "QTM1x: The Quantum Internet and Quantum Computers: How Will They Change the World?", "company": "edX / DelftX", "year": "2021" },
+  { "title": "Certified LeSS practitioner", "company": "LeSS", "year": "2021" },
+  { "title": "Certified SAfe agilist", "company": "SAFe", "year": "2016" },
+  { "title": "Professional Scrum Master", "company": "Scrum.org", "year": "2013" },
+  { "title": "Agile Foundation Leadership Focus", "company": "DSDM", "year": "2012" }
+]
+const conferences = [
+  { "title": "Agile Coach Camp", "country": "Denmark", "year": "2022" },
+  { "title": "Agile Coach Camp (co-organizer)", "country": "Denmark", "year": "2019" },
+  { "title": "Elixir Conf Europe", "country": "Barcelona", "year": "2017" },
+  { "title": "Elixir Conf Europe", "country": "Berlin", "year": "2016" },
+  { "title": "Agile Coach Camp (co-organizer)", "country": "Denmark", "year": "2016" },
+  { "title": "Agile Coach Camp", "country": "Denmark", "year": "2015" },
+  { "title": "XP Days", "country": "Benelux", "year": "2015" }
+]
 </script>
