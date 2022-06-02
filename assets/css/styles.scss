@@ -14,15 +14,15 @@
 
 
 h1 {
-  @apply text-gray-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white;
+  @apply text-gray-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center;
 }
 
 h2 {
-  @apply mt-4 text-3xl sm:text-4xl text-gray-900 font-extrabold tracking-tight dark:text-gray-50;
+  @apply mt-4 text-3xl sm:text-4xl text-gray-900 font-extrabold tracking-tight;
 }
 
 h3 {
-  @apply mb-4 text-xl text-gray-900 tracking-tight font-bold dark:text-gray-200;
+  @apply mb-4 text-xl text-gray-900 tracking-tight font-bold;
 }
 
 .cloud {
@@ -40,11 +40,4 @@ h3 {
   {
    background-position: 5440px;
   }
-}
-
-$lightGrey:#8e9eab;
-
-h1z, px{
-  text-shadow: 2px 2px 4px white, 0 0 1em $lightGrey, 0 0 0.2em $lightGrey;
-  text-align: right;
 }

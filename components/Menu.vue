@@ -31,3 +31,11 @@
     </div>
   </div>
 </template>
+
+<script setup>
+  const props = defineProps({
+    styling: {
+      type: [Object],
+    },
+  });
+</script>
