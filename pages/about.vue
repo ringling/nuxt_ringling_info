@@ -60,41 +60,9 @@
 
         <div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-8">
 
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Danish</h3>
-                <div class="mt-0.5">Native proficiency</div>
-              </div>
-            </figcaption>
-          </figure>
 
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>German</h3>
-                <div class="mt-0.5">Native proficiency</div>
-              </div>
-            </figcaption>
-          </figure>
+          <Language v-for="language in languages" :item="language" v-bind:key="language.language" />
 
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>English</h3>
-                <div class="mt-0.5">Full professional proficiency</div>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
-            <figcaption class="flex items-center space-x-4">
-              <div class="flex-auto">
-                <h3>Japanese</h3>
-                <div class="mt-0.5">Elementary proficiency</div>
-              </div>
-            </figcaption>
-          </figure>
 
         </div>
 
@@ -305,6 +273,13 @@
 
 
 <script setup>
+
+  const languages = [
+    { "language": "Danish", "proficiency": "Native" },
+    { "language": "German", "proficiency": "Native" },
+    { "language": "English", "proficiency": "Full professional proficiency" },
+    { "language": "Japanese", "proficiency": "Elementary proficiency" }
+  ]
 
   const schools = [
     {
