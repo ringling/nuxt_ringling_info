@@ -60,7 +60,7 @@
 
         <h2 class="m-4">Certifications</h2>
         <div class="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-8">
-          <Course v-for="certification in certifications" :item="certification" v-bind:key="certification" />
+          <Certification v-for="certification in certifications" :item="certification" v-bind:key="certification" />
         </div>
 
         <h2 class="m-4">Conferences</h2>
