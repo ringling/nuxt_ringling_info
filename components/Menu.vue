@@ -1,6 +1,6 @@
 <template>
-  <div
-    class="sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-gray-900/10 supports-backdrop-blur:bg-white/95">
+  <div :class="bgColor"
+    class="sticky top-0 z-40 w-full flex-none lg:z-50 lg:border-b lg:border-gray-900/10">
     <div class="max-w-8xl mx-auto border-b border-gray-900/10 lg:px-8">
       <div class="py-4  mx-4 lg:mx-0">
         <div class="relative flex items-center">
@@ -34,8 +34,8 @@
 
 <script setup>
   const props = defineProps({
-    styling: {
-      type: [Object],
+      bgColor: {
+        type: [String],
     },
   });
 </script>
