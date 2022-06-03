@@ -1,5 +1,5 @@
 <template>
-  <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
+  <figure class="box">
     <blockquote class="mt-6 text-gray-700">
       <p>{{item.timespan}}</p>
     </blockquote>

@@ -12,6 +12,10 @@
   --text: #f8f8f8;
 }
 
+.box {
+  @apply relative flex flex-col-reverse bg-gray-50 rounded-lg p-6 border-solid border-2 border-gray-300;
+}
+
 
 h1 {
   @apply text-gray-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center;

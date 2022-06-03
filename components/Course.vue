@@ -1,5 +1,5 @@
 <template>
-    <figure class="relative flex flex-col-reverse bg-gray-50 rounded-lg p-6">
+    <figure class="box">
         <figcaption class="flex items-center space-x-4">
             <div class="flex-auto">
                 <h3>{{ item.title }}</h3>
