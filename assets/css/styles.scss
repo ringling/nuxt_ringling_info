@@ -12,8 +12,12 @@
   --text: #f8f8f8;
 }
 
+hr {
+  @apply border-gray-300 ;
+}
+
 .box {
-  @apply relative flex flex-col-reverse bg-gray-50 rounded-lg p-6 border-solid border-2 border-gray-300;
+  @apply relative flex flex-col-reverse bg-gray-50 rounded-lg p-6 border-solid border border-gray-300;
 }
 
 
