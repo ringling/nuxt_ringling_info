@@ -52,7 +52,7 @@
 
         <h2 class="m-4">Languages</h2>
         <div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-8">
-          <Language v-for="language in languages" :item="language" v-bind:key="language.language" />
+          <Language v-for="language in data.cv.languages" :item="language" v-bind:key="language.language" />
         </div>
         <hr />
 
@@ -81,6 +81,7 @@
 
 <script setup>
 
+const { pending, data: data } = await useLazyAsyncData('cv', () => $fetch('/api/cv'))
 const languages = [
   { "language": "Danish", "proficiency": "Native" },
   { "language": "German", "proficiency": "Native" },
@@ -135,3 +136,4 @@ const conferences = [
   { "title": "XP Days", "country": "Benelux", "year": "2015" }
 ]
 </script>
+
