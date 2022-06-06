@@ -5,6 +5,9 @@
     <div class="container mx-auto p-4 ">
       <div>
         <h1 class="m-4">Now</h1>
+        <section class="m-8 flex flex-wrap">
+          COMING SOON :)
+        </section>
       </div>
     </div>
   </div>
