@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen w-screen bg-cover bg-[left_-12rem_top] md:bg-left-top bg-[url(/img/home-bg-1.jpg)]">
 
-   <Menu/>
+    <Menu />
 
     <div class="container mx-auto p-4 ">
       <main class="container">
@@ -16,7 +16,8 @@
           <p class="mb-2 text-xl xl:text-2xl">And what I have been doing</p>
         </section>
 
-        <div class="cloud top-0 left-0 absolute h-full w-full" style="z-index: 10; background: url(/img/cloud.png)"></div>
+        <div class="cloud top-0 left-0 absolute h-full w-full" style="z-index: 10; background: url(/img/cloud.png)">
+        </div>
       </main>
     </div>
   </div>

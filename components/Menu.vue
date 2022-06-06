@@ -23,6 +23,9 @@
                 <li>
                   <NuxtLink class="hover:text-sky-500" style="z-index: 1000" to="/now">Now</NuxtLink>
                 </li>
+                <li>
+                  <NuxtLink class="hover:text-sky-500" style="z-index: 1000" to="/cv">CV</NuxtLink>
+                </li>
               </ul>
             </nav>
           </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <Menu bgColor="bg-white"/>
+    <Menu bgColor="bg-white" />
 
     <div class="container mx-auto p-4 ">
       <div>
