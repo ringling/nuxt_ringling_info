@@ -21,7 +21,7 @@
 
         <h2 class="m-4">Courses</h2>
         <div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-8">
-          <Course v-for="course in courses" :item="course" v-bind:key="course" />
+          <Course v-for="course in data.cv.achievements.list.filter(ach => ach.type === 'courses')" :item="course" v-bind:key="course" />
         </div>
         <hr />
 
@@ -50,14 +50,4 @@
 <script setup>
 const { pending, data: data } = useLazyFetch('/api/cv');
 const route = useRoute()
-
-const courses = [
-  { "title": "Product Owner 360", "company": "GoAgile", "year": "2019" },
-  { "title": "Lead for Greatness", "company": "GoAgile", "year": "2018" },
-  { "title": "Angular 2.0", "company": "Trifork", "year": "2016" },
-  { "title": "Stillwater Leadership", "company": "Stillwater", "year": "2016" },
-  { "title": "Graphical Facilitation", "company": "Future Factory", "year": "2016" },
-  { "title": "Agile Project Leadership", "company": "GoAgile", "year": "2012" }
-]
-
 </script>

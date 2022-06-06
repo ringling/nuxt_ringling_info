@@ -3,7 +3,7 @@
         <figcaption class="flex items-center space-x-4">
             <div class="flex-auto">
                 <h3>{{ item.title }}</h3>
-                <div class="mt-0.5">{{ item.year }} - {{ item.company }}</div>
+                <div class="mt-0.5">{{ item.description }}</div>
             </div>
         </figcaption>
     </figure>
