@@ -26,8 +26,9 @@
         <hr />
 
         <h2 class="m-4">Certifications</h2>
+
         <div class="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-8">
-          <Certification v-for="certification in certifications" :item="certification" v-bind:key="certification" />
+          <Certification v-for="certification in data.cv.achievements.list.filter(ach => ach.type === 'certifications')" :item="certification" v-bind:key="certification" />
         </div>
         <hr />
 
@@ -47,8 +48,7 @@
 </template>
 
 <script setup>
-const { pending, data: data } = await useLazyAsyncData('cv', () => $fetch('/api/cv'))
-
+const { pending, data: data } = useLazyFetch('/api/cv');
 const route = useRoute()
 
 const courses = [
@@ -60,14 +60,6 @@ const courses = [
   { "title": "Agile Project Leadership", "company": "GoAgile", "year": "2012" }
 ]
 
-const certifications = [
-  { "title": "Introduction to Quantum Computing for Everyone", "company": "edX / ChicagoX", "year": "2021" },
-  { "title": "QTM1x: The Quantum Internet and Quantum Computers: How Will They Change the World?", "company": "edX / DelftX", "year": "2021" },
-  { "title": "Certified LeSS practitioner", "company": "LeSS", "year": "2021" },
-  { "title": "Certified SAfe agilist", "company": "SAFe", "year": "2016" },
-  { "title": "Professional Scrum Master", "company": "Scrum.org", "year": "2013" },
-  { "title": "Agile Foundation Leadership Focus", "company": "DSDM", "year": "2012" }
-]
 const conferences = [
   { "title": "Agile Coach Camp", "country": "Denmark", "year": "2022" },
   { "title": "Agile Coach Camp (co-organizer)", "country": "Denmark", "year": "2019" },
