@@ -6,9 +6,7 @@
 			<div>
 				<h1 class="m-4">CV</h1>
 
-
-
-        <h2 class="m-4">Education</h2>
+<h2 class="m-4">Education</h2>
         <div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-8">
           <Education v-for="education in data.cv.educations" :item="education" v-bind:key="education.studyType" />
         </div>
@@ -39,7 +37,7 @@
         </div>
 			</div>
 
-			<div v-if="data && false">
+			<div v-if="data && route.query.showFullCV">
 				<pre>
 				{{ data.cv }}*
 				</pre>
@@ -50,6 +48,8 @@
 
 <script setup>
 const { pending, data: data } = await useLazyAsyncData('cv', () => $fetch('/api/cv'))
+
+const route = useRoute()
 
 const courses = [
   { "title": "Product Owner 360", "company": "GoAgile", "year": "2019" },
