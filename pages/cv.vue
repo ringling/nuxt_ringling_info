@@ -34,7 +34,7 @@
 
         <h2 class="m-4">Conferences</h2>
         <div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-8">
-          <Conference v-for="conference in conferences" :item="conference" v-bind:key="conference" />
+          <Conference v-for="conference in data.cv.achievements.list.filter(ach => ach.type === 'conferences')" :item="conference" v-bind:key="conference" />
         </div>
 			</div>
 
@@ -60,13 +60,4 @@ const courses = [
   { "title": "Agile Project Leadership", "company": "GoAgile", "year": "2012" }
 ]
 
-const conferences = [
-  { "title": "Agile Coach Camp", "country": "Denmark", "year": "2022" },
-  { "title": "Agile Coach Camp (co-organizer)", "country": "Denmark", "year": "2019" },
-  { "title": "Elixir Conf Europe", "country": "Barcelona", "year": "2017" },
-  { "title": "Elixir Conf Europe", "country": "Berlin", "year": "2016" },
-  { "title": "Agile Coach Camp (co-organizer)", "country": "Denmark", "year": "2016" },
-  { "title": "Agile Coach Camp", "country": "Denmark", "year": "2015" },
-  { "title": "XP Days", "country": "Benelux", "year": "2015" }
-]
 </script>
