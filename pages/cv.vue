@@ -6,8 +6,10 @@
 			<div>
 				<h1 class="m-4">CV</h1>
 
-				<h2 class="m-4">Self assessment</h2>
+				<h2 class="m-4">Skills</h2>
 
+
+				<p class="m-4">Self-assessment</p>
 				<div
 					class="m-4 mb-16 text-gray-600 text-sm grid grid-cols- gap-4 lg:gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-8 uppercase">
 					<div class="skill">
@@ -93,7 +95,7 @@
 						v-bind:key="conference" />
 				</div>
 
-				<h2 class="m-4">Skills</h2>
+				<h2 class="m-4">Technologies</h2>
 				<div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
 					<Skill v-for="skill in skills(data)" :item="skill" v-bind:key="skill.name" />
 				</div>
