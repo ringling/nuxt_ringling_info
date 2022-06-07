@@ -1,12 +1,12 @@
 <template>
   <figure class="box">
-    <blockquote class="mt-6 text-gray-700">
+    <blockquote class="mt-6">
       <p>{{item.startDate}} - {{item.endDate}}</p>
     </blockquote>
     <figcaption class="flex items-center space-x-4">
       <div class="flex-auto">
-        <h3>{{item.studyType}}</h3>
-        <div class="mt-0.5">{{item.institution}}</div>
+        <h3 class="mb-1">{{item.studyType}}</h3>
+        <div>{{item.institution}}</div>
       </div>
     </figcaption>
   </figure>

@@ -17,7 +17,11 @@ hr {
 }
 
 .box {
-  @apply relative flex flex-col-reverse bg-gray-50 rounded-lg p-6 border-solid border border-gray-300;
+  @apply  uppercase p-4 text-gray-600 text-sm;
+}
+
+.box div, .box h3 {
+  @apply text-gray-600 text-sm;
 }
 
 
