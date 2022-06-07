@@ -16,12 +16,20 @@ hr {
   @apply border-gray-300 ;
 }
 
+.skill-text {
+  @apply mb-1;
+}
+
 .box {
   @apply  uppercase p-4 text-gray-600 text-sm;
 }
 
 .box div, .box h3 {
   @apply text-gray-600 text-sm;
+}
+
+.cv h2 {
+  @apply my-12;
 }
 
 

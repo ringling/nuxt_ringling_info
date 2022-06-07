@@ -256,6 +256,26 @@
   "skills": [
     {
       "active": true,
+      "name": "Julia",
+      "type": "language",
+      "proficiencyLevel": 4,
+      "firstUsed": "2020",
+      "lastUsed": "2022",
+      "acquiredDuring": "",
+      "description": ""
+    },
+    {
+      "active": true,
+      "name": "Python",
+      "type": "language",
+      "proficiencyLevel": 2,
+      "firstUsed": "2019",
+      "lastUsed": "2022",
+      "acquiredDuring": "",
+      "description": ""
+    },
+    {
+      "active": true,
       "name": "Docker",
       "type": "containers",
       "proficiencyLevel": 2,
@@ -460,7 +480,7 @@
       "type": "programming-language",
       "proficiencyLevel": 1,
       "firstUsed": "2014",
-      "lastUsed": "2020",
+      "lastUsed": "2022",
       "acquiredDuring": "",
       "description": "My goto dynamic, functional, distributed language. Together with Erlang, Elixir opened my eyes for the world of distributed systems"
     },
@@ -500,7 +520,7 @@
       "type": "programming-language",
       "proficiencyLevel": 3,
       "firstUsed": "2017",
-      "lastUsed": "2019",
+      "lastUsed": "2022",
       "acquiredDuring": "",
       "description": "Java/C# in the frontend"
     },
