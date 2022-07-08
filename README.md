@@ -1,5 +1,13 @@
-# Nuxt 3 Minimal Starter
+# Personal website
 
+```
+docker build -t ringling/personal-website .
+docker push ringling/personal-website
+```
+
+
+
+```
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
 ## Setup
