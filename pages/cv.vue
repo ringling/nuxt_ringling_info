@@ -68,44 +68,45 @@
 					</div>
 				</div>
 
-				<hr/>
+				<hr />
 				<h2 class="m-4">Education</h2>
 				<div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
 					<Education v-for="education in data.cv.educations" :item="education" v-bind:key="education.studyType" />
 				</div>
 
-				<hr/>
+				<hr />
 
 				<h2 class="m-4">Languages</h2>
 				<div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
 					<Language v-for="language in data.cv.languages" :item="language" v-bind:key="language.language" />
 				</div>
-				<hr/>
+				<hr />
 
 				<h2 class="m-4">Courses</h2>
 				<div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
 					<Course v-for="course in achivement(data, 'courses')" :item="course" v-bind:key="course" />
 				</div>
-				<hr/>
-
+				<hr />
 				<h2 class="m-4">Certifications</h2>
 				<div class="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
 					<Certification v-for="certification in achivement(data, 'certifications')" :item="certification"
 						v-bind:key="certification" />
 				</div>
-				<hr/>
+				<hr />
 
 				<h2 class="m-4">Conferences</h2>
 				<div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
 					<Conference v-for="conference in achivement(data, 'conferences')" :item="conference"
 						v-bind:key="conference" />
 				</div>
-				<hr/>
+				<hr />
 
+				<!--
 				<h2 class="m-4">Technologies</h2>
 				<div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
 					<Skill v-for="skill in skills(data)" :item="skill" v-bind:key="skill.name" />
 				</div>
+				-->
 			</div>
 
 			<div v-if="data && route.query.showFullCV">
@@ -122,7 +123,7 @@ const { pending, data: data } = useLazyFetch('/api/cv');
 const route = useRoute()
 
 function skills(data) {
-	
+
 	return data.cv.skills.sort(function (x, y) {
 		return y.lastUsed > x.lastUsed
 	});
