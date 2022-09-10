@@ -103,8 +103,8 @@
 
 
 				<h2 class="m-4">Technologies</h2>
-				<div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
-					<Skill v-for="skill in skills(data)" :item="skill" v-bind:key="skill.name" />
+				<div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8" v-if="data.cv.skills">
+					<Skill v-for="skill in sortSkills(data.cv.skills)" :item="skill" v-bind:key="skill.name" />
 				</div>
 
 			</div>
@@ -119,15 +119,11 @@
 </template>
 
 <script setup lang="ts">
-const { pending, data: data } = useLazyFetch('/api/cv');
 const route = useRoute()
+const { pending, data: data } = await useFetch('/api/cv');
 
-function skills(data) {
-	if (!data.cv)
-		return []
-	return data.cv.skills.sort(function (x, y) {
-		return y.lastUsed > x.lastUsed
-	});
+function sortSkills(skills) {
+	return skills.filter(skill => skill.lastUsed > '2014')//.sort((x, y) => y.lastUsed < x.lastUsed)
 }
 
 function achivement(data, type) {
