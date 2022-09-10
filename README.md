@@ -1,5 +1,8 @@
 # Personal website
 
+## Content
+https://content.nuxtjs.org/guide/writing/document-driven
+
 ```
 docker build -t ringling/personal-website .
 docker push ringling/personal-website

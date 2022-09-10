@@ -6,7 +6,7 @@
       <div>
         <h1 class="m-4">Now</h1>
         <section class="m-8 flex flex-wrap">
-          COMING SOON :)
+          <ContentDoc />
         </section>
       </div>
     </div>

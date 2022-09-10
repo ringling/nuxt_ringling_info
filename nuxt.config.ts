@@ -4,6 +4,12 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   //ssr: false,
   buildModules: ['@nuxtjs/tailwindcss'],
+  modules: [
+    '@nuxt/content'
+  ],
+  content: {
+    // https://content.nuxtjs.org/api/configuration
+  },
   css: [
     '@/assets/css/styles.scss'
   ],
