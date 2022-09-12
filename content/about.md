@@ -4,7 +4,7 @@ description: 'meta description of the page'
 ---
 <!-- Content of the page -->
 
-
+# About
 
 
 Living north of Copenhagen with my wife and my daughter.

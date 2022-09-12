@@ -8,7 +8,6 @@
 
 				<h2 class="m-4">Skills</h2>
 
-
 				<p class="m-4">Self-assessment</p>
 				<div
 					class="m-4 mb-16 text-gray-600 text-sm grid grid-cols- gap-4 lg:gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-8 uppercase">

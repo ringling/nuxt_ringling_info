@@ -4,18 +4,8 @@
 
     <div class="container mx-auto p-4 ">
       <div>
-        <h1 class="m-4">About</h1>
-        <section class="m-8 flex flex-wrap">
-
-          <div>
-
-            <ContentDoc />
-
-          </div>
-
-        </section>
-
-
+        <!-- <h1 class="m-4">About</h1> -->
+        <ContentDoc />
       </div>
     </div>
   </div>

@@ -1,12 +1,18 @@
 # Personal website
 
-## Content
-https://content.nuxtjs.org/guide/writing/document-driven
+## Deployment
 
+Execute
 ```
 docker build -t ringling/personal-website .
 docker push ringling/personal-website
 ```
+
+go to DigitalOcean website and execute "deploy" in "Actions" in personal-website app
+
+## Content
+https://content.nuxtjs.org/guide/writing/document-driven
+
 
 
 
