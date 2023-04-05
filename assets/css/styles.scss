@@ -45,6 +45,13 @@ h3 {
   @apply mb-4 text-xl text-gray-900 tracking-tight font-bold;
 }
 
+h4 {
+  @apply mb-4 text-lg text-gray-900 tracking-tight font-bold;
+}
+h5 {
+  @apply mb-4 text-base text-gray-900 tracking-tight font-bold;
+}
+
 .cloud {
   z-index: 100;
   max-height: 768px;
@@ -60,4 +67,31 @@ h3 {
   {
    background-position: 5440px;
   }
+}
+
+.markdown > ul {
+  list-style-type: circle;
+  list-style-position: inside;
+}
+
+.markdown > h2,  .markdown > h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.markdown > h3 {
+
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.markdown > h5 {
+  margin-top: 10px;
+}
+.markdown > p {
+  margin-bottom: 5px;
+}
+.markdown > hr {
+  margin-top: 20px;
+
 }
