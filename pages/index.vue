@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen w-screen bg-cover bg-[left_-12rem_top] md:bg-left-top bg-[url(/img/home-bg-1.jpg)]">
+  <div class="h-screen w-screen bg-cover bg-[left_-12rem_top] md:bg-left-top bg-[url(/img/boy.png)]">
 
     <Menu />
 
