@@ -74,15 +74,16 @@ h5 {
   list-style-position: inside;
 }
 
-.markdown > h2,  .markdown > h4 {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.markdown > h2 {
+  @apply mt-12 mb-6;
 }
 
 .markdown > h3 {
+  @apply font-extrabold uppercase py-4 text-gray-600 text-sm my-2;
+}
 
-  margin-top: 20px;
-  margin-bottom: 10px;
+.markdown > h4 {
+  @apply font-light uppercase py-4 text-gray-600 text-sm my-2;
 }
 
 .markdown > h5 {

@@ -5,15 +5,15 @@ description: 'meta description of the page'
 
 # Now
 <!-- Content of the page -->
-### May 2023
+## May 2023
 
 
-#### Other
+### Other
 - Reading Modern Software Engineering by David Farley
 
-#### Machine Learning
+### Machine Learning
 
-##### Technologies
+#### Technologies
 
 - Gradio
 - OpenAI
@@ -21,30 +21,30 @@ description: 'meta description of the page'
 - AssemblyAI
 - HuggingFace
 - Python, Elixir NX, Julia
-##### Courses
+#### Courses
 
 - Introduction to Machine Learning - MIT OPenLearningLibrary (Online)
 - MIT 6.S191: Introduction to Deep Learning (Youtube)
 
-##### Books
+#### Books
 
 Still looking for the right one :)
 
 ---
-### September 2022
+## September 2022
 
 - "Playing" a lot around with Rust (primarily WASM), Typescript, Vue 3 and Nuxt 3, at work and privately.
 - Lots of datafun with Python and Pandas
 
 ---
-### January 2022
+## January 2022
 
-#### Quantum Computing
+### Quantum Computing
 
-##### Books
+#### Books
 
 - Quantum Computing for Everyone
-##### Courses
+#### Courses
 
 - Introduction to quantum computing for everyone - edX
 - The quantum internet and quantum computers: how will they change the world? - edX
