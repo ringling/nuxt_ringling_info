@@ -5,11 +5,10 @@
     <div class="container mx-auto p-4 ">
       <div>
         <!-- <h1 class="m-4">About</h1> -->
-        <ContentDoc />
+        <ContentDoc class="markdown" />
       </div>
     </div>
   </div>
-
 </template>
 
 

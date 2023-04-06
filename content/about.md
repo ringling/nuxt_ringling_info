@@ -6,7 +6,7 @@ description: 'meta description of the page'
 
 # About
 
-
+## Me
 Living north of Copenhagen with my wife and my daughter.
 
 <br>
@@ -36,3 +36,10 @@ project manager, scrum master, product owner, team lead etc.
 
 As I still do software development, I keep up with new technologies and hence thrive in
 environments and cultures who value competences, innovation and creativity.
+
+
+## This site
+
+* Build with Typescript, Vue 3, Nuxt 3 and TailwindCSS
+* Images generated with Midjourney
+* Deployed via a Docker image to DigitalOcean App Platform
