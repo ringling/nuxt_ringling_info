@@ -4,6 +4,8 @@ description: 'meta description of the page'
 ---
 
 # Now
+
+What am I doing right now? This page is a living document that I update every month. It's a way for me to keep track of what I'm doing and what I'm learning. It's also a way for me to share what I'm learning with others.
 <!-- Content of the page -->
 ## April 2023
 
@@ -18,21 +20,27 @@ description: 'meta description of the page'
 - AssemblyAI
 - HuggingFace
 - Python, Elixir NX, Julia
+
+
+
 #### Tools
 
+- Pandas 2.0
 - Github Copilot X
+- Playwright (end to end testing)
 - Midjourney
 - ChatGPT
 ### Courses
 
-- Introduction to Machine Learning - MIT OPenLearningLibrary (Online)
-- MIT 6.S191: Introduction to Deep Learning (Youtube)
+- __Fat Chance: Probability from the Ground Up__ - _HarvardX • FC1x_
+- __Introduction to Machine Learning__ - _MITx • 6.036_
+- __MIT 6.S191: Introduction to Deep Learning__ (Youtube)
 
 ### Books
 
-- Modern Software Engineering by David Farley
-- The Hundred-Page Machine Learning Book by Andriy Burkov
-- The Andromeda Evolution by Daniel H. Wilson, Michael Crichton
+- __The Hundred-Page Machine Learning Book__ by _Andriy Burkov_
+- __Modern Software Engineering__ by _David Farley_
+- __The Andromeda Evolution__ by _Daniel H. Wilson, Michael Crichton_
 
 ---
 
@@ -49,7 +57,7 @@ description: 'meta description of the page'
 
 ### Books
 
-- ZOV by Pavel Filatjev
+- __ZOV__ by _Pavel Filatjev_
 
 ---
 
@@ -57,9 +65,9 @@ description: 'meta description of the page'
 
 ### Books
 
-- Lær at præstere, når du skal by Lars Robl
-- Kaptajn Dinesen - Ild og blod by Tom Buk-Swienty
-- Safari fra helvede by Tom Buk-Swienty
+- __Lær at præstere, når du skal__ by _Lars Robl_
+- __Kaptajn Dinesen - Ild og blod__ by _Tom Buk-Swienty_
+- __Safari fra helvede__ by _Tom Buk-Swienty_
 
 ---
 ## September 2022
@@ -77,10 +85,10 @@ description: 'meta description of the page'
 - Linear Algebra
 ### Books
 
-- Quantum Computing for Everyone
+- __Quantum Computing for Everyone__ by _Chris Bernhardt_
 
 
 ### Courses
 
-- Introduction to quantum computing for everyone - edX
-- The quantum internet and quantum computers: how will they change the world? - edX
+- __Introduction to quantum computing for everyone__ - UChicagoX • QUAN11000
+- __The quantum internet and quantum computers: how will they change the world?__ - DelftX • QTM1x

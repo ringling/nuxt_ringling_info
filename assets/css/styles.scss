@@ -75,6 +75,10 @@ h5 {
 }
 
 
+.markdown > h1 {
+  @apply mb-6;
+}
+
 .markdown > h2 {
   @apply mt-12 mb-6 my-2;
 }
@@ -95,5 +99,11 @@ h5 {
 }
 .markdown > hr {
   margin-top: 20px;
+}
 
+div.markdown > ul >  li > strong  {
+  @apply text-base text-gray-900  font-medium;
+}
+div.markdown > ul >  li > em  {
+  @apply text-sm text-gray-900  font-light;
 }
