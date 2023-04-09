@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "deploy": "./deploy.sh",
     "build": "nuxi build",
     "dev": "nuxi dev",
     "generate": "nuxi generate",

@@ -43,7 +43,7 @@ npm run dev
 
 Requiures `doctl` - https://docs.digitalocean.com/reference/doctl/how-to/install/
 
-Run `./deploy.sh`
+Run `npm run deploy`
 
 
 

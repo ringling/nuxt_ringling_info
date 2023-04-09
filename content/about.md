@@ -8,7 +8,7 @@ description: 'meta description of the page'
 
 ## Me
 
-<img src="img/gothic_guitar.png" width="300" style="float: right;">
+<img src="img/gothic_guitar.png" class="lg:w-72 md:w-48 w-32 float-right rounded-lg">
 
 Living north of Copenhagen with my wife and my daughter.
 
@@ -43,6 +43,6 @@ environments and cultures who value competences, innovation and creativity.
 
 ## This site
 
-* Build with Typescript, Vue 3, Nuxt 3 and TailwindCSS
-* Images generated with Midjourney
+* Built with Typescript, Vue 3, Nuxt 3 and TailwindCSS
+* Images generated with Midjourney v5
 * Deployed via a Docker image to DigitalOcean App Platform
