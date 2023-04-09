@@ -16,7 +16,7 @@ https://content.nuxtjs.org/guide/writing/document-driven
 
 
 
-```
+
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
 ## Setup
@@ -24,14 +24,8 @@ Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 Make sure to install the dependencies:
 
 ```bash
-# yarn
-yarn install
-
 # npm
 npm install
-
-# pnpm
-pnpm install --shamefully-hoist
 ```
 
 ## Development Server
@@ -43,6 +37,17 @@ npm run dev
 ```
 
 ## Production
+
+
+### Deployment
+
+Requiures `doctl` - https://docs.digitalocean.com/reference/doctl/how-to/install/
+
+Run `./deploy.sh`
+
+
+
+
 
 Build the application for production:
 
