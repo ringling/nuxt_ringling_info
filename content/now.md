@@ -9,6 +9,8 @@ What am I doing right now? This page is a living document that I update every mo
 <!-- Content of the page -->
 ## April 2023
 
+<img src="img/60ies_futuristic_pc.png" width="300" style="float: right;">
+
 ### Technologies
 
 
@@ -45,6 +47,8 @@ What am I doing right now? This page is a living document that I update every mo
 ---
 
 ## March 2023
+
+<img src="img/60ies_dirty_old_pc.png" width="300" style="float: right;">
 
 ### Technologies
 

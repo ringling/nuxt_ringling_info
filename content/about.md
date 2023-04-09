@@ -7,6 +7,9 @@ description: 'meta description of the page'
 # About
 
 ## Me
+
+<img src="img/gothic_guitar.png" width="300" style="float: right;">
+
 Living north of Copenhagen with my wife and my daughter.
 
 <br>
