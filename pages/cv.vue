@@ -140,7 +140,7 @@ function sortSkills(skills) {
 
 function toogleDetails() {
 	console.log("toogle")
-	this.showDetails = !this.showDetails;
+	showDetails.value = !showDetails.value;
 }
 
 function achivement(data, type) {
