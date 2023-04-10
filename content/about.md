@@ -8,8 +8,8 @@ description: 'meta description of the page'
 
 ## Me
 
-<img src="img/gothic_guitar.png" class="lg:w-72 md:w-48 w-32 float-right rounded-lg">
 
+<img src="img/gothic_guitar.png" class="lg:w-72 md:w-48 w-32 float-right rounded-lg">
 Living north of Copenhagen with my wife and my daughter.
 
 <br>
