@@ -583,7 +583,7 @@
       "companyName": "PFA",
       "companyLogo": "assets/img/pfa.png",
       "website": "http://pfa.dk",
-      "title": "Business Consultant",
+      "title": "Business consultant",
       "roles": "",
       "highlights": [],
       "technologies": [
@@ -601,7 +601,7 @@
       "companyName": "PFA",
       "companyLogo": "assets/img/pfa.png",
       "website": "http://pfa.dk",
-      "title": "Agile Coach",
+      "title": "Agile coach",
       "roles": "Agile Coach",
       "highlights": [],
       "technologies": [],
@@ -660,9 +660,9 @@
       "endDate": "June 2019",
       "companyName": "Danske Spil A/S",
       "companyLogo": "assets/img/ds.png",
-      "title": "Consultant",
+      "title": "Agile coach",
       "roles": "Agile Coach and Scrum Master",
-      "summary": "Agile coach and helping with the shift towards more agile processes. Facilitating team workshops and introducing scrum. Later scrum master of up to 3 teams"
+      "summary": "Agile coach in the BI department and helping with the shift towards more agile processes. Facilitating team workshops and introducing scrum. Later scrum master of up to 3 teams"
     },
     {
       "year": "2016",
@@ -680,13 +680,13 @@
       "endDate": "Dec 2017",
       "companyName": "MP Pension",
       "companyLogo": "assets/img/mp.png",
-      "title": "Consultant",
-      "roles": "Agile Coach and Scrum Master",
+      "title": "Scrum master, product owner",
+      "roles": "Agile Coach, product owner and scrum master",
       "technologies": [
         "C#",
         "Angular"
       ],
-      "summary": "Agile coach, scrum master and temporary product owner. Front-end development in .NET(Angular & TypeScript)"
+      "summary": "Agile coach, product owner, scrum master and temporary product owner. Front-end development in .NET(Angular & TypeScript)"
     },
     {
       "year": "2016",
@@ -694,7 +694,7 @@
       "endDate": "Nov 2016",
       "companyName": "Nykredit",
       "companyLogo": "assets/img/nykredit.png",
-      "title": "Consultant",
+      "title": "Developer",
       "roles": "Software Developer",
       "technologies": [
         "Java",
@@ -712,7 +712,7 @@
       "endDate": "Apr 2016",
       "companyName": "Widex A/S",
       "companyLogo": "assets/img/widex.png",
-      "title": "Consultant",
+      "title": "Delivery manager",
       "roles": "Solution delivery manager, scrum master",
       "technologies": [
         "Azure Document DB",
@@ -745,7 +745,7 @@
       "endDate": "May 2015",
       "companyName": "Lokalebasen.dk A/S",
       "companyLogo": "assets/img/lb.png",
-      "title": "Consultant",
+      "title": "Product owner, scrum master",
       "technologies": [
         "Ruby",
         "Ruby on Rails",
@@ -774,7 +774,7 @@
       "endDate": "Sep 2012",
       "companyName": "Nykredit",
       "companyLogo": null,
-      "title": "Consultant",
+      "title": "Developer",
       "roles": "Developer",
       "technologies": [
         "Java",
@@ -801,7 +801,7 @@
       "endDate": "Aug 2011",
       "companyName": "Forca",
       "companyLogo": null,
-      "title": "Consultant",
+      "title": "Developer, BA",
       "roles": "Developer, Business Analyst",
       "technologies": [
         "C# 4.0",
@@ -828,7 +828,7 @@
       "endDate": "May 2006",
       "companyName": "Nykredit",
       "companyLogo": null,
-      "title": "Consultant",
+      "title": "Developer",
       "roles": "Developer",
       "technologies": [
         "Java",
@@ -860,7 +860,7 @@
       "endDate": "Dec 2000",
       "companyName": "Ericsson",
       "companyLogo": null,
-      "title": "Consultant",
+      "title": "Developer, architect",
       "roles": "Developer, Architect",
       "summary": "Java and VB developer on a command and voice recognition project",
       "technologies": [
@@ -878,7 +878,7 @@
       "endDate": "Mar 2005",
       "companyName": "XponCard",
       "companyLogo": null,
-      "title": "Developer",
+      "title": "Developer, architect",
       "roles": "Developer, Architect, Technical project manager",
       "technologies": [
         "Java",
@@ -896,7 +896,7 @@
       "endDate": "Sep 2008",
       "companyName": "Forca",
       "companyLogo": null,
-      "title": "Consultant",
+      "title": "Developer",
       "roles": "Developer",
       "technologies": [
         "C# 4.0",
@@ -912,7 +912,7 @@
       "endDate": "Mar 2003",
       "companyName": "Nokia",
       "companyLogo": null,
-      "title": "Consultant",
+      "title": "Requalification manager",
       "roles": "Requalification manager, TRUE test responsible",
       "technologies": [
         "Java",
