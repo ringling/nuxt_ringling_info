@@ -43,6 +43,8 @@ environments and cultures who value competences, innovation and creativity.
 
 ## This site
 
+<img src="img/web.png" class="lg:w-72 md:w-48 w-32 float-right rounded-lg">
+
 * Built with Typescript, Vue 3, Nuxt 3 and TailwindCSS
 * Images generated with Midjourney v5
 * Deployed via a Docker image to DigitalOcean App Platform
