@@ -7,7 +7,7 @@
 				<h1 class="m-4">CV</h1>
 
 				<div class="flex justify-center">
-					<img src="img/cv.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg">
+					<img src="/img/cv.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg">
 				</div>
 
 
