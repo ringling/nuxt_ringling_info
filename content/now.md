@@ -5,11 +5,11 @@ description: 'meta description of the page'
 
 # Now
 
-What am I doing right now? This page is a living document that I update every month. It's a way for me to keep track of what I'm doing and what I'm learning. It's also a way for me to share what I'm learning with others.
+This page is a living document that I try to update every month. It's a way for me to keep track of what I'm doing and what I'm learning. It's also a way for me to share what I'm learning with others.
 <!-- Content of the page -->
 ## April 2023
 
-<img src="img/ai.jpg" class="lg:w-72 md:w-48 w-32 float-right rounded-lg">
+<img src="img/ai.jpg" class="lg:w-72 md:w-48 w-32 rounded-lg">
 
 ### Technologies
 
@@ -48,7 +48,7 @@ What am I doing right now? This page is a living document that I update every mo
 
 ## March 2023
 
-<img src="img/python.jpg" class="lg:w-72 md:w-48 w-32 float-right rounded-lg">
+<img src="img/python.jpg" class="lg:w-72 md:w-48 w-32 rounded-lg">
 
 ### Technologies
 
@@ -67,6 +67,8 @@ What am I doing right now? This page is a living document that I update every mo
 
 ## December 2022 - February 2023
 
+<img src="img/relax.jpg" class="lg:w-72 md:w-48 w-32  rounded-lg">
+
 ### Books
 
 - __Lær at præstere, når du skal__ by _Lars Robl_
@@ -76,13 +78,15 @@ What am I doing right now? This page is a living document that I update every mo
 ---
 ## September 2022
 
+<img src="img/pc.jpg" class="lg:w-72 md:w-48 w-32 rounded-lg">
+
 - Rust (primarily WASM), Typescript, Vue 3 and Nuxt 3.
 - Python and Pandas
 
 ---
 ## January 2022
 
-<img src="img/qc.jpg" class="lg:w-72 md:w-48 w-32 float-right rounded-lg">
+<img src="img/qc.jpg" class="lg:w-72 md:w-48 w-32 rounded-lg">
 
 ### Technologies
 #### Quantum Computing

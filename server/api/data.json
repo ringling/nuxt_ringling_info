@@ -97,6 +97,12 @@
     "list": [
       {
         "type": "conferences",
+        "title": "Elixir Conf Europe 2023",
+        "description": "Lisbon",
+        "documentation": ""
+      },
+      {
+        "type": "conferences",
         "title": "Agile Coach Camp 2022",
         "description": "Denmark",
         "documentation": ""

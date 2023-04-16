@@ -6,6 +6,11 @@ description: 'meta description of the page'
 
 # About
 
+<div class="flex justify-center">
+  <img src="img/guitar.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg mt-4 lg:mx-12 md:mx-8 mx-4">
+  <img src="img/family.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg mt-4 lg:mx-12 md:mx-8 mx-4">
+  <img src="img/fitness.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg mt-4 lg:mx-12 md:mx-8 mx-4">
+</div>
 
 ## Me
 Lifetime learner and polyglot software craftsman with a great love for physical training,
@@ -28,11 +33,6 @@ project manager, scrum master, product owner, team lead etc.
 
 As I still do software development, I keep up with new technologies and hence thrive in
 environments and cultures who value competences, innovation and creativity.
-<div class="flex justify-center">
-<img src="img/guitar.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg mt-4 mx-12">
-<img src="img/family.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg mt-4 mx-12">
-<img src="img/fitness.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg mt-4 mx-12">
-</div>
 
 
 <br>
