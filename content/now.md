@@ -36,13 +36,14 @@ This page is a living document that I try to update every month. It's a way for 
 
 - __Fat Chance: Probability from the Ground Up__ - _HarvardX • FC1x_
 - __Introduction to Machine Learning__ - _MITx • 6.036_
-- __MIT 6.S191: Introduction to Deep Learning__ (Youtube)
+- __MIT 6.S191: Introduction to Deep Learning__ - _Youtube_
 
 ### Books
 
 - __The Hundred-Page Machine Learning Book__ by _Andriy Burkov_
 - __Modern Software Engineering__ by _David Farley_
 - __The Andromeda Evolution__ by _Daniel H. Wilson, Michael Crichton_
+- __Ikigai__ by _Héctor García and Francesc Miralles_
 
 ---
 
@@ -100,5 +101,5 @@ This page is a living document that I try to update every month. It's a way for 
 
 ### Courses
 
-- __Introduction to quantum computing for everyone__ - UChicagoX • QUAN11000
-- __The quantum internet and quantum computers: how will they change the world?__ - DelftX • QTM1x
+- __Introduction to quantum computing for everyone__ - _UChicagoX • QUAN11000_
+- __The quantum internet and quantum computers: how will they change the world?__ - _DelftX • QTM1x_
