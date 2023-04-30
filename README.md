@@ -62,3 +62,17 @@ npm run preview
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+
+
+## Grapics
+
+
+### Midjourney prompts
+```
+3-d model, relaxing, blue and fancy paper art, white background
+3-d model, artificial intelligence, blue and fancy paper art, white background
+3-d model, quantum computer, blue and fancy paper art, white background
+
+3-d model, curriculum vitae, blue and fancy paper art, white background
+
+```
