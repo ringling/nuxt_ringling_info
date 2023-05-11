@@ -74,5 +74,6 @@ Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/prese
 3-d model, quantum computer, blue and fancy paper art, white background
 
 3-d model, curriculum vitae, blue and fancy paper art, white background
+3-d model, image mosaic, blue and fancy paper art, white background
 
 ```

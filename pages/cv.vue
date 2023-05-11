@@ -20,6 +20,7 @@
 						</svg> <a href="mailto:cv@ringling.info">cv@ringling.info</a>
 					</div>
 
+
 					<div class="flex">
 						<svg width="25px" height="25px" class="mr-2" viewBox="0 -2 20 20" version="1.1"
 							xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -33,7 +34,7 @@
 									</g>
 								</g>
 							</g>
-						</svg> <a href="https://www.linkedin.com/in/thomas-ringling-88698b/" target="blank">Thomas Ringling</a>
+						</svg> @thomasringling
 					</div>
 
 					<div class="flex">
@@ -43,7 +44,7 @@
 								<path
 									d="M2.5 18h3V6.9h-3V18zM4 2c-1 0-1.8.8-1.8 1.8S3 5.6 4 5.6s1.8-.8 1.8-1.8S5 2 4 2zm6.6 6.6V6.9h-3V18h3v-5.7c0-3.2 4.1-3.4 4.1 0V18h3v-6.8c0-5.4-5.7-5.2-7.1-2.6z" />
 							</g>
-						</svg> @thomasringling
+						</svg> <a href="https://www.linkedin.com/in/thomas-ringling-88698b/" target="blank">Thomas Ringling</a>
 					</div>
 				</div>
 

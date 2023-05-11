@@ -9,7 +9,8 @@ export default defineNuxtConfig({
     // https://content.nuxtjs.org/api/configuration
   },
   css: [
-    '@/assets/css/styles.scss'
+    '@/assets/css/styles.scss',
+
   ],
 
   app: {

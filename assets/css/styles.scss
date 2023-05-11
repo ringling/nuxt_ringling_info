@@ -75,6 +75,15 @@ h5 {
 }
 
 
+.neu {
+
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  background: #ffffff;
+  -webkit-box-shadow: 12px 12px 24px #d9d9d9, -12px -12px 24px #ffffff;
+  box-shadow: 12px 12px 24px #d9d9d9, -12px -12px 24px #ffffff;
+}
+
 .markdown > h1 {
   @apply mb-6;
 }
@@ -106,4 +115,16 @@ div.markdown > ul >  li > strong  {
 }
 div.markdown > ul >  li > em  {
   @apply text-sm text-gray-900  font-light;
+}
+
+/* override styles when printing */
+@media print {
+
+  body {
+    margin: 0;
+    color: #000;
+
+    color: red;
+  }
+
 }

@@ -7,6 +7,34 @@ description: 'meta description of the page'
 
 This page is a living document that I try to update every month. It's a way for me to keep track of what I'm doing and what I'm learning. It's also a way for me to share what I'm learning with others.
 <!-- Content of the page -->
+## May 2023
+<img src="img/ai_mosaik.jpg" class="lg:w-72 md:w-48 w-32 rounded-lg">
+
+### Technologies
+
+
+#### Machine Learning
+
+- OpenAI
+
+#### Tools
+
+- Midjourney
+- ChatGPT
+- Anaconda 2023.3
+### Courses
+
+- __Fat Chance: Probability from the Ground Up__ - _HarvardX • FC1x_
+- __Introduction to Machine Learning__ - _MITx • 6.036_
+### Books
+
+- __The Hundred-Page Machine Learning Book__ by _Andriy Burkov_
+- __Modern Software Engineering__ by _David Farley_
+- __Pirate Latitudes__ by _Michael Crichton_
+
+
+
+
 ## April 2023
 
 <img src="img/ai.jpg" class="lg:w-72 md:w-48 w-32 rounded-lg">
@@ -34,14 +62,11 @@ This page is a living document that I try to update every month. It's a way for 
 - ChatGPT
 ### Courses
 
-- __Fat Chance: Probability from the Ground Up__ - _HarvardX • FC1x_
-- __Introduction to Machine Learning__ - _MITx • 6.036_
+
 - __MIT 6.S191: Introduction to Deep Learning__ - _Youtube_
 
 ### Books
 
-- __The Hundred-Page Machine Learning Book__ by _Andriy Burkov_
-- __Modern Software Engineering__ by _David Farley_
 - __The Andromeda Evolution__ by _Daniel H. Wilson, Michael Crichton_
 - __Ikigai__ by _Héctor García and Francesc Miralles_
 
