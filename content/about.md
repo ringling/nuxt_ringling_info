@@ -13,28 +13,12 @@ description: 'meta description of the page'
 </div>
 
 ## Me
-Lifetime learner and polyglot software craftsman with a great love for physical training,
-music and nature.
+
+As a lifetime learner and polyglot software craftsman, I have a great love for physical training, music, and nature. I am currently living north of Copenhagen with my wife and daughter. With over 20 years of experience in software development, I have implemented and taught agile methodologies and principles. I have a wide range of experience in different technologies, paradigms, and programming languages. My roles have included developer, coach, teacher, architect, project manager, scrum master, product owner, and team lead, both within and outside of IT.
 <br>
-
-Living north of Copenhagen with my wife and my daughter.
+As someone who still actively develops software, I keep up with new technologies and thrive in environments and cultures that value competences, innovation, and creativity. My experience has taught me that the key to success in software development is not just technical expertise, but also the ability to communicate effectively and work collaboratively with others.
 <br>
-
-A long experience implementing and teaching agile methodologies and principles.
-<br>
-
-With over 20 years of experience within software development, I span a variety of different
-technologies, paradigms and programming languages.
-<br>
-
-I have had many roles within and outside IT, such as developer, coach, teacher, architect,
-project manager, scrum master, product owner, team lead etc.
-<br>
-
-As I still do software development, I keep up with new technologies and hence thrive in
-environments and cultures who value competences, innovation and creativity.
-
-
+My passion for physical training, music, and nature has taught me the importance of balance in life. I believe that a healthy body and mind are essential for success in any field, including software development. I am committed to continuous learning and growth, both personally and professionally.
 <br>
 
 ## This site
