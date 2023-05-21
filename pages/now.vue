@@ -10,7 +10,7 @@
         <!-- <li> <b>Introduction to Machine Learning</b> - <em>MITx • 6.036</em> </li> -->
 
         <div class="block max-w p-6 bg-white markdown neu">
-          <img src="img/ai_mosaik.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
+          <img src="/img/ai_mosaik.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">May 2023</h5>
           <p class="font-normal text-gray-700">
 
@@ -38,6 +38,7 @@
 
           <h3>Books</h3>
           <ul>
+            <li> <b>Frankenstein</b> - <em>Mary Shelley</em> </li>
             <li> <b>The Hundred-Page Machine Learning Book</b> - <em>Andriy Burkov</em> </li>
             <li> <b>Modern Software Engineering</b> by <em>David Farley</em> </li>
             <li> <b>Pirate Latitudes</b> by <em>Michael Crichton</em> </li>
@@ -47,7 +48,7 @@
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
-          <img src="img/ai.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
+          <img src="/img/ai.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">April 2023</h5>
           <p class="font-normal text-gray-700">
           <h3>Technologies</h3>
@@ -87,7 +88,7 @@
 
 
         <div class="block max-w p-6 bg-white markdown neu">
-          <img src="img/python.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
+          <img src="/img/python.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">March 2023</h5>
           <p class="font-normal text-gray-700">
           <h3>Technologies</h3>
@@ -108,7 +109,7 @@
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
-          <img src="img/relax.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
+          <img src="/img/relax.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">December 2022 - February
             2023</h5>
           <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -122,7 +123,7 @@
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
-          <img src="img/pc.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
+          <img src="/img/pc.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">September 2022</h5>
           <p class="font-normal text-gray-700 dark:text-gray-400">
           <h3>Technologies</h3>
@@ -136,7 +137,7 @@
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
-          <img src="img/qc.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
+          <img src="/img/qc.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">January 2022</h5>
           <p class="font-normal text-gray-700 dark:text-gray-400">
           <h3>Technologies</h3>
