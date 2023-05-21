@@ -9,6 +9,32 @@
 					<img src="/img/cv.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg">
 				</div>
 
+				<div class="mt-8 mb-2"></div>
+				<h2 class="m-4">About me</h2>
+
+				<div class="m-4">
+					As a lifetime learner and polyglot software craftsman, I have a great love for physical training, music, and
+					nature. I am currently living north of Copenhagen with my wife and daughter. With over 20 years of experience in
+					software development, I have implemented and taught agile methodologies and principles. I have a wide range of
+					experience in different technologies, paradigms, and programming languages. My roles have included developer,
+					coach, teacher, architect, project manager, scrum master, product owner, and team lead, both within and outside
+					of
+					IT.
+				</div>
+				<div class="m-4">
+
+					As someone who still actively develops software, I keep up with new technologies and thrive in environments and
+					cultures that value competences, innovation, and creativity. My experience has taught me that the key to success
+					in software development is not just technical expertise, but also the ability to communicate effectively and
+					work
+					collaboratively with others.
+				</div>
+				<div class="m-4">
+
+					My passion for physical training, music, and nature has taught me the importance of balance in life. I believe
+					that a healthy body and mind are essential for success in any field, including software development. I am
+					committed to continuous learning and growth, both personally and professionally.
+				</div>
 				<h2 class="m-4">Contact</h2>
 				<div class="m-4 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
 					<div class="flex">

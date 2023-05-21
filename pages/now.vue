@@ -5,6 +5,12 @@
 
       <h1 class="my-8">Now</h1>
 
+
+      <div class="m-4 mb-8">This page is a living document that I try to update every month. It's a way for me to keep
+        track of
+        what I'm doing and what I'm learning. It's also a way for me to share what I'm learning with others.
+      </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 
         <!-- <li> <b>Introduction to Machine Learning</b> - <em>MITx • 6.036</em> </li> -->
