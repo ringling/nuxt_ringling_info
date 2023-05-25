@@ -16,6 +16,39 @@
         <!-- <li> <b>Introduction to Machine Learning</b> - <em>MITx • 6.036</em> </li> -->
 
         <div class="block max-w p-6 bg-white markdown neu">
+          <img src="/img/frankenstein.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
+          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">June 2023</h5>
+          <p class="font-normal text-gray-700">
+
+          <h3>Technologies</h3>
+          <h4>Machine Learning</h4>
+          <ul>
+            <li>OpenAI</li>
+          </ul>
+
+          <h4>Tools</h4>
+          <ul>
+            <li>Midjourney</li>
+            <li>Gradio</li>
+            <li>ChatGPT</li>
+          </ul>
+
+          <h3>Courses</h3>
+          <ul>
+            <li> <b>Fat Chance: Probability from the Ground Up</b> <em class="whitespace-nowrap">HarvardX • FC1x</em>
+            </li>
+          </ul>
+
+          <h3>Books</h3>
+          <ul>
+            <li> <b>Frankenstein</b> <em class="whitespace-nowrap">Mary Shelley</em> </li>
+            <li> <b>The Hundred-Page Machine Learning Book</b> <em class="whitespace-nowrap">Andriy Burkov</em> </li>
+          </ul>
+
+          </p>
+        </div>
+
+        <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/ai_mosaik.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">May 2023</h5>
           <p class="font-normal text-gray-700">
@@ -25,29 +58,25 @@
           <ul>
             <li>OpenAI</li>
           </ul>
-          <h4>Data Science</h4>
-          <ul>
-            <li>Anaconda 2023.3</li>
-          </ul>
+
 
           <h4>Tools</h4>
           <ul>
+            <li>Anaconda 2023.3</li>
+            <li>AlpineJS, Tornado & Websockets</li>
             <li>Midjourney</li>
             <li>ChatGPT</li>
           </ul>
 
           <h3>Courses</h3>
           <ul>
-            <li> <b>Fat Chance: Probability from the Ground Up</b> - <em>HarvardX • FC1x</em> </li>
-            <li> <b>ChatGPT Prompt Engineering for Developers</b> - <em>DeepLearning.AI</em> </li>
+            <li> <b>ChatGPT Prompt Engineering for Developers</b> <em>DeepLearning.AI</em> </li>
           </ul>
 
           <h3>Books</h3>
           <ul>
-            <li> <b>Frankenstein</b> - <em>Mary Shelley</em> </li>
-            <li> <b>The Hundred-Page Machine Learning Book</b> - <em>Andriy Burkov</em> </li>
-            <li> <b>Modern Software Engineering</b> by <em>David Farley</em> </li>
-            <li> <b>Pirate Latitudes</b> by <em>Michael Crichton</em> </li>
+            <li> <b>Modern Software Engineering</b> <em>David Farley</em> </li>
+            <li> <b>Pirate Latitudes</b> <em>Michael Crichton</em> </li>
           </ul>
 
           </p>
@@ -79,13 +108,14 @@
 
           <h3>Courses</h3>
           <ul>
-            <li> <b>MIT 6.S191: Introduction to Deep Learning </b> - <em>Youtube</em> </li>
+            <li> <b>MIT 6.S191: Introduction to Deep Learning </b> <em>Youtube</em> </li>
           </ul>
 
           <h3>Books</h3>
           <ul>
-            <li> <b>The Andromeda Evolution</b> by <em>Andriy Burkov</em> </li>
-            <li> <b>Ikigai</b> by <em>Héctor García and Francesc Miralles</em> </li>
+            <li> <b>The Andromeda Evolution</b> <em class="whitespace-nowrap">Daniel H. Wilson and Michael
+                Crichton</em> </li>
+            <li> <b>Ikigai</b> <em class="whitespace-nowrap">Héctor García and Francesc Miralles</em> </li>
 
           </ul>
 
@@ -108,7 +138,7 @@
 
           <h3>Books</h3>
           <ul>
-            <li> <b>ZOV</b> by <em>Pavel Filatjev</em> </li>
+            <li> <b>ZOV</b> <em>Pavel Filatjev</em> </li>
           </ul>
 
           </p>
@@ -121,9 +151,9 @@
           <p class="font-normal text-gray-700 dark:text-gray-400">
           <h3>Books</h3>
           <ul>
-            <li> <b>Lær at præstere, når du skal</b> by <em>Lars Robl</em> </li>
-            <li> <b>Kaptajn Dinesen - Ild og blod</b> by <em>Tom Buk-Swienty</em> </li>
-            <li> <b>Safari fra helvede</b> by <em>Tom Buk-Swienty</em> </li>
+            <li> <b>Lær at præstere, når du skal</b> <em class="whitespace-nowrap">Lars Robl</em> </li>
+            <li> <b>Kaptajn Dinesen - Ild og blod</b> <em class="whitespace-nowrap">Tom Buk-Swienty</em> </li>
+            <li> <b>Safari fra helvede</b> <em class="whitespace-nowrap">Tom Buk-Swienty</em> </li>
           </ul>
           </p>
         </div>
@@ -156,14 +186,16 @@
 
           <h3>Courses</h3>
           <ul>
-            <li> <b>Introduction to quantum computing for everyone</b> - <em>UChicagoX • QUAN11000</em> </li>
-            <li> <b>The quantum internet and quantum computers: how will they change the world?</b> - <em>DelftX •
+            <li> <b>Introduction to quantum computing for everyone</b> <em class="whitespace-nowrap">UChicagoX •
+                QUAN11000</em> </li>
+            <li> <b>The quantum internet and quantum computers: how will they change the world?</b> <em
+                class="whitespace-nowrap">DelftX •
                 QTM1x</em> </li>
           </ul>
 
           <h3>Books</h3>
           <ul>
-            <li> <b>Quantum Computing for Everyone</b> by <em>Chris Bernhardt</em> </li>
+            <li> <b>Quantum Computing for Everyone</b> <em>Chris Bernhardt</em> </li>
           </ul>
           </p>
         </div>

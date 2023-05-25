@@ -69,14 +69,19 @@ h5 {
   }
 }
 
-.markdown > ul {
-  list-style-type: circle;
+.markdown > ul > li{
+  //list-style-type: circle;
+  @apply mb-1;
+
   list-style-position: inside;
+}
+
+.markdown > img {
+  @apply ml-2 mb-2;
 }
 
 
 .neu {
-
   -webkit-border-radius: 15px;
   border-radius: 15px;
   background: #ffffff;
