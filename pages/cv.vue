@@ -200,7 +200,7 @@
 				<div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
 					<div>
 
-						<img src="img/fitness.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg">
+						<img src="/img/fitness.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg">
 						<figure class="box">
 							<figcaption class="flex items-center space-x-4">
 								<div class="flex-auto">
@@ -212,7 +212,7 @@
 						</figure>
 					</div>
 					<div>
-						<img src="img/guitar.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg">
+						<img src="/img/guitar.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg">
 
 						<figure class="box">
 							<figcaption class="flex items-center space-x-4">
@@ -225,7 +225,7 @@
 					</div>
 
 					<div>
-						<img src="img/japanese.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg">
+						<img src="/img/japanese.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg">
 
 						<figure class="box">
 							<figcaption class="flex items-center space-x-4">
@@ -238,7 +238,7 @@
 					</div>
 					<div>
 
-						<img src="img/family.jpg" class="text-center lg:w-48 md:w-48 w-32">
+						<img src="/img/family.jpg" class="text-center lg:w-48 md:w-48 w-32">
 						<figure class="box">
 							<figcaption class="flex items-center space-x-4">
 								<div class="flex-auto">

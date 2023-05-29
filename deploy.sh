@@ -1,3 +1,4 @@
+#!/bin/bash
 docker build -t ringling/personal-website .
 docker push ringling/personal-website
 doctl auth switch --context depl_ringling_info
