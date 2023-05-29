@@ -38,19 +38,23 @@
   "languages": [
     {
       "language": "Danish",
-      "fluency": "Native speaker"
+      "fluency": "Native speaker",
+      "proficiency": "100%"
     },
     {
       "language": "German",
-      "fluency": "Native speaker"
+      "fluency": "Native speaker",
+      "proficiency": "100%"
     },
     {
       "language": "English",
-      "fluency": "Full professional proficiency"
+      "fluency": "Full professional proficiency",
+      "proficiency": "90%"
     },
     {
       "language": "Japanese",
-      "fluency": "Elementary proficiency"
+      "fluency": "Elementary proficiency",
+      "proficiency": "20%"
     }
   ],
   "educations": [

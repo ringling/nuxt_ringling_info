@@ -12,14 +12,6 @@
             <nav class="text-sm leading-6 font-semibold text-gray-700">
               <ul class="flex space-x-8">
                 <li>
-                  <NuxtLink class="hover:text-sky-500 " style="z-index: 1000" to="/">Home</NuxtLink>
-                </li>
-
-                <li>
-                  <NuxtLink class="hover:text-sky-500 " style="z-index: 1000" to="/about">About</NuxtLink>
-                </li>
-
-                <li>
                   <NuxtLink class="hover:text-sky-500" style="z-index: 1000" to="/now">Now</NuxtLink>
                 </li>
                 <li>

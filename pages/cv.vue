@@ -10,7 +10,7 @@
 				</div>
 
 				<div class="mt-8 mb-2"></div>
-				<h2 class="m-4">About me</h2>
+				<h2 class="m-4">Profile</h2>
 
 				<div class="m-4">
 					As a lifetime learner and polyglot software craftsman, I have a great love for physical training, music, and
@@ -147,13 +147,16 @@
 				<h2 class="m-4">Languages</h2>
 				<div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
 					<Language v-for="language in data.cv.languages" :item="language" v-bind:key="language.language" />
+
 				</div>
 				<hr />
 
 				<h2 class="m-4">Courses</h2>
 				<div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
 					<Course v-for="course in achivement(data, 'courses')" :item="course" v-bind:key="course" />
+
 				</div>
+
 				<hr />
 				<h2 class="m-4">Certifications</h2>
 				<div class="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
@@ -183,9 +186,68 @@
 					<Experience v-for="experience in (data.cv.experiences)" :item="experience" v-bind:key="experience"
 						:showDetails="showDetails" />
 				</div>
+
 				<h2 class="m-4">Technologies</h2>
 				<div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8" v-if="data.cv.skills">
 					<Skill v-for="skill in sortSkills(data.cv.skills)" :item="skill" v-bind:key="skill.name" />
+				</div>
+
+				<h2 class="m-4">Hobbies</h2>
+
+
+				<div class="flex justify-center">
+				</div>
+				<div class="grid grid-cols- gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+					<div>
+
+						<img src="img/fitness.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg">
+						<figure class="box">
+							<figcaption class="flex items-center space-x-4">
+								<div class="flex-auto">
+									<h3 class="mb-1">Physical training</h3>
+									<div class="normal-case">I have trained my entire life, including martial arts for 30 years. Now
+										primarily weight training.</div>
+								</div>
+							</figcaption>
+						</figure>
+					</div>
+					<div>
+						<img src="img/guitar.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg">
+
+						<figure class="box">
+							<figcaption class="flex items-center space-x-4">
+								<div class="flex-auto">
+									<h3 class="mb-1">Guitar</h3>
+									<div class="normal-case">Primarily classical guitar, but a little western as well</div>
+								</div>
+							</figcaption>
+						</figure>
+					</div>
+
+					<div>
+						<img src="img/japanese.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg">
+
+						<figure class="box">
+							<figcaption class="flex items-center space-x-4">
+								<div class="flex-auto">
+									<h3 class="mb-1">Japanese</h3>
+									<div class="normal-case">Language, culture and sashimono(joinery)</div>
+								</div>
+							</figcaption>
+						</figure>
+					</div>
+					<div>
+
+						<img src="img/family.jpg" class="text-center lg:w-48 md:w-48 w-32">
+						<figure class="box">
+							<figcaption class="flex items-center space-x-4">
+								<div class="flex-auto">
+									<h3 class="mb-1">Family</h3>
+									<div class="normal-case">Spending a lot of my time together with my family</div>
+								</div>
+							</figcaption>
+						</figure>
+					</div>
 				</div>
 
 			</div>

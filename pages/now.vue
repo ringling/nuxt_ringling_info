@@ -6,9 +6,13 @@
       <h1 class="my-8">Now</h1>
 
 
-      <div class="m-4 mb-8">This page is a living document that I try to update every month. It's a way for me to keep
+      <div class="m-4 mb-4">This page is a living document that I try to update every month. It's a way for me to keep
         track of
         what I'm doing and what I'm learning. It's also a way for me to share what I'm learning with others.
+      </div>
+      <div class="m-4 mb-8 text-xs">This site is built with Typescript, Vue 3, Nuxt 3 and TailwindCSS. Images are
+        generated with
+        Midjourney. Deployed via a Docker image to DigitalOcean App Platform
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
@@ -160,12 +164,17 @@
 
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/pc.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">September 2022</h5>
+          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">February - September 2022</h5>
           <p class="font-normal text-gray-700 dark:text-gray-400">
+          <p>
+            Doing a lot of software development at work
+          </p>
           <h3>Technologies</h3>
 
+
           <ul>
-            <li>Rust (primarily WASM), Typescript, Vue 3 and Nuxt 3.</li>
+            <li>Rust (primarily WASM)</li>
+            <li>Typescript, Vue 3 and Nuxt 3.</li>
             <li>Python and Pandas</li>
 
           </ul>
@@ -174,7 +183,7 @@
 
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/qc.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">January 2022</h5>
+          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">June 2021 - January 2022</h5>
           <p class="font-normal text-gray-700 dark:text-gray-400">
           <h3>Technologies</h3>
           <h4>Quantum Computing</h4>
