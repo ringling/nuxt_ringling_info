@@ -178,6 +178,7 @@
 
           <h3>Books</h3>
           <ul>
+            <li> <b>Philosophy of Science: A Very Short Introduction </b> <em>Samir Okasha</em> </li>
             <li> <b>Extraterrestrial</b> <em>Avi Loeb</em> </li>
             <li> <b>Butcher's Crossing</b> <em>John Williams</em> </li>
           </ul>
@@ -212,8 +213,6 @@
           </p>
         </div>
       </div>
-
-      <!--ContentDoc class="markdown" /-->
     </div>
   </div>
 </template>
