@@ -178,6 +178,7 @@
 
           <h3>Books</h3>
           <ul>
+            <li> <b>Extraterrestrial</b> <em>Avi Loeb</em> </li>
             <li> <b>Butcher's Crossing</b> <em>John Williams</em> </li>
           </ul>
           </p>
@@ -207,7 +208,6 @@
           <ul>
             <li> <b>Quantum Computing for Everyone</b> <em>Chris Bernhardt</em> </li>
             <li> <b>In Plain Sight</b> <em>Ross Coulthart</em> </li>
-            <li> <b>Extraterrestrial</b> <em>Avi Loeb</em> </li>
           </ul>
           </p>
         </div>
