@@ -33,7 +33,7 @@
           <h4>Tools</h4>
           <ul>
             <li>Midjourney</li>
-            <li>Gradio</li>
+            <li>Pyscript</li>
             <li>ChatGPT</li>
           </ul>
 
@@ -170,13 +170,15 @@
             Doing a lot of software development at work
           </p>
           <h3>Technologies</h3>
-
-
           <ul>
             <li>Rust (primarily WASM)</li>
             <li>Typescript, Vue 3 and Nuxt 3.</li>
             <li>Python and Pandas</li>
+          </ul>
 
+          <h3>Books</h3>
+          <ul>
+            <li> <b>Butchers Crossing</b> <em>Butchers Crossing</em> </li>
           </ul>
           </p>
         </div>
@@ -190,7 +192,6 @@
           <ul>
             <li>Qiskit</li>
             <li>Linear Algebra</li>
-
           </ul>
 
           <h3>Courses</h3>
@@ -205,6 +206,8 @@
           <h3>Books</h3>
           <ul>
             <li> <b>Quantum Computing for Everyone</b> <em>Chris Bernhardt</em> </li>
+            <li> <b>In Plain Sight</b> <em>Ross Coulthart</em> </li>
+            <li> <b>Extraterrestrial</b> <em>Avi Loeb</em> </li>
           </ul>
           </p>
         </div>
