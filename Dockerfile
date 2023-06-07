@@ -1,4 +1,4 @@
-FROM node:alpine3.16
+FROM node:lts-alpine3.18
 RUN mkdir -p /usr/src/nuxt-app
 WORKDIR /usr/src/nuxt-app
 COPY . .
