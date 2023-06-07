@@ -178,7 +178,7 @@
 
           <h3>Books</h3>
           <ul>
-            <li> <b>Butchers Crossing</b> <em>Butchers Crossing</em> </li>
+            <li> <b>Butcher's Crossing</b> <em>John Williams</em> </li>
           </ul>
           </p>
         </div>
