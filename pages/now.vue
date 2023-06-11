@@ -39,15 +39,15 @@
 
           <h3>Courses</h3>
           <ul>
-            <li> <b>Fat Chance: Probability from the Ground Up</b> <em class="whitespace-nowrap">HarvardX • FC1x</em>
+            <li class="grid grid-cols-1"> <b>Fat Chance: Probability from the Ground Up</b> <em class="whitespace-nowrap">HarvardX • FC1x</em>
             </li>
           </ul>
 
           <h3>Books</h3>
           <ul>
-            <li> <b>The Alchemist</b> <em class="whitespace-nowrap">Paulo Coelho</em> </li>
-            <li> <b>Frankenstein</b> <em class="whitespace-nowrap">Mary Shelley</em> </li>
-            <li> <b>The Hundred-Page Machine Learning Book</b> <em class="whitespace-nowrap">Andriy Burkov</em> </li>
+            <li class="grid grid-cols-1"> <b>The Alchemist</b> <em class="whitespace-nowrap">Paulo Coelho</em> </li>
+            <li class="grid grid-cols-1"> <b>Frankenstein</b> <em class="whitespace-nowrap">Mary Shelley</em> </li>
+            <li class="grid grid-cols-1"> <b>The Hundred-Page Machine Learning Book</b> <em class="whitespace-nowrap">Andriy Burkov</em> </li>
           </ul>
 
           </p>
@@ -75,13 +75,13 @@
 
           <h3>Courses</h3>
           <ul>
-            <li> <b>ChatGPT Prompt Engineering for Developers</b> <em>DeepLearning.AI</em> </li>
+            <li class="grid grid-cols-1"> <b>ChatGPT Prompt Engineering for Developers</b> <em>DeepLearning.AI</em> </li>
           </ul>
 
           <h3>Books</h3>
           <ul>
-            <li> <b>Modern Software Engineering</b> <em>David Farley</em> </li>
-            <li> <b>Pirate Latitudes</b> <em>Michael Crichton</em> </li>
+            <li class="grid grid-cols-1"> <b>Modern Software Engineering</b> <em>David Farley</em> </li>
+            <li class="grid grid-cols-1"> <b>Pirate Latitudes</b> <em>Michael Crichton</em> </li>
           </ul>
 
           </p>
@@ -113,14 +113,14 @@
 
           <h3>Courses</h3>
           <ul>
-            <li> <b>MIT 6.S191: Introduction to Deep Learning </b> <em>Youtube</em> </li>
+            <li class="grid grid-cols-1"> <b>MIT 6.S191: Introduction to Deep Learning </b> <em>Youtube</em> </li>
           </ul>
 
           <h3>Books</h3>
           <ul>
-            <li> <b>The Andromeda Evolution</b> <em class="whitespace-nowrap">Daniel H. Wilson and Michael
+            <li class="grid grid-cols-1"> <b>The Andromeda Evolution</b> <em class="whitespace-nowrap">Daniel H. Wilson and Michael
                 Crichton</em> </li>
-            <li> <b>Ikigai</b> <em class="whitespace-nowrap">Héctor García and Francesc Miralles</em> </li>
+            <li class="grid grid-cols-1"> <b>Ikigai</b> <em class="whitespace-nowrap">Héctor García and Francesc Miralles</em> </li>
 
           </ul>
 
@@ -143,7 +143,7 @@
 
           <h3>Books</h3>
           <ul>
-            <li> <b>ZOV</b> <em>Pavel Filatjev</em> </li>
+            <li class="grid grid-cols-1"> <b>ZOV</b> <em>Pavel Filatjev</em> </li>
           </ul>
 
           </p>
@@ -156,9 +156,9 @@
           <p class="font-normal text-gray-700 dark:text-gray-400">
           <h3>Books</h3>
           <ul>
-            <li> <b>Lær at præstere, når du skal</b> <em class="whitespace-nowrap">Lars Robl</em> </li>
-            <li> <b>Kaptajn Dinesen - Ild og blod</b> <em class="whitespace-nowrap">Tom Buk-Swienty</em> </li>
-            <li> <b>Safari fra helvede</b> <em class="whitespace-nowrap">Tom Buk-Swienty</em> </li>
+            <li class="grid grid-cols-1"> <b>Lær at præstere, når du skal</b> <em class="whitespace-nowrap">Lars Robl</em> </li>
+            <li class="grid grid-cols-1"> <b>Kaptajn Dinesen - Ild og blod</b> <em class="whitespace-nowrap">Tom Buk-Swienty</em> </li>
+            <li class="grid grid-cols-1"> <b>Safari fra helvede</b> <em class="whitespace-nowrap">Tom Buk-Swienty</em> </li>
           </ul>
           </p>
         </div>
@@ -179,9 +179,9 @@
 
           <h3>Books</h3>
           <ul>
-            <li> <b>Philosophy of Science: A Very Short Introduction </b> <em>Samir Okasha</em> </li>
-            <li> <b>Extraterrestrial</b> <em>Avi Loeb</em> </li>
-            <li> <b>Butcher's Crossing</b> <em>John Williams</em> </li>
+            <li class="grid grid-cols-1"> <b>Philosophy of Science: A Very Short Introduction </b> <em>Samir Okasha</em> </li>
+            <li class="grid grid-cols-1"> <b>Extraterrestrial</b> <em>Avi Loeb</em> </li>
+            <li class="grid grid-cols-1"> <b>Butcher's Crossing</b> <em>John Williams</em> </li>
           </ul>
           </p>
         </div>
@@ -199,17 +199,17 @@
 
           <h3>Courses</h3>
           <ul>
-            <li> <b>Introduction to quantum computing for everyone</b> <em class="whitespace-nowrap">UChicagoX •
+            <li class="grid grid-cols-1"> <b>Introduction to quantum computing for everyone</b> <em class="whitespace-nowrap">UChicagoX •
                 QUAN11000</em> </li>
-            <li> <b>The quantum internet and quantum computers: how will they change the world?</b> <em
+            <li class="grid grid-cols-1"> <b>The quantum internet and quantum computers: how will they change the world?</b> <em
                 class="whitespace-nowrap">DelftX •
                 QTM1x</em> </li>
           </ul>
 
           <h3>Books</h3>
           <ul>
-            <li> <b>Quantum Computing for Everyone</b> <em>Chris Bernhardt</em> </li>
-            <li> <b>In Plain Sight</b> <em>Ross Coulthart</em> </li>
+            <li class="grid grid-cols-1"> <b>Quantum Computing for Everyone</b> <em>Chris Bernhardt</em> </li>
+            <li class="grid grid-cols-1"> <b>In Plain Sight</b> <em>Ross Coulthart</em> </li>
           </ul>
           </p>
         </div>
