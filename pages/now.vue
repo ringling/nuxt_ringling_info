@@ -45,6 +45,7 @@
 
           <h3>Books</h3>
           <ul>
+            <li> <b>The Alchemist</b> <em class="whitespace-nowrap">Paulo Coelho</em> </li>
             <li> <b>Frankenstein</b> <em class="whitespace-nowrap">Mary Shelley</em> </li>
             <li> <b>The Hundred-Page Machine Learning Book</b> <em class="whitespace-nowrap">Andriy Burkov</em> </li>
           </ul>
