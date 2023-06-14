@@ -39,14 +39,14 @@
 
           <h3>Courses</h3>
           <ul>
-            <li class="grid grid-cols-1"> <b>Fat Chance: Probability from the Ground Up</b> <em class="whitespace-nowrap">HarvardX • FC1x</em>
-            </li>
+            <li class="grid grid-cols-1"> <b>Fat Chance: Probability from the Ground Up</b> <em class="whitespace-nowrap">HarvardX • FC1x</em></li>
+            <li class="grid grid-cols-1"> <b>Building Systems with the ChatGPT API</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
           </ul>
 
           <h3>Books</h3>
           <ul>
-            <li class="grid grid-cols-1"> <b>The Alchemist</b> <em class="whitespace-nowrap">Paulo Coelho</em> </li>
-            <li class="grid grid-cols-1"> <b>Frankenstein</b> <em class="whitespace-nowrap">Mary Shelley</em> </li>
+            <li class="grid grid-cols-1"> <b>The Alchemist</b> <em class="whitespace-nowrap">Paulo Coelho</em></li>
+            <li class="grid grid-cols-1"> <b>Frankenstein</b> <em class="whitespace-nowrap">Mary Shelley</em></li>
             <li class="grid grid-cols-1"> <b>The Hundred-Page Machine Learning Book</b> <em class="whitespace-nowrap">Andriy Burkov</em> </li>
           </ul>
 
