@@ -210,6 +210,7 @@
           <ul>
             <li class="grid grid-cols-1"> <b>Quantum Computing for Everyone</b> <em>Chris Bernhardt</em> </li>
             <li class="grid grid-cols-1"> <b>In Plain Sight</b> <em>Ross Coulthart</em> </li>
+            <li class="grid grid-cols-1"> <b>Blood and Thunder</b> <em>Hampton Sides</em> </li>
           </ul>
           </p>
         </div>
