@@ -12,7 +12,7 @@
       </div>
       <div class="m-4 mb-8 text-xs">This site is built with Typescript, Vue 3, Nuxt 3 and TailwindCSS. Images are
         generated with
-        Midjourney. Deployed via a Docker image to DigitalOcean App Platform
+        Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
