@@ -45,6 +45,7 @@
 
           <h3>Books</h3>
           <ul>
+            <li class="grid grid-cols-1"> <b>Scary Smart</b> <em class="whitespace-nowrap">Mo Gawdat</em></li>
             <li class="grid grid-cols-1"> <b>The Alchemist</b> <em class="whitespace-nowrap">Paulo Coelho</em></li>
             <li class="grid grid-cols-1"> <b>Frankenstein</b> <em class="whitespace-nowrap">Mary Shelley</em></li>
             <li class="grid grid-cols-1"> <b>The Hundred-Page Machine Learning Book</b> <em class="whitespace-nowrap">Andriy Burkov</em> </li>
