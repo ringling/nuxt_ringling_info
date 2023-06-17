@@ -270,7 +270,6 @@ function sortSkills(skills) {
 }
 
 function toogleDetails() {
-	console.log("toogle")
 	showDetails.value = !showDetails.value;
 }
 

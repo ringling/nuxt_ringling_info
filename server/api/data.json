@@ -587,9 +587,26 @@
   ],
   "experiences": [
     {
+      "year": "2023",
+      "startDate": "July 2023",
+      "endDate": "Present",
+      "companyName": "PFA",
+      "companyLogo": "assets/img/pfa.png",
+      "website": "http://pfa.dk",
+      "title": "Business consultant",
+      "roles": "",
+      "highlights": [],
+      "technologies": [
+        "Python",
+        "Pandas",
+        "Numpy"
+      ],
+      "summary": "Data analysis, -extraction & -ports"
+    },
+    {
       "year": "2021",
       "startDate": "June 2021",
-      "endDate": "Present",
+      "endDate": "June 2023",
       "companyName": "PFA",
       "companyLogo": "assets/img/pfa.png",
       "website": "http://pfa.dk",
@@ -602,7 +619,7 @@
         "Pandas",
         "Matlibplot"
       ],
-      "summary": "Part of a program office. Doing data analysis, architecture etc"
+      "summary": "Part of a program office. Track management, communication, analysis, architecture counseling etc"
     },
     {
       "year": "2021",
