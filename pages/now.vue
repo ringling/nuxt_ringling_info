@@ -45,6 +45,7 @@
 
           <h3>Books</h3>
           <ul>
+            <li class="grid grid-cols-1"> <b>FAT Chance! Probabilty from 0 to 1</b> <em class="whitespace-nowrap">Benedict Gross, Joe Harris & Emily Riehl</em></li>
             <li class="grid grid-cols-1"> <b>Scary Smart</b> <em class="whitespace-nowrap">Mo Gawdat</em></li>
             <li class="grid grid-cols-1"> <b>The Alchemist</b> <em class="whitespace-nowrap">Paulo Coelho</em></li>
             <li class="grid grid-cols-1"> <b>Frankenstein</b> <em class="whitespace-nowrap">Mary Shelley</em></li>
