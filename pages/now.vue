@@ -145,6 +145,7 @@
 
           <h3>Books</h3>
           <ul>
+            <li class="grid grid-cols-1"> <b>Niels Bohr - Det beskedne geni</b> <em>Charlotte Koldbye</em> </li>
             <li class="grid grid-cols-1"> <b>ZOV</b> <em>Pavel Filatjev</em> </li>
             <li class="grid grid-cols-1"> <b>Stalingrad</b> <em>Antony Beevor</em> </li>
           </ul>
