@@ -26,6 +26,11 @@
 
           <h3>A.D. ?</h3>
 
+          <h3>Courses</h3>
+          <ul>
+            <li class="grid grid-cols-1"> <b>Fat Chance: Probability from the Ground Up</b> <em class="whitespace-nowrap">HarvardX • FC1x</em></li>
+          </ul>
+
           <h3>Books</h3>
           <ul>
             <li class="grid grid-cols-1"> <b>A Column of Fire</b> <em class="whitespace-nowrap">Ken Follett</em> </li>
@@ -33,14 +38,6 @@
             <li class="grid grid-cols-1"> <b>Scary Smart</b> <em class="whitespace-nowrap">Mo Gawdat</em></li>
             <li class="grid grid-cols-1"> <b>The Hundred-Page Machine Learning Book</b> <em class="whitespace-nowrap">Andriy Burkov</em> </li>
           </ul>
-
-          <h3>Courses</h3>
-          <ul>
-            <li class="grid grid-cols-1"> <b>Fat Chance: Probability from the Ground Up</b> <em class="whitespace-nowrap">HarvardX • FC1x</em></li>
-          </ul>
-
-
-
 
           </p>
         </div>
