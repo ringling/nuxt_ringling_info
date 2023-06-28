@@ -25,7 +25,8 @@
 
 
         <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/elizabeth.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right hover:bg-bar" />
+          <!--img src="/img/elizabeth.jpg" class="bg-[url('/img/elizabeth.jpg')] lg:w-48 md:w-32 w-16 rounded-lg float-right hover:bg-[url('/img/uap.jpg')]" /-->
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/elizabeth.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right hover:bg-[url('/img/uap.jpg')]" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">July 2023</h5>
           <p class="font-normal text-gray-700">
 
