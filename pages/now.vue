@@ -20,6 +20,32 @@
         <!-- <li> <b>Introduction to Machine Learning</b> - <em>MITx • 6.036</em> </li> -->
 
         <div class="block max-w p-6 bg-white markdown neu">
+          <img src="/img/uap.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
+          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">July 2023</h5>
+          <p class="font-normal text-gray-700">
+
+          <h3>A.D. ?</h3>
+
+          <h3>Books</h3>
+          <ul>
+            <li class="grid grid-cols-1"> <b>A Column of Fire</b> <em class="whitespace-nowrap">Ken Follett</em> </li>
+            <li class="grid grid-cols-1"> <b>Fat Chance! Probabilty from 0 to 1</b> <em class="whitespace-nowrap">Benedict Gross, Joe Harris & Emily Riehl</em></li>
+            <li class="grid grid-cols-1"> <b>Scary Smart</b> <em class="whitespace-nowrap">Mo Gawdat</em></li>
+            <li class="grid grid-cols-1"> <b>The Hundred-Page Machine Learning Book</b> <em class="whitespace-nowrap">Andriy Burkov</em> </li>
+          </ul>
+
+          <h3>Courses</h3>
+          <ul>
+            <li class="grid grid-cols-1"> <b>Fat Chance: Probability from the Ground Up</b> <em class="whitespace-nowrap">HarvardX • FC1x</em></li>
+          </ul>
+
+
+
+
+          </p>
+        </div>
+
+        <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/frankenstein.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">June 2023</h5>
           <p class="font-normal text-gray-700">
@@ -39,17 +65,14 @@
 
           <h3>Courses</h3>
           <ul>
-            <li class="grid grid-cols-1"> <b>Fat Chance: Probability from the Ground Up</b> <em class="whitespace-nowrap">HarvardX • FC1x</em></li>
             <li class="grid grid-cols-1"> <b>Building Systems with the ChatGPT API</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
           </ul>
 
           <h3>Books</h3>
           <ul>
-            <li class="grid grid-cols-1"> <b>FAT Chance! Probabilty from 0 to 1</b> <em class="whitespace-nowrap">Benedict Gross, Joe Harris & Emily Riehl</em></li>
-            <li class="grid grid-cols-1"> <b>Scary Smart</b> <em class="whitespace-nowrap">Mo Gawdat</em></li>
             <li class="grid grid-cols-1"> <b>The Alchemist</b> <em class="whitespace-nowrap">Paulo Coelho</em></li>
             <li class="grid grid-cols-1"> <b>Frankenstein</b> <em class="whitespace-nowrap">Mary Shelley</em></li>
-            <li class="grid grid-cols-1"> <b>The Hundred-Page Machine Learning Book</b> <em class="whitespace-nowrap">Andriy Burkov</em> </li>
+
           </ul>
 
           </p>
