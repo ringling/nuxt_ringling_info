@@ -15,12 +15,17 @@
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
 
+      <!--style>
+        .hover:bg-bar:hover { background:url("uap.jpg");
+
+      </style-->
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 
         <!-- <li> <b>Introduction to Machine Learning</b> - <em>MITx • 6.036</em> </li> -->
 
+
         <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/uap.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
+          <img src="/img/elizabeth.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right hover:bg-bar" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">July 2023</h5>
           <p class="font-normal text-gray-700">
 
