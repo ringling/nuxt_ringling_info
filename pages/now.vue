@@ -8,17 +8,13 @@
 
       <div class="m-4 mb-4">This page is a living document that I try to update every month. It's a way for me to keep
         track of
-        what I'm doing and what I'm learning. It's also a way for me to share what I'm learning with others.
+        what I've been doing and what I've learned. It's also a way for me to share what I've learned with others.
       </div>
       <div class="m-4 mb-8 text-xs">This site is built with Typescript, Vue 3, Nuxt 3 and TailwindCSS. Images are
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
 
-      <!--style>
-        .hover:bg-bar:hover { background:url("uap.jpg");
-
-      </style-->
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 
         <!-- <li> <b>Introduction to Machine Learning</b> - <em>MITx • 6.036</em> </li> -->
@@ -30,10 +26,44 @@
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">July 2023</h5>
           <p class="font-normal text-gray-700">
 
-          <h3>A.D. ?</h3>
+          <h4>A.D. ?</h4>
+
+
+          <h3>Areas of interest</h3>
+          <h4>Philosophy</h4>
+          <ul>
+            <li>Ontology, metatheory</li>
+          </ul>
+          <h4>Machine Learning</h4>
+          <ul>
+            <li class="grid grid-cols-1"> <b>Theory and application</b>
+              <em class="whitespace-nowrap">
+                <ul>
+                  <li>Gradient Descent</li>
+                  <li>Sum of Squared Residuals(SSR)</li>
+                  <li>Activation Functions</li>
+                  <li>Backpropagation</li>
+                  <li>Vectorizing (incl. Numpy)</li>
+                  <li>Principal Component Analysis</li>
+
+                </ul>
+              </em>
+            </li>
+            <li class="grid grid-cols-1"> <b>OpenAI API</b>
+              <em class="whitespace-nowrap">
+                <ul>
+                  <li>Davinci</li>
+                  <li>ChatGPT 3.5 turbo</li>
+                </ul>
+              </em>
+            </li>
+            <li>Midjourney</li>
+
+          </ul>
 
           <h3>Courses</h3>
           <ul>
+            <li class="grid grid-cols-1"> <b>Building Systems with the ChatGPT API</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
             <li class="grid grid-cols-1"> <b>Fat Chance: Probability from the Ground Up</b> <em class="whitespace-nowrap">HarvardX • FC1x</em></li>
           </ul>
 
@@ -53,17 +83,35 @@
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">June 2023</h5>
           <p class="font-normal text-gray-700">
 
-          <h3>Technologies</h3>
+          <h3>Areas of interest</h3>
           <h4>Machine Learning</h4>
           <ul>
-            <li>OpenAI</li>
+            <li class="grid grid-cols-1"> <b>Theory and application</b>
+              <em class="whitespace-nowrap">
+                <ul>
+                  <li>Logistic Regression</li>
+                  <li>Perceptrons</li>
+                  <li>k-Nearest Neightbors</li>
+                  <li>Bayes Naives</li>
+                  <li>Decision Tree</li>
+                </ul>
+              </em>
+            </li>
+            <li class="grid grid-cols-1"> <b>OpenAI API</b>
+              <em class="whitespace-nowrap">
+                <ul>
+                  <li>ChatGPT 3.5 turbo</li>
+                  <li>Whisper</li>
+                </ul>
+              </em>
+            </li>
+            <li>Midjourney</li>
           </ul>
 
-          <h4>Tools</h4>
+          <h4>Other</h4>
           <ul>
-            <li>Midjourney</li>
             <li>Pyscript</li>
-            <li>ChatGPT</li>
+            <li>Mojo</li>
           </ul>
 
           <h3>Courses</h3>
@@ -86,19 +134,29 @@
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">May 2023</h5>
           <p class="font-normal text-gray-700">
 
-          <h3>Technologies</h3>
+          <h3>Areas of interest</h3>
           <h4>Machine Learning</h4>
           <ul>
-            <li>OpenAI</li>
+            <li class="grid grid-cols-1"> <b>Theory and application</b>
+              <em class="whitespace-nowrap">
+                <ul>
+                  <li>Support Vector Machines</li>
+                  <li>Linear Regression</li>
+                </ul>
+              </em>
+            </li>
+            <li>OpenAI API</li>
+            <li>Midjourney</li>
+            <li>HuggingFace</li>
+            <li>ChatGPT</li>
+            <li>Python, Elixir Nx</li>
           </ul>
 
 
-          <h4>Tools</h4>
+          <h4>Other</h4>
           <ul>
             <li>Anaconda 2023.3</li>
             <li>AlpineJS, Tornado & Websockets</li>
-            <li>Midjourney</li>
-            <li>ChatGPT</li>
           </ul>
 
           <h3>Courses</h3>
@@ -119,24 +177,23 @@
           <img src="/img/ai.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">April 2023</h5>
           <p class="font-normal text-gray-700">
-          <h3>Technologies</h3>
+          <h3>Areas of interest</h3>
           <h4>Machine Learning</h4>
           <ul>
             <li>Gradio</li>
             <li>OpenAI</li>
             <li>Whisper</li>
             <li>AssemblyAI</li>
-            <li>HuggingFace</li>
-            <li>Python, Elixir NX, Julia</li>
+            <li>Python, Elixir Nx, Julia</li>
+            <li>Midjourney</li>
+            <li>ChatGPT</li>
           </ul>
 
-          <h4>Tools</h4>
+          <h4>Other</h4>
           <ul>
             <li>Pandas 2.0</li>
             <li>Github Copilot X</li>
             <li>Playwright (end to end testing)</li>
-            <li>Midjourney</li>
-            <li>ChatGPT</li>
           </ul>
 
           <h3>Courses</h3>
@@ -160,7 +217,7 @@
           <img src="/img/python.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">March 2023</h5>
           <p class="font-normal text-gray-700">
-          <h3>Technologies</h3>
+          <h3>Areas of interest</h3>
           <h4>Data Science</h4>
           <ul>
             <li>SQLite</li>
@@ -220,11 +277,11 @@
           <img src="/img/qc.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">June 2021 - January 2022</h5>
           <p class="font-normal text-gray-700 dark:text-gray-400">
-          <h3>Technologies</h3>
+          <h3>Areas of interest</h3>
           <h4>Quantum Computing</h4>
           <ul>
             <li>Qiskit</li>
-            <li>Linear Algebra</li>
+            <li>Linear Algebra in QC</li>
           </ul>
 
           <h3>Courses</h3>

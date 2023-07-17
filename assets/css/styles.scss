@@ -98,11 +98,11 @@ h5 {
 }
 
 .markdown > h3 {
-  @apply font-extrabold uppercase py-4 text-gray-600 text-sm my-2;
+  @apply font-extrabold uppercase py-4 text-gray-900 text-base my-2;
 }
 
 .markdown > h4 {
-  @apply font-light uppercase py-1 text-gray-600 text-sm my-2;
+  @apply font-extrabold uppercase py-1 text-gray-900 text-sm my-2;
 }
 
 .markdown > h5 {
@@ -115,11 +115,18 @@ h5 {
   margin-top: 20px;
 }
 
+div.markdown > ul >  li  {
+  @apply text-base text-gray-600  font-normal;
+}
+
+div.markdown > ul >  li > b  {
+  @apply text-base text-gray-600  font-semibold;
+}
 div.markdown > ul >  li > strong  {
-  @apply text-base text-gray-900  font-medium;
+  @apply text-base text-gray-600  font-medium;
 }
 div.markdown > ul >  li > em  {
-  @apply text-sm text-gray-900  font-light;
+  @apply text-sm text-gray-600  font-light;
 }
 
 /* override styles when printing */
