@@ -69,7 +69,8 @@
 
           <h3>Books</h3>
           <ul>
-            <li class="grid grid-cols-1"> <b>A Column of Fire</b> <em class="whitespace-nowrap">Ken Follett</em> </li>
+            <li class="grid grid-cols-1"> <b>Middelalderen i Danmark</b> <em class="whitespace-nowrap">Niels Knud Liebgott</em> </li>
+            <!-- <li class="grid grid-cols-1"> <b>A Column of Fire</b> <em class="whitespace-nowrap">Ken Follett</em> </li> -->
             <li class="grid grid-cols-1"> <b>Fat Chance! Probabilty from 0 to 1</b> <em class="whitespace-nowrap">Benedict Gross, Joe Harris & Emily Riehl</em></li>
             <li class="grid grid-cols-1"> <b>Scary Smart</b> <em class="whitespace-nowrap">Mo Gawdat</em></li>
             <li class="grid grid-cols-1"> <b>The Hundred-Page Machine Learning Book</b> <em class="whitespace-nowrap">Andriy Burkov</em> </li>
