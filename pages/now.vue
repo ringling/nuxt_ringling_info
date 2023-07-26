@@ -26,56 +26,42 @@
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">July 2023</h5>
           <p class="font-normal text-gray-700">
 
-          <h4>A.D. ?</h4>
 
 
-          <h3>Areas of interest</h3>
-          <h4>Philosophy</h4>
-          <ul>
-            <li>Ontology, metatheory</li>
-          </ul>
-          <h4>Machine Learning</h4>
-          <ul>
-            <li class="grid grid-cols-1"> <b>Theory and application</b>
-              <em class="whitespace-nowrap">
-                <ul>
-                  <li>Gradient Descent</li>
-                  <li>Sum of Squared Residuals(SSR)</li>
-                  <li>Activation Functions</li>
-                  <li>Backpropagation</li>
-                  <li>Vectorizing (incl. Numpy)</li>
-                  <li>Principal Component Analysis</li>
+            <h3>Areas of interest</h3>
+            <h4>Machine Learning</h4>
 
-                </ul>
-              </em>
-            </li>
-            <li class="grid grid-cols-1"> <b>OpenAI API</b>
-              <em class="whitespace-nowrap">
-                <ul>
-                  <li>Davinci</li>
-                  <li>ChatGPT 3.5 turbo</li>
-                </ul>
-              </em>
-            </li>
-            <li>Midjourney</li>
+            <ul>
+              <li>Theory and application</li>
+              <li>Chat with your PDF, using OpenAI, Huggingface</li>
+              <li>OpenAI API - Davinci, ChatGPT 3.5</li>
+              <li>Midjourney</li>
+            </ul>
 
-          </ul>
 
-          <h3>Courses</h3>
-          <ul>
-            <li class="grid grid-cols-1"> <b>Building Systems with the ChatGPT API</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
-            <li class="grid grid-cols-1"> <b>Fat Chance: Probability from the Ground Up</b> <em class="whitespace-nowrap">HarvardX • FC1x</em></li>
-          </ul>
+            <h4>Misc</h4>
+            <ul>
+              <li>Ontology, metatheory</li>
+              <li>Barefoot training, shoes etc</li>
+            </ul>
 
-          <h3>Books</h3>
-          <ul>
-            <li class="grid grid-cols-1"> <b>Middelalderen i Danmark</b> <em class="whitespace-nowrap">Niels Knud Liebgott</em> </li>
-            <!-- <li class="grid grid-cols-1"> <b>A Column of Fire</b> <em class="whitespace-nowrap">Ken Follett</em> </li> -->
-            <li class="grid grid-cols-1"> <b>Fat Chance! Probabilty from 0 to 1</b> <em class="whitespace-nowrap">Benedict Gross, Joe Harris & Emily Riehl</em></li>
-            <li class="grid grid-cols-1"> <b>Scary Smart</b> <em class="whitespace-nowrap">Mo Gawdat</em></li>
-            <li class="grid grid-cols-1"> <b>The Hundred-Page Machine Learning Book</b> <em class="whitespace-nowrap">Andriy Burkov</em> </li>
-          </ul>
 
+            <h3>Courses</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Building Systems with the ChatGPT API</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
+              <li class="grid grid-cols-1"> <b>Fat Chance: Probability from the Ground Up</b> <em class="whitespace-nowrap">HarvardX • FC1x</em></li>
+            </ul>
+
+            <h3>Books</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Middelalderen i Danmark</b> <em class="whitespace-nowrap">Niels Knud Liebgott</em> </li>
+              <!-- <li class="grid grid-cols-1"> <b>A Column of Fire</b> <em class="whitespace-nowrap">Ken Follett</em> </li> -->
+              <li class="grid grid-cols-1"> <b>Fat Chance! Probabilty from 0 to 1</b> <em class="whitespace-nowrap">Benedict Gross, Joe Harris & Emily Riehl</em></li>
+              <li class="grid grid-cols-1"> <b>Scary Smart</b> <em class="whitespace-nowrap">Mo Gawdat</em></li>
+              <li class="grid grid-cols-1"> <b>The Hundred-Page Machine Learning Book</b> <em class="whitespace-nowrap">Andriy Burkov</em> </li>
+            </ul>
+
+            <h4>Disclosure or Confirmation?</h4>
           </p>
         </div>
 
@@ -87,29 +73,16 @@
           <h3>Areas of interest</h3>
           <h4>Machine Learning</h4>
           <ul>
-            <li class="grid grid-cols-1"> <b>Theory and application</b>
-              <em class="whitespace-nowrap">
-                <ul>
-                  <li>Logistic Regression</li>
-                  <li>Perceptrons</li>
-                  <li>k-Nearest Neightbors</li>
-                  <li>Bayes Naives</li>
-                  <li>Decision Tree</li>
-                </ul>
-              </em>
-            </li>
-            <li class="grid grid-cols-1"> <b>OpenAI API</b>
-              <em class="whitespace-nowrap">
-                <ul>
-                  <li>ChatGPT 3.5 turbo</li>
-                  <li>Whisper</li>
-                </ul>
-              </em>
-            </li>
+
+            <li>Theory and application</li>
+            <li>OpenAI API - ChatGPT 3.5</li>
+            <li>OpenAI API - Whisper</li>
             <li>Midjourney</li>
+
+
           </ul>
 
-          <h4>Other</h4>
+          <h4>Misc</h4>
           <ul>
             <li>Pyscript</li>
             <li>Mojo</li>
