@@ -33,7 +33,7 @@
 
             <ul>
               <li>Theory and application</li>
-              <li>Chat with your PDF, using OpenAI, Huggingface</li>
+              <li>Chat with your PDF, using OpenAI, Huggingface, Streamlit</li>
               <li>OpenAI API - Davinci, ChatGPT 3.5</li>
               <li>Midjourney</li>
             </ul>
