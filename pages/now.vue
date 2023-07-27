@@ -241,16 +241,17 @@
           <h3>Books</h3>
           <ul>
             <li class="grid grid-cols-1"> <b>Philosophy of Science: A Very Short Introduction </b> <em>Samir Okasha</em> </li>
-            <li class="grid grid-cols-1"> <b>Extraterrestrial</b> <em>Avi Loeb</em> </li>
             <li class="grid grid-cols-1"> <b>Butcher's Crossing</b> <em>John Williams</em> </li>
+            <li class="grid grid-cols-1"> <b>What Every BODY is Saying</b> <em>Joe Navarro & Marvin Karlins</em> </li>
+            <li class="grid grid-cols-1"> <b>Tuesdays with Morrie: An Old Man, a Young Man, and Life's Greatest Lesson</b> <em>Mitch Alborn</em> </li>
           </ul>
-          </p>
-        </div>
+        </p>
+      </div>
 
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/qc.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">June 2021 - January 2022</h5>
-          <p class="font-normal text-gray-700 dark:text-gray-400">
+      <div class="block max-w p-6 bg-white markdown neu">
+        <img src="/img/qc.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
+        <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">June 2021 - January 2022</h5>
+        <p class="font-normal text-gray-700 dark:text-gray-400">
           <h3>Areas of interest</h3>
           <h4>Quantum Computing</h4>
           <ul>
@@ -261,14 +262,16 @@
           <h3>Courses</h3>
           <ul>
             <li class="grid grid-cols-1"> <b>Introduction to quantum computing for everyone</b> <em class="whitespace-nowrap">UChicagoX •
-                QUAN11000</em> </li>
-            <li class="grid grid-cols-1"> <b>The quantum internet and quantum computers: how will they change the world?</b> <em
+              QUAN11000</em> </li>
+              <li class="grid grid-cols-1"> <b>The quantum internet and quantum computers: how will they change the world?</b> <em
                 class="whitespace-nowrap">DelftX •
                 QTM1x</em> </li>
-          </ul>
+              </ul>
 
-          <h3>Books</h3>
-          <ul>
+              <h3>Books</h3>
+              <ul>
+            <li class="grid grid-cols-1"> <b>Leading Change: Why Transformation Efforts Fail</b> <em>John P. Kotter</em> </li>
+            <li class="grid grid-cols-1"> <b>Extraterrestrial</b> <em>Avi Loeb</em> </li>
             <li class="grid grid-cols-1"> <b>Quantum Computing for Everyone</b> <em>Chris Bernhardt</em> </li>
             <li class="grid grid-cols-1"> <b>In Plain Sight</b> <em>Ross Coulthart</em> </li>
             <li class="grid grid-cols-1"> <b>Blood and Thunder</b> <em>Hampton Sides</em> </li>
