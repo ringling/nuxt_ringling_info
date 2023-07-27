@@ -238,6 +238,12 @@
             <li>Python and Pandas</li>
           </ul>
 
+          <h3>Courses</h3>
+          <ul>
+            <li class="grid grid-cols-1"> <b>The Hardware of a Quantum Computer</b> <em
+                class="whitespace-nowrap">DelftX • QTM2x</em> </li>
+          </ul>
+
           <h3>Books</h3>
           <ul>
             <li class="grid grid-cols-1"> <b>Philosophy of Science: A Very Short Introduction </b> <em>Samir Okasha</em> </li>
@@ -264,8 +270,7 @@
             <li class="grid grid-cols-1"> <b>Introduction to quantum computing for everyone</b> <em class="whitespace-nowrap">UChicagoX •
               QUAN11000</em> </li>
               <li class="grid grid-cols-1"> <b>The quantum internet and quantum computers: how will they change the world?</b> <em
-                class="whitespace-nowrap">DelftX •
-                QTM1x</em> </li>
+                class="whitespace-nowrap">DelftX • QTM1x</em> </li>
               </ul>
 
               <h3>Books</h3>
