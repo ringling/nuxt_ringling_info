@@ -156,7 +156,8 @@
 
           <h3>Courses</h3>
           <ul>
-            <li class="grid grid-cols-1"> <b>Fat Chance! Probabilty from 0 to 1</b> <em class="whitespace-nowrap">Benedict Gross, Joe Harris & Emily Riehl</em></li>
+            <li class="grid grid-cols-1"> <b>ChatGPT Prompt Engineering for Developers</b> <em>DeepLearning.AI</em> </li>
+
           </ul>
 
           <h3>Books</h3>
