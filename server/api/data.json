@@ -155,6 +155,12 @@
       },
       {
         "type": "certifications",
+        "title": "Linear Algebra for Machine Learning and Data Science",
+        "description": "2023 - Coursera / DeepLearning.AI",
+        "documentation": "https://www.coursera.org/account/accomplishments/certificate/5YHKLYT34D4L"
+      },
+      {
+        "type": "certifications",
         "title": "FC1x: Fat Chance: Probability from the Ground Up",
         "description": "2023 - edX / HarvardX",
         "documentation": "https://courses.edx.org/certificates/6bde02f1d18b4479b7cf435bdbb24d3a"
