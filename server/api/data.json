@@ -191,6 +191,12 @@
       },
       {
         "type": "certifications",
+        "title": "Maps and the Geospatial Revolution",
+        "description": "Coursera 2013",
+        "documentation": "https://www.coursera.org/api/legacyCertificates.v1/spark/statementOfAccomplishment/970583~676800/pdf"
+      },
+      {
+        "type": "certifications",
         "title": "Professional Scrum Master - PSM I",
         "description": "scrum.org - Issued May 2013",
         "documentation": ""
