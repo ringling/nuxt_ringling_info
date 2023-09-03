@@ -155,6 +155,12 @@
       },
       {
         "type": "certifications",
+        "title": "Calculus for Machine Learning and Data Science",
+        "description": "2023 - Coursera / DeepLearning.AI",
+        "documentation": "https://www.coursera.org/account/accomplishments/certificate/BP453BDZWNMR"
+      },
+      {
+        "type": "certifications",
         "title": "Linear Algebra for Machine Learning and Data Science",
         "description": "2023 - Coursera / DeepLearning.AI",
         "documentation": "https://www.coursera.org/account/accomplishments/certificate/5YHKLYT34D4L"
@@ -193,7 +199,7 @@
         "type": "certifications",
         "title": "Maps and the Geospatial Revolution",
         "description": "Coursera 2013",
-        "documentation": "https://www.coursera.org/api/legacyCertificates.v1/spark/statementOfAccomplishment/970583~676800/pdf"
+        "documentation": "/maps_course.pdf"
       },
       {
         "type": "certifications",
