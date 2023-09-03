@@ -21,7 +21,7 @@
 
         <div class="block max-w p-6 bg-white markdown neu">
           <!--img src="/img/elizabeth.jpg" class="bg-[url('/img/elizabeth.jpg')] lg:w-48 md:w-32 w-16 rounded-lg float-right hover:bg-[url('/img/uap.jpg')]" /-->
-          <img src="/img/wiking.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">August 2023</h5>
+          <img src="/img/probability.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">September 2023</h5>
           <p class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <h4>Machine Learning</h4>
@@ -34,11 +34,38 @@
 
             <h3>Courses</h3>
             <ul>
-              <li class="grid grid-cols-1"> <b>Calculus for Machine Learning and Data Science</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
-              <li class="grid grid-cols-1"> <b>Linear Algebra for Machine Learning and Data Science</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
-              <li class="grid grid-cols-1"> <b>Building Systems with the ChatGPT API</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
+              <li class="grid grid-cols-1"> <b>Probability & Statistics for Machine Learning and Data Science</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
+               <li class="grid grid-cols-1"> <b>Building Systems with the ChatGPT API</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>Statistical Learning</b> <em class="whitespace-nowrap">StanfordOnline • STATSX0001</em></li>
             </ul>
+
+            <h3>Books</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Viking</b> <em class="whitespace-nowrap">Jeanette Varberg</em> </li>
+              <!-- <li class="grid grid-cols-1"> <b>A Column of Fire</b> <em class="whitespace-nowrap">Ken Follett</em> </li> -->
+
+            </ul>
+          </p>
+        </div>
+
+
+        <div class="block max-w p-6 bg-white markdown neu">
+          <!--img src="/img/elizabeth.jpg" class="bg-[url('/img/elizabeth.jpg')] lg:w-48 md:w-32 w-16 rounded-lg float-right hover:bg-[url('/img/uap.jpg')]" /-->
+          <img src="/img/wiking.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">August 2023</h5>
+          <p class="font-normal text-gray-700">
+            <h3>Areas of interest</h3>
+            <h4>Machine Learning</h4>
+
+            <ul>
+              <li>OpenAI API - ChatGPT 4</li>
+              <li>Midjourney</li>
+            </ul>
+
+            <h3>Courses</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Calculus for Machine Learning and Data Science</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
+              <li class="grid grid-cols-1"> <b>Linear Algebra for Machine Learning and Data Science</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
+             </ul>
 
             <h3>Books</h3>
             <ul>
