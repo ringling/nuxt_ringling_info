@@ -69,7 +69,6 @@
 
             <h3>Books</h3>
             <ul>
-              <li class="grid grid-cols-1"> <b>Viking</b> <em class="whitespace-nowrap">Jeanette Varberg</em> </li>
               <!-- <li class="grid grid-cols-1"> <b>A Column of Fire</b> <em class="whitespace-nowrap">Ken Follett</em> </li> -->
               <li class="grid grid-cols-1"> <b>Scary Smart</b> <em class="whitespace-nowrap">Mo Gawdat</em></li>
             </ul>
