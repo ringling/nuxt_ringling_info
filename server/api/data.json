@@ -155,15 +155,9 @@
       },
       {
         "type": "certifications",
-        "title": "Calculus for Machine Learning and Data Science",
+        "title": "Mathematics for Machine Learning and Data Science",
         "description": "2023 - Coursera / DeepLearning.AI",
-        "documentation": "https://www.coursera.org/account/accomplishments/certificate/BP453BDZWNMR"
-      },
-      {
-        "type": "certifications",
-        "title": "Linear Algebra for Machine Learning and Data Science",
-        "description": "2023 - Coursera / DeepLearning.AI",
-        "documentation": "https://www.coursera.org/account/accomplishments/certificate/5YHKLYT34D4L"
+        "documentation": "/CourseraMLMathematics.pdf"
       },
       {
         "type": "certifications",
