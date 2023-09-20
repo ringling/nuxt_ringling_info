@@ -34,6 +34,7 @@
 
             <h3>Courses</h3>
             <ul>
+              <li class="grid grid-cols-1"> <b>Japanese - level A2(Marugoto)</b> <em class="whitespace-nowrap">FOF Lyngby 2023-2024</em></li>
               <li class="grid grid-cols-1"> <b>Supervised Machine Learning: Regression and Classification</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>Probability & Statistics for Machine Learning and Data Science</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>Building Systems with the ChatGPT API</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
