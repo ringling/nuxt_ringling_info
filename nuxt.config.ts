@@ -15,7 +15,13 @@ export default defineNuxtConfig({
   app: {
     head: {
       meta: [
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: 'Thomas Ringling',
+          name: 'Thomas Ringling website',
+          content: 'A lifetime learner and polyglot software craftsman. Who am I, what am I doing and what I have done. '
+        }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
