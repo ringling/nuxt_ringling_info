@@ -29,7 +29,7 @@ export default defineNuxtConfig({
 
       ],
 
-      title: "Thomas Ringling"
+      title: "Thomas Ringling: A lifetime learner and polyglot software craftsman"
     }
   }
 })
