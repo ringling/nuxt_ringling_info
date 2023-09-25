@@ -24,6 +24,7 @@ export default defineNuxtConfig({
         }
       ],
       link: [
+        { rel: 'sitemap', type: 'application/xml', title: 'Sitemap - Thomas Ringling', href: '/sitemap.xml' },
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap' }
 
