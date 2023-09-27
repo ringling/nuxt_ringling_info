@@ -44,6 +44,7 @@
             <ul>
               <li class="grid grid-cols-1"> <b>Jytte fra Marketing er desværre gået for i dag</b> <em class="whitespace-nowrap">Morten Münster</em> </li>
               <li class="grid grid-cols-1"> <b>Viking</b> <em class="whitespace-nowrap">Jeanette Varberg</em> </li>
+              <li class="grid grid-cols-1"> <b>grokking Machine Learning</b> <em class="whitespace-nowrap">Luis G. Serrano</em> </li>
               <!-- <li class="grid grid-cols-1"> <b>A Column of Fire</b> <em class="whitespace-nowrap">Ken Follett</em> </li> -->
 
             </ul>
