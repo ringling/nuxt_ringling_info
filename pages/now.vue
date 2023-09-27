@@ -10,15 +10,40 @@
         track of
         what I've been doing and what I've learned. It's also a way for me to share what I've learned with others.
       </div>
+      <div class="m-4 mb-4">Over the past year(2023), I have been very fortunate, working only three days a week. I use the other two days for learning, taking courses, and doing a lot of reading. This is reflected on this page.</div>
       <div class="m-4 mb-8 text-xs">This site is built with Typescript, Vue 3, Nuxt 3 and TailwindCSS. Images are
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <!--
 
-        <!-- <li> <b>Introduction to Machine Learning</b> - <em>MITx • 6.036</em> </li> -->
+          <div class="block max-w p-6 bg-white markdown neu">
+          <img src="/img/probability.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">October 2023</h5>
+          <p class="font-normal text-gray-700">
+            <h3>Areas of interest</h3>
+            <h4>Machine Learning</h4>
 
+            <ul>
+              <li>Theory and application</li>
+              <li>OpenAI API - ChatGPT 4</li>
+              <li>Midjourney</li>
+            </ul>
+
+            <h3>Courses</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Advanced Learning Algorithms</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
+            </ul>
+
+            <h3>Books</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>grokking Machine Learning</b> <em class="whitespace-nowrap">Luis G. Serrano</em> </li>
+              <li class="grid grid-cols-1"> <b>Jytte vender tilbage</b> <em class="whitespace-nowrap">Morten Münster</em> </li>
+            </ul>
+          </p>
+        </div>
+
+      -->
         <div class="block max-w p-6 bg-white markdown neu">
           <!--img src="/img/elizabeth.jpg" class="bg-[url('/img/elizabeth.jpg')] lg:w-48 md:w-32 w-16 rounded-lg float-right hover:bg-[url('/img/uap.jpg')]" /-->
           <img src="/img/probability.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">September 2023</h5>
@@ -44,7 +69,6 @@
             <ul>
               <li class="grid grid-cols-1"> <b>Jytte fra Marketing er desværre gået for i dag</b> <em class="whitespace-nowrap">Morten Münster</em> </li>
               <li class="grid grid-cols-1"> <b>Viking</b> <em class="whitespace-nowrap">Jeanette Varberg</em> </li>
-              <li class="grid grid-cols-1"> <b>grokking Machine Learning</b> <em class="whitespace-nowrap">Luis G. Serrano</em> </li>
               <!-- <li class="grid grid-cols-1"> <b>A Column of Fire</b> <em class="whitespace-nowrap">Ken Follett</em> </li> -->
 
             </ul>
