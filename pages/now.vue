@@ -38,7 +38,6 @@
               <li class="grid grid-cols-1"> <b>Supervised Machine Learning: Regression and Classification</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>Probability & Statistics for Machine Learning and Data Science</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>Building Systems with the ChatGPT API</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
-              <li class="grid grid-cols-1"> <b>Statistical Learning</b> <em class="whitespace-nowrap">StanfordOnline • STATSX0001</em></li>
             </ul>
 
             <h3>Books</h3>
@@ -68,6 +67,7 @@
             <ul>
               <li class="grid grid-cols-1"> <b>Calculus for Machine Learning and Data Science</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>Linear Algebra for Machine Learning and Data Science</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
+              <li class="grid grid-cols-1"> <b>Statistical Learning</b> <em class="whitespace-nowrap">StanfordOnline • STATSX0001</em></li>
              </ul>
 
             <h3>Books</h3>
