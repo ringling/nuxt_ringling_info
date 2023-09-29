@@ -155,6 +155,12 @@
       },
       {
         "type": "certifications",
+        "title": "Supervised Machine Learning: Regression and Classification",
+        "description": "2023 - Coursera / DeepLearning.AI",
+        "documentation": "/CourseraSup_ML_Reg_Clas.pdf"
+      },
+      {
+        "type": "certifications",
         "title": "Mathematics for Machine Learning and Data Science Specialization",
         "description": "2023 - Coursera / DeepLearning.AI",
         "documentation": "/CourseraMLMathematics.pdf"

@@ -15,20 +15,19 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: September 27, 2023</div>
+      <div class="m-4 mb-8 text-xs">Last updated: October 1, 2023</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-        <!--
 
           <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/probability.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">October 2023</h5>
+          <img src="/img/kabuki.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">October 2023</h5>
           <p class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
-            <h4>Machine Learning</h4>
+
 
             <ul>
-              <li>Theory and application</li>
+              <li>Scikit Learn</li>
               <li>OpenAI API - ChatGPT 4</li>
-              <li>Midjourney</li>
+
             </ul>
 
             <h3>Courses</h3>
@@ -39,12 +38,14 @@
             <h3>Books</h3>
             <ul>
               <li class="grid grid-cols-1"> <b>grokking Machine Learning</b> <em class="whitespace-nowrap">Luis G. Serrano</em> </li>
-              <li class="grid grid-cols-1"> <b>Jytte vender tilbage</b> <em class="whitespace-nowrap">Morten Münster</em> </li>
+              <!--
+
+                <li class="grid grid-cols-1"> <b>Jytte vender tilbage</b> <em class="whitespace-nowrap">Morten Münster</em> </li>
+              -->
             </ul>
           </p>
         </div>
 
-      -->
         <div class="block max-w p-6 bg-white markdown neu">
           <!--img src="/img/elizabeth.jpg" class="bg-[url('/img/elizabeth.jpg')] lg:w-48 md:w-32 w-16 rounded-lg float-right hover:bg-[url('/img/uap.jpg')]" /-->
           <img src="/img/wiking.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">September 2023</h5>
@@ -54,7 +55,7 @@
 
             <ul>
               <li>Theory and application</li>
-              <li>OpenAI API - ChatGPT 4</li>
+              <li>OpenAI API - ChatGPT 3.5</li>
               <li>Midjourney</li>
             </ul>
 
@@ -84,7 +85,7 @@
             <h4>Machine Learning</h4>
 
             <ul>
-              <li>OpenAI API - ChatGPT 4</li>
+              <li>OpenAI API - ChatGPT 3.5</li>
               <li>Midjourney</li>
             </ul>
 
