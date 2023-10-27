@@ -15,7 +15,7 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: October 12, 2023</div>
+      <div class="m-4 mb-8 text-xs">Last updated: October 27, 2023</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 
           <div class="block max-w p-6 bg-white markdown neu">
@@ -27,7 +27,9 @@
             <ul>
               <li>Llama with Ollama</li>
               <li>Scikit Learn</li>
-              <li>llama-index</li>
+              <li>llama-index, Chat with your PDFs</li>
+              <li>Figma, Dall-E and Midjourney, UI design</li>
+              <li></li>
 
             </ul>
 
