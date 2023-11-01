@@ -29,7 +29,8 @@
               <li>Scikit Learn</li>
               <li>llama-index, Chat with your PDFs</li>
               <li>Figma, Dall-E and Midjourney, UI design</li>
-              <li></li>
+              <li>Figma, Dall-E and Midjourney, UI design</li>
+              <li>InsightFace library</li>
 
             </ul>
 
