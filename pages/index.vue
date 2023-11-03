@@ -22,3 +22,12 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+useHead({
+  title: 'Thomas Ringling - Home',
+  meta: [
+    { name: 'description', content: 'Thomas Ringling website, who am I, what am I doing right now and what have been doing' }
+  ]
+})
+</script>

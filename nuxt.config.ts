@@ -16,12 +16,7 @@ export default defineNuxtConfig({
     head: {
       meta: [
         { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
-          hid: 'Thomas Ringling',
-          name: 'Thomas Ringling website',
-          content: 'A lifetime learner and polyglot software craftsman. Who am I, what am I doing and what I have done. '
-        }
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
       ],
       link: [
         { rel: 'sitemap', type: 'application/xml', title: 'Sitemap - Thomas Ringling', href: '/sitemap.xml' },

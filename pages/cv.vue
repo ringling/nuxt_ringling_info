@@ -266,6 +266,14 @@
 </template>
 
 <script setup lang="ts">
+
+useHead({
+  title: 'Thomas Ringling - CV',
+  meta: [
+    { name: 'description', content: 'Curriculum Vitae' }
+  ]
+})
+
 const route = useRoute()
 const { pending, data: data } = await useFetch('/api/cv');
 
@@ -282,4 +290,8 @@ function toogleDetails() {
 function achivement(data, type) {
 	return data.cv.achievements.list.filter(ach => ach.type === type)
 }
+
+
+
 </script>
+
