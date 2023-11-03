@@ -15,11 +15,11 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: November 1, 2023</div>
+      <div class="m-4 mb-8 text-xs">Last updated: November 3, 2023</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 
           <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/kabuki.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">October 2023</h5>
+          <img src="/img/gen-ai.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">November 2023</h5>
           <p class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
 
