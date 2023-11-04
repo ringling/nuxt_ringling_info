@@ -1,5 +1,9 @@
 # Personal website
 
+## Google Search Console
+
+https://search.google.com/search-console/index/drilldown?resource_id=https%3A%2F%2Fwww.ringling.info%2F&item_key=CAMYFyAC&hl=da
+
 ## Deployment
 
 Execute

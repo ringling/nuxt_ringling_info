@@ -15,7 +15,7 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: November 3, 2023</div>
+      <div class="m-4 mb-8 text-xs">Last updated: November 4, 2023</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 
           <div class="block max-w p-6 bg-white markdown neu">
@@ -25,7 +25,7 @@
 
             <ul>
               <li>Scikit Learn</li>
-              <li>Figma, Dall-E and Midjourney, UI design</li>
+              <li>MemGPT</li>
               <li>InsightFace library</li>
             </ul>
 
@@ -37,8 +37,8 @@
 
             <h3>Books</h3>
             <ul>
+              <li class="grid grid-cols-1"> <b>Software Engineering at Google</b> <em class="whitespace-nowrap">Winters, Manshreck & Wright</em> </li>
               <li class="grid grid-cols-1"> <b>grokking Machine Learning</b> <em class="whitespace-nowrap">Luis G. Serrano</em> </li>
-
             </ul>
           </p>
         </div>
