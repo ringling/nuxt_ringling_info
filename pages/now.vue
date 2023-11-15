@@ -28,7 +28,7 @@
               <li>MemGPT</li>
               <li>InsightFace library</li>
               <li>Zettelkasten method & Obsidian</li>
-              <li>OPenAI GPT 4.0</li>
+              <li>OpenAI GPT 4.0</li>
             </ul>
 
             <h3>Courses</h3>
