@@ -15,7 +15,7 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: November 15, 2023</div>
+      <div class="m-4 mb-8 text-xs">Last updated: November 17, 2023</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 
           <div class="block max-w p-6 bg-white markdown neu">
@@ -33,7 +33,7 @@
 
             <h3>Courses</h3>
             <ul>
-              <li class="grid grid-cols-1"> <b>Advanced Learning Algorithms</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
+              <li class="grid grid-cols-1"> <b>Vector Databases: from Embeddings to Applications</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>Generative AI for Everyone</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
             </ul>
 
