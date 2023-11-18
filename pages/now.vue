@@ -41,7 +41,7 @@
             <ul>
               <li class="grid grid-cols-1"> <b>Software Engineering at Google</b> <em class="whitespace-nowrap">Winters, Manshreck & Wright</em> </li>
               <li class="grid grid-cols-1"> <b>Atomic Habits</b> <em class="whitespace-nowrap">James Clear</em> </li>
-              <li class="grid grid-cols-1"> <b>Measuring the World</b> <em class="whitespace-nowrap">Daniel Kehlmann</em> </li>
+              <li class="grid grid-cols-1"> <b>Die Vermessung der Welt</b> <em class="whitespace-nowrap">Daniel Kehlmann</em> </li>
             </ul>
           </p>
         </div>
