@@ -15,7 +15,7 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: November 17, 2023</div>
+      <div class="m-4 mb-8 text-xs">Last updated: November 18, 2023</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 
           <div class="block max-w p-6 bg-white markdown neu">
@@ -41,6 +41,7 @@
             <ul>
               <li class="grid grid-cols-1"> <b>Software Engineering at Google</b> <em class="whitespace-nowrap">Winters, Manshreck & Wright</em> </li>
               <li class="grid grid-cols-1"> <b>Atomic Habits</b> <em class="whitespace-nowrap">James Clear</em> </li>
+              <li class="grid grid-cols-1"> <b>Measuring the World</b> <em class="whitespace-nowrap">Daniel Kehlmann</em> </li>
             </ul>
           </p>
         </div>
