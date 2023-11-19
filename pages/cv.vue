@@ -145,7 +145,7 @@
 							Machine Learning
 						</div>
 						<div class="w-full bg-gray-400 mb-2 flex-grow">
-							<div class="bg-gray-600 text-xs leading-none py-1 text-center text-black skill-text" style="width:50%;">
+							<div class="bg-gray-600 text-xs leading-none py-1 text-center text-black skill-text" style="width:20%;">
 							</div>
 						</div>
 					</div>
