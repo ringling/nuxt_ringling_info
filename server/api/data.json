@@ -155,6 +155,12 @@
       },
       {
         "type": "certifications",
+        "title": "Advanced Learning Algorithms",
+        "description": "2023 - Coursera / DeepLearning.AI",
+        "documentation": "/CourseraAdvLearnAlg.pdf"
+      },
+      {
+        "type": "certifications",
         "title": "Supervised Machine Learning: Regression and Classification",
         "description": "2023 - Coursera / DeepLearning.AI",
         "documentation": "/CourseraSup_ML_Reg_Clas.pdf"
