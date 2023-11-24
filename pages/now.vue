@@ -33,7 +33,7 @@
 
             <h3>Courses</h3>
             <ul>
-              <li class="grid grid-cols-1"> <b>Vector Databases: from Embeddings to Applications</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
+              <li class="grid grid-cols-1"> <b>Unsupervised Learning, Recommenders, Reinforcement Learning</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>Generative AI for Everyone</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
             </ul>
 
