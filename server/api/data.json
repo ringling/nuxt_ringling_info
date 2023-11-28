@@ -155,6 +155,12 @@
       },
       {
         "type": "certifications",
+        "title": "Generative AI for Everyone",
+        "description": "2023 - Coursera / DeepLearning.AI",
+        "documentation": "/CourseraGenAI.pdf"
+      },
+      {
+        "type": "certifications",
         "title": "Advanced Learning Algorithms",
         "description": "2023 - Coursera / DeepLearning.AI",
         "documentation": "/CourseraAdvLearnAlg.pdf"
