@@ -328,7 +328,7 @@
       "type": "language",
       "proficiencyLevel": 2,
       "firstUsed": "2019",
-      "lastUsed": "2022",
+      "lastUsed": "2023",
       "acquiredDuring": "",
       "description": ""
     },
@@ -398,7 +398,7 @@
       "type": "database",
       "proficiencyLevel": 2,
       "firstUsed": "2007",
-      "lastUsed": "2019",
+      "lastUsed": "2023",
       "acquiredDuring": "",
       "description": "The preferred RDBMS when in .NET-country."
     },
@@ -478,7 +478,7 @@
       "type": "web-framework",
       "proficiencyLevel": 1,
       "firstUsed": "2015",
-      "lastUsed": "2020",
+      "lastUsed": "2023",
       "acquiredDuring": "",
       "description": "A functional web framework build on Elixir. Simplicity, stability, distribution, channels and performance baked in. Some things, just come with the language and platform(VM) itself"
     },
@@ -487,7 +487,7 @@
       "name": "Vue.js",
       "type": "javascript-framework",
       "firstUsed": "2015",
-      "lastUsed": "2020",
+      "lastUsed": "2023",
       "proficiencyLevel": 1,
       "acquiredDuring": "",
       "description": "Adopted this framework very early, as it combines the simplicity of Ractive.js and a bunch of the good features from Angular, React and even Elm"
@@ -538,7 +538,7 @@
       "type": "programming-language",
       "proficiencyLevel": 1,
       "firstUsed": "2014",
-      "lastUsed": "2022",
+      "lastUsed": "2023",
       "acquiredDuring": "",
       "description": "My goto dynamic, functional, distributed language. Together with Erlang, Elixir opened my eyes for the world of distributed systems"
     },
@@ -578,7 +578,7 @@
       "type": "programming-language",
       "proficiencyLevel": 3,
       "firstUsed": "2017",
-      "lastUsed": "2022",
+      "lastUsed": "2023",
       "acquiredDuring": "",
       "description": "Java/C# in the frontend"
     },
@@ -608,7 +608,7 @@
       "type": "operating-system",
       "proficiencyLevel": 2,
       "firstUsed": "1995",
-      "lastUsed": "2020",
+      "lastUsed": "2023",
       "acquiredDuring": "",
       "description": "Windows 3.1, 3.11 and so on :o)"
     },
@@ -618,7 +618,7 @@
       "type": "operating-system",
       "proficiencyLevel": 2,
       "firstUsed": "2005",
-      "lastUsed": "2020",
+      "lastUsed": "2023",
       "acquiredDuring": "",
       "description": ""
     },
@@ -628,7 +628,7 @@
       "type": "operating-system",
       "proficiencyLevel": 2,
       "firstUsed": "1998",
-      "lastUsed": "2020",
+      "lastUsed": "2022",
       "acquiredDuring": "",
       "description": "Together with OS X, Ubuntu is my primary development OS. RedHat, Ubuntu, CoreOS, Raspbian, Mandrake, Debian"
     }
@@ -647,7 +647,9 @@
       "technologies": [
         "Python",
         "Pandas",
-        "Numpy"
+        "Numpy",
+        "MS SQL",
+        "Scikit-learn"
       ],
       "summary": "Data analysis, -extraction & -ports"
     },
@@ -711,7 +713,8 @@
       "technologies": [
         "NodeJS",
         "Typescript",
-        "React"
+        "React",
+        "MongoDB"
       ],
       "summary": "Maturing SW department, and doing technical assessments"
     },
@@ -726,6 +729,12 @@
       "roles": "Software Developer",
       "highlights": [
         "Started the company"
+      ],
+      "technologies": [
+        "Nuxt3/Vue.js",
+        "PostgreSQL",
+        "Elixir",
+        "Phoenix"
       ],
       "summary": "Delivering the right software. Working on our product <b>Marangu</b>"
     },
