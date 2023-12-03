@@ -10,7 +10,7 @@
         track of
         what I've been doing and what I've learned. It's also a way for me to share what I've learned with others.
       </div>
-      <div class="m-4 mb-4">Over the past year(2023), I have been very fortunate, working only three days a week. I use the other two days for learning, taking courses, and doing a lot of reading. This is reflected on this page.</div>
+      <div class="m-4 mb-4">Throughout the past year (2023), I have been quite fortunate, working only three days a week. I dedicate the remaining two days to learning, enrolling in various courses, engaging in extensive reading, and practicing Japanese. This experience is evident on this page.</div>
       <div class="m-4 mb-8 text-xs">This site is built with Typescript, Vue 3, Nuxt 3 and TailwindCSS. Images are
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
