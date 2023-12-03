@@ -35,6 +35,7 @@
             <h3>Books</h3>
             <ul>
               <li class="grid grid-cols-1"> <b>Encounters</b> <em class="whitespace-nowrap">Diana W. Pasulka</em> </li>
+              <li class="grid grid-cols-1"> <b>Atomic Habits</b> <em class="whitespace-nowrap">James Clear</em> </li>
             </ul>
           </p>
         </div>
@@ -59,7 +60,6 @@
             <h3>Books</h3>
             <ul>
               <li class="grid grid-cols-1"> <b>Software Engineering at Google</b> <em class="whitespace-nowrap">Winters, Manshreck & Wright</em> </li>
-              <li class="grid grid-cols-1"> <b>Atomic Habits</b> <em class="whitespace-nowrap">James Clear</em> </li>
               <li class="grid grid-cols-1"> <b>Die Vermessung der Welt</b> <em class="whitespace-nowrap">Daniel Kehlmann</em> </li>
             </ul>
           </p>
