@@ -15,9 +15,29 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: November 28, 2023</div>
+      <div class="m-4 mb-8 text-xs">Last updated: December 3, 2023</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <div class="block max-w p-6 bg-white markdown neu">
+          <img src="/img/winter_wonderland.jpeg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">December 2023</h5>
+          <p class="font-normal text-gray-700">
+            <h3>Areas of interest</h3>
 
+            <ul>
+              <li>Scikit Learn</li>
+            </ul>
+
+            <h3>Courses</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>LangChain for LLM Application Development</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
+              <li class="grid grid-cols-1"> <b>Unsupervised Learning, Recommenders, Reinforcement Learning</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
+            </ul>
+
+            <h3>Books</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Encounters</b> <em class="whitespace-nowrap">Diana W. Pasulka</em> </li>
+            </ul>
+          </p>
+        </div>
           <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/gen-ai.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">November 2023</h5>
           <p class="font-normal text-gray-700">
@@ -33,7 +53,6 @@
 
             <h3>Courses</h3>
             <ul>
-              <li class="grid grid-cols-1"> <b>Unsupervised Learning, Recommenders, Reinforcement Learning</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>Generative AI for Everyone</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
             </ul>
 
