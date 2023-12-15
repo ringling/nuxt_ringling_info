@@ -35,6 +35,7 @@
 
             <h3>Books</h3>
             <ul>
+              <li class="grid grid-cols-1"> <b>Sapiens</b> <em class="whitespace-nowrap">Yuval Noah Harari</em> </li>
               <li class="grid grid-cols-1"> <b>Encounters</b> <em class="whitespace-nowrap">Diana W. Pasulka</em> </li>
               <li class="grid grid-cols-1"> <b>Atomic Habits</b> <em class="whitespace-nowrap">James Clear</em> </li>
             </ul>
