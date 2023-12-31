@@ -23,6 +23,7 @@
             <h3>Areas of interest</h3>
 
             <ul>
+              <li>Vector Databases</li>
               <li>Scikit Learn</li>
               <li>LangChain</li>
             </ul>

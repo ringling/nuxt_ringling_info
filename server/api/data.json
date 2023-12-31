@@ -155,21 +155,15 @@
       },
       {
         "type": "certifications",
+        "title": "Machine Learning Specialization (3 courses)",
+        "description": "2023 - Coursera / DeepLearning.AI",
+        "documentation": "/CourseraML.pdf"
+      },
+      {
+        "type": "certifications",
         "title": "Generative AI for Everyone",
         "description": "2023 - Coursera / DeepLearning.AI",
         "documentation": "/CourseraGenAI.pdf"
-      },
-      {
-        "type": "certifications",
-        "title": "Advanced Learning Algorithms",
-        "description": "2023 - Coursera / DeepLearning.AI",
-        "documentation": "/CourseraAdvLearnAlg.pdf"
-      },
-      {
-        "type": "certifications",
-        "title": "Supervised Machine Learning: Regression and Classification",
-        "description": "2023 - Coursera / DeepLearning.AI",
-        "documentation": "/CourseraSup_ML_Reg_Clas.pdf"
       },
       {
         "type": "certifications",
@@ -866,7 +860,7 @@
         "WebServices",
         "Oracle WLS"
       ],
-      "summary": "Java develolper on a new loan/financing product",
+      "summary": "Java developer on a new loan/financing product",
       "full": "My role as a Java developer, was developing web services in J2EE supporting a new loan/financing product. Using technologies, such as J2EE, WebServices, Oracle WLS"
     },
     {
