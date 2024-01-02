@@ -29,6 +29,7 @@
 
             <h3>Courses</h3>
             <ul>
+              <li class="grid grid-cols-1"> <b>Vector Databases: from Embeddings to Applications</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
             </ul>
 
             <h3>Books</h3>
@@ -36,7 +37,7 @@
             </ul>
           </p>
         </div>
-      
+
 
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/winter_wonderland.jpeg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">December 2023</h5>
@@ -51,7 +52,6 @@
 
             <h3>Courses</h3>
             <ul>
-              <li class="grid grid-cols-1"> <b>Vector Databases: from Embeddings to Applications</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>LangChain for LLM Application Development</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>Unsupervised Learning, Recommenders, Reinforcement Learning</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
             </ul>
