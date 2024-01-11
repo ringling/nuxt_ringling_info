@@ -36,6 +36,7 @@
 
             <h3>Books</h3>
             <ul>
+              <li class="grid grid-cols-1"> <b>UFO-Mysteriet - På sporet af min far og de flyvende tallerkner</b> <em class="whitespace-nowrap">Frederik Dirks Gottlieb</em> </li>
               <li class="grid grid-cols-1"> <b>Streamlit for Data Science</b> <em class="whitespace-nowrap">Tyler Richards</em> </li>
               <li class="grid grid-cols-1"> <b>The Case Against Reality</b> <em class="whitespace-nowrap">Donald D. Hoffman</em> </li>
             </ul>
