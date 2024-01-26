@@ -26,6 +26,7 @@
               <li>Vector Databases</li>
               <li>LangChain</li>
               <li>Ludwig (ludwig.ai)</li>
+              <li>AlpineJS</li>
             </ul>
 
             <h3>Courses</h3>
