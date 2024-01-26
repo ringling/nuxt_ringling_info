@@ -31,6 +31,7 @@
 
             <h3>Courses</h3>
             <ul>
+              <li class="grid grid-cols-1"> <b>Large Language Models with Semantic Search</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>Developing a Systems Mindset</b> <em class="whitespace-nowrap">Coursera/University of Colorado Boulder</em></li>
               <li class="grid grid-cols-1"> <b>Vector Databases: from Embeddings to Applications</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
             </ul>
