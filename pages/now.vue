@@ -15,15 +15,42 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: January 10, 2024</div>
+      <div class="m-4 mb-8 text-xs">Last updated: February 2, 2024</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+
+
+
+        <div class="block max-w p-6 bg-white markdown neu">
+          <img src="/img/aquarius.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">February 2024</h5>
+          <p class="font-normal text-gray-700">
+            <h3>Areas of interest</h3>
+
+            <ul>
+              <li>Weaviate</li>
+              <li>AlpineJS</li>
+            </ul>
+
+            <h3>Courses</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Large Language Models with Semantic Search</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
+              <li class="grid grid-cols-1"> <b>Developing a Systems Mindset</b> <em class="whitespace-nowrap">Coursera/University of Colorado Boulder</em></li>
+            </ul>
+
+            <h3>Books</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Dit selvhelbredende sind</b> <em class="whitespace-nowrap">Mette Louise Holland</em> </li>
+              <li class="grid grid-cols-1"> <b>Streamlit for Data Science</b> <em class="whitespace-nowrap">Tyler Richards</em> </li>
+            </ul>
+          </p>
+        </div>
+
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/new_year2024.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">January 2024</h5>
           <p class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
 
             <ul>
-              <li>Vector Databases</li>
+              <li>Weaviate</li>
               <li>LangChain</li>
               <li>Ludwig (ludwig.ai)</li>
               <li>AlpineJS</li>
@@ -31,7 +58,6 @@
 
             <h3>Courses</h3>
             <ul>
-              <li class="grid grid-cols-1"> <b>Large Language Models with Semantic Search</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>Developing a Systems Mindset</b> <em class="whitespace-nowrap">Coursera/University of Colorado Boulder</em></li>
               <li class="grid grid-cols-1"> <b>Vector Databases: from Embeddings to Applications</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
             </ul>
@@ -40,7 +66,6 @@
             <ul>
               <li class="grid grid-cols-1"> <b>You're Not Listening</b> <em class="whitespace-nowrap">Kate Murphy</em> </li>
               <li class="grid grid-cols-1"> <b>UFO-Mysteriet - På sporet af min far og de flyvende tallerkner</b> <em class="whitespace-nowrap">Frederik Dirks Gottlieb</em> </li>
-              <li class="grid grid-cols-1"> <b>Streamlit for Data Science</b> <em class="whitespace-nowrap">Tyler Richards</em> </li>
               <li class="grid grid-cols-1"> <b>The Case Against Reality</b> <em class="whitespace-nowrap">Donald D. Hoffman</em> </li>
             </ul>
           </p>
