@@ -35,8 +35,9 @@
 
             <h3>Books</h3>
             <ul>
-              <li class="grid grid-cols-1"> <b>Dit selvhelbredende sind</b> <em class="whitespace-nowrap">Mette Louise Holland</em> </li>
-              <li class="grid grid-cols-1"> <b>Streamlit for Data Science</b> <em class="whitespace-nowrap">Tyler Richards</em> </li>
+              <li class="grid grid-cols-1"> <b>Change By Design</b> <em class="whitespace-nowrap">Tim Brown</em></li>
+              <li class="grid grid-cols-1"> <b>Dit selvhelbredende sind</b> <em class="whitespace-nowrap">Mette Louise Holland</em></li>
+              <li class="grid grid-cols-1"> <b>Streamlit for Data Science</b> <em class="whitespace-nowrap">Tyler Richards</em></li>
             </ul>
           </p>
         </div>
