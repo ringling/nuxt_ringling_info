@@ -15,8 +15,28 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: February 24, 2024</div>
+      <div class="m-4 mb-8 text-xs">Last updated: March 4, 2024</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <div class="block max-w p-6 bg-white markdown neu">
+          <img src="/img/aquarius.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">March 2024</h5>
+          <p class="font-normal text-gray-700">
+            <h3>Areas of interest</h3>
+            <ul>
+              <li>Domain Storytelling</li>
+              <li>Pydantic</li>
+            </ul>
+            <h3>Courses</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Large Language Models with Semantic Search</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
+            </ul>
+
+            <h3>Books</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Domain Storytelling</b> <em class="whitespace-nowrap">Stefan Hofer & Henning Schwentner</em></li>
+              <li class="grid grid-cols-1"> <b>Gopler ældes baglæns</b> <em class="whitespace-nowrap">Nicklas Brendborg</em></li>
+            </ul>
+          </p>
+        </div>
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/aquarius.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">February 2024</h5>
           <p class="font-normal text-gray-700">
@@ -30,13 +50,11 @@
 
             <h3>Courses</h3>
             <ul>
-              <li class="grid grid-cols-1"> <b>Large Language Models with Semantic Search</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>Developing a Systems Mindset</b> <em class="whitespace-nowrap">Coursera/University of Colorado Boulder</em></li>
             </ul>
 
             <h3>Books</h3>
             <ul>
-              <li class="grid grid-cols-1"> <b>Gopler ældes baglæns</b> <em class="whitespace-nowrap">Nicklas Brendborg</em></li>
               <li class="grid grid-cols-1"> <b>Change By Design</b> <em class="whitespace-nowrap">Tim Brown</em></li>
               <li class="grid grid-cols-1"> <b>Dit selvhelbredende sind</b> <em class="whitespace-nowrap">Mette Louise Holland</em></li>
               <li class="grid grid-cols-1"> <b>Streamlit for Data Science</b> <em class="whitespace-nowrap">Tyler Richards</em></li>
