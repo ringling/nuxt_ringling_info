@@ -4,8 +4,6 @@
     <div class="container mx-auto">
 
       <h1 class="my-8">Now</h1>
-
-
       <div class="m-4 mb-4">This page is a living document that I try to update every month. It's a way for me to keep
         track of
         what I've been doing and what I've learned. It's also a way for me to share what I've learned with others.
@@ -15,7 +13,7 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: March 4, 2024</div>
+      <div class="m-4 mb-8 text-xs">Last updated: March 9, 2024</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/shogun.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">March 2024</h5>
@@ -27,6 +25,7 @@
             </ul>
             <h3>Courses</h3>
             <ul>
+              <li class="grid grid-cols-1"> <b>LOpen Source Models with Hugging Face</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>Large Language Models with Semantic Search</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
             </ul>
 
