@@ -25,7 +25,7 @@
             </ul>
             <h3>Courses</h3>
             <ul>
-              <li class="grid grid-cols-1"> <b>LOpen Source Models with Hugging Face</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
+              <li class="grid grid-cols-1"> <b>Open Source Models with Hugging Face</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>Large Language Models with Semantic Search</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
             </ul>
 
