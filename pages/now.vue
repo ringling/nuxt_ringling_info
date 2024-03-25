@@ -13,7 +13,7 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: March 22, 2024</div>
+      <div class="m-4 mb-8 text-xs">Last updated: March 25, 2024</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/shogun.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">March 2024</h5>
@@ -25,6 +25,7 @@
             </ul>
             <h3>Courses</h3>
             <ul>
+              <li class="grid grid-cols-1"> <b>Agile Leadership: Introduction to Change</b> <em class="whitespace-nowrap">Coursera/University of Colorado System</em></li>
               <li class="grid grid-cols-1"> <b>Systems Thinking: Essential Concepts</b> <em class="whitespace-nowrap">udemy</em></li>
               <li class="grid grid-cols-1"> <b>LLM University</b> <em class="whitespace-nowrap">Cohere</em></li>
               <li class="grid grid-cols-1"> <b>Open Source Models with Hugging Face</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
