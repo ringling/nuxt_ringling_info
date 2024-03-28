@@ -155,6 +155,12 @@
       },
       {
         "type": "certifications",
+        "title": "Developing a Systems Mindset",
+        "description": "2024 - Coursera / University of Colorado Boulder",
+        "documentation": "/CourseraDevelopingASystemsMindset.pdf"
+      },
+      {
+        "type": "certifications",
         "title": "Machine Learning Specialization (3 courses)",
         "description": "2023 - Coursera / DeepLearning.AI",
         "documentation": "/CourseraML.pdf"
