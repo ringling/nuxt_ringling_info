@@ -35,6 +35,7 @@
             <ul>
               <li class="grid grid-cols-1"> <b>Book You Wish Your Parents Had Read (and Your Children Will Be Glad That You Did)</b> <em class="whitespace-nowrap">Philippa Perry</em></li>
               <li class="grid grid-cols-1"> <b>En dag i Ivan Denisovitjs liv</b> <em class="whitespace-nowrap">Aleksandr Solsjenitsyn</em></li>
+              <li class="grid grid-cols-1"> <b>Turn the Ship Around! - A True Story of Turning Followers Into Leaders</b> <em class="whitespace-nowrap">L. David Marquet</em></li>
             </ul>
           </p>
         </div>
