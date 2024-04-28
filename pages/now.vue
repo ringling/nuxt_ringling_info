@@ -13,7 +13,7 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: April 5, 2024</div>
+      <div class="m-4 mb-8 text-xs">Last updated: April 28, 2024</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/hannah.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">April 2024</h5>
@@ -22,6 +22,7 @@
             <ul>
               <li>Systems Thinking</li>
               <li>WebAssembly</li>
+              <li>BDD / Behave</li>
             </ul>
             <h3>Courses</h3>
             <ul>
