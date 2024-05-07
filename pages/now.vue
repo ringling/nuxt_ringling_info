@@ -13,8 +13,56 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: April 29, 2024</div>
+      <div class="m-4 mb-8 text-xs">Last updated: May 7, 2024</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <div class="block max-w p-6 bg-white markdown neu">
+          <img src="/img/hannah.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">April 2024</h5>
+          <p class="font-normal text-gray-700">
+            <h3>Areas of interest</h3>
+            <ul>
+              <li>Systems Thinking</li>
+              <li>BDD / Behave</li>
+            </ul>
+            <h3>Courses</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Systems Thinking: Essential Concepts</b> <em class="whitespace-nowrap">udemy</em></li>
+              <li class="grid grid-cols-1"> <b>Beginning Llamafile for Local Large Language Models</b> <em class="whitespace-nowrap">Coursera</em></li>
+            </ul>
+
+            <h3>Books</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Before The Coffee Gets Cold</b> <em class="whitespace-nowrap">Toshikazu Kawaguchi</em></li>
+              <li class="grid grid-cols-1"> <b>Uncommon Sense Teaching</b> <em class="whitespace-nowrap">Barbara Oakley & Terrence J. Sejnowski</em></li>
+              <li class="grid grid-cols-1"> <b>Book You Wish Your Parents Had Read (and Your Children Will Be Glad That You Did)</b> <em class="whitespace-nowrap">Philippa Perry</em></li>
+            </ul>
+          </p>
+        </div>
+        
+        <div class="block max-w p-6 bg-white markdown neu">
+          <img src="/img/hannah.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">April 2024</h5>
+          <p class="font-normal text-gray-700">
+            <h3>Areas of interest</h3>
+            <ul>
+              <li>Systems Thinking</li>
+              <li>Web Assembly</li>
+              <li>BDD / Behave</li>
+            </ul>
+            <h3>Courses</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Agile Leadership: Introduction to Change</b> <em class="whitespace-nowrap">Coursera/University of Colorado System</em></li>
+              <li class="grid grid-cols-1"> <b>Systems Thinking: Essential Concepts</b> <em class="whitespace-nowrap">udemy</em></li>
+              <li class="grid grid-cols-1"> <b>LLM University</b> <em class="whitespace-nowrap">Cohere</em></li>
+              <li class="grid grid-cols-1"> <b>LangChain Chat with Your Data</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
+            </ul>
+
+            <h3>Books</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Factfulness</b> <em class="whitespace-nowrap">Hans Rosling</em></li>
+              <li class="grid grid-cols-1"> <b>En dag i Ivan Denisovitjs liv</b> <em class="whitespace-nowrap">Aleksandr Solsjenitsyn</em></li>
+              <li class="grid grid-cols-1"> <b>Turn the Ship Around! - A True Story of Turning Followers Into Leaders</b> <em class="whitespace-nowrap">L. David Marquet</em></li>
+            </ul>
+          </p>
+        </div>
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/hannah.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">April 2024</h5>
           <p class="font-normal text-gray-700">
