@@ -1,4 +1,4 @@
-<template>
+Team<template>
   <div class="">
     <Menu bgColor="bg-white" />
     <div class="container mx-auto">
@@ -52,7 +52,7 @@
               <li class="grid grid-cols-1"> <b>Agile Leadership: Introduction to Change</b> <em class="whitespace-nowrap">Coursera/University of Colorado System</em></li>
               <li class="grid grid-cols-1"> <b>Systems Thinking: Essential Concepts</b> <em class="whitespace-nowrap">udemy</em></li>
               <li class="grid grid-cols-1"> <b>LLM University</b> <em class="whitespace-nowrap">Cohere</em></li>
-              <li class="grid grid-cols-1"> <b>LangChain Chat with Your Data</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
+              <li class="grid grid-cols-1"> <b>Red Teaming LLM Applications</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
             </ul>
 
             <h3>Books</h3>
