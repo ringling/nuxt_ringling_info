@@ -31,7 +31,7 @@ Team<template>
 
             <h3>Books</h3>
             <ul>
-              <li class="grid grid-cols-1"> <b>Before The Coffee Gets Cold</b> <em class="whitespace-nowrap">Toshikazu Kawaguchi</em></li>
+              <li class="grid grid-cols-1"> <b>Before The Coffee Gets Cold(コーヒーが冷めないうちに)</b> <em class="whitespace-nowrap">Toshikazu Kawaguchi</em></li>
               <li class="grid grid-cols-1"> <b>Uncommon Sense Teaching</b> <em class="whitespace-nowrap">Barbara Oakley & Terrence J. Sejnowski</em></li>
               <li class="grid grid-cols-1"> <b>Book You Wish Your Parents Had Read (and Your Children Will Be Glad That You Did)</b> <em class="whitespace-nowrap">Philippa Perry</em></li>
             </ul>
