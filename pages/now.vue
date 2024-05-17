@@ -13,7 +13,7 @@ Team<template>
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: May 12, 2024</div>
+      <div class="m-4 mb-8 text-xs">Last updated: May 17, 2024</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/porto_santo.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">May 2024</h5>
@@ -25,12 +25,13 @@ Team<template>
             </ul>
             <h3>Courses</h3>
             <ul>
+              <li class="grid grid-cols-1"> <b>Open Source Models with Hugging Face</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>Systems Thinking: Essential Concepts</b> <em class="whitespace-nowrap">udemy</em></li>
               <li class="grid grid-cols-1"> <b>Beginning Llamafile for Local Large Language Models</b> <em class="whitespace-nowrap">Coursera</em></li>
             </ul>
-
             <h3>Books</h3>
             <ul>
+              <li class="grid grid-cols-1"> <b>Den Falske Løjtnant</b> <em class="whitespace-nowrap">Martin Q. Magnussen</em></li>
               <li class="grid grid-cols-1"> <b>Before The Coffee Gets Cold(コーヒーが冷めないうちに)</b> <em class="whitespace-nowrap">Toshikazu Kawaguchi</em></li>
               <li class="grid grid-cols-1"> <b>Uncommon Sense Teaching</b> <em class="whitespace-nowrap">Barbara Oakley & Terrence J. Sejnowski</em></li>
               <li class="grid grid-cols-1"> <b>Book You Wish Your Parents Had Read (and Your Children Will Be Glad That You Did)</b> <em class="whitespace-nowrap">Philippa Perry</em></li>
@@ -74,7 +75,6 @@ Team<template>
             <h3>Courses</h3>
             <ul>
               <li class="grid grid-cols-1"> <b>LangChain Chat with Your Data</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
-              <li class="grid grid-cols-1"> <b>Open Source Models with Hugging Face</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>Large Language Models with Semantic Search</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
             </ul>
 
