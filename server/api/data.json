@@ -161,6 +161,12 @@
       },
       {
         "type": "certifications",
+        "title": "Beginning Llamafile for Local Large Language Models (LLMs)",
+        "description": "2024 - Coursera / Duke University",
+        "documentation": "/CourseraLlamafile.pdf"
+      },
+      {
+        "type": "certifications",
         "title": "Developing a Systems Mindset",
         "description": "2024 - Coursera / University of Colorado Boulder",
         "documentation": "/CourseraDevelopingASystemsMindset.pdf"
