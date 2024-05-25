@@ -155,15 +155,21 @@
       },
       {
         "type": "certifications",
-        "title": "Agile Leadership - Introducing Change",
-        "description": "2024 - Coursera / University of Colorado",
-        "documentation": "/CourseraAgileLeadership_IntroducingChange.pdf"
+        "title": "Systems Thinking: Essential Concepts",
+        "description": "2024 - Udemy",
+        "documentation": "/UdemySystemsThinking.pdf"
       },
       {
         "type": "certifications",
         "title": "Beginning Llamafile for Local Large Language Models (LLMs)",
         "description": "2024 - Coursera / Duke University",
         "documentation": "/CourseraLlamafile.pdf"
+      },
+      {
+        "type": "certifications",
+        "title": "Agile Leadership - Introducing Change",
+        "description": "2024 - Coursera / University of Colorado",
+        "documentation": "/CourseraAgileLeadership_IntroducingChange.pdf"
       },
       {
         "type": "certifications",
