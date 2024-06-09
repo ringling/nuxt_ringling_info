@@ -101,6 +101,12 @@
     "list": [
       {
         "type": "conferences",
+        "title": "Agile Coach Camp 2024",
+        "description": "Denmark",
+        "documentation": ""
+      },
+      {
+        "type": "conferences",
         "title": "Elixir Conf Europe 2023",
         "description": "Lisbon",
         "documentation": ""
