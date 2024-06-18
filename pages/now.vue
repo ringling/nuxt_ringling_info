@@ -556,8 +556,18 @@ Team<template>
 <script setup lang="ts">
 useHead({
   title: 'Thomas Ringling - Now',
+  link: [
+    {rel: "canonical", href: "https://thomasringling.com/now"}
+  ],
   meta: [
     { name: 'description', content: 'What am I doing right now and what have I been doing' }
+  ]
+})
+
+definePageMeta({
+	title: 'Thomas Ringling - Now',
+	meta: [
+		{ name: 'description', content: 'What am I doing right now and what have I been doing' }
   ]
 })
 </script>

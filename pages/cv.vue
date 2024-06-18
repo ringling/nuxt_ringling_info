@@ -276,10 +276,18 @@
 
 <script setup lang="ts">
 
+
 useHead({
-  title: 'Thomas Ringling - CV',
+	title: 'Thomas Ringling - CV',
   meta: [
-    { name: 'description', content: 'Curriculum Vitae' }
+		{ name: 'description', content: 'Curriculum Vitae' }
+  ]
+})
+
+definePageMeta({
+	title: 'Thomas Ringling - CV',
+	meta: [
+		{ name: 'description', content: 'Curriculum Vitae' }
   ]
 })
 
