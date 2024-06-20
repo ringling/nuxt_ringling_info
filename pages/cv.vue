@@ -284,13 +284,6 @@ useHead({
   ]
 })
 
-definePageMeta({
-	title: 'Thomas Ringling - CV',
-	meta: [
-		{ name: 'description', content: 'Curriculum Vitae' }
-  ]
-})
-
 const route = useRoute()
 const { pending, data: data } = await useFetch('/api/cv');
 

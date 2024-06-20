@@ -21,6 +21,7 @@ Team<template>
             <h3>Areas of interest</h3>
             <ul>
               <li>Multimodal RAG</li>
+              <li>Embeddings, Nomic, Llama3, OpenAI</li>
             </ul>
             <h3>Courses</h3>
             <ul>
@@ -29,6 +30,7 @@ Team<template>
             </ul>
             <h3>Books</h3>
             <ul>
+              <li class="grid grid-cols-1"> <b>AI Epoken</b> <em class="whitespace-nowrap">Anders Bæk</em></li>
               <li class="grid grid-cols-1"> <b>Project Hail Mary</b> <em class="whitespace-nowrap">Andy Weir</em></li>
               <li class="grid grid-cols-1"> <b>Uncommon Sense Teaching</b> <em class="whitespace-nowrap">Barbara Oakley & Terrence J. Sejnowski</em></li>
             </ul>
@@ -564,10 +566,4 @@ useHead({
   ]
 })
 
-definePageMeta({
-	title: 'Thomas Ringling - Now',
-	meta: [
-		{ name: 'description', content: 'What am I doing right now and what have I been doing' }
-  ]
-})
 </script>
