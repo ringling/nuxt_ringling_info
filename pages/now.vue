@@ -30,6 +30,7 @@ Team<template>
             </ul>
             <h3>Books</h3>
             <ul>
+              <li class="grid grid-cols-1"> <b>Artemis</b> <em class="whitespace-nowrap">Andy Weir</em></li>
               <li class="grid grid-cols-1"> <b>Siddhartha</b> <em class="whitespace-nowrap">Hermann Hesse</em></li>
               <li class="grid grid-cols-1"> <b>AI Epoken</b> <em class="whitespace-nowrap">Anders Bæk</em></li>
               <li class="grid grid-cols-1"> <b>Project Hail Mary</b> <em class="whitespace-nowrap">Andy Weir</em></li>
