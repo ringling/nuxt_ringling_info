@@ -28,6 +28,9 @@ useHead({
   title: 'Thomas Ringling - Home',
   meta: [
     { name: 'description', content: 'Thomas Ringling website, who am I, what am I doing right now and what have been doing' }
-  ]
+  ],
+  link: [
+    {rel: "canonical", href: "https://www.ringling.info"}
+  ],
 })
 </script>

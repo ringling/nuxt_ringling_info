@@ -281,7 +281,10 @@ useHead({
 	title: 'Thomas Ringling - CV',
   meta: [
 		{ name: 'description', content: 'Curriculum Vitae' }
-  ]
+  ],
+	link: [
+    {rel: "canonical", href: "https://www.ringling.info/cv"}
+  ],
 })
 
 const route = useRoute()

@@ -561,7 +561,7 @@ Team<template>
 useHead({
   title: 'Thomas Ringling - Now',
   link: [
-    {rel: "canonical", href: "https://thomasringling.com/now"}
+    {rel: "canonical", href: "https://www.ringling.info/now"}
   ],
   meta: [
     { name: 'description', content: 'What am I doing right now and what have I been doing' }
