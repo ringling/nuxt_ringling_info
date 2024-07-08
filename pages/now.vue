@@ -16,12 +16,12 @@ Team<template>
       <div class="m-4 mb-8 text-xs">Last updated: June 14, 2024</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/tau-ceti.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">June 2024</h5>
+          <img src="/img/zen.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">July 2024</h5>
           <p class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>Multimodal RAG</li>
-              <li>Embeddings, Nomic, Llama3, OpenAI</li>
+              <li>Embeddings, Voyage</li>
             </ul>
             <h3>Courses</h3>
             <ul>
@@ -30,8 +30,24 @@ Team<template>
             </ul>
             <h3>Books</h3>
             <ul>
-              <li class="grid grid-cols-1"> <b>Artemis</b> <em class="whitespace-nowrap">Andy Weir</em></li>
               <li class="grid grid-cols-1"> <b>Siddhartha</b> <em class="whitespace-nowrap">Hermann Hesse</em></li>
+              <li class="grid grid-cols-1"> <b>Artemis</b> <em class="whitespace-nowrap">Andy Weir</em></li>
+            </ul>
+          </p>
+        </div>
+        <div class="block max-w p-6 bg-white markdown neu">
+          <img src="/img/tau-ceti.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">June 2024</h5>
+          <p class="font-normal text-gray-700">
+            <h3>Areas of interest</h3>
+            <ul>
+              <li>Embeddings, Nomic, Llama3, OpenAI</li>
+            </ul>
+            <h3>Courses</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Building Multimodal Search and RAG</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
               <li class="grid grid-cols-1"> <b>AI Epoken</b> <em class="whitespace-nowrap">Anders Bæk</em></li>
               <li class="grid grid-cols-1"> <b>Project Hail Mary</b> <em class="whitespace-nowrap">Andy Weir</em></li>
               <li class="grid grid-cols-1"> <b>Uncommon Sense Teaching</b> <em class="whitespace-nowrap">Barbara Oakley & Terrence J. Sejnowski</em></li>
