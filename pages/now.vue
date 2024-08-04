@@ -13,7 +13,7 @@ Team<template>
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: August 2, 2024</div>
+      <div class="m-4 mb-8 text-xs">Last updated: August 4, 2024</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/zen.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">August 2024</h5>
@@ -22,14 +22,16 @@ Team<template>
             <ul>
               <li>Mojo</li>
               <li>FastHTML</li>
-              <li>MM RAG</li>
+              <li>Multimodal RAG</li>
             </ul>
             <h3>Courses</h3>
             <ul>
+              <li class="grid grid-cols-1"> <b>Prompt Compression and Query Optimization</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
               <li class="grid grid-cols-1"> <b>Systems Thinking Course</b> <em class="whitespace-nowrap">Dave Shapiro/Patreon</em></li>
             </ul>
             <h3>Books</h3>
             <ul>
+              <li class="grid grid-cols-1"> <b>Kan man tænke sig rask - Videnskaben om sammenhængen mellem sind, sygdom og helbredelse</b> <em class="whitespace-nowrap">Thomas Breinholt</em></li>
               <li class="grid grid-cols-1"> <b>What is ChatGPT Doing...and Why Does It Work?</b> <em class="whitespace-nowrap">Stephen Wolfram</em></li>
               <li class="grid grid-cols-1"> <b>Die Welt von Gestern: Erinnerungen eines Europäers</b> <em class="whitespace-nowrap">Stefan Zweig</em></li>
             </ul>
