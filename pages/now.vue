@@ -31,7 +31,7 @@ Team<template>
             </ul>
             <h3>Books</h3>
             <ul>
-              <li class="grid grid-cols-1"> <b>Kan man tænke sig rask - Videnskaben om sammenhængen mellem sind, sygdom og helbredelse</b> <em class="whitespace-nowrap">Thomas Breinholt</em></li>
+              <li class="grid grid-cols-1"> <b>Kan man tænke sig rask</b> <em class="whitespace-nowrap">Thomas Breinholt</em></li>
               <li class="grid grid-cols-1"> <b>What is ChatGPT Doing...and Why Does It Work?</b> <em class="whitespace-nowrap">Stephen Wolfram</em></li>
               <li class="grid grid-cols-1"> <b>Die Welt von Gestern: Erinnerungen eines Europäers</b> <em class="whitespace-nowrap">Stefan Zweig</em></li>
             </ul>
