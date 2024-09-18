@@ -251,6 +251,12 @@
       },
       {
         "type": "courses",
+        "title": "Japanese level A2 (Marugoto)",
+        "description": "2023-2024 - FOF",
+        "documentation": ""
+      },
+      {
+        "type": "courses",
         "title": "Japanese level A1 & A1+(Marugoto)",
         "description": "2022-2023 - FOF",
         "documentation": ""
