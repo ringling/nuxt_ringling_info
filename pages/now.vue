@@ -30,6 +30,7 @@ Team<template>
             <h3>Books</h3>
             <ul>
               <li class="grid grid-cols-1"> <b>Build a Large Language Model (From Scratch)</b> <em class="whitespace-nowrap">Sebastian Raschka</em></li>
+              <li class="grid grid-cols-1"> <b>Det ensomme hjerte</b> <em class="whitespace-nowrap">Tom Buk-Swienty</em></li>
               <li class="grid grid-cols-1"> <b>Zen: The Art of Simple Living</b> <em class="whitespace-nowrap">Shunmyo Masuno</em></li>
               <li class="grid grid-cols-1"> <b>Ulvehjerter</b> <em class="whitespace-nowrap">Puk Damsgård</em></li>
             </ul>
