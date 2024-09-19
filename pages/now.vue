@@ -13,13 +13,14 @@ Team<template>
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: September 10, 2024</div>
+      <div class="m-4 mb-8 text-xs">Last updated: September 19, 2024</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/zen.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">September 2024</h5>
           <p class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
+              <li>Structured Output - OpenAI</li>
               <li>Change Management</li>
               <li>Multimodal RAG</li>
             </ul>
