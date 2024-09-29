@@ -1,4 +1,4 @@
-Team<template>
+<template>
   <div class="">
     <Menu bgColor="bg-white" />
     <div class="container mx-auto">
@@ -31,6 +31,7 @@ Team<template>
             </ul>
             <h3>Books</h3>
             <ul>
+              <li class="grid grid-cols-1"> <b>Seikatsu (生活)</b> <em class="whitespace-nowrap">Asger Røjle Christensen</em></li>
               <li class="grid grid-cols-1"> <b>Build a Large Language Model (From Scratch)</b> <em class="whitespace-nowrap">Sebastian Raschka</em></li>
               <li class="grid grid-cols-1"> <b>Det ensomme hjerte</b> <em class="whitespace-nowrap">Tom Buk-Swienty</em></li>
               <li class="grid grid-cols-1"> <b>Zen: The Art of Simple Living</b> <em class="whitespace-nowrap">Shunmyo Masuno</em></li>
