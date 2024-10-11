@@ -13,8 +13,24 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: September 29, 2024</div>
+      <div class="m-4 mb-8 text-xs">Last updated: October 11, 2024</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <div class="block max-w p-6 bg-white markdown neu">
+          <img src="/img/future.png" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">October 2024</h5>
+          <p class="font-normal text-gray-700">
+            <h3>Areas of interest</h3>
+            <ul>
+              <li>LLM - basics</li>
+            </ul>
+
+            <h3>Books</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>1000-årsriget</b> <em class="whitespace-nowrap">Tonny Gulløv</em></li>
+              <li class="grid grid-cols-1"> <b>Seikatsu (生活)</b> <em class="whitespace-nowrap">Asger Røjle Christensen</em></li>
+              <li class="grid grid-cols-1"> <b>Build a Large Language Model (From Scratch)</b> <em class="whitespace-nowrap">Sebastian Raschka</em></li>
+            </ul>
+          </p>
+        </div>
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/zen.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">September 2024</h5>
           <p class="font-normal text-gray-700">
@@ -31,8 +47,6 @@
             </ul>
             <h3>Books</h3>
             <ul>
-              <li class="grid grid-cols-1"> <b>Seikatsu (生活)</b> <em class="whitespace-nowrap">Asger Røjle Christensen</em></li>
-              <li class="grid grid-cols-1"> <b>Build a Large Language Model (From Scratch)</b> <em class="whitespace-nowrap">Sebastian Raschka</em></li>
               <li class="grid grid-cols-1"> <b>Det ensomme hjerte</b> <em class="whitespace-nowrap">Tom Buk-Swienty</em></li>
               <li class="grid grid-cols-1"> <b>Zen: The Art of Simple Living</b> <em class="whitespace-nowrap">Shunmyo Masuno</em></li>
               <li class="grid grid-cols-1"> <b>Ulvehjerter</b> <em class="whitespace-nowrap">Puk Damsgård</em></li>
