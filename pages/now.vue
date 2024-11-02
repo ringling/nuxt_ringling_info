@@ -13,8 +13,27 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: October 11, 2024</div>
+      <div class="m-4 mb-8 text-xs">Last updated: November 2, 2024</div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <div class="block max-w p-6 bg-white markdown neu">
+          <img src="/img/nov2024.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">November 2024</h5>
+          <p class="font-normal text-gray-700">
+            <h3>Areas of interest</h3>
+            <ul>
+              <li>Knowledge graphs</li>
+              <li>LLM - basics</li>
+            </ul>
+
+            <h3>Courses</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Knowledge Graphs for RAG</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Build a Large Language Model (From Scratch)</b> <em class="whitespace-nowrap">Sebastian Raschka</em></li>
+            </ul>
+          </p>
+        </div>
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/future.png" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">October 2024</h5>
           <p class="font-normal text-gray-700">
@@ -27,7 +46,6 @@
             <ul>
               <li class="grid grid-cols-1"> <b>1000-årsriget</b> <em class="whitespace-nowrap">Tonny Gulløv</em></li>
               <li class="grid grid-cols-1"> <b>Seikatsu (生活)</b> <em class="whitespace-nowrap">Asger Røjle Christensen</em></li>
-              <li class="grid grid-cols-1"> <b>Build a Large Language Model (From Scratch)</b> <em class="whitespace-nowrap">Sebastian Raschka</em></li>
             </ul>
           </p>
         </div>
