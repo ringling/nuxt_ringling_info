@@ -14,7 +14,7 @@
             <img src="/img/agile_coach.jpg" class="lg:w-48 md:w-48 w-32 rounded-lg mr-12">
           </div>
           <div class="flex-initial">
-            <div class="text-4xl font-extrabold text-black">Agile Coach</div>
+            <div class="text-4xl font-extrabold text-black">Software Coach</div>
             <div class="text-lg font-light text-black my-4">Thomas</div>
             Passionate and certified agile coach with over a decade of experience implementing agile frameworks. Skilled in coaching teams toward iterative success, fostering collaboration, and creating agile cultures within organizations.
           </div>
