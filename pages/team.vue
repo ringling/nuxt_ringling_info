@@ -64,3 +64,15 @@
 
 </div>
 </template>
+<script setup lang="ts">
+useHead({
+  title: 'Thomas Ringling - Team',
+  link: [
+    {rel: "canonical", href: "https://www.ringling.info/now"}
+  ],
+  meta: [
+    { name: 'description', content: 'See my software development team' }
+  ]
+})
+
+</script>
