@@ -13,7 +13,7 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: December 7, 2024</div>
+      <div class="m-4 mb-8 text-xs">Last updated: December 8, 2024</div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         <div class="block max-w p-6 bg-white markdown neu">
@@ -31,7 +31,8 @@
             </ul>
             <h3>Books</h3>
             <ul>
-              <li class="grid grid-cols-1"> <b>The Edgar Allan Poe Collection</b> <em class="whitespace-nowrap">Edgar Allan Poe</em></li>
+              <!-- <li class="grid grid-cols-1"> <b>The Consolation of Philosophy</b> <em class="whitespace-nowrap">Boethius</em></li> -->
+              <li class="grid grid-cols-1"> <b>Vikingernes Helte</b> <em class="whitespace-nowrap">Niels Saxtorph</em></li>
               <li class="grid grid-cols-1"> <b>Build a Large Language Model (From Scratch)</b> <em class="whitespace-nowrap">Sebastian Raschka</em></li>
             </ul>
           </p>
@@ -52,6 +53,7 @@
             </ul>
             <h3>Books</h3>
             <ul>
+              <li class="grid grid-cols-1"> <b>The Edgar Allan Poe Collection</b> <em class="whitespace-nowrap">Edgar Allan Poe</em></li>
               <li class="grid grid-cols-1"> <b>Build a Large Language Model (From Scratch)</b> <em class="whitespace-nowrap">Sebastian Raschka</em></li>
             </ul>
           </p>
