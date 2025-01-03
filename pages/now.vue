@@ -13,9 +13,29 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: December 25, 2024</div>
+      <div class="m-4 mb-8 text-xs">Last updated: January 3, 2025</div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <div class="block max-w p-6 bg-white markdown neu">
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/2025.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
+          <p class="font-normal text-gray-700">
+            <h3>Areas of interest</h3>
+            <ul>
+              <li>Rust</li>
+              <li>Docling, Neo4J</li>
+            </ul>
+
+            <h3>Courses</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>ISTQ Foundation</b> <em class="whitespace-nowrap">Testhuset</em></li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+              <!-- <li class="grid grid-cols-1"> <b>The Consolation of Philosophy</b> <em class="whitespace-nowrap">Boethius</em></li> -->
+              <li class="grid grid-cols-1"> <b>Empire of the Summer Moon</b> <em class="whitespace-nowrap">S. C. Gwynne</em></li>
+            </ul>
+          </p>
+        </div>
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/drones.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">December 2024</h5>
           <p class="font-normal text-gray-700">
@@ -32,7 +52,6 @@
             <h3>Books</h3>
             <ul>
               <!-- <li class="grid grid-cols-1"> <b>The Consolation of Philosophy</b> <em class="whitespace-nowrap">Boethius</em></li> -->
-              <li class="grid grid-cols-1"> <b>Empire of the Summer Moon</b> <em class="whitespace-nowrap">S. C. Gwynne</em></li>
               <li class="grid grid-cols-1"> <b>The Castaway</b> <em class="whitespace-nowrap">W. W. Jacobs</em></li>
               <li class="grid grid-cols-1"> <b>It Doesn’t Have to Be Crazy at Work</b> <em class="whitespace-nowrap">Jason Fried & David Heinemeier Hansson</em></li>
               <li class="grid grid-cols-1"> <b>Vikingernes Helte</b> <em class="whitespace-nowrap">Niels Saxtorph</em></li>
