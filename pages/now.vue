@@ -27,7 +27,7 @@
 
             <h3>Courses</h3>
             <ul>
-              <li class="grid grid-cols-1"> <b>ISTQ Foundation</b> <em class="whitespace-nowrap">Testhuset</em></li>
+              <li class="grid grid-cols-1"> <b>ISTQB Foundation</b> <em class="whitespace-nowrap">Testhuset</em></li>
             </ul>
             <h3>Books</h3>
             <ul>
