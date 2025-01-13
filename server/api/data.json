@@ -161,6 +161,12 @@
       },
       {
         "type": "certifications",
+        "title": "ISTQB Foundation",
+        "description": "2025 - Testhuset / DSTB",
+        "documentation": ""
+      },
+      {
+        "type": "certifications",
         "title": "Systems Thinking: Essential Concepts",
         "description": "2024 - Udemy",
         "documentation": "/UdemySystemsThinking.pdf"
