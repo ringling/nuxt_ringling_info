@@ -13,7 +13,7 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: January 3, 2025</div>
+      <div class="m-4 mb-8 text-xs">Last updated: January 19, 2025</div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         <div class="block max-w p-6 bg-white markdown neu">
@@ -32,6 +32,7 @@
             <h3>Books</h3>
             <ul>
               <!-- <li class="grid grid-cols-1"> <b>The Consolation of Philosophy</b> <em class="whitespace-nowrap">Boethius</em></li> -->
+              <li class="grid grid-cols-1"> <b>Gid min chef var høvding</b> <em class="whitespace-nowrap">Dennis Nørmark</em></li>
               <li class="grid grid-cols-1"> <b>Empire of the Summer Moon</b> <em class="whitespace-nowrap">S. C. Gwynne</em></li>
             </ul>
           </p>

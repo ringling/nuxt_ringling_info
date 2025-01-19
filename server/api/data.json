@@ -161,9 +161,9 @@
       },
       {
         "type": "certifications",
-        "title": "ISTQB Foundation",
-        "description": "2025 - Testhuset / DSTB",
-        "documentation": ""
+        "title": "ISTQB Certified Tester Foundation Level",
+        "description": "2025 - DSTB",
+        "documentation": "/istqb.pdf"
       },
       {
         "type": "certifications",
@@ -253,6 +253,12 @@
         "type": "certifications",
         "title": "Agile Foundation – Leadership Focus",
         "description": "DSDM - Issued Apr 2012",
+        "documentation": ""
+      },
+      {
+        "type": "courses",
+        "title": "ISTQB Foundation",
+        "description": "2025 Testhuset",
         "documentation": ""
       },
       {
