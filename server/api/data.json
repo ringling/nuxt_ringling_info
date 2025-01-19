@@ -677,9 +677,25 @@
   ],
   "experiences": [
     {
+      "year": "2025",
+      "startDate": "January 2025",
+      "endDate": "Present",
+      "companyName": "Nes Tech A/S",
+      "companyLogo": "assets/img/nestech.png",
+      "website": "http://nestech.dk",
+      "title": "Software consultant",
+      "roles": "",
+      "highlights": [],
+      "technologies": [
+        "C#",
+        "Polaris - Life and Pension platform"
+      ],
+      "summary": "..."
+    },
+    {
       "year": "2023",
       "startDate": "July 2023",
-      "endDate": "Present",
+      "endDate": "December 2024",
       "companyName": "PFA",
       "companyLogo": "assets/img/pfa.png",
       "website": "http://pfa.dk",
