@@ -13,9 +13,28 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: January 31, 2025</div>
+      <div class="m-4 mb-8 text-xs">Last updated: March 1, 2025</div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <div class="block max-w p-6 bg-white markdown neu">
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/disaster-start.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
+          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">February 2025</h5>
+          <p class="font-normal text-gray-700">
+            <h3>Areas of interest</h3>
+            <ul>
+              <li>Obsidian</li>
+              <li>3 Echonomies</li>
+              <li>DDD</li>
+              <li>Modular Monolith</li>
+            </ul>
+
+            <h3>Books</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Norwegian Wood</b> <em class="whitespace-nowrap">Haruki Murakami</em></li>
+              <li class="grid grid-cols-1"> <b>Software Engineering at Google</b> <em class="whitespace-nowrap">Titus Winters, Tom Manshreck and Hyrum Wright</em></li>
+            </ul>
+          </p>
+        </div>
         <div class="block max-w p-6 bg-white markdown neu">
           <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/2025.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">January 2025</h5>
