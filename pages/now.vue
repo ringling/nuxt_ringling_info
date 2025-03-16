@@ -16,6 +16,24 @@
       <div class="m-4 mb-8 text-xs">Last updated: March 1, 2025</div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+
+        <div class="block max-w p-6 bg-white markdown neu">
+          <img src="/img/womb.png" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
+          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">March 2025</h5>
+          <p class="font-normal text-gray-700">
+            <h3>Areas of interest</h3>
+            <ul>
+              <li>Pydantic AI</li>
+            </ul>
+
+            <h3>Books</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Personforsikring</b> <em class="whitespace-nowrap">Inge Brabrand</em></li>
+            </ul>
+          </p>
+        </div>
+
+
         <div class="block max-w p-6 bg-white markdown neu">
           <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/disaster-start.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">February 2025</h5>
@@ -35,6 +53,7 @@
             </ul>
           </p>
         </div>
+
         <div class="block max-w p-6 bg-white markdown neu">
           <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/2025.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">January 2025</h5>
