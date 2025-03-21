@@ -13,7 +13,7 @@
         generated with
         Midjourney. Deployed via Github to DigitalOcean App Platform
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: March 1, 2025</div>
+      <div class="m-4 mb-8 text-xs">Last updated: March 21, 2025</div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 
@@ -24,16 +24,22 @@
             <h3>Areas of interest</h3>
             <ul>
               <li>Pydantic AI</li>
+              <li>Model Context Protocol</li>
             </ul>
 
             <h3>Books</h3>
             <ul>
+              <li class="grid grid-cols-1"> <b>Learn Japanese</b> <em class="whitespace-nowrap">Paul Noble</em></li>
+              <li class="grid grid-cols-1"> <b>Shogun</b> <em class="whitespace-nowrap">James Clavell</em></li>
               <li class="grid grid-cols-1"> <b>Personforsikring</b> <em class="whitespace-nowrap">Inge Brabrand</em></li>
+            </ul>
+
+            <h3>Courses</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>How Transformer LLMs Work</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
             </ul>
           </p>
         </div>
-
-
         <div class="block max-w p-6 bg-white markdown neu">
           <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/disaster-start.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">February 2025</h5>
@@ -68,6 +74,7 @@
             <ul>
               <li class="grid grid-cols-1"> <b>ISTQB Foundation</b> <em class="whitespace-nowrap">Testhuset</em></li>
             </ul>
+
             <h3>Books</h3>
             <ul>
               <!-- <li class="grid grid-cols-1"> <b>The Consolation of Philosophy</b> <em class="whitespace-nowrap">Boethius</em></li> -->
