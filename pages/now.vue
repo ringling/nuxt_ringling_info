@@ -11,11 +11,28 @@
       <div class="m-4 mb-4">Throughout the past year (2023), I have been quite fortunate, working only three days a week. I dedicate the remaining two days to learning, enrolling in various courses, engaging in extensive reading, and practicing Japanese. This experience is evident on this page.</div>
       <div class="m-4 mb-8 text-xs">This site is built with Typescript, Vue 3, Nuxt 3 and TailwindCSS. Images are
         generated with
-        Midjourney. Deployed via Github to DigitalOcean App Platform
+        Midjourney. Deployed on Hetzner as a Docker image
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: March 21, 2025</div>
+      <div class="m-4 mb-8 text-xs">Last updated: April 21, 2025</div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+
+        <div class="block max-w p-6 bg-white markdown neu">
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/europe_first.png')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
+          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">April 2025</h5>
+          <p class="font-normal text-gray-700">
+            <h3>Areas of interest</h3>
+            <ul>
+              <li>Svelte</li>
+              <li>Elixir Phoenix & LiveView</li>
+            </ul>
+
+            <h3>Books</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>The Idiot</b> <em class="whitespace-nowrap">Fyodor Dostoyevsky</em></li>
+            </ul>
+          </p>
+        </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/womb.png" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
