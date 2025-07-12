@@ -13,9 +13,26 @@
         generated with
         Midjourney. Deployed on Hetzner as a Docker image
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: April 21, 2025</div>
+      <div class="m-4 mb-8 text-xs">Last updated: July 12, 2025</div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+
+        <div class="block max-w p-6 bg-white markdown neu">
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/icehotel.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
+          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">July 2025</h5>
+          <p class="font-normal text-gray-700">
+            <h3>Areas of interest</h3>
+            <ul>
+              <li>knowledge graphs</li>
+              <li>RAG</li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Adopting Elixir</b> <em class="whitespace-nowrap">Ben Marx, José Valim, Bruce Tate</em> </li>
+              <li class="grid grid-cols-1"> <b>Genesis</b> <em class="whitespace-nowrap">Henry A. Kissinger, Eric Schmidt, Craig Mundie</em> </li>
+            </ul>
+          </p>
+        </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
           <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/boy_anim.gif')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
