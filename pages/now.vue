@@ -13,7 +13,7 @@
         generated with
         Midjourney. Deployed on Hetzner as a Docker image
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: July 12, 2025</div>
+      <div class="m-4 mb-8 text-xs">Last updated: July 18, 2025</div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 
@@ -25,6 +25,7 @@
             <ul>
               <li>knowledge graphs</li>
               <li>RAG</li>
+              <li>Claude Code</li>
             </ul>
             <h3>Books</h3>
             <ul>
