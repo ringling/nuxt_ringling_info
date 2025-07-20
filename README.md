@@ -50,6 +50,14 @@ Requiures `doctl` - https://docs.digitalocean.com/reference/doctl/how-to/install
 Run `npm run deploy`
 
 
+__Docker Build command__
+
+```bash
+cd nuxt_ringling_info
+git pull && docker build -t ringling/personal-website . && docker stop ringling_info && docker rm ringling_info && docker run -d --name ringling_info -p 8080:3000 ringling/personal-website
+```
+
+
 
 
 
