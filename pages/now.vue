@@ -13,7 +13,7 @@
         generated with
         Midjourney. Deployed on Hetzner as a Docker image
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: July 20, 2025</div>
+      <div class="m-4 mb-8 text-xs">Last updated: July 26, 2025</div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 
@@ -32,6 +32,7 @@
               <li class="grid grid-cols-1"> <b>Adopting Elixir</b> <em class="whitespace-nowrap">Ben Marx, José Valim, Bruce Tate</em> </li>
               <li class="grid grid-cols-1"> <b>Genesis</b> <em class="whitespace-nowrap">Henry A. Kissinger, Eric Schmidt, Craig Mundie</em> </li>
               <li class="grid grid-cols-1"> <b>Essential GraphRAG</b> <em class="whitespace-nowrap">Tomaž Bratanič & Oskar Hane</em> </li>
+              <li class="grid grid-cols-1"> <b>L'Heure des Prédateurs</b> <em class="whitespace-nowrap">Giuliano da Empoli</em> </li>
             </ul>
           </p>
         </div>
