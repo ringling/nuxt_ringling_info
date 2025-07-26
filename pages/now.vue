@@ -20,7 +20,7 @@
         <div class="block max-w p-6 bg-white markdown neu">
           <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/icehotel.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">July 2025</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>knowledge graphs</li>
@@ -34,13 +34,13 @@
               <li class="grid grid-cols-1"> <b>Essential GraphRAG</b> <em class="whitespace-nowrap">Tomaž Bratanič & Oskar Hane</em> </li>
               <li class="grid grid-cols-1"> <b>L'Heure des Prédateurs</b> <em class="whitespace-nowrap">Giuliano da Empoli</em> </li>
             </ul>
-          </p>
+          </div>
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
           <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/boy_anim.gif')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">June 2025</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>html to pdf</li>
@@ -51,13 +51,13 @@
             <ul>
               <li class="grid grid-cols-1"> <b>Real-World Event Sourcing</b> <em class="whitespace-nowrap">Kevin Hoffman</em> </li>
             </ul>
-          </p>
+          </div>
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
           <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/faroer.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">May 2025</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>Raycast</li>
@@ -68,13 +68,13 @@
             <ul>
               <li class="grid grid-cols-1"> <b>Berlin brænder</b> <em class="whitespace-nowrap">Tom Buk-Swienty</em> </li>
             </ul>
-          </p>
+          </div>
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
           <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/europe_first.png')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">April 2025</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>Svelte</li>
@@ -85,13 +85,13 @@
             <ul>
               <li class="grid grid-cols-1"> <b>The Idiot</b> <em class="whitespace-nowrap">Fyodor Dostoyevsky</em></li>
             </ul>
-          </p>
+          </div>
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/womb.png" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">March 2025</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>Pydantic AI</li>
@@ -109,12 +109,12 @@
             <ul>
               <li class="grid grid-cols-1"> <b>How Transformer LLMs Work</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
             </ul>
-          </p>
+          </div>
         </div>
         <div class="block max-w p-6 bg-white markdown neu">
           <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/disaster-start.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">February 2025</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>Obsidian</li>
@@ -128,13 +128,13 @@
               <li class="grid grid-cols-1"> <b>Norwegian Wood</b> <em class="whitespace-nowrap">Haruki Murakami</em></li>
               <li class="grid grid-cols-1"> <b>Software Engineering at Google</b> <em class="whitespace-nowrap">Titus Winters, Tom Manshreck and Hyrum Wright</em></li>
             </ul>
-          </p>
+          </div>
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
           <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/2025.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">January 2025</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>Rust</li>
@@ -153,11 +153,11 @@
               <li class="grid grid-cols-1"> <b>Gid min chef var høvding</b> <em class="whitespace-nowrap">Dennis Nørmark</em></li>
               <li class="grid grid-cols-1"> <b>Empire of the Summer Moon</b> <em class="whitespace-nowrap">S. C. Gwynne</em></li>
             </ul>
-          </p>
+          </div>
         </div>
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/drones.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">December 2024</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>LLM - basics(Elixir)</li>
@@ -176,11 +176,11 @@
               <li class="grid grid-cols-1"> <b>Vikingernes Helte</b> <em class="whitespace-nowrap">Niels Saxtorph</em></li>
               <li class="grid grid-cols-1"> <b>Build a Large Language Model (From Scratch)</b> <em class="whitespace-nowrap">Sebastian Raschka</em></li>
             </ul>
-          </p>
+          </div>
         </div>
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/senate.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">November 2024</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>Knowledge graphs</li>
@@ -197,11 +197,11 @@
               <li class="grid grid-cols-1"> <b>The Edgar Allan Poe Collection</b> <em class="whitespace-nowrap">Edgar Allan Poe</em></li>
               <li class="grid grid-cols-1"> <b>Build a Large Language Model (From Scratch)</b> <em class="whitespace-nowrap">Sebastian Raschka</em></li>
             </ul>
-          </p>
+          </div>
         </div>
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/nov2024.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">October 2024</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>LLM - basics</li>
@@ -212,11 +212,11 @@
               <li class="grid grid-cols-1"> <b>1000-årsriget</b> <em class="whitespace-nowrap">Tonny Gulløv</em></li>
               <li class="grid grid-cols-1"> <b>Seikatsu (生活)</b> <em class="whitespace-nowrap">Asger Røjle Christensen</em></li>
             </ul>
-          </p>
+          </div>
         </div>
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/zen.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">September 2024</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>Structured Output - OpenAI</li>
@@ -234,11 +234,11 @@
               <li class="grid grid-cols-1"> <b>Zen: The Art of Simple Living</b> <em class="whitespace-nowrap">Shunmyo Masuno</em></li>
               <li class="grid grid-cols-1"> <b>Ulvehjerter</b> <em class="whitespace-nowrap">Puk Damsgård</em></li>
             </ul>
-          </p>
+          </div>
         </div>
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/lego.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">August 2024</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>Mojo</li>
@@ -256,11 +256,11 @@
               <li class="grid grid-cols-1"> <b>What is ChatGPT Doing...and Why Does It Work?</b> <em class="whitespace-nowrap">Stephen Wolfram</em></li>
               <li class="grid grid-cols-1"> <b>Die Welt von Gestern: Erinnerungen eines Europäers</b> <em class="whitespace-nowrap">Stefan Zweig</em></li>
             </ul>
-          </p>
+          </div>
         </div>
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/norway.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">July 2024</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>Multimodal RAG</li>
@@ -277,11 +277,11 @@
               <li class="grid grid-cols-1"> <b>Siddhartha</b> <em class="whitespace-nowrap">Hermann Hesse</em></li>
               <li class="grid grid-cols-1"> <b>Artemis</b> <em class="whitespace-nowrap">Andy Weir</em></li>
             </ul>
-          </p>
+          </div>
         </div>
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/tau-ceti.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">June 2024</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>Embeddings, Nomic, Llama3, OpenAI</li>
@@ -296,11 +296,11 @@
               <li class="grid grid-cols-1"> <b>Project Hail Mary</b> <em class="whitespace-nowrap">Andy Weir</em></li>
               <li class="grid grid-cols-1"> <b>Uncommon Sense Teaching</b> <em class="whitespace-nowrap">Barbara Oakley & Terrence J. Sejnowski</em></li>
             </ul>
-          </p>
+          </div>
         </div>
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/porto_santo.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">May 2024</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>LlamaIndex, RAG and ChromaDB</li>
@@ -319,12 +319,12 @@
               <li class="grid grid-cols-1"> <b>Uncommon Sense Teaching</b> <em class="whitespace-nowrap">Barbara Oakley & Terrence J. Sejnowski</em></li>
               <li class="grid grid-cols-1"> <b>Book You Wish Your Parents Had Read (and Your Children Will Be Glad That You Did)</b> <em class="whitespace-nowrap">Philippa Perry</em></li>
             </ul>
-          </p>
+          </div>
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/hannah.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">April 2024</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>Systems Thinking</li>
@@ -345,11 +345,11 @@
               <li class="grid grid-cols-1"> <b>En dag i Ivan Denisovitjs liv</b> <em class="whitespace-nowrap">Aleksandr Solsjenitsyn</em></li>
               <li class="grid grid-cols-1"> <b>Turn the Ship Around! - A True Story of Turning Followers Into Leaders</b> <em class="whitespace-nowrap">L. David Marquet</em></li>
             </ul>
-          </p>
+          </div>
         </div>
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/shogun.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">March 2024</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>Domain Storytelling</li>
@@ -367,11 +367,11 @@
               <li class="grid grid-cols-1"> <b>Domain Storytelling</b> <em class="whitespace-nowrap">Stefan Hofer & Henning Schwentner</em></li>
               <li class="grid grid-cols-1"> <b>Gopler ældes baglæns</b> <em class="whitespace-nowrap">Nicklas Brendborg</em></li>
             </ul>
-          </p>
+          </div>
         </div>
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/aquarius.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">February 2024</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>Weaviate</li>
@@ -391,12 +391,12 @@
               <li class="grid grid-cols-1"> <b>Dit selvhelbredende sind</b> <em class="whitespace-nowrap">Mette Louise Holland</em></li>
               <li class="grid grid-cols-1"> <b>Streamlit for Data Science</b> <em class="whitespace-nowrap">Tyler Richards</em></li>
             </ul>
-          </p>
+          </div>
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/new_year2024.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">January 2024</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
 
             <ul>
@@ -418,13 +418,13 @@
               <li class="grid grid-cols-1"> <b>UFO-Mysteriet - På sporet af min far og de flyvende tallerkner</b> <em class="whitespace-nowrap">Frederik Dirks Gottlieb</em> </li>
               <li class="grid grid-cols-1"> <b>The Case Against Reality</b> <em class="whitespace-nowrap">Donald D. Hoffman</em> </li>
             </ul>
-          </p>
+          </div>
         </div>
 
 
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/winter_wonderland.jpeg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">December 2023</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
 
             <ul>
@@ -445,11 +445,11 @@
               <li class="grid grid-cols-1"> <b>Encounters</b> <em class="whitespace-nowrap">Diana W. Pasulka</em> </li>
               <li class="grid grid-cols-1"> <b>Atomic Habits</b> <em class="whitespace-nowrap">James Clear</em> </li>
             </ul>
-          </p>
+          </div>
         </div>
           <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/gen-ai.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">November 2023</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
 
             <ul>
@@ -470,11 +470,11 @@
               <li class="grid grid-cols-1"> <b>Software Engineering at Google</b> <em class="whitespace-nowrap">Winters, Manshreck & Wright</em> </li>
               <li class="grid grid-cols-1"> <b>Die Vermessung der Welt</b> <em class="whitespace-nowrap">Daniel Kehlmann</em> </li>
             </ul>
-          </p>
+          </div>
         </div>
           <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/kabuki.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">October 2023</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>Llama with Ollama</li>
@@ -496,13 +496,13 @@
               <li class="grid grid-cols-1"> <b>Jytte vender tilbage</b> <em class="whitespace-nowrap">Morten Münster</em> </li>
 
             </ul>
-          </p>
+          </div>
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
           <!--img src="/img/elizabeth.jpg" class="bg-[url('/img/elizabeth.jpg')] lg:w-48 md:w-32 w-16 rounded-lg float-right hover:bg-[url('/img/uap.jpg')]" /-->
           <img src="/img/wiking.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">September 2023</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <h4>Machine Learning</h4>
 
@@ -527,13 +527,13 @@
               <!-- <li class="grid grid-cols-1"> <b>A Column of Fire</b> <em class="whitespace-nowrap">Ken Follett</em> </li> -->
 
             </ul>
-          </p>
+          </div>
         </div>
 
 
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/probability.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">August 2023</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <h4>Machine Learning</h4>
 
@@ -554,7 +554,7 @@
               <!-- <li class="grid grid-cols-1"> <b>A Column of Fire</b> <em class="whitespace-nowrap">Ken Follett</em> </li> -->
               <li class="grid grid-cols-1"> <b>Scary Smart</b> <em class="whitespace-nowrap">Mo Gawdat</em></li>
             </ul>
-          </p>
+          </div>
         </div>
 
 
@@ -562,7 +562,7 @@
           <!--img src="/img/elizabeth.jpg" class="bg-[url('/img/elizabeth.jpg')] lg:w-48 md:w-32 w-16 rounded-lg float-right hover:bg-[url('/img/uap.jpg')]" /-->
           <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/elizabeth.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right hover:bg-[url('/img/uap.jpg')]" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">July 2023</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <h4>Machine Learning</h4>
 
@@ -593,13 +593,13 @@
               <li class="grid grid-cols-1"> <b>Fat Chance! Probabilty from 0 to 1</b> <em class="whitespace-nowrap">Benedict Gross, Joe Harris & Emily Riehl</em></li>
               <li class="grid grid-cols-1"> <b>The Hundred-Page Machine Learning Book</b> <em class="whitespace-nowrap">Andriy Burkov</em> </li>
             </ul>
-          </p>
+          </div>
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/frankenstein.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">June 2023</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
 
           <h3>Areas of interest</h3>
           <h4>Machine Learning</h4>
@@ -630,13 +630,13 @@
 
           </ul>
 
-          </p>
+          </div>
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/ai_mosaik.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">May 2023</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
 
           <h3>Areas of interest</h3>
           <h4>Machine Learning</h4>
@@ -674,13 +674,13 @@
             <li class="grid grid-cols-1"> <b>Pirate Latitudes</b> <em>Michael Crichton</em> </li>
           </ul>
 
-          </p>
+          </div>
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/ai.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">April 2023</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
           <h3>Areas of interest</h3>
           <h4>Machine Learning</h4>
           <ul>
@@ -713,14 +713,14 @@
 
           </ul>
 
-          </p>
+          </div>
         </div>
 
 
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/python.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">March 2023</h5>
-          <p class="font-normal text-gray-700">
+          <div class="font-normal text-gray-700">
           <h3>Areas of interest</h3>
           <h4>Data Science</h4>
           <ul>
@@ -737,27 +737,27 @@
             <li class="grid grid-cols-1"> <b>Stalingrad</b> <em>Antony Beevor</em> </li>
           </ul>
 
-          </p>
+          </div>
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/relax.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">December 2022 - February
             2023</h5>
-          <p class="font-normal text-gray-700 dark:text-gray-400">
+          <div class="font-normal text-gray-700 dark:text-gray-400">
           <h3>Books</h3>
           <ul>
             <li class="grid grid-cols-1"> <b>Lær at præstere, når du skal</b> <em class="whitespace-nowrap">Lars Robl</em> </li>
             <li class="grid grid-cols-1"> <b>Kaptajn Dinesen - Ild og blod</b> <em class="whitespace-nowrap">Tom Buk-Swienty</em> </li>
             <li class="grid grid-cols-1"> <b>Safari fra helvede</b> <em class="whitespace-nowrap">Tom Buk-Swienty</em> </li>
           </ul>
-          </p>
+          </div>
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
           <img src="/img/pc.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">February - September 2022</h5>
-          <p class="font-normal text-gray-700 dark:text-gray-400">
+          <div class="font-normal text-gray-700 dark:text-gray-400">
           <p>
             Doing a lot of software development at work
           </p>
@@ -781,13 +781,13 @@
             <li class="grid grid-cols-1"> <b>What Every BODY is Saying</b> <em>Joe Navarro & Marvin Karlins</em> </li>
             <li class="grid grid-cols-1"> <b>Tuesdays with Morrie: An Old Man, a Young Man, and Life's Greatest Lesson</b> <em>Mitch Alborn</em> </li>
           </ul>
-        </p>
+        </div>
       </div>
 
       <div class="block max-w p-6 bg-white markdown neu">
         <img src="/img/qc.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
         <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">June 2021 - January 2022</h5>
-        <p class="font-normal text-gray-700 dark:text-gray-400">
+        <div class="font-normal text-gray-700 dark:text-gray-400">
           <h3>Areas of interest</h3>
           <h4>Quantum Computing</h4>
           <ul>
@@ -811,7 +811,7 @@
             <li class="grid grid-cols-1"> <b>In Plain Sight</b> <em>Ross Coulthart</em> </li>
             <li class="grid grid-cols-1"> <b>Blood and Thunder</b> <em>Hampton Sides</em> </li>
           </ul>
-          </p>
+          </div>
         </div>
       </div>
     </div>
