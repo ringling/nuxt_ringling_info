@@ -12,13 +12,13 @@
             <nav class="text-sm leading-6 font-semibold text-gray-700">
               <ul class="flex space-x-8">
                 <li>
-                  <NuxtLink class="hover:text-sky-500" style="z-index: 1000" to="/now">Now</NuxtLink>
+                  <NuxtLink class="hover:text-sky-500 z-[1000]" to="/now">Now</NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink class="hover:text-sky-500" style="z-index: 1000" to="/cv">CV</NuxtLink>
+                  <NuxtLink class="hover:text-sky-500 z-[1000]" to="/cv">CV</NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink class="hover:text-sky-500" style="z-index: 1000" to="/team">Team</NuxtLink>
+                  <NuxtLink class="hover:text-sky-500 z-[1000]" to="/team">Team</NuxtLink>
                 </li>
               </ul>
             </nav>
@@ -29,10 +29,8 @@
   </div>
 </template>
 
-<script setup>
-const props = defineProps({
-  bgColor: {
-    type: [String],
-  },
-});
+<script setup lang="ts">
+import type { MenuProps } from '~/types/cv'
+
+const props = defineProps<MenuProps>()
 </script>

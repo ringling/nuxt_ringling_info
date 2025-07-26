@@ -12,10 +12,8 @@
   </figure>
 </template>
 
-<script setup>
-  const props = defineProps({
-    item: {
-      type: [Object],
-    },
-  });
+<script setup lang="ts">
+import type { EducationProps } from '~/types/cv'
+
+const props = defineProps<EducationProps>()
 </script>

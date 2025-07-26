@@ -9,10 +9,8 @@
     </figure>
 </template>
 
-<script setup>
-const props = defineProps({
-    item: {
-        type: [Object],
-    },
-});
+<script setup lang="ts">
+import type { ConferenceProps } from '~/types/cv'
+
+const props = defineProps<ConferenceProps>()
 </script>

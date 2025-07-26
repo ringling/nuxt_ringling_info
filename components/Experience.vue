@@ -14,14 +14,10 @@
   </figure>
 </template>
 
-<script setup>
-const props = defineProps({
-  showDetails: {
-    type: Boolean,
-    default: false,
-  },
-  item: {
-    type: [Object],
-  },
-});
+<script setup lang="ts">
+import type { ExperienceProps } from '~/types/cv'
+
+const props = withDefaults(defineProps<ExperienceProps>(), {
+  showDetails: false
+})
 </script>

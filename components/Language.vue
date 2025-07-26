@@ -15,10 +15,8 @@
     </figure>
 </template>
 
-<script setup>
-const props = defineProps({
-    item: {
-        type: [Object],
-    },
-});
+<script setup lang="ts">
+import type { LanguageProps } from '~/types/cv'
+
+const props = defineProps<LanguageProps>()
 </script>
