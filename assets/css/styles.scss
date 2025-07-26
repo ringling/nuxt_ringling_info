@@ -42,7 +42,7 @@ h2 {
 }
 
 h3 {
-  @apply mb-4 text-xl text-gray-900 tracking-tight font-bold;
+  @apply mt-4 text-xl text-gray-900 tracking-tight font-bold;
 }
 
 h4 {
@@ -89,19 +89,19 @@ h5 {
   box-shadow: 12px 12px 24px #d9d9d9, -12px -12px 24px #ffffff;
 }
 
-.markdown > h1 {
+.markdown  h1 {
   @apply mb-6;
 }
 
-.markdown > h2 {
+.markdown  h2 {
   @apply mt-12 mb-6 my-2;
 }
 
-.markdown > h3 {
-  @apply font-extrabold uppercase py-4 text-gray-900 text-base my-2;
+.markdown  h3 {
+  @apply font-extrabold uppercase py-2 text-gray-900 text-base;
 }
 
-.markdown > h4 {
+.markdown  h4 {
   @apply font-extrabold uppercase py-1 text-gray-900 text-sm my-2;
 }
 
@@ -115,17 +115,17 @@ h5 {
   margin-top: 20px;
 }
 
-div.markdown > ul >  li  {
+div.markdown > div > ul >  li  {
   @apply text-base text-gray-600  font-normal;
 }
 
-div.markdown > ul >  li > b  {
+div.markdown > div > ul >  li > b  {
   @apply text-base text-gray-600  font-semibold;
 }
 div.markdown > ul >  li > strong  {
   @apply text-base text-gray-600  font-medium;
 }
-div.markdown > ul >  li > em  {
+div.markdown > div > ul >  li > em  {
   @apply text-sm text-gray-600  font-light;
 }
 

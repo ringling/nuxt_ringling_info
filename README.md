@@ -18,9 +18,6 @@ go to DigitalOcean website and execute "deploy" in "Actions" in personal-website
 https://content.nuxtjs.org/guide/writing/document-driven
 
 
-
-
-
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
 ## Setup
