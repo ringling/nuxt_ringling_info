@@ -101,6 +101,12 @@
     "list": [
       {
         "type": "conferences",
+        "title": "Goatmire 2025",
+        "description": "Varberg, Sweden",
+        "documentation": ""
+      },
+      {
+        "type": "conferences",
         "title": "Agile Coach Camp 2024",
         "description": "Denmark",
         "documentation": ""
@@ -263,8 +269,14 @@
       },
       {
         "type": "courses",
+        "title": "Japanese level A2+ (Marugoto)",
+        "description": "2025-2026 - FOF",
+        "documentation": ""
+      },
+      {
+        "type": "courses",
         "title": "Japanese level A2 (Marugoto)",
-        "description": "2023-2024 - FOF",
+        "description": "2023-2025 - FOF",
         "documentation": ""
       },
       {
