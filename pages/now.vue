@@ -18,6 +18,36 @@
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         
         <div class="block max-w p-6 bg-white markdown neu">
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/placeholder.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
+          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">December 2025</h5>
+          <div class="font-normal text-gray-700">
+            <h3>Areas of interest</h3>
+            <ul>
+              <li>改善 初心 生き甲斐</li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Distancing</b> <em class="whitespace-nowrap">L. David Marquet & Michael Gillespie</em> </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="block max-w p-6 bg-white markdown neu">
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/japan_immersion.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
+          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">November 2025</h5>
+          <div class="font-normal text-gray-700">
+            <h3>Areas of interest</h3>
+            <ul>
+              <li>日本語</li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Kryssing - Manden, der valgte forkert</b> <em class="whitespace-nowrap">Thomas Harder</em> </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="block max-w p-6 bg-white markdown neu">
           <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/bridge.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">October 2025</h5>
           <div class="font-normal text-gray-700">
