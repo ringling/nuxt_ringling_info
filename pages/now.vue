@@ -27,7 +27,7 @@
             </ul>
             <h3>Books</h3>
             <ul>
-              <li class="grid grid-cols-1"> <b>Distancing</b> <em class="whitespace-nowrap">L. David Marquet & Michael Gillespie</em> </li>
+              <li class="grid grid-cols-1"> <b>Kaizen - et lille skridt kan ændre dit liv</b> <em class="whitespace-nowrap">Robert Maurer</em> </li>
             </ul>
           </div>
         </div>
