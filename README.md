@@ -47,15 +47,25 @@ Requiures `doctl` - https://docs.digitalocean.com/reference/doctl/how-to/install
 Run `npm run deploy`
 
 
+#### Fix gpg lock freeze
+
+```bash
+ls -l ~/.gnupg/**/*.lock
+rm ~/.gnupg/[name-of-the-stale-lock-file].lock
+gpgconf --reload gpg-agent
+```
+
+https://gist.github.com/bahadiraraz/f2fb15b07e0fce92d8d5a86ab33469f7
+
+
 __Docker Build command__
 
 ```bash
+pass -c Hetzner/www_ringling
+ssh root@157.180.64.13 # cmd-v
 cd nuxt_ringling_info
 git pull && docker build -t ringling/personal-website . && docker stop ringling_info && docker rm ringling_info && docker run -d --name ringling_info -p 8080:3000 ringling/personal-website
 ```
-
-
-
 
 
 Build the application for production:
