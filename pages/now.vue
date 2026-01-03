@@ -13,10 +13,27 @@
         generated with
         Midjourney. Deployed on Hetzner as a Docker image
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: December 5, 2025</div>
+      <div class="m-4 mb-8 text-xs">Last updated: January 3, 2025</div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         
+        <div class="block max-w p-6 bg-white markdown neu">
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/2026.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
+          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">January 2026</h5>
+          <div class="font-normal text-gray-700">
+            <h3>Areas of interest</h3>
+            <ul>
+              <li>Enneagram</li>
+              <li>無心</li>
+            </ul>
+            <h3>Books</h3>
+            <ul>
+              <li class="grid grid-cols-1"> <b>Domain-Specific Small Language Models</b> <em class="whitespace-nowrap">Guglielmo Iozzia</em> </li>
+              <li class="grid grid-cols-1"> <b>Russerne kommer</b> <em class="whitespace-nowrap">Tom Buk-Swienty</em> </li>
+            </ul>
+          </div>
+        </div>
+      
         <div class="block max-w p-6 bg-white markdown neu">
           <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/christmas2025.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">December 2025</h5>
