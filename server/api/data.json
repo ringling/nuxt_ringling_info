@@ -689,6 +689,23 @@
   ],
   "experiences": [
     {
+      "year": "2026",
+      "startDate": "February 2026",
+      "endDate": "",
+      "companyName": "TBA",
+      "companyLogo": "assets/img/pfa.png",
+      "website": "http://pfa.dk",
+      "title": "TBA",
+      "roles": "",
+      "highlights": [],
+      "technologies": [
+        "Python",
+        "Pandas",
+        "MS SQL"
+      ],
+      "summary": "Something with data and communication"
+    },
+    {
       "year": "2025",
       "startDate": "January 2025",
       "endDate": "January 2026",
