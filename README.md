@@ -12,7 +12,7 @@ docker build -t ringling/personal-website .
 docker push ringling/personal-website
 ```
 
-go to DigitalOcean website and execute "deploy" in "Actions" in personal-website app
+go to Hetzner Cloud console and execute the deploy workflow for the personal-website app
 
 ## Content
 https://content.nuxtjs.org/guide/writing/document-driven
@@ -42,7 +42,7 @@ npm run dev
 
 ### Deployment
 
-Requiures `doctl` - https://docs.digitalocean.com/reference/doctl/how-to/install/
+Requires Hetzner server access (SSH)
 
 Run `npm run deploy`
 
