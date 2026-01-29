@@ -25,6 +25,7 @@
             <ul>
               <li>Enneagram</li>
               <li>無心</li>
+              <li>OpenCode, Mistral(functions)</li>
             </ul>
             <h3>Books</h3>
             <ul>
