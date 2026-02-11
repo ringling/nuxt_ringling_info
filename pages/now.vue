@@ -13,7 +13,7 @@
         generated with
         Midjourney. Deployed on Hetzner as a Docker image
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: February 9, 2025</div>
+      <div class="m-4 mb-8 text-xs">Last updated: February 11, 2025</div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         
@@ -25,6 +25,7 @@
             <ul>
               <li>初心</li>
               <li>Pandas</li>
+              <li>OpenCode with Devstral Small 2</li>
             </ul>
             <h3>Books</h3>
             <ul>
@@ -42,7 +43,7 @@
             <ul>
               <li>Enneagram</li>
               <li>無心</li>
-              <li>OpenCode, Mistral(functions)</li>
+              <li>Mistral(functions)</li>
             </ul>
             <h3>Books</h3>
             <ul>
