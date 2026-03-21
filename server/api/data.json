@@ -101,15 +101,33 @@
     "list": [
       {
         "type": "conferences",
+        "title": "SAOS 2026",
+        "description": "Denmark",
+        "documentation": "Software Architecture Open Space"
+      },
+      {
+        "type": "conferences",
         "title": "Goatmire 2025",
         "description": "Varberg, Sweden",
         "documentation": ""
+      },
+            {
+        "type": "conferences",
+        "title": "SAOS 2025",
+        "description": "Denmark",
+        "documentation": "Software Architecture Open Space"
       },
       {
         "type": "conferences",
         "title": "Agile Coach Camp 2024",
         "description": "Denmark",
         "documentation": ""
+      },
+      {
+        "type": "conferences",
+        "title": "SAOS 2024",
+        "description": "Denmark",
+        "documentation": "Software Architecture Open Space"
       },
       {
         "type": "conferences",
@@ -131,6 +149,12 @@
       },
       {
         "type": "conferences",
+        "title": "SAOS 2019",
+        "description": "Denmark",
+        "documentation": "Software Architecture Open Space"
+      },
+      {
+        "type": "conferences",
         "title": "Agile Coach Camp 2017",
         "description": "Denmark - co-organizer",
         "documentation": ""
@@ -146,6 +170,12 @@
         "title": "Elixir Conf Europe 2016",
         "description": "Berlin",
         "documentation": ""
+      },
+      {
+        "type": "conferences",
+        "title": "SAOS 2016",
+        "description": "Denmark",
+        "documentation": "Software Architecture Open Space"
       },
       {
         "type": "conferences",
