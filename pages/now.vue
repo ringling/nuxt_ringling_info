@@ -13,17 +13,18 @@
         generated with
         Midjourney. Deployed on Hetzner as a Docker image
       </div>
-      <div class="m-4 mb-8 text-xs">Last updated: March 6, 2025</div>
+      <div class="m-4 mb-8 text-xs">Last updated: March 6, 2026</div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 
         <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/copper_wedding.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/copper_wedding.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">March 2026</h5>
           <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
             <ul>
               <li>Marimo notebooks</li>
+              <li>Kubernetes</li>
             </ul>
             <h3>Books</h3>
             <ul>
@@ -34,7 +35,7 @@
         </div>
         
         <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/shoshin.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/shoshin.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">February 2026</h5>
           <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
@@ -51,7 +52,7 @@
         </div>
         
         <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/2026.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/2026.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">January 2026</h5>
           <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
@@ -68,7 +69,7 @@
         </div>
       
         <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/christmas2025.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/christmas2025.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">December 2025</h5>
           <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
@@ -83,7 +84,7 @@
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/japan_immersion.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/japan_immersion.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">November 2025</h5>
           <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
@@ -98,7 +99,7 @@
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/bridge.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/bridge.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">October 2025</h5>
           <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
@@ -113,7 +114,7 @@
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/glc.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/glc.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">September 2025</h5>
           <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
@@ -128,7 +129,7 @@
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/olivia.png')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/olivia.png')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">August 2025</h5>
           <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
@@ -144,7 +145,7 @@
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/icehotel.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/icehotel.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">July 2025</h5>
           <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
@@ -163,7 +164,7 @@
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/boy_anim.gif')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/boy_anim.gif')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">June 2025</h5>
           <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
@@ -180,7 +181,7 @@
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/faroer.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right" />
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/faroer.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">May 2025</h5>
           <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
@@ -197,7 +198,7 @@
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/europe_first.png')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/europe_first.png')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">April 2025</h5>
           <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
@@ -237,7 +238,7 @@
           </div>
         </div>
         <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/disaster-start.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/disaster-start.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">February 2025</h5>
           <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
@@ -257,7 +258,7 @@
         </div>
 
         <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/2025.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/2025.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">January 2025</h5>
           <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
@@ -685,7 +686,7 @@
 
         <div class="block max-w p-6 bg-white markdown neu">
           <!--img src="/img/elizabeth.jpg" class="bg-[url('/img/elizabeth.jpg')] lg:w-48 md:w-32 w-16 rounded-lg float-right hover:bg-[url('/img/uap.jpg')]" /-->
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/elizabeth.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-16 w-16 rounded-lg float-right hover:bg-[url('/img/uap.jpg')]" />
+          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/elizabeth.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right hover:bg-[url('/img/uap.jpg')]" />
           <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">July 2023</h5>
           <div class="font-normal text-gray-700">
             <h3>Areas of interest</h3>
