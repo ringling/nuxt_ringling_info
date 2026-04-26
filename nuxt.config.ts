@@ -1,17 +1,10 @@
 export default defineNuxtConfig({
-  //ssr: false,
-
   modules: [
     '@nuxtjs/tailwindcss'
   ],
-  content: {
-    // https://content.nuxtjs.org/api/configuration
-  },
   css: [
     '@/assets/css/styles.scss',
-
   ],
-
   app: {
     head: {
       meta: [
@@ -21,11 +14,11 @@ export default defineNuxtConfig({
       link: [
         { rel: 'sitemap', type: 'application/xml', title: 'Sitemap - Thomas Ringling', href: '/sitemap.xml' },
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap' }
-
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Work+Sans:wght@300;400;500;600&family=Noto+Serif+JP:wght@200;300;400;500&family=JetBrains+Mono:wght@300;400&display=swap' },
       ],
-
-      title: "Thomas Ringling: A lifetime learner and polyglot software craftsman"
+      title: 'Thomas Ringling — Developer, Nærum'
     }
   }
 })
