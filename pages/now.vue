@@ -8,7 +8,7 @@
         what I've been doing and what I've learned. It's also a way for me to share what I've learned with others.
       </p>
       <p class="meta-line">
-        Built with TypeScript, Vue 3, Nuxt 3 &amp; TailwindCSS. Images generated with Midjourney. Deployed on Hetzner as a Docker image. <span class="updated">Last updated: April 2026</span>
+        Built with TypeScript, Vue 3, Nuxt 3 &amp; TailwindCSS. Images generated with Midjourney. Deployed on Hetzner as a Docker image. <span class="updated">Last updated: April 27, 2026</span>
       </p>
 
       <div class="cards-grid">
@@ -83,6 +83,15 @@ function getYear(month: string): string {
 }
 
 const cards: NowEntry[] = [
+  {
+    month: 'April 2026',
+    img: '/img/2026_hannah_9.jpg',
+    interests: ['Claude Design', 'Marimo'],
+    books: [
+      { title: 'Shogun', author: 'James Clavell' },
+      { title: 'Hvis jeg ikke ringer i morgen', author: 'Kim Eg Thygesen' },
+    ],
+  },
   {
     month: 'March 2026',
     img: '/img/copper_wedding.jpg',

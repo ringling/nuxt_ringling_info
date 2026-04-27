@@ -16,7 +16,7 @@
             software enthusiast.
           </h1>
           <p class="hero-lede">
-            Twenty-three years of shipping software. Currently coaching teams and writing code north of Copenhagen.
+            Twenty-five years of shipping software. Currently working as a data engineer north of Copenhagen.
           </p>
 
           <div class="link-list reveal d2">
@@ -58,7 +58,7 @@
 useHead({
   title: 'Thomas Ringling — Developer, Nærum',
   meta: [
-    { name: 'description', content: 'Thomas Ringling — Creative technologist and software enthusiast, twenty-three years of shipping software, north of Copenhagen.' }
+    { name: 'description', content: 'Thomas Ringling — Creative technologist and software enthusiast, twenty-five years of shipping software, north of Copenhagen.' }
   ],
   link: [
     { rel: 'canonical', href: 'https://www.ringling.info' }
