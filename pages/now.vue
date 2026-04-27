@@ -1,957 +1,637 @@
 <template>
-  <div class="">
-    <Menu bgColor="bg-white" />
-    <div class="container mx-auto">
-
-      <h1 class="my-8">Now</h1>
-      <div class="m-4 mb-4">This page is a living document that I try to update every month. It's a way for me to keep
-        track of
+  <div>
+    <Menu />
+    <div class="page-inner">
+      <h1 class="page-h1">Now</h1>
+      <p class="lede">
+        This page is a living document that I try to update every month. It's a way for me to keep track of
         what I've been doing and what I've learned. It's also a way for me to share what I've learned with others.
-      </div>
-      <div class="m-4 mb-4">Throughout the past year (2023), I have been quite fortunate, working only three days a week. I dedicate the remaining two days to learning, enrolling in various courses, engaging in extensive reading, and practicing Japanese. This experience is evident on this page.</div>
-      <div class="m-4 mb-8 text-xs">This site is built with Typescript, Vue 3, Nuxt 3 and TailwindCSS. Images are
-        generated with
-        Midjourney. Deployed on Hetzner as a Docker image
-      </div>
-      <div class="m-4 mb-8 text-xs">Last updated: March 6, 2026</div>
+      </p>
+      <p class="meta-line">
+        Built with TypeScript, Vue 3, Nuxt 3 &amp; TailwindCSS. Images generated with Midjourney. Deployed on Hetzner as a Docker image. <span class="updated">Last updated: April 2026</span>
+      </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/copper_wedding.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">March 2026</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Marimo notebooks</li>
-              <li>Kubernetes</li>
-            </ul>
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>History of War in 100 Battles</b> <em class="whitespace-nowrap">Richard Overy</em> </li>
-              <li class="grid grid-cols-1"> <b>Shoshin</b> <em class="whitespace-nowrap">Hiroshi Nakamura</em> </li>
-            </ul>
+      <div class="cards-grid">
+        <template v-for="(card, idx) in cards" :key="card.month">
+          <div v-if="getYear(card.month) !== getYear(cards[idx - 1]?.month ?? '')" class="year-divider">
+            <span class="year-num">{{ getYear(card.month) }}</span>
+            <span class="year-line" />
           </div>
-        </div>
-        
-        <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/shoshin.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">February 2026</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>初心</li>
-              <li>Pandas</li>
-              <li>OpenCode with Devstral Small 2</li>
-            </ul>
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Domain-Specific Small Language Models</b> <em class="whitespace-nowrap">Guglielmo Iozzia</em> </li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/2026.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">January 2026</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Enneagram</li>
-              <li>無心</li>
-              <li>Mistral(functions)</li>
-            </ul>
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Russerne kommer</b> <em class="whitespace-nowrap">Tom Buk-Swienty</em> </li>
-            </ul>
-          </div>
-        </div>
-      
-        <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/christmas2025.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">December 2025</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>改善 初心 生き甲斐</li>
-            </ul>
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Kaizen - et lille skridt kan ændre dit liv</b> <em class="whitespace-nowrap">Robert Maurer</em> </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/japan_immersion.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">November 2025</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>日本語</li>
-            </ul>
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Kryssing - Manden, der valgte forkert</b> <em class="whitespace-nowrap">Thomas Harder</em> </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/bridge.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">October 2025</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Claude Code commands</li>
-            </ul>
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Range</b> <em class="whitespace-nowrap">David Epstein</em> </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/glc.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">September 2025</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Claude Code(subagents)</li>
-            </ul>
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Tælle til en, tælle til to</b> <em class="whitespace-nowrap">Jørgen Svejstrup</em> </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/olivia.png')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">August 2025</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Claude Code(subagents)</li>
-              <li>MCP servers</li>
-            </ul>
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>L'Heure des Prédateurs</b> <em class="whitespace-nowrap">Giuliano da Empoli</em> </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/icehotel.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">July 2025</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>knowledge graphs</li>
-              <li>RAG</li>
-              <li>Claude Code</li>
-            </ul>
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Essential GraphRAG</b> <em class="whitespace-nowrap">Tomaž Bratanič & Oskar Hane</em> </li>
-              <li class="grid grid-cols-1"> <b>Adopting Elixir</b> <em class="whitespace-nowrap">Ben Marx, José Valim, Bruce Tate</em> </li>
-              <li class="grid grid-cols-1"> <b>Genesis</b> <em class="whitespace-nowrap">Henry A. Kissinger, Eric Schmidt, Craig Mundie</em> </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/boy_anim.gif')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">June 2025</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>html to pdf</li>
-              <li>DeepSeek R1, Qdrant</li>
-            </ul>
-
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Real-World Event Sourcing</b> <em class="whitespace-nowrap">Kevin Hoffman</em> </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/faroer.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">May 2025</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Raycast</li>
-              <li>Productivity</li>
-            </ul>
-
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Berlin brænder</b> <em class="whitespace-nowrap">Tom Buk-Swienty</em> </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/europe_first.png')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">April 2025</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Svelte</li>
-              <li>Elixir Phoenix & LiveView</li>
-            </ul>
-
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>The Idiot</b> <em class="whitespace-nowrap">Fyodor Dostoyevsky</em></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/womb.png" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">March 2025</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Pydantic AI</li>
-              <li>Model Context Protocol</li>
-            </ul>
-
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Learn Japanese</b> <em class="whitespace-nowrap">Paul Noble</em></li>
-              <li class="grid grid-cols-1"> <b>Shogun</b> <em class="whitespace-nowrap">James Clavell</em></li>
-              <li class="grid grid-cols-1"> <b>Personforsikring</b> <em class="whitespace-nowrap">Inge Brabrand</em></li>
-            </ul>
-
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>How Transformer LLMs Work</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
-            </ul>
-          </div>
-        </div>
-        <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/disaster-start.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">February 2025</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Obsidian</li>
-              <li>3 Echonomies</li>
-              <li>DDD</li>
-              <li>Modular Monolith</li>
-            </ul>
-
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Norwegian Wood</b> <em class="whitespace-nowrap">Haruki Murakami</em></li>
-              <li class="grid grid-cols-1"> <b>Software Engineering at Google</b> <em class="whitespace-nowrap">Titus Winters, Tom Manshreck and Hyrum Wright</em></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/2025.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right hover:bg-[url('/img/nhi.jpg')]" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">January 2025</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Rust</li>
-              <li>Docling, Neo4J</li>
-            </ul>
-
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>ISTQB Foundation</b> <em class="whitespace-nowrap">Testhuset</em></li>
-            </ul>
-
-            <h3>Books</h3>
-            <ul>
-              <!-- <li class="grid grid-cols-1"> <b>The Consolation of Philosophy</b> <em class="whitespace-nowrap">Boethius</em></li> -->
-              <li class="grid grid-cols-1"> <b>Software Engineering at Google</b> <em class="whitespace-nowrap">Titus Winters, Tom Manshreck and Hyrum Wright</em></li>
-              <li class="grid grid-cols-1"> <b>Gid min chef var høvding</b> <em class="whitespace-nowrap">Dennis Nørmark</em></li>
-              <li class="grid grid-cols-1"> <b>Empire of the Summer Moon</b> <em class="whitespace-nowrap">S. C. Gwynne</em></li>
-            </ul>
-          </div>
-        </div>
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/drones.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">December 2024</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>LLM - basics(Elixir)</li>
-              <li>DuckDB, Polars, Pandas</li>
-            </ul>
-
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Knowledge Graphs for RAG</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
-            </ul>
-            <h3>Books</h3>
-            <ul>
-              <!-- <li class="grid grid-cols-1"> <b>The Consolation of Philosophy</b> <em class="whitespace-nowrap">Boethius</em></li> -->
-              <li class="grid grid-cols-1"> <b>The Castaway</b> <em class="whitespace-nowrap">W. W. Jacobs</em></li>
-              <li class="grid grid-cols-1"> <b>It Doesn’t Have to Be Crazy at Work</b> <em class="whitespace-nowrap">Jason Fried & David Heinemeier Hansson</em></li>
-              <li class="grid grid-cols-1"> <b>Vikingernes Helte</b> <em class="whitespace-nowrap">Niels Saxtorph</em></li>
-              <li class="grid grid-cols-1"> <b>Build a Large Language Model (From Scratch)</b> <em class="whitespace-nowrap">Sebastian Raschka</em></li>
-            </ul>
-          </div>
-        </div>
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/senate.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">November 2024</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Knowledge graphs</li>
-              <li>LLM - basics(Python)</li>
-              <li>Elixir: Livebook, Nx, Explorer</li>
-            </ul>
-
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Knowledge Graphs for RAG</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
-            </ul>
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>The Edgar Allan Poe Collection</b> <em class="whitespace-nowrap">Edgar Allan Poe</em></li>
-              <li class="grid grid-cols-1"> <b>Build a Large Language Model (From Scratch)</b> <em class="whitespace-nowrap">Sebastian Raschka</em></li>
-            </ul>
-          </div>
-        </div>
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/nov2024.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">October 2024</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>LLM - basics</li>
-            </ul>
-
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>1000-årsriget</b> <em class="whitespace-nowrap">Tonny Gulløv</em></li>
-              <li class="grid grid-cols-1"> <b>Seikatsu (生活)</b> <em class="whitespace-nowrap">Asger Røjle Christensen</em></li>
-            </ul>
-          </div>
-        </div>
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/zen.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">September 2024</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Structured Output - OpenAI</li>
-              <li>Change Management</li>
-              <li>Multimodal RAG</li>
-            </ul>
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Japanese level A2(まるごと)</b> <em class="whitespace-nowrap">FOF</em></li>
-              <li class="grid grid-cols-1"> <b>Prompt Compression and Query Optimization</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
-            </ul>
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Det ensomme hjerte</b> <em class="whitespace-nowrap">Tom Buk-Swienty</em></li>
-              <li class="grid grid-cols-1"> <b>Zen: The Art of Simple Living</b> <em class="whitespace-nowrap">Shunmyo Masuno</em></li>
-              <li class="grid grid-cols-1"> <b>Ulvehjerter</b> <em class="whitespace-nowrap">Puk Damsgård</em></li>
-            </ul>
-          </div>
-        </div>
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/lego.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">August 2024</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Mojo</li>
-              <li>FastHTML</li>
-              <li>Multimodal RAG</li>
-            </ul>
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Systems Thinking Course</b> <em class="whitespace-nowrap">Dave Shapiro/Patreon</em></li>
-            </ul>
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Imminent</b> <em class="whitespace-nowrap">Lois Elizondo</em></li>
-              <li class="grid grid-cols-1"> <b>Kan man tænke sig rask</b> <em class="whitespace-nowrap">Thomas Breinholt</em></li>
-              <li class="grid grid-cols-1"> <b>What is ChatGPT Doing...and Why Does It Work?</b> <em class="whitespace-nowrap">Stephen Wolfram</em></li>
-              <li class="grid grid-cols-1"> <b>Die Welt von Gestern: Erinnerungen eines Europäers</b> <em class="whitespace-nowrap">Stefan Zweig</em></li>
-            </ul>
-          </div>
-        </div>
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/norway.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">July 2024</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Multimodal RAG</li>
-              <li>Embeddings, Voyage</li>
-              <li>Pandas AI</li>
-            </ul>
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Building Multimodal Search and RAG</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
-            </ul>
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>The Little Prince</b> <em class="whitespace-nowrap">Antoine de Saint-Exupéry</em></li>
-              <li class="grid grid-cols-1"> <b>Siddhartha</b> <em class="whitespace-nowrap">Hermann Hesse</em></li>
-              <li class="grid grid-cols-1"> <b>Artemis</b> <em class="whitespace-nowrap">Andy Weir</em></li>
-            </ul>
-          </div>
-        </div>
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/tau-ceti.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">June 2024</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Embeddings, Nomic, Llama3, OpenAI</li>
-            </ul>
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Building Multimodal Search and RAG</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
-            </ul>
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>AI Epoken</b> <em class="whitespace-nowrap">Anders Bæk</em></li>
-              <li class="grid grid-cols-1"> <b>Project Hail Mary</b> <em class="whitespace-nowrap">Andy Weir</em></li>
-              <li class="grid grid-cols-1"> <b>Uncommon Sense Teaching</b> <em class="whitespace-nowrap">Barbara Oakley & Terrence J. Sejnowski</em></li>
-            </ul>
-          </div>
-        </div>
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/porto_santo.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">May 2024</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>LlamaIndex, RAG and ChromaDB</li>
-              <li>BDD / Behave</li>
-            </ul>
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Open Source Models with Hugging Face</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
-              <li class="grid grid-cols-1"> <b>Systems Thinking: Essential Concepts</b> <em class="whitespace-nowrap">udemy</em></li>
-              <li class="grid grid-cols-1"> <b>Beginning Llamafile for Local Large Language Models</b> <em class="whitespace-nowrap">Coursera</em></li>
-            </ul>
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Den Falske Løjtnant</b> <em class="whitespace-nowrap">Martin Q. Magnussen</em></li>
-              <li class="grid grid-cols-1"> <b>Before The Coffee Gets Cold(コーヒーが冷めないうちに)</b> <em class="whitespace-nowrap">Toshikazu Kawaguchi</em></li>
-              <li class="grid grid-cols-1"> <b>Uncommon Sense Teaching</b> <em class="whitespace-nowrap">Barbara Oakley & Terrence J. Sejnowski</em></li>
-              <li class="grid grid-cols-1"> <b>Book You Wish Your Parents Had Read (and Your Children Will Be Glad That You Did)</b> <em class="whitespace-nowrap">Philippa Perry</em></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/hannah.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">April 2024</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Systems Thinking</li>
-              <li>Web Assembly</li>
-              <li>BDD / Behave</li>
-            </ul>
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Agile Leadership: Introduction to Change</b> <em class="whitespace-nowrap">Coursera/University of Colorado System</em></li>
-              <li class="grid grid-cols-1"> <b>Systems Thinking: Essential Concepts</b> <em class="whitespace-nowrap">udemy</em></li>
-              <li class="grid grid-cols-1"> <b>LLM University</b> <em class="whitespace-nowrap">Cohere</em></li>
-              <li class="grid grid-cols-1"> <b>Red Teaming LLM Applications</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
-            </ul>
-
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Factfulness</b> <em class="whitespace-nowrap">Hans Rosling</em></li>
-              <li class="grid grid-cols-1"> <b>En dag i Ivan Denisovitjs liv</b> <em class="whitespace-nowrap">Aleksandr Solsjenitsyn</em></li>
-              <li class="grid grid-cols-1"> <b>Turn the Ship Around! - A True Story of Turning Followers Into Leaders</b> <em class="whitespace-nowrap">L. David Marquet</em></li>
-            </ul>
-          </div>
-        </div>
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/shogun.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">March 2024</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Domain Storytelling</li>
-              <li>Pydantic</li>
-            </ul>
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>LangChain Chat with Your Data</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
-              <li class="grid grid-cols-1"> <b>Large Language Models with Semantic Search</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
-            </ul>
-
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Magteliten</b> <em class="whitespace-nowrap">Markus Bernsen, Christoph Ellersgaard & Anton Grau Larsen</em></li>
-              <li class="grid grid-cols-1"> <b>Domain Storytelling</b> <em class="whitespace-nowrap">Stefan Hofer & Henning Schwentner</em></li>
-              <li class="grid grid-cols-1"> <b>Gopler ældes baglæns</b> <em class="whitespace-nowrap">Nicklas Brendborg</em></li>
-            </ul>
-          </div>
-        </div>
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/aquarius.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">February 2024</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Weaviate</li>
-              <li>AlpineJS</li>
-              <li>Polars</li>
-              <li>Pydantic</li>
-            </ul>
-
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Developing a Systems Mindset</b> <em class="whitespace-nowrap">Coursera/University of Colorado Boulder</em></li>
-            </ul>
-
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Change By Design</b> <em class="whitespace-nowrap">Tim Brown</em></li>
-              <li class="grid grid-cols-1"> <b>Dit selvhelbredende sind</b> <em class="whitespace-nowrap">Mette Louise Holland</em></li>
-              <li class="grid grid-cols-1"> <b>Streamlit for Data Science</b> <em class="whitespace-nowrap">Tyler Richards</em></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/new_year2024.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">January 2024</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-
-            <ul>
-              <li>Weaviate</li>
-              <li>LangChain</li>
-              <li>Ludwig (ludwig.ai)</li>
-              <li>AlpineJS</li>
-            </ul>
-
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Developing a Systems Mindset</b> <em class="whitespace-nowrap">Coursera/University of Colorado Boulder</em></li>
-              <li class="grid grid-cols-1"> <b>Vector Databases: from Embeddings to Applications</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
-            </ul>
-
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>You're Not Listening</b> <em class="whitespace-nowrap">Kate Murphy</em> </li>
-              <li class="grid grid-cols-1"> <b>UFO-Mysteriet - På sporet af min far og de flyvende tallerkner</b> <em class="whitespace-nowrap">Frederik Dirks Gottlieb</em> </li>
-              <li class="grid grid-cols-1"> <b>The Case Against Reality</b> <em class="whitespace-nowrap">Donald D. Hoffman</em> </li>
-            </ul>
-          </div>
-        </div>
-
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/winter_wonderland.jpeg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">December 2023</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-
-            <ul>
-              <li>Vector Databases</li>
-              <li>Scikit Learn</li>
-              <li>LangChain</li>
-            </ul>
-
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>LangChain for LLM Application Development</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
-              <li class="grid grid-cols-1"> <b>Unsupervised Learning, Recommenders, Reinforcement Learning</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
-            </ul>
-
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Sapiens</b> <em class="whitespace-nowrap">Yuval Noah Harari</em> </li>
-              <li class="grid grid-cols-1"> <b>Encounters</b> <em class="whitespace-nowrap">Diana W. Pasulka</em> </li>
-              <li class="grid grid-cols-1"> <b>Atomic Habits</b> <em class="whitespace-nowrap">James Clear</em> </li>
-            </ul>
-          </div>
-        </div>
-          <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/gen-ai.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">November 2023</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-
-            <ul>
-              <li>Scikit Learn</li>
-              <li>MemGPT</li>
-              <li>InsightFace library</li>
-              <li>Zettelkasten method & Obsidian</li>
-              <li>OpenAI GPT 4.0</li>
-            </ul>
-
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Generative AI for Everyone</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
-            </ul>
-
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Software Engineering at Google</b> <em class="whitespace-nowrap">Winters, Manshreck & Wright</em> </li>
-              <li class="grid grid-cols-1"> <b>Die Vermessung der Welt</b> <em class="whitespace-nowrap">Daniel Kehlmann</em> </li>
-            </ul>
-          </div>
-        </div>
-          <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/kabuki.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">October 2023</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <ul>
-              <li>Llama with Ollama</li>
-              <li>Scikit Learn</li>
-              <li>llama-index, Chat with your PDFs</li>
-              <li>Figma, Dall-E and Midjourney, UI design</li>
-              <li>InsightFace library</li>
-
-            </ul>
-
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Advanced Learning Algorithms</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
-            </ul>
-
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>grokking Machine Learning</b> <em class="whitespace-nowrap">Luis G. Serrano</em> </li>
-              <li class="grid grid-cols-1"> <b>Jytte vender tilbage</b> <em class="whitespace-nowrap">Morten Münster</em> </li>
-
-            </ul>
-          </div>
-        </div>
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <!--img src="/img/elizabeth.jpg" class="bg-[url('/img/elizabeth.jpg')] lg:w-48 md:w-32 w-16 rounded-lg float-right hover:bg-[url('/img/uap.jpg')]" /-->
-          <img src="/img/wiking.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">September 2023</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <h4>Machine Learning</h4>
-
-            <ul>
-              <li>Theory and application</li>
-              <li>OpenAI API - ChatGPT 4.0</li>
-              <li>Midjourney</li>
-            </ul>
-
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Japanese - level A2(Marugoto)</b> <em class="whitespace-nowrap">FOF Lyngby 2023-2024</em></li>
-              <li class="grid grid-cols-1"> <b>Supervised Machine Learning: Regression and Classification</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
-              <li class="grid grid-cols-1"> <b>Probability & Statistics for Machine Learning and Data Science</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
-              <li class="grid grid-cols-1"> <b>Building Systems with the ChatGPT API</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
-            </ul>
-
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Jytte fra Marketing er desværre gået for i dag</b> <em class="whitespace-nowrap">Morten Münster</em> </li>
-              <li class="grid grid-cols-1"> <b>Viking</b> <em class="whitespace-nowrap">Jeanette Varberg</em> </li>
-              <!-- <li class="grid grid-cols-1"> <b>A Column of Fire</b> <em class="whitespace-nowrap">Ken Follett</em> </li> -->
-
-            </ul>
-          </div>
-        </div>
-
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/probability.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" /><h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">August 2023</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <h4>Machine Learning</h4>
-
-            <ul>
-              <li>OpenAI API - ChatGPT 3.5</li>
-              <li>Midjourney</li>
-            </ul>
-
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Calculus for Machine Learning and Data Science</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
-              <li class="grid grid-cols-1"> <b>Linear Algebra for Machine Learning and Data Science</b> <em class="whitespace-nowrap">Coursera/DeepLearning.AI</em></li>
-              <li class="grid grid-cols-1"> <b>Statistical Learning</b> <em class="whitespace-nowrap">StanfordOnline • STATSX0001</em></li>
-             </ul>
-
-            <h3>Books</h3>
-            <ul>
-              <!-- <li class="grid grid-cols-1"> <b>A Column of Fire</b> <em class="whitespace-nowrap">Ken Follett</em> </li> -->
-              <li class="grid grid-cols-1"> <b>Scary Smart</b> <em class="whitespace-nowrap">Mo Gawdat</em></li>
-            </ul>
-          </div>
-        </div>
-
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <!--img src="/img/elizabeth.jpg" class="bg-[url('/img/elizabeth.jpg')] lg:w-48 md:w-32 w-16 rounded-lg float-right hover:bg-[url('/img/uap.jpg')]" /-->
-          <div  class="bg-contain bg-no-repeat bg-center border bg-[url('/img/elizabeth.jpg')] lg:w-48 lg:h-48 md:w-32 md:h-32 h-32 w-32 rounded-lg float-right hover:bg-[url('/img/uap.jpg')]" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">July 2023</h5>
-          <div class="font-normal text-gray-700">
-            <h3>Areas of interest</h3>
-            <h4>Machine Learning</h4>
-
-            <ul>
-              <li>Theory and application</li>
-              <li>Chat with your PDF, using OpenAI, Huggingface, Streamlit</li>
-              <li>OpenAI API - Davinci, ChatGPT 3.5</li>
-              <li>Midjourney</li>
-            </ul>
-
-
-            <h4>Misc</h4>
-            <ul>
-              <li>Ontology, metatheory</li>
-              <li>Barefoot training, shoes etc</li>
-            </ul>
-
-
-            <h3>Courses</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Fat Chance: Probability from the Ground Up</b> <em class="whitespace-nowrap">HarvardX • FC1x</em></li>
-            </ul>
-
-            <h3>Books</h3>
-            <ul>
-              <li class="grid grid-cols-1"> <b>Middelalderen i Danmark</b> <em class="whitespace-nowrap">Niels Knud Liebgott</em> </li>
-              <!-- <li class="grid grid-cols-1"> <b>A Column of Fire</b> <em class="whitespace-nowrap">Ken Follett</em> </li> -->
-              <li class="grid grid-cols-1"> <b>Fat Chance! Probabilty from 0 to 1</b> <em class="whitespace-nowrap">Benedict Gross, Joe Harris & Emily Riehl</em></li>
-              <li class="grid grid-cols-1"> <b>The Hundred-Page Machine Learning Book</b> <em class="whitespace-nowrap">Andriy Burkov</em> </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/frankenstein.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">June 2023</h5>
-          <div class="font-normal text-gray-700">
-
-          <h3>Areas of interest</h3>
-          <h4>Machine Learning</h4>
-          <ul>
-            <li>Theory and application</li>
-            <li>OpenAI API - ChatGPT 3.5</li>
-            <li>OpenAI API - Whisper</li>
-            <li>Midjourney</li>
-
-
-          </ul>
-
-          <h4>Misc</h4>
-          <ul>
-            <li>Pyscript</li>
-            <li>Mojo</li>
-          </ul>
-
-          <h3>Courses</h3>
-          <ul>
-            <li class="grid grid-cols-1"> <b>Building Systems with the ChatGPT API</b> <em class="whitespace-nowrap">DeepLearning.AI</em></li>
-          </ul>
-
-          <h3>Books</h3>
-          <ul>
-            <li class="grid grid-cols-1"> <b>The Alchemist</b> <em class="whitespace-nowrap">Paulo Coelho</em></li>
-            <li class="grid grid-cols-1"> <b>Frankenstein</b> <em class="whitespace-nowrap">Mary Shelley</em></li>
-
-          </ul>
-
-          </div>
-        </div>
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/ai_mosaik.jpg" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">May 2023</h5>
-          <div class="font-normal text-gray-700">
-
-          <h3>Areas of interest</h3>
-          <h4>Machine Learning</h4>
-          <ul>
-            <li class="grid grid-cols-1"> <b>Theory and application</b>
-              <em class="whitespace-nowrap">
-                <ul>
-                  <li>Support Vector Machines</li>
-                  <li>Linear Regression</li>
-                </ul>
-              </em>
-            </li>
-            <li>OpenAI API</li>
-            <li>Midjourney</li>
-            <li>HuggingFace</li>
-            <li>ChatGPT</li>
-            <li>Python, Elixir Nx</li>
-          </ul>
-
-
-          <h4>Other</h4>
-          <ul>
-            <li>Anaconda 2023.3</li>
-            <li>AlpineJS, Tornado & Websockets</li>
-          </ul>
-
-          <h3>Courses</h3>
-          <ul>
-            <li class="grid grid-cols-1"> <b>ChatGPT Prompt Engineering for Developers</b> <em>DeepLearning.AI</em> </li>
-          </ul>
-
-          <h3>Books</h3>
-          <ul>
-            <li class="grid grid-cols-1"> <b>Modern Software Engineering</b> <em>David Farley</em> </li>
-            <li class="grid grid-cols-1"> <b>Pirate Latitudes</b> <em>Michael Crichton</em> </li>
-          </ul>
-
-          </div>
-        </div>
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/ai.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">April 2023</h5>
-          <div class="font-normal text-gray-700">
-          <h3>Areas of interest</h3>
-          <h4>Machine Learning</h4>
-          <ul>
-            <li>Gradio</li>
-            <li>OpenAI</li>
-            <li>Whisper</li>
-            <li>AssemblyAI</li>
-            <li>Python, Elixir Nx, Julia</li>
-            <li>Midjourney</li>
-            <li>ChatGPT</li>
-          </ul>
-
-          <h4>Other</h4>
-          <ul>
-            <li>Pandas 2.0</li>
-            <li>Github Copilot X</li>
-            <li>Playwright (end to end testing)</li>
-          </ul>
-
-          <h3>Courses</h3>
-          <ul>
-            <li class="grid grid-cols-1"> <b>MIT 6.S191: Introduction to Deep Learning </b> <em>Youtube</em> </li>
-          </ul>
-
-          <h3>Books</h3>
-          <ul>
-            <li class="grid grid-cols-1"> <b>The Andromeda Evolution</b> <em class="whitespace-nowrap">Daniel H. Wilson and Michael
-                Crichton</em> </li>
-            <li class="grid grid-cols-1"> <b>Ikigai</b> <em class="whitespace-nowrap">Héctor García and Francesc Miralles</em> </li>
-
-          </ul>
-
-          </div>
-        </div>
-
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/python.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">March 2023</h5>
-          <div class="font-normal text-gray-700">
-          <h3>Areas of interest</h3>
-          <h4>Data Science</h4>
-          <ul>
-            <li>SQLite</li>
-            <li>Arrow</li>
-            <li>Pandas</li>
-            <li>Polars</li>
-          </ul>
-
-          <h3>Books</h3>
-          <ul>
-            <li class="grid grid-cols-1"> <b>Niels Bohr - Det beskedne geni</b> <em>Charlotte Koldbye</em> </li>
-            <li class="grid grid-cols-1"> <b>ZOV</b> <em>Pavel Filatjev</em> </li>
-            <li class="grid grid-cols-1"> <b>Stalingrad</b> <em>Antony Beevor</em> </li>
-          </ul>
-
-          </div>
-        </div>
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/relax.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">December 2022 - February
-            2023</h5>
-          <div class="font-normal text-gray-700 dark:text-gray-400">
-          <h3>Books</h3>
-          <ul>
-            <li class="grid grid-cols-1"> <b>Lær at præstere, når du skal</b> <em class="whitespace-nowrap">Lars Robl</em> </li>
-            <li class="grid grid-cols-1"> <b>Kaptajn Dinesen - Ild og blod</b> <em class="whitespace-nowrap">Tom Buk-Swienty</em> </li>
-            <li class="grid grid-cols-1"> <b>Safari fra helvede</b> <em class="whitespace-nowrap">Tom Buk-Swienty</em> </li>
-          </ul>
-          </div>
-        </div>
-
-        <div class="block max-w p-6 bg-white markdown neu">
-          <img src="/img/pc.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
-          <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">February - September 2022</h5>
-          <div class="font-normal text-gray-700 dark:text-gray-400">
-          <p>
-            Doing a lot of software development at work
-          </p>
-          <h3>Technologies</h3>
-          <ul>
-            <li>Rust (primarily WASM)</li>
-            <li>Typescript, Vue 3 and Nuxt 3.</li>
-            <li>Python and Pandas</li>
-          </ul>
-
-          <h3>Courses</h3>
-          <ul>
-            <li class="grid grid-cols-1"> <b>The Hardware of a Quantum Computer</b> <em
-                class="whitespace-nowrap">DelftX • QTM2x</em> </li>
-          </ul>
-
-          <h3>Books</h3>
-          <ul>
-            <li class="grid grid-cols-1"> <b>Philosophy of Science: A Very Short Introduction </b> <em>Samir Okasha</em> </li>
-            <li class="grid grid-cols-1"> <b>Butcher's Crossing</b> <em>John Williams</em> </li>
-            <li class="grid grid-cols-1"> <b>What Every BODY is Saying</b> <em>Joe Navarro & Marvin Karlins</em> </li>
-            <li class="grid grid-cols-1"> <b>Tuesdays with Morrie: An Old Man, a Young Man, and Life's Greatest Lesson</b> <em>Mitch Alborn</em> </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="block max-w p-6 bg-white markdown neu">
-        <img src="/img/qc.jpg" alt="" class="lg:w-48 md:w-32 w-16 rounded-lg float-right" />
-        <h5 class="mb-2 mt-4 text-2xl font-bold tracking-tight text-black">June 2021 - January 2022</h5>
-        <div class="font-normal text-gray-700 dark:text-gray-400">
-          <h3>Areas of interest</h3>
-          <h4>Quantum Computing</h4>
-          <ul>
-            <li>Qiskit</li>
-            <li>Linear Algebra in QC</li>
-          </ul>
-
-          <h3>Courses</h3>
-          <ul>
-            <li class="grid grid-cols-1"> <b>Introduction to quantum computing for everyone</b> <em class="whitespace-nowrap">UChicagoX •
-              QUAN11000</em> </li>
-              <li class="grid grid-cols-1"> <b>The quantum internet and quantum computers: how will they change the world?</b> <em
-                class="whitespace-nowrap">DelftX • QTM1x</em> </li>
+          <div class="now-card neu">
+          <img :src="card.img" :alt="card.month" class="card-img" />
+          <div class="card-body">
+            <div class="card-kicker">
+              <span class="kicker-rule" />
+              {{ String(idx + 1).padStart(2, '0') }} / {{ card.month.split(' ').pop() }}
+            </div>
+            <h5 class="card-month">{{ card.month.replace(' ' + card.month.split(' ').pop(), '') }}</h5>
+
+            <template v-if="card.interests && card.interests.length">
+              <div class="section-label">Areas of interest</div>
+              <ul class="item-list">
+                <li v-for="item in card.interests" :key="item" class="item-row">{{ item }}</li>
               </ul>
+            </template>
 
-              <h3>Books</h3>
-              <ul>
-            <li class="grid grid-cols-1"> <b>Leading Change: Why Transformation Efforts Fail</b> <em>John P. Kotter</em> </li>
-            <li class="grid grid-cols-1"> <b>Extraterrestrial</b> <em>Avi Loeb</em> </li>
-            <li class="grid grid-cols-1"> <b>Quantum Computing for Everyone</b> <em>Chris Bernhardt</em> </li>
-            <li class="grid grid-cols-1"> <b>In Plain Sight</b> <em>Ross Coulthart</em> </li>
-            <li class="grid grid-cols-1"> <b>Blood and Thunder</b> <em>Hampton Sides</em> </li>
-          </ul>
+            <template v-if="card.books && card.books.length">
+              <div class="section-label">Books</div>
+              <ul class="item-list">
+                <li v-for="book in card.books" :key="book.title" class="item-row">
+                  <b>{{ book.title }}</b>
+                  <em class="author">— {{ book.author }}</em>
+                </li>
+              </ul>
+            </template>
+
+            <template v-if="card.courses && card.courses.length">
+              <div class="section-label">Courses</div>
+              <ul class="item-list">
+                <li v-for="course in card.courses" :key="course.title" class="item-row">
+                  <b>{{ course.title }}</b>
+                  <em class="author">— {{ course.institution }}</em>
+                </li>
+              </ul>
+            </template>
           </div>
-        </div>
+          </div>
+        </template>
       </div>
     </div>
   </div>
 </template>
+
 <script setup lang="ts">
 useHead({
-  title: 'Thomas Ringling - Now',
-  link: [
-    {rel: "canonical", href: "https://www.ringling.info/now"}
-  ],
-  meta: [
-    { name: 'description', content: 'What am I doing right now and what have I been doing' }
-  ]
+  title: 'Thomas Ringling — Now',
+  link: [{ rel: 'canonical', href: 'https://www.ringling.info/now' }],
+  meta: [{ name: 'description', content: 'What am I doing right now and what have I been doing' }]
 })
 
+interface Book { title: string; author: string }
+interface Course { title: string; institution: string }
+interface NowEntry {
+  month: string
+  img: string
+  interests?: string[]
+  books?: Book[]
+  courses?: Course[]
+}
+
+function getYear(month: string): string {
+  const match = month.match(/\d{4}/)
+  return match ? match[0] : ''
+}
+
+const cards: NowEntry[] = [
+  {
+    month: 'March 2026',
+    img: '/img/copper_wedding.jpg',
+    interests: ['Marimo notebooks', 'Kubernetes'],
+    books: [
+      { title: 'History of War in 100 Battles', author: 'Richard Overy' },
+      { title: 'Shoshin', author: 'Hiroshi Nakamura' },
+    ],
+  },
+  {
+    month: 'February 2026',
+    img: '/img/shoshin.jpg',
+    interests: ['初心', 'Pandas', 'OpenCode with Devstral Small 2'],
+    books: [{ title: 'Domain-Specific Small Language Models', author: 'Guglielmo Iozzia' }],
+  },
+  {
+    month: 'January 2026',
+    img: '/img/2026.jpg',
+    interests: ['Enneagram', '無心', 'Mistral (functions)'],
+    books: [{ title: 'Russerne kommer', author: 'Tom Buk-Swienty' }],
+  },
+  {
+    month: 'December 2025',
+    img: '/img/christmas2025.jpg',
+    interests: ['改善 初心 生き甲斐'],
+    books: [{ title: 'Kaizen - et lille skridt kan ændre dit liv', author: 'Robert Maurer' }],
+  },
+  {
+    month: 'November 2025',
+    img: '/img/japan_immersion.jpg',
+    interests: ['日本語'],
+    books: [{ title: 'Kryssing - Manden, der valgte forkert', author: 'Thomas Harder' }],
+  },
+  {
+    month: 'October 2025',
+    img: '/img/bridge.jpg',
+    interests: ['Claude Code commands'],
+    books: [{ title: 'Range', author: 'David Epstein' }],
+  },
+  {
+    month: 'September 2025',
+    img: '/img/glc.jpg',
+    interests: ['Claude Code (subagents)'],
+    books: [{ title: 'Tælle til en, tælle til to', author: 'Jørgen Svejstrup' }],
+  },
+  {
+    month: 'August 2025',
+    img: '/img/olivia.png',
+    interests: ['Claude Code (subagents)', 'MCP servers'],
+    books: [{ title: "L'Heure des Prédateurs", author: 'Giuliano da Empoli' }],
+  },
+  {
+    month: 'July 2025',
+    img: '/img/icehotel.jpg',
+    interests: ['Knowledge graphs', 'RAG', 'Claude Code'],
+    books: [
+      { title: 'Essential GraphRAG', author: 'Tomaž Bratanič & Oskar Hane' },
+      { title: 'Adopting Elixir', author: 'Ben Marx, José Valim, Bruce Tate' },
+      { title: 'Genesis', author: 'Henry A. Kissinger, Eric Schmidt, Craig Mundie' },
+    ],
+  },
+  {
+    month: 'June 2025',
+    img: '/img/boy_anim.gif',
+    interests: ['html to pdf', 'DeepSeek R1, Qdrant'],
+    books: [{ title: 'Real-World Event Sourcing', author: 'Kevin Hoffman' }],
+  },
+  {
+    month: 'May 2025',
+    img: '/img/faroer.jpg',
+    interests: ['Raycast', 'Productivity'],
+    books: [{ title: 'Berlin brænder', author: 'Tom Buk-Swienty' }],
+  },
+  {
+    month: 'April 2025',
+    img: '/img/europe_first.png',
+    interests: ['Svelte', 'Elixir Phoenix & LiveView'],
+    books: [{ title: 'The Idiot', author: 'Fyodor Dostoyevsky' }],
+  },
+  {
+    month: 'March 2025',
+    img: '/img/womb.png',
+    interests: ['Pydantic AI', 'Model Context Protocol'],
+    books: [
+      { title: 'Learn Japanese', author: 'Paul Noble' },
+      { title: 'Shogun', author: 'James Clavell' },
+      { title: 'Personforsikring', author: 'Inge Brabrand' },
+    ],
+    courses: [{ title: 'How Transformer LLMs Work', institution: 'DeepLearning.AI' }],
+  },
+  {
+    month: 'February 2025',
+    img: '/img/disaster-start.jpg',
+    interests: ['Obsidian', '3 Echonomies', 'DDD', 'Modular Monolith'],
+    books: [
+      { title: 'Norwegian Wood', author: 'Haruki Murakami' },
+      { title: 'Software Engineering at Google', author: 'Titus Winters, Tom Manshreck and Hyrum Wright' },
+    ],
+  },
+  {
+    month: 'January 2025',
+    img: '/img/2025.jpg',
+    interests: ['Rust', 'Docling, Neo4J'],
+    courses: [{ title: 'ISTQB Foundation', institution: 'Testhuset' }],
+    books: [
+      { title: 'Software Engineering at Google', author: 'Titus Winters, Tom Manshreck and Hyrum Wright' },
+      { title: 'Gid min chef var høvding', author: 'Dennis Nørmark' },
+      { title: 'Empire of the Summer Moon', author: 'S. C. Gwynne' },
+    ],
+  },
+  {
+    month: 'December 2024',
+    img: '/img/drones.jpg',
+    interests: ['LLM - basics (Elixir)', 'DuckDB, Polars, Pandas'],
+    courses: [{ title: 'Knowledge Graphs for RAG', institution: 'DeepLearning.AI' }],
+    books: [
+      { title: 'The Castaway', author: 'W. W. Jacobs' },
+      { title: "It Doesn't Have to Be Crazy at Work", author: 'Jason Fried & David Heinemeier Hansson' },
+      { title: 'Vikingernes Helte', author: 'Niels Saxtorph' },
+      { title: 'Build a Large Language Model (From Scratch)', author: 'Sebastian Raschka' },
+    ],
+  },
+  {
+    month: 'November 2024',
+    img: '/img/senate.jpg',
+    interests: ['Knowledge graphs', 'LLM - basics (Python)', 'Elixir: Livebook, Nx, Explorer'],
+    courses: [{ title: 'Knowledge Graphs for RAG', institution: 'DeepLearning.AI' }],
+    books: [
+      { title: 'The Edgar Allan Poe Collection', author: 'Edgar Allan Poe' },
+      { title: 'Build a Large Language Model (From Scratch)', author: 'Sebastian Raschka' },
+    ],
+  },
+  {
+    month: 'October 2024',
+    img: '/img/nov2024.jpg',
+    interests: ['LLM - basics'],
+    books: [
+      { title: '1000-årsriget', author: 'Tonny Gulløv' },
+      { title: 'Seikatsu (生活)', author: 'Asger Røjle Christensen' },
+    ],
+  },
+  {
+    month: 'September 2024',
+    img: '/img/zen.jpg',
+    interests: ['Structured Output - OpenAI', 'Change Management', 'Multimodal RAG'],
+    courses: [
+      { title: 'Japanese level A2 (まるごと)', institution: 'FOF' },
+      { title: 'Prompt Compression and Query Optimization', institution: 'DeepLearning.AI' },
+    ],
+    books: [
+      { title: 'Det ensomme hjerte', author: 'Tom Buk-Swienty' },
+      { title: 'Zen: The Art of Simple Living', author: 'Shunmyo Masuno' },
+      { title: 'Ulvehjerter', author: 'Puk Damsgård' },
+    ],
+  },
+  {
+    month: 'August 2024',
+    img: '/img/lego.jpg',
+    interests: ['Mojo', 'FastHTML', 'Multimodal RAG'],
+    courses: [{ title: 'Systems Thinking Course', institution: 'Dave Shapiro / Patreon' }],
+    books: [
+      { title: 'Imminent', author: 'Lois Elizondo' },
+      { title: 'Kan man tænke sig rask', author: 'Thomas Breinholt' },
+      { title: 'What is ChatGPT Doing...and Why Does It Work?', author: 'Stephen Wolfram' },
+      { title: 'Die Welt von Gestern: Erinnerungen eines Europäers', author: 'Stefan Zweig' },
+    ],
+  },
+  {
+    month: 'July 2024',
+    img: '/img/norway.jpg',
+    interests: ['Multimodal RAG', 'Embeddings, Voyage', 'Pandas AI'],
+    courses: [{ title: 'Building Multimodal Search and RAG', institution: 'DeepLearning.AI' }],
+    books: [
+      { title: 'The Little Prince', author: 'Antoine de Saint-Exupéry' },
+      { title: 'Siddhartha', author: 'Hermann Hesse' },
+      { title: 'Artemis', author: 'Andy Weir' },
+    ],
+  },
+  {
+    month: 'June 2024',
+    img: '/img/tau-ceti.jpg',
+    interests: ['Embeddings, Nomic, Llama3, OpenAI'],
+    courses: [{ title: 'Building Multimodal Search and RAG', institution: 'DeepLearning.AI' }],
+    books: [
+      { title: 'AI Epoken', author: 'Anders Bæk' },
+      { title: 'Project Hail Mary', author: 'Andy Weir' },
+      { title: 'Uncommon Sense Teaching', author: 'Barbara Oakley & Terrence J. Sejnowski' },
+    ],
+  },
+  {
+    month: 'May 2024',
+    img: '/img/porto_santo.jpg',
+    interests: ['LlamaIndex, RAG and ChromaDB', 'BDD / Behave'],
+    courses: [
+      { title: 'Open Source Models with Hugging Face', institution: 'DeepLearning.AI' },
+      { title: 'Systems Thinking: Essential Concepts', institution: 'Udemy' },
+      { title: 'Beginning Llamafile for Local Large Language Models', institution: 'Coursera' },
+    ],
+    books: [
+      { title: 'Den Falske Løjtnant', author: 'Martin Q. Magnussen' },
+      { title: 'Before The Coffee Gets Cold (コーヒーが冷めないうちに)', author: 'Toshikazu Kawaguchi' },
+      { title: 'Uncommon Sense Teaching', author: 'Barbara Oakley & Terrence J. Sejnowski' },
+      { title: 'Book You Wish Your Parents Had Read', author: 'Philippa Perry' },
+    ],
+  },
+  {
+    month: 'April 2024',
+    img: '/img/hannah.jpg',
+    interests: ['Systems Thinking', 'Web Assembly', 'BDD / Behave'],
+    courses: [
+      { title: 'Agile Leadership: Introduction to Change', institution: 'Coursera / University of Colorado System' },
+      { title: 'Systems Thinking: Essential Concepts', institution: 'Udemy' },
+      { title: 'LLM University', institution: 'Cohere' },
+      { title: 'Red Teaming LLM Applications', institution: 'DeepLearning.AI' },
+    ],
+    books: [
+      { title: 'Factfulness', author: 'Hans Rosling' },
+      { title: 'En dag i Ivan Denisovitjs liv', author: 'Aleksandr Solsjenitsyn' },
+      { title: 'Turn the Ship Around!', author: 'L. David Marquet' },
+    ],
+  },
+  {
+    month: 'March 2024',
+    img: '/img/shogun.jpg',
+    interests: ['Domain Storytelling', 'Pydantic'],
+    courses: [
+      { title: 'LangChain Chat with Your Data', institution: 'DeepLearning.AI' },
+      { title: 'Large Language Models with Semantic Search', institution: 'DeepLearning.AI' },
+    ],
+    books: [
+      { title: 'Magteliten', author: 'Markus Bernsen, Christoph Ellersgaard & Anton Grau Larsen' },
+      { title: 'Domain Storytelling', author: 'Stefan Hofer & Henning Schwentner' },
+      { title: 'Gopler ældes baglæns', author: 'Nicklas Brendborg' },
+    ],
+  },
+  {
+    month: 'February 2024',
+    img: '/img/aquarius.jpg',
+    interests: ['Weaviate', 'AlpineJS', 'Polars', 'Pydantic'],
+    courses: [{ title: 'Developing a Systems Mindset', institution: 'Coursera / University of Colorado Boulder' }],
+    books: [
+      { title: 'Change By Design', author: 'Tim Brown' },
+      { title: 'Dit selvhelbredende sind', author: 'Mette Louise Holland' },
+      { title: 'Streamlit for Data Science', author: 'Tyler Richards' },
+    ],
+  },
+  {
+    month: 'January 2024',
+    img: '/img/new_year2024.jpg',
+    interests: ['Weaviate', 'LangChain', 'Ludwig (ludwig.ai)', 'AlpineJS'],
+    courses: [
+      { title: 'Developing a Systems Mindset', institution: 'Coursera / University of Colorado Boulder' },
+      { title: 'Vector Databases: from Embeddings to Applications', institution: 'DeepLearning.AI' },
+    ],
+    books: [
+      { title: "You're Not Listening", author: 'Kate Murphy' },
+      { title: 'UFO-Mysteriet', author: 'Frederik Dirks Gottlieb' },
+      { title: 'The Case Against Reality', author: 'Donald D. Hoffman' },
+    ],
+  },
+  {
+    month: 'December 2023',
+    img: '/img/winter_wonderland.jpeg',
+    interests: ['Vector Databases', 'Scikit Learn', 'LangChain'],
+    courses: [
+      { title: 'LangChain for LLM Application Development', institution: 'DeepLearning.AI' },
+      { title: 'Unsupervised Learning, Recommenders, Reinforcement Learning', institution: 'Coursera / DeepLearning.AI' },
+    ],
+    books: [
+      { title: 'Sapiens', author: 'Yuval Noah Harari' },
+      { title: 'Encounters', author: 'Diana W. Pasulka' },
+      { title: 'Atomic Habits', author: 'James Clear' },
+    ],
+  },
+  {
+    month: 'November 2023',
+    img: '/img/gen-ai.jpg',
+    interests: ['Scikit Learn', 'MemGPT', 'InsightFace library', 'Zettelkasten & Obsidian', 'OpenAI GPT 4.0'],
+    courses: [{ title: 'Generative AI for Everyone', institution: 'Coursera / DeepLearning.AI' }],
+    books: [
+      { title: 'Software Engineering at Google', author: 'Winters, Manshreck & Wright' },
+      { title: 'Die Vermessung der Welt', author: 'Daniel Kehlmann' },
+    ],
+  },
+  {
+    month: 'October 2023',
+    img: '/img/kabuki.jpg',
+    interests: ['Llama with Ollama', 'Scikit Learn', 'llama-index', 'Figma, Dall-E and Midjourney', 'InsightFace library'],
+    courses: [{ title: 'Advanced Learning Algorithms', institution: 'Coursera / DeepLearning.AI' }],
+    books: [
+      { title: 'grokking Machine Learning', author: 'Luis G. Serrano' },
+      { title: 'Jytte vender tilbage', author: 'Morten Münster' },
+    ],
+  },
+  {
+    month: 'September 2023',
+    img: '/img/wiking.jpg',
+    interests: ['Machine Learning theory & application', 'OpenAI API - ChatGPT 4.0', 'Midjourney'],
+    courses: [
+      { title: 'Japanese — level A2 (Marugoto)', institution: 'FOF Lyngby 2023–2024' },
+      { title: 'Supervised Machine Learning: Regression and Classification', institution: 'Coursera / DeepLearning.AI' },
+      { title: 'Probability & Statistics for Machine Learning and Data Science', institution: 'Coursera / DeepLearning.AI' },
+      { title: 'Building Systems with the ChatGPT API', institution: 'DeepLearning.AI' },
+    ],
+    books: [
+      { title: 'Jytte fra Marketing er desværre gået for i dag', author: 'Morten Münster' },
+      { title: 'Viking', author: 'Jeanette Varberg' },
+    ],
+  },
+  {
+    month: 'August 2023',
+    img: '/img/probability.jpg',
+    interests: ['OpenAI API - ChatGPT 3.5', 'Midjourney'],
+    courses: [
+      { title: 'Calculus for Machine Learning and Data Science', institution: 'Coursera / DeepLearning.AI' },
+      { title: 'Linear Algebra for Machine Learning and Data Science', institution: 'Coursera / DeepLearning.AI' },
+      { title: 'Statistical Learning', institution: 'StanfordOnline — STATSX0001' },
+    ],
+    books: [{ title: 'Scary Smart', author: 'Mo Gawdat' }],
+  },
+  {
+    month: 'July 2023',
+    img: '/img/elizabeth.jpg',
+    interests: ['Machine Learning theory & application', 'Chat with your PDF (OpenAI, HuggingFace, Streamlit)', 'OpenAI API — Davinci, ChatGPT 3.5', 'Midjourney', 'Ontology, metatheory', 'Barefoot training'],
+    courses: [{ title: 'Fat Chance: Probability from the Ground Up', institution: 'HarvardX — FC1x' }],
+    books: [
+      { title: 'Middelalderen i Danmark', author: 'Niels Knud Liebgott' },
+      { title: 'Fat Chance! Probability from 0 to 1', author: 'Benedict Gross, Joe Harris & Emily Riehl' },
+      { title: 'The Hundred-Page Machine Learning Book', author: 'Andriy Burkov' },
+    ],
+  },
+  {
+    month: 'June 2023',
+    img: '/img/frankenstein.jpg',
+    interests: ['Machine Learning theory & application', 'OpenAI API - ChatGPT 3.5 & Whisper', 'Midjourney', 'Pyscript', 'Mojo'],
+    courses: [{ title: 'Building Systems with the ChatGPT API', institution: 'DeepLearning.AI' }],
+    books: [
+      { title: 'The Alchemist', author: 'Paulo Coelho' },
+      { title: 'Frankenstein', author: 'Mary Shelley' },
+    ],
+  },
+  {
+    month: 'May 2023',
+    img: '/img/ai_mosaik.jpg',
+    interests: ['Machine Learning theory & application', 'OpenAI API', 'Midjourney', 'HuggingFace', 'ChatGPT', 'Python, Elixir Nx', 'Anaconda 2023.3', 'AlpineJS, Tornado & Websockets'],
+    courses: [{ title: 'ChatGPT Prompt Engineering for Developers', institution: 'DeepLearning.AI' }],
+    books: [
+      { title: 'Modern Software Engineering', author: 'David Farley' },
+      { title: 'Pirate Latitudes', author: 'Michael Crichton' },
+    ],
+  },
+  {
+    month: 'April 2023',
+    img: '/img/ai.jpg',
+    interests: ['Gradio, OpenAI, Whisper, AssemblyAI', 'Python, Elixir Nx, Julia', 'Midjourney', 'Pandas 2.0', 'Github Copilot X', 'Playwright'],
+    courses: [{ title: 'MIT 6.S191: Introduction to Deep Learning', institution: 'YouTube' }],
+    books: [
+      { title: 'The Andromeda Evolution', author: 'Daniel H. Wilson and Michael Crichton' },
+      { title: 'Ikigai', author: 'Héctor García and Francesc Miralles' },
+    ],
+  },
+  {
+    month: 'March 2023',
+    img: '/img/python.jpg',
+    interests: ['SQLite', 'Arrow', 'Pandas', 'Polars'],
+    books: [
+      { title: 'Niels Bohr - Det beskedne geni', author: 'Charlotte Koldbye' },
+      { title: 'ZOV', author: 'Pavel Filatjev' },
+      { title: 'Stalingrad', author: 'Antony Beevor' },
+    ],
+  },
+  {
+    month: 'December 2022 – February 2023',
+    img: '/img/relax.jpg',
+    books: [
+      { title: 'Lær at præstere, når du skal', author: 'Lars Robl' },
+      { title: 'Kaptajn Dinesen - Ild og blod', author: 'Tom Buk-Swienty' },
+      { title: 'Safari fra helvede', author: 'Tom Buk-Swienty' },
+    ],
+  },
+  {
+    month: 'February – September 2022',
+    img: '/img/pc.jpg',
+    interests: ['Rust (primarily WASM)', 'TypeScript, Vue 3 and Nuxt 3', 'Python and Pandas'],
+    courses: [{ title: 'The Hardware of a Quantum Computer', institution: 'DelftX — QTM2x' }],
+    books: [
+      { title: 'Philosophy of Science: A Very Short Introduction', author: 'Samir Okasha' },
+      { title: "Butcher's Crossing", author: 'John Williams' },
+      { title: 'What Every BODY is Saying', author: 'Joe Navarro & Marvin Karlins' },
+      { title: 'Tuesdays with Morrie', author: 'Mitch Alborn' },
+    ],
+  },
+  {
+    month: 'June 2021 – January 2022',
+    img: '/img/qc.jpg',
+    interests: ['Quantum Computing', 'Qiskit', 'Linear Algebra in QC'],
+    courses: [
+      { title: 'Introduction to quantum computing for everyone', institution: 'UChicagoX — QUAN11000' },
+      { title: 'The quantum internet and quantum computers: how will they change the world?', institution: 'DelftX — QTM1x' },
+    ],
+    books: [
+      { title: 'Leading Change: Why Transformation Efforts Fail', author: 'John P. Kotter' },
+      { title: 'Extraterrestrial', author: 'Avi Loeb' },
+      { title: 'Quantum Computing for Everyone', author: 'Chris Bernhardt' },
+      { title: 'In Plain Sight', author: 'Ross Coulthart' },
+      { title: 'Blood and Thunder', author: 'Hampton Sides' },
+    ],
+  },
+]
 </script>
+
+<style scoped>
+.page-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.page-h1 {
+  margin: 64px 0 0 0;
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  text-align: center;
+  color: #111827;
+}
+
+.lede {
+  margin-top: 32px;
+  margin-bottom: 0;
+  color: #374151;
+}
+
+.meta-line {
+  margin-top: 12px;
+  margin-bottom: 64px;
+  font-size: 12px;
+  color: #6b7280;
+}
+.updated { margin-left: 12px; }
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+  padding-bottom: 64px;
+}
+
+.year-divider {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 32px 0 8px 0;
+}
+.year-divider:first-child { margin-top: 0; }
+
+.year-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #111827;
+  white-space: nowrap;
+}
+.year-line {
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.now-card {
+  padding: 24px;
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 96px;
+  height: 96px;
+  flex: none;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.card-body {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.card-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #111827;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.kicker-rule {
+  width: 18px;
+  height: 1px;
+  background: #111827;
+  display: inline-block;
+}
+
+.card-month {
+  margin: 8px 0 16px 0;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #111827;
+  line-height: 1.05;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  margin: 14px 0 6px 0;
+}
+
+.item-list {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+  color: #374151;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.item-row {
+  padding: 4px 0;
+  border-top: 1px solid #f3f4f6;
+}
+.item-row:first-child { border-top: none; }
+
+.author {
+  color: #6b7280;
+  font-size: 13px;
+  font-style: normal;
+}
+.author::before { content: ' '; }
+</style>
