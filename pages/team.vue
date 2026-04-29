@@ -50,25 +50,25 @@ const team = [
     img: '/img/agile_coach.jpg',
     role: 'Software',
     accent: 'coach',
-    body: 'Passionate and certified agile coach with over a decade of experience implementing agile frameworks. Skilled in coaching teams toward iterative success, fostering collaboration, and creating agile cultures within organizations.',
+    body: 'Certified agile coach, over a decade in. Helped teams figure out what actually slows them down — usually not what they think. The framework is the easy part.',
   },
   {
     img: '/img/frontend.jpg',
     role: 'Frontend',
     accent: 'developer',
-    body: 'Skilled frontend developer with extensive experience in UI design, web technologies, and JavaScript frameworks. Known for high adaptability and expertise in agile environments, with a strong commitment to continuous learning and modern frontend practices.',
+    body: 'Frontend developer who\'s worked across enough stacks to have opinions. UI design, JavaScript frameworks, web technologies. Prefers things that work over things that look impressive in a demo.',
   },
   {
     img: '/img/backend.jpg',
     role: 'Backend',
     accent: 'developer',
-    body: 'Experienced backend developer with a robust foundation in database management, API development, and backend frameworks. Demonstrates strong skills in data architecture, server-side logic, and maintaining high-performance applications.',
+    body: 'Backend developer. Databases, APIs, server-side logic — the parts nobody notices until they break. Has kept a few things running that probably shouldn\'t have survived.',
   },
   {
     img: '/img/dataengineer.jpg',
     role: 'Data',
     accent: 'engineer',
-    body: 'Data engineer with strong programming and data manipulation skills, specializing in transforming and analyzing data for business insights. Expertise in data pipelines, data architecture, and machine learning integration.',
+    body: 'Data engineer. Mostly pipelines — getting data from where it lives to where it\'s useful. Some machine learning when it makes sense.',
   },
 ]
 </script>
