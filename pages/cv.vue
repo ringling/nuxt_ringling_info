@@ -29,16 +29,15 @@
       <div class="section-rule"><span class="sr-num">01 / Profile</span><span class="sr-line" /></div>
       <div class="prose-2col">
         <p>
-          As a lifetime learner and polyglot software craftsman, I have a great love for physical training, music, and
-          nature. I am currently living north of Copenhagen with my wife and daughter. With over 25 years of experience in
-          software development, I have implemented and taught agile methodologies and principles. I have a wide range of
-          experience in different technologies, paradigms, and programming languages.
+          I've been building software for over 25 years and I still write code — that part hasn't changed. What has
+          changed is how many roles I've cycled through: developer, coach, architect, team lead. I've introduced agile
+          in places that needed it, and worked in enough languages and paradigms that I stopped keeping count.
         </p>
         <p>
-          As someone who still actively develops software, I keep up with new technologies and thrive in environments and
-          cultures that value competences, innovation, and creativity. My experience has taught me that the key to success
-          in software development is not just technical expertise, but also the ability to communicate effectively and
-          work collaboratively with others.
+          I live north of Copenhagen with my wife and daughter. When I'm not at a keyboard, I train martial arts, play
+          classical guitar, or just go for a walk.
+          The longer I do this work, the more I think the hard part was never the technology. It's getting people to
+          actually talk to each other. Every project that went well had that. Every one that didn't, didn't.
         </p>
       </div>
 
