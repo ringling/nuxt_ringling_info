@@ -16,7 +16,7 @@
           Twenty-five years <span class="accent">of</span> shipping software.
         </h1>
         <p class="cv-lede">
-          Lifetime learner and polyglot software craftsman. Living north of Copenhagen with my wife and daughter — software developer since 2001.
+          Lifetime learner and polyglot software craftsman. Living north of Copenhagen with my wife and daughters — software developer since 2001.
         </p>
         <dl class="cv-meta">
           <dt>Based</dt><dd>Copenhagen, DK</dd>
@@ -34,7 +34,7 @@
           in places that needed it, and worked in enough languages and paradigms that I stopped keeping count.
         </p>
         <p>
-          I live north of Copenhagen with my wife and daughter. When I'm not at a keyboard, I train martial arts, play
+          I live north of Copenhagen with my wife and daughters. When I'm not at a keyboard, I train martial arts, play
           classical guitar, or just go for a walk.
           The longer I do this work, the more I think the hard part was never the technology. It's getting people to
           actually talk to each other. Every project that went well had that. Every one that didn't, didn't.
