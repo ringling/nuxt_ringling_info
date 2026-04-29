@@ -577,11 +577,6 @@ const cards: NowEntry[] = [
   flex: none;
   border-radius: 6px;
   object-fit: cover;
-  filter: grayscale(100%);
-  transition: filter 300ms ease;
-}
-.card-img:hover {
-  filter: grayscale(0%);
 }
 
 .card-body {
