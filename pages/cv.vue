@@ -112,7 +112,7 @@
             <div class="bf-kicker">{{ exp.startDate }} — {{ exp.endDate || 'present' }}</div>
             <div class="bf-title">{{ exp.companyName }}</div>
             <div class="bf-subtitle">{{ exp.title }}</div>
-            <div v-if="showDetails && exp.summary" class="bf-note">{{ exp.summary }}</div>
+            <div v-if="showDetails && exp.summary" class="bf-note" v-html="exp.summary" />
           </div>
         </div>
       </div>
