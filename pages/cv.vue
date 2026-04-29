@@ -203,7 +203,7 @@ const skillsOverview = [
 ]
 
 const educations = [
-  { studyType: 'Diploma in IT', institution: 'IT University of Copenhagen', startDate: '2002', endDate: '2005', note: 'Two-year graduate diploma programme (continuing education) · 60 ECTS.' },
+  { studyType: 'Diploma in IT', institution: 'IT University of Copenhagen', startDate: '2002', endDate: '2005', note: 'Two-year graduate diploma programme (continuing education) · 60 ECTS · EQF level 6.' },
   { studyType: 'AP Graduate in Computer Science (Datamatiker)', institution: 'Lyngby Uddannelsescenter', startDate: '1998', endDate: '2000', note: '2½-year applied computer science programme · 150 ECTS · EQF level 5.' },
   { studyType: 'Gymnasium', institution: 'Deutsches Gymnasium für Nordschleswig', startDate: '1988', endDate: '1991', note: 'Upper secondary education.' },
 ]
