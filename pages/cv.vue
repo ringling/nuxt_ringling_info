@@ -16,7 +16,7 @@
           Twenty-five years <span class="accent">of</span> shipping software.
         </h1>
         <p class="cv-lede">
-          Lifetime learner and polyglot software craftsman. Living north of Copenhagen with my wife and daughters — software developer since 2001.
+          Software developer since 2001. Living north of Copenhagen with my wife and daughters.
         </p>
         <dl class="cv-meta">
           <dt>Based</dt><dd>Copenhagen, DK</dd>
@@ -176,7 +176,7 @@ import type { CVResponse, Skill, Achievement } from '~/types/cv'
 
 useHead({
   title: 'Thomas Ringling — CV',
-  meta: [{ name: 'description', content: 'Curriculum Vitae — Twenty-three years of shipping software.' }],
+  meta: [{ name: 'description', content: 'Curriculum Vitae — Twenty-five years of shipping software.' }],
   link: [{ rel: 'canonical', href: 'https://www.ringling.info/cv' }],
 })
 
@@ -209,10 +209,10 @@ const educations = [
 ]
 
 const hobbies = [
-  { title: 'Physical training', img: '/img/fitness.jpg', body: 'I have trained my entire life, including martial arts for 30 years. Now primarily weight training.' },
-  { title: 'Guitar', img: '/img/guitar.jpg', body: 'Primarily classical guitar, but a little western as well.' },
+  { title: 'Physical training', img: '/img/fitness.jpg', body: 'Trained my whole life — martial arts for 30 years, now mostly weights.' },
+  { title: 'Guitar', img: '/img/guitar.jpg', body: 'Mostly classical guitar, some western too.' },
   { title: 'Japanese', img: '/img/japanese.jpg', body: 'Language, culture and sashimono (joinery).' },
-  { title: 'Family', img: '/img/family.jpg', body: 'Spending a lot of my time together with my family.' },
+  { title: 'Family', img: '/img/family.jpg', body: 'Most of my time outside work goes to family.' },
 ]
 
 function sortSkills(skills: Skill[]): Skill[] {
