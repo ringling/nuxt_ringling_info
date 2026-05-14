@@ -86,7 +86,7 @@ const cards: NowEntry[] = [
   {
     month: 'May 2026',
     img: '/img/skagen.jpg',
-    interests: ['mjml'],
+    interests: ['mjml', 'Tauri'],
     books: [
       { title: 'Personal Responsibility under a Dictatorship', author: 'Hannah Arendt' },
     ],
