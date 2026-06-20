@@ -8,7 +8,7 @@
         what I've been doing and what I've learned. It's also a way for me to share what I've learned with others.
       </p>
       <p class="meta-line">
-        Built with TypeScript, Vue 3, Nuxt 3 &amp; TailwindCSS. Images generated with Midjourney. Deployed on Hetzner as a Docker image. <span class="updated">Last updated: May 25, 2026</span>
+        Built with TypeScript, Vue 3, Nuxt 3 &amp; TailwindCSS. Images generated with Midjourney. Deployed on Hetzner as a Docker image. <span class="updated">Last updated: June 20, 2026</span>
       </p>
 
       <div class="cards-grid">
@@ -84,6 +84,14 @@ function getYear(month: string): string {
 
 const cards: NowEntry[] = [
   {
+    month: 'June 2026',
+    img: '/img/skthans_2026.jpg',
+    interests: ['Rust'],
+    books: [
+      { title: 'Shogun Part 3', author: 'James Clavell' },
+    ],
+  },
+  {
     month: 'May 2026',
     img: '/img/skagen.jpg',
     interests: ['mjml', 'Tauri', 'Pocketbase'],
@@ -96,7 +104,7 @@ const cards: NowEntry[] = [
     img: '/img/2026_hannah_9.jpg',
     interests: ['Claude Design', 'Marimo'],
     books: [
-      { title: 'Shogun', author: 'James Clavell' },
+      { title: 'Shogun Part 2', author: 'James Clavell' },
       { title: 'Hvis jeg ikke ringer i morgen', author: 'Kim Eg Thygesen' },
     ],
   },
@@ -185,7 +193,7 @@ const cards: NowEntry[] = [
     interests: ['Pydantic AI', 'Model Context Protocol'],
     books: [
       { title: 'Learn Japanese', author: 'Paul Noble' },
-      { title: 'Shogun', author: 'James Clavell' },
+      { title: 'Shogun Part 1', author: 'James Clavell' },
       { title: 'Personforsikring', author: 'Inge Brabrand' },
     ],
     courses: [{ title: 'How Transformer LLMs Work', institution: 'DeepLearning.AI' }],
