@@ -86,7 +86,7 @@ const cards: NowEntry[] = [
   {
     month: 'June 2026',
     img: '/img/skthans_2026.jpg',
-    interests: ['Rust', 'OpenCode'],
+    interests: ['Rust', 'OpenCode', 'Gemma 4 MLX model'],
     books: [
       { title: 'Shogun Part 3', author: 'James Clavell' },
     ],
