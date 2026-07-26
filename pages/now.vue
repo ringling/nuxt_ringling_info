@@ -89,6 +89,7 @@ const cards: NowEntry[] = [
     interests: ['Rust', 'Qwen Coder 30B'],
     books: [
       { title: 'Small Things Like These', author: 'Claire Keegan' },
+      { title: 'Forsvarsløs', author: 'Peter Ernstved Rasmussen' },
     ],
   },
   {
