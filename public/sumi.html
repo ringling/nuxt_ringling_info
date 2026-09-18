@@ -1,0 +1,2960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sumi</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.17.0/katex.min.css" crossorigin="anonymous">
+<style>
+/* ── tokens ──────────────────────────────────────────────────────────── */
+:root{
+  --paper:#eef0ec;      /* washi, cool not cream */
+  --paper-2:#e4e7e2;
+  --ink:#22262a;
+  --ink-soft:#565d63;
+  --ink-faint:#8d959b;
+  --rule:#cfd4ce;
+  --accent:#4a7d6f;     /* verdigris */
+  --code-bg:#e3e7e2;
+  --mark:#d9e6a8;
+  --sel:rgba(74,125,111,.20);
+  --shadow:0 1px 2px rgba(20,30,25,.06), 0 8px 30px rgba(20,30,25,.07);
+
+  --serif:'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,ui-serif,serif;
+  --sans:ui-sans-serif,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;
+  --mono:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,monospace;
+
+  --body:var(--serif);
+  --size:19px;
+  --measure:56em;      /* page measure incl. side margins; Typora-like column */
+  --pmargin:1.2cm;   /* page margin: shown on screen as side padding, and as @page for print */
+  --lh:1.72;
+  --scheme:light;    /* dark themes set this to dark so scrollbars and form controls follow */
+
+  /* code highlighting (highlight.js classes are mapped onto these in HL_CSS) */
+  --hl-kw:#7b3fa0; --hl-str:#2f7d4f; --hl-num:#b3571e; --hl-cmt:#8d959b;
+  --hl-fn:#2a63b0; --hl-type:#a83a26; --hl-attr:#8a6a1a;
+}
+html{color-scheme:var(--scheme)}
+
+/* ── themes ──────────────────────────────────────────────────────────────
+   A theme is one block of token overrides on html[data-theme="…"]. It may
+   also set --serif/--sans and pick --body, --size, --measure, --lh. Register
+   it in THEMES in the script. A user .css file loaded from the Theme menu is
+   appended after everything here and can override any of it. */
+html[data-theme="ink"]{
+  --scheme:dark;
+  --hl-kw:#c8a2e8; --hl-str:#95c98f; --hl-num:#e3a56e; --hl-cmt:#6a7375;
+  --hl-fn:#86adf0; --hl-type:#f0907e; --hl-attr:#e6c07b;
+  --paper:#1b1f22;
+  --paper-2:#22272a;
+  --ink:#d8dcd9;
+  --ink-soft:#9aa3a3;
+  --ink-faint:#6a7375;
+  --rule:#333a3d;
+  --accent:#7fb3a1;
+  --code-bg:#252b2e;
+  --mark:#4c5a33;
+  --sel:rgba(127,179,161,.22);
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 30px rgba(0,0,0,.35);
+}
+html[data-theme="github"]{
+  --paper:#ffffff; --paper-2:#f6f8fa; --ink:#1f2328; --ink-soft:#59636e; --ink-faint:#8c959f;
+  --rule:#d1d9e0; --accent:#0969da; --code-bg:#f6f8fa; --mark:#fff8c5; --sel:rgba(9,105,218,.18);
+  --shadow:0 1px 2px rgba(31,35,40,.06), 0 8px 24px rgba(31,35,40,.08);
+  --sans:-apple-system,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif;
+  --body:var(--sans); --size:16px; --lh:1.6; --measure:64em;
+  --hl-kw:#cf222e; --hl-str:#0a3069; --hl-num:#0550ae; --hl-cmt:#6e7781;
+  --hl-fn:#8250df; --hl-type:#953800; --hl-attr:#116329;
+}
+html[data-theme="github"] .line.h1,html[data-theme="github"] .line.h2{border-bottom:1px solid var(--rule); padding-bottom:.25em}
+html[data-theme="github"] .h{font-weight:600}
+html[data-theme="whitey"]{
+  --paper:#ffffff; --paper-2:#f2f2f2; --ink:#333333; --ink-soft:#666666; --ink-faint:#9a9a9a;
+  --rule:#e4e4e4; --accent:#2a6fb3; --code-bg:#f4f4f4; --mark:#fff3a3; --sel:rgba(42,111,179,.18);
+  --shadow:0 1px 2px rgba(0,0,0,.05), 0 8px 24px rgba(0,0,0,.06);
+  --sans:'Helvetica Neue',Helvetica,Arial,-apple-system,sans-serif;
+  --body:var(--sans); --size:17px; --lh:1.65; --measure:60em;
+}
+html[data-theme="newsprint"]{
+  --paper:#f3f2ee; --paper-2:#e9e7e0; --ink:#1f1f1f; --ink-soft:#5a5751; --ink-faint:#8b877e;
+  --rule:#d6d2c8; --accent:#8b2a2a; --code-bg:#e9e7e0; --mark:#f2e394; --sel:rgba(139,42,42,.16);
+  --serif:'PT Serif',Georgia,'Times New Roman',Times,serif;
+  --body:var(--serif); --size:18px; --lh:1.65; --measure:44em;
+}
+html[data-theme="newsprint"] a{border-bottom:0; text-decoration:underline; text-underline-offset:.15em; color:var(--ink)}
+html[data-theme="newsprint"] .h{letter-spacing:.01em}
+html[data-theme="sepia"]{
+  --paper:#f4ecd8; --paper-2:#eadfc4; --ink:#3b2f22; --ink-soft:#6b5a45; --ink-faint:#9a8a72;
+  --rule:#d9cdb2; --accent:#8a5a2b; --code-bg:#ebe2cb; --mark:#f1d98a; --sel:rgba(138,90,43,.2);
+  --shadow:0 1px 2px rgba(60,40,20,.08), 0 8px 30px rgba(60,40,20,.1);
+}
+html[data-theme="night"]{
+  --scheme:dark;
+  --hl-kw:#c9a0e8; --hl-str:#a3d39c; --hl-num:#e3a56e; --hl-cmt:#7f878d;
+  --hl-fn:#8fbcbb; --hl-type:#f0907e; --hl-attr:#e6c07b;
+  --paper:#363b40; --paper-2:#3e444a; --ink:#dedede; --ink-soft:#b3b9be; --ink-faint:#7f878d;
+  --rule:#505860; --accent:#c9d0d6; --code-bg:#2c3034; --mark:#6e6428; --sel:rgba(255,255,255,.16);
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 30px rgba(0,0,0,.35);
+  --sans:'Open Sans',-apple-system,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;
+  --body:var(--sans); --size:16px; --lh:1.7; --measure:72em;
+}
+html[data-theme="night"] .h{color:#f4f4f4; font-weight:600}
+html[data-theme="night"] .line.h1{font-weight:400; font-size:2.1em}
+html[data-theme="night"] a{color:var(--ink); border-bottom:0; text-decoration:underline; text-underline-offset:.15em}
+html[data-theme="night"] .ul::before{content:'▪'; opacity:.55}
+html[data-theme="night"] .quote{border-left-color:var(--rule)}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--body); font-size:var(--size);
+  -webkit-font-smoothing:antialiased;
+  transition:background .3s ease,color .3s ease;
+}
+::selection{background:var(--sel)}
+
+/* ── chrome ──────────────────────────────────────────────────────────── */
+#bar{
+  position:fixed; inset:0 0 auto 0; height:46px; z-index:20;
+  display:flex; align-items:center; gap:2px; padding:0 12px;
+  font-family:var(--sans); font-size:12.5px; color:var(--ink-soft);
+  background:color-mix(in srgb, var(--paper) 86%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid transparent;
+  opacity:0; transition:opacity .25s ease, border-color .25s ease;
+}
+#bar.show{opacity:1; border-bottom-color:var(--rule)}
+#name{
+  font:inherit; color:var(--ink); background:none; border:0; padding:4px 6px;
+  border-radius:5px; width:15em; outline:none;
+}
+#name:focus{background:var(--paper-2)}
+.sp{flex:1}
+button.b{
+  font:inherit; color:var(--ink-soft); background:none; border:0;
+  padding:5px 9px; border-radius:6px; cursor:pointer;
+}
+button.b:hover{background:var(--paper-2); color:var(--ink)}
+button.b[aria-pressed="true"]{background:var(--accent); color:var(--paper)}
+button.b:focus-visible, #name:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
+.dot{width:1px;height:16px;background:var(--rule);margin:0 6px}
+.emo{font-style:normal}
+#emoji,#slash{
+  position:fixed; z-index:35; display:none; min-width:12em; padding:4px;
+  background:var(--paper); border:1px solid var(--rule); border-radius:8px; box-shadow:var(--shadow);
+  font-family:var(--sans); font-size:12.5px; color:var(--ink-soft);
+}
+#emoji.show,#slash.show{display:block}
+#emoji div,#slash div{display:flex; gap:10px; align-items:center; padding:4px 8px; border-radius:5px; cursor:pointer}
+#emoji div.on,#emoji div:hover,#slash div.on,#slash div:hover{background:var(--paper-2); color:var(--ink)}
+#emoji div span:first-child{width:1.4em; text-align:center; font-size:16px}
+#slash{min-width:16em; max-height:60vh; overflow:auto}
+#slash div span:first-child{width:1.6em; text-align:center; color:var(--ink-faint); font-family:var(--mono); font-size:11px}
+#slash div span:last-child{margin-left:auto; color:var(--ink-faint); font-size:11px}
+#find{
+  position:fixed; top:54px; right:16px; z-index:30; display:none;
+  background:var(--paper); border:1px solid var(--rule); border-radius:10px; box-shadow:var(--shadow);
+  padding:6px; font-family:var(--sans); font-size:12.5px; color:var(--ink-soft);
+}
+#find.show{display:block}
+#find .row{display:flex; align-items:center; gap:3px}
+#find .row + .row{margin-top:4px}
+#find input{font:inherit; color:var(--ink); background:var(--paper-2); border:1px solid transparent; border-radius:6px; padding:4px 8px; width:15em; outline:none}
+#find input:focus{border-color:var(--accent)}
+#find #fcount{min-width:4em; text-align:right; color:var(--ink-faint); font-size:11.5px; padding:0 4px; white-space:nowrap}
+#find .fb{font:inherit; color:var(--ink-soft); background:none; border:0; border-radius:5px; padding:4px 7px; cursor:pointer; min-width:1.9em}
+#find .fb:hover{background:var(--paper-2); color:var(--ink)}
+#find .fb[aria-pressed="true"]{background:var(--accent); color:var(--paper)}
+::highlight(sumi-find){background:color-mix(in srgb,var(--mark) 75%,transparent)}
+::highlight(sumi-find-current){background:var(--accent); color:var(--paper)}
+#menu{
+  position:fixed; top:46px; z-index:25; display:none; min-width:15em; padding:6px;
+  background:var(--paper); border:1px solid var(--rule); border-radius:10px; box-shadow:var(--shadow);
+  font-family:var(--sans); font-size:12.5px;
+}
+#menu.show{display:block}
+#menu .mi{
+  display:flex; justify-content:space-between; align-items:center; gap:2.2em;
+  width:100%; text-align:left; font:inherit; color:var(--ink); background:none;
+  border:0; padding:6px 10px 6px 26px; border-radius:6px; cursor:pointer; position:relative;
+}
+#menu .mi span,#menu .mi kbd{white-space:nowrap}
+#menu .mi kbd{font-family:var(--sans); font-size:11px; color:var(--ink-faint); background:none; border:0; padding:0}
+#menu .mi:hover,#menu .mi:focus-visible{background:var(--paper-2); outline:none}
+#menu .mi.on::before{content:'✓'; position:absolute; left:9px; color:var(--accent)}
+#menu hr{border:0; border-top:1px solid var(--rule); margin:6px 0}
+
+#outline{
+  position:fixed; top:46px; bottom:0; left:0; width:230px; z-index:15;
+  padding:14px 8px 40px 16px; overflow:auto;
+  font-family:var(--sans); font-size:12.5px; line-height:1.5;
+  border-right:1px solid var(--rule); background:var(--paper);
+  transform:translateX(-100%); transition:transform .22s ease;
+}
+body.outline #outline{transform:none}
+#docs{
+  position:fixed; top:46px; bottom:0; left:0; width:230px; z-index:15;
+  padding:14px 8px 40px 12px; overflow:auto;
+  font-family:var(--sans); font-size:12.5px; line-height:1.5;
+  border-right:1px solid var(--rule); background:var(--paper);
+  transform:translateX(-100%); transition:transform .22s ease;
+}
+body.docs #docs{transform:none}
+#docs .hd{display:flex; justify-content:space-between; align-items:center; padding:0 6px 8px;
+  color:var(--ink-faint); font-size:11px; letter-spacing:.06em; text-transform:uppercase}
+#docs .hd button{font:inherit; font-size:12.5px; letter-spacing:0; text-transform:none; color:var(--accent);
+  background:none; border:0; cursor:pointer; padding:2px 6px; border-radius:5px}
+#docs .hd button:hover{background:var(--paper-2)}
+#docs .doc{display:flex; align-items:center; gap:6px; padding:5px 6px; border-radius:5px; cursor:pointer; color:var(--ink-soft)}
+#docs .doc:hover{background:var(--paper-2); color:var(--ink)}
+#docs .doc.on{color:var(--ink); background:var(--paper-2)}
+#docs .doc .n{flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+#docs .doc input{flex:1; min-width:0; font:inherit; color:var(--ink); background:var(--paper); border:1px solid var(--accent); border-radius:4px; padding:1px 4px; outline:none}
+#docs .doc .t{color:var(--ink-faint); font-size:11px}
+#docs .doc .x{visibility:hidden; color:var(--ink-faint); background:none; border:0; font:inherit; font-size:14px; line-height:1; cursor:pointer; padding:0 3px; border-radius:4px}
+#docs .doc:hover .x,#docs .doc.ask .x{visibility:visible}
+#docs .doc .x:hover{color:#b4544a; background:var(--paper)}
+#docs .doc.ask .n{color:#b4544a}
+#docs .empty{color:var(--ink-faint); padding:4px 6px}
+#hist{
+  position:fixed; top:46px; bottom:0; right:0; width:250px; z-index:15;
+  padding:14px 12px 40px 10px; overflow:auto;
+  font-family:var(--sans); font-size:12.5px; line-height:1.5;
+  border-left:1px solid var(--rule); background:var(--paper);
+  transform:translateX(100%); transition:transform .22s ease;
+}
+body.hist #hist{transform:none}
+body.hist #wrap{padding-right:250px}
+#hist .hd{padding:0 6px 8px; color:var(--ink-faint); font-size:11px; letter-spacing:.06em; text-transform:uppercase}
+#hist form{display:flex; gap:4px; padding:0 4px 10px}
+#hist input{flex:1; min-width:0; font:inherit; color:var(--ink); background:var(--paper-2); border:1px solid transparent; border-radius:5px; padding:3px 7px; outline:none}
+#hist input:focus{border-color:var(--accent)}
+#hist form button,#hist .acts button{font:inherit; font-size:11.5px; color:var(--ink-soft); background:var(--paper-2); border:0; border-radius:5px; padding:3px 8px; cursor:pointer}
+#hist form button:hover,#hist .acts button:hover{color:var(--ink); background:var(--rule)}
+#hist .ver{display:flex; flex-wrap:wrap; align-items:center; gap:6px; padding:5px 6px; border-radius:5px; cursor:pointer; color:var(--ink-soft)}
+#hist .ver:hover,#hist .ver.on{background:var(--paper-2); color:var(--ink)}
+#hist .ver .n{flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+#hist .ver.same .n::after{content:' ●'; color:var(--accent); font-size:.7em; vertical-align:.15em}
+#hist .ver .t{color:var(--ink-faint); font-size:11px; white-space:nowrap}
+#hist .ver .acts{display:none; width:100%; gap:4px; padding:4px 0 2px}
+#hist .ver.on .acts{display:flex}
+#hist .empty{color:var(--ink-faint); padding:4px 6px}
+#diff{
+  position:fixed; inset:0; z-index:40; display:none; place-items:center;
+  background:color-mix(in srgb,var(--paper) 72%,transparent); backdrop-filter:blur(6px);
+}
+#diff.show{display:grid}
+#diff .card{
+  background:var(--paper); border:1px solid var(--rule); border-radius:12px; box-shadow:var(--shadow);
+  padding:18px 22px; width:min(920px,94vw); max-height:86vh; overflow:auto;
+  font-family:var(--sans); font-size:13px; color:var(--ink-soft);
+}
+#diff .card h2{font-family:var(--body); font-size:18px; color:var(--ink); margin:0 0 10px; display:flex; justify-content:space-between; align-items:baseline; gap:1em}
+#diff .card h2 small{font-family:var(--sans); font-size:12px; color:var(--ink-faint); font-weight:400}
+#diff pre{font-family:var(--mono); font-size:12px; line-height:1.5; white-space:pre-wrap; overflow-wrap:anywhere; margin:0}
+#diff .dl{padding:0 8px; border-radius:3px}
+#diff .dl.del{background:color-mix(in srgb,#b4544a 16%,transparent); text-decoration:line-through; text-decoration-color:color-mix(in srgb,#b4544a 50%,transparent)}
+#diff .dl.add{background:color-mix(in srgb,#4a7d6f 18%,transparent)}
+#diff .skip{color:var(--ink-faint); text-align:center; padding:3px; font-family:var(--sans)}
+#outline div{
+  padding:4px 6px; border-radius:5px; cursor:pointer; color:var(--ink-soft);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+#outline div:hover{background:var(--paper-2); color:var(--ink)}
+#outline div.warn::after{content:'●'; color:#b08b3a; margin-left:.5em; font-size:.85em; vertical-align:.05em}
+#outline div.d2{padding-left:18px}
+#outline div.d3{padding-left:30px; font-size:12px}
+#outline div.d4,#outline div.d5,#outline div.d6{padding-left:42px; font-size:12px}
+#outline .empty{color:var(--ink-faint); cursor:default}
+
+#count{
+  position:fixed; right:16px; bottom:14px; z-index:20;
+  font-family:var(--sans); font-size:12px; color:var(--ink-faint);
+  background:color-mix(in srgb, var(--paper) 80%, transparent);
+  padding:4px 10px; border-radius:20px; backdrop-filter:blur(6px);
+  opacity:.55; transition:opacity .25s ease;
+}
+#count:hover{opacity:1}
+#toast{
+  position:fixed; left:50%; bottom:22px; transform:translate(-50%,12px);
+  z-index:30; font-family:var(--sans); font-size:12.5px;
+  background:var(--ink); color:var(--paper); padding:7px 14px; border-radius:8px;
+  opacity:0; pointer-events:none; transition:opacity .2s ease, transform .2s ease;
+}
+#toast.show{opacity:.95; transform:translate(-50%,0)}
+
+/* ── writing surface ─────────────────────────────────────────────────── */
+#wrap{height:100%; overflow-y:auto; scroll-behavior:auto}
+body.outline #wrap,body.docs #wrap{padding-left:230px}
+#editor{
+  max-width:var(--measure); margin:0 auto;
+  padding:16vh max(4mm, var(--pmargin)) 60vh;
+  outline:none; line-height:var(--lh);
+  caret-color:var(--accent);
+  transition:max-width .2s ease, padding .2s ease;
+}
+body.typewriter #editor{padding-bottom:52vh; padding-top:44vh}
+
+.line{
+  position:relative;
+  min-height:calc(1em * var(--lh));
+  padding-left:calc(var(--ind,0) * 1.5em);
+  transition:opacity .25s ease;
+  white-space:pre-wrap;
+  word-wrap:break-word;
+}
+body.focus .line{opacity:.26}
+body.focus .line.near{opacity:1}
+
+/* hidden syntax */
+.tok{color:var(--accent); opacity:0; font-size:0; transition:font-size .12s ease, opacity .12s ease}
+.line.active .tok, html.reveal .tok{font-size:inherit; opacity:.45}
+
+.h{font-family:var(--body); font-weight:700; letter-spacing:-.015em; line-height:1.28; margin:1.4em 0 .1em}
+.h1{font-size:1.85em} .h2{font-size:1.45em} .h3{font-size:1.2em}
+.h4,.h5,.h6{font-size:1.02em; color:var(--ink-soft)}
+.line.h1{margin-top:1.1em}
+
+.quote{border-left:2px solid var(--accent); padding-left:.9em; color:var(--ink-soft); font-style:italic}
+.quote .tok{font-style:normal}
+
+.ul::before{
+  content:'•'; position:absolute; color:var(--accent); opacity:.7;
+  left:calc(var(--ind,0) * 1.5em - .95em);
+}
+.ul,.task{padding-left:calc(var(--ind,0) * 1.5em + .1em)}
+.task::before{
+  content:'○'; position:absolute; color:var(--ink-faint);
+  left:calc(var(--ind,0) * 1.5em - 1.05em); cursor:pointer;
+}
+.task.done::before{content:'●'; color:var(--accent)}
+.task.done{color:var(--ink-faint); text-decoration:line-through; text-decoration-color:var(--ink-faint)}
+.onum{color:var(--accent); opacity:.7}
+
+.rule{
+  display:block; height:0; border-bottom:1px solid var(--rule);
+  margin:.85em 0;
+}
+.line.hr{min-height:auto}
+
+.code, .fence{
+  font-family:var(--mono); font-size:.86em; background:var(--code-bg);
+  padding:0 1em; line-height:1.6; min-height:1.6em;
+}
+.fence.open{padding-top:.6em; border-radius:7px 7px 0 0; margin-top:.5em}
+.fence.close{padding-bottom:.6em; border-radius:0 0 7px 7px; margin-bottom:.5em}
+.lang{color:var(--ink-faint); font-size:.85em}
+code{font-family:var(--mono); font-size:.87em; background:var(--code-bg); padding:.1em .32em; border-radius:4px}
+
+.trow{font-family:var(--mono); font-size:.84em; line-height:1.65}
+.pipe{color:var(--ink-faint)}
+
+a{color:var(--accent); text-decoration:none; border-bottom:1px solid color-mix(in srgb,var(--accent) 35%,transparent)}
+strong{font-weight:700}
+em{font-style:italic}
+del{color:var(--ink-faint)}
+mark{background:var(--mark); color:inherit; padding:.05em .15em; border-radius:3px}
+.mdimg{display:block; max-width:100%; border-radius:6px; margin:.5em 0; box-shadow:var(--shadow)}
+.line.active .mdimg{opacity:.55}
+
+/* math & diagrams */
+.src{display:inline}
+.prev{display:block; margin:.7em 0; text-align:left; overflow-x:auto; line-height:1.2}
+.prev svg{display:block; margin:0 auto}
+.prev svg{max-width:100%; height:auto}
+.prev:empty{display:none}
+.line.active .kx{display:none}
+.kx{font-size:1.02em}
+.mathblk{font-family:var(--mono); font-size:.86em; background:var(--code-bg); padding:0 1em; min-height:1.6em}
+.mathblk.open{border-radius:7px 7px 0 0; padding-top:.5em; margin-top:.5em}
+.mathblk.close{border-radius:0 0 7px 7px; padding-bottom:.5em; margin-bottom:.5em}
+.err{font-family:var(--sans); font-size:12.5px; color:#b4544a; display:inline-block; text-align:left}
+.prev table{border-collapse:collapse; width:100%; table-layout:auto;
+  font-family:var(--sans); font-size:.82em; line-height:1.5}
+.prev th,.prev td{border:1px solid var(--rule); padding:.4em .7em; text-align:left;
+  white-space:normal; overflow-wrap:anywhere; hyphens:auto; min-width:0}
+.prev th code,.prev td code{white-space:normal; overflow-wrap:anywhere}
+.prev th{background:var(--paper-2); font-weight:600}
+.prev tbody tr:nth-child(even){background:color-mix(in srgb, var(--paper-2) 45%, transparent)}
+.setext{color:var(--ink-faint)}
+.line.setext{min-height:0}
+.refdef{font-family:var(--mono); font-size:.8em; color:var(--ink-faint)}
+.rawhtml{font-family:var(--mono); font-size:.84em; color:var(--ink-soft)}
+.fn{font-size:.7em; vertical-align:super; color:var(--accent); font-family:var(--sans)}
+.line.active .fn{display:none}
+.alert{border-left-width:3px}
+.quote.alert{font-style:normal}
+.alabel{font-family:var(--sans); font-size:.8em; font-weight:600; font-style:normal; letter-spacing:.01em}
+.a-note{border-left-color:#4a7d9e} .a-note .alabel{color:#4a7d9e}
+.a-tip{border-left-color:#4a7d6f} .a-tip .alabel{color:#4a7d6f}
+.a-important{border-left-color:#7a5aa0} .a-important .alabel{color:#7a5aa0}
+.a-warning{border-left-color:#b08b3a} .a-warning .alabel{color:#b08b3a}
+.a-caution{border-left-color:#b4544a} .a-caution .alabel{color:#b4544a}
+.line.fold{min-height:0; background:none; padding:0; margin:0}
+.line.fold .src{display:none}
+
+/* ── source mode: the raw markdown, monospace, nothing folded or rendered.
+   Pure CSS over the same DOM, so the caret does not move. Screen only; print
+   keeps the rendered page. ── */
+@media screen{
+  body.source #editor{font-family:var(--mono); font-size:.9em; line-height:1.6}
+  body.source .tok{font-size:inherit; opacity:.55}
+  body.source .line{padding-left:0}
+  body.source .line.fold{min-height:calc(1em * var(--lh))}
+  body.source .line.fold .src{display:inline}
+  body.source .prev,body.source .kx,body.source .fn,body.source .alabel,body.source .rule,body.source .emo,body.source .hn,
+  body.source .mdimg,body.source .eqno{display:none!important}
+  body.source .h{font-family:inherit; font-size:inherit; margin:0; letter-spacing:0; line-height:inherit; color:inherit}
+  body.source .ul::before,body.source .task::before,body.source .line.code::before{content:none}
+  body.source .quote{border:0; padding-left:0; font-style:normal; color:inherit}
+  body.source .code,body.source .fence,body.source .mathblk,body.source .fm,body.source .trow{
+    background:none; padding:0; margin:0; font-size:inherit; line-height:inherit; min-height:auto; border-radius:0}
+  body.source .line.code{padding-left:0}
+  body.source .task.done{color:inherit; text-decoration:none}
+  body.source .onum,body.source .setext,body.source .pipe,body.source .lang,body.source .refdef,body.source .rawhtml{color:inherit; opacity:1; font-size:inherit}
+  body.source code{background:none; padding:0; font-size:inherit}
+  body.source mark{background:none; padding:0}
+  body.source a{border:0}
+}
+
+/* ── numbering (all class toggles on body; counters and ::before add no DOM text) ── */
+body.linenos .fence.open{counter-reset:code}
+body.linenos .line.code:not(.fold){padding-left:3.4em}
+body.linenos .line.code:not(.fold)::before{
+  counter-increment:code; content:counter(code);
+  position:absolute; left:0; width:2.6em; text-align:right;
+  color:var(--ink-faint); font-size:.85em;
+}
+.hn{display:none; color:var(--ink-soft); font-weight:inherit}
+
+/* ── section folding: a heading can hide everything down to the next heading
+   of its level or higher. Chevron in the gutter, ··· after a folded heading. ── */
+.line.h::before{content:'▾'; position:absolute; left:-1.3em; top:.2em; font-size:.75em; color:var(--ink-faint); opacity:0; cursor:pointer; transition:opacity .15s}
+.line.h:hover::before{opacity:.8}
+.line.h.folded::before{content:'▸'; opacity:.8}
+.line.h.folded::after{content:' ···'; color:var(--ink-faint); font-weight:400}
+@media screen{ .line.hid{display:none} }
+body.source .line.h::before,body.source .line.h.folded::after{content:none}
+body.source .line.hid{display:block}
+body.hnums .hn{display:inline}
+.prev{position:relative}
+.eqno{display:none; position:absolute; right:0; top:50%; transform:translateY(-50%);
+  font-family:var(--sans); font-size:.85em; color:var(--ink-soft)}
+body.eqnos .eqno{display:block}
+
+/* ── front matter: a YAML block at the top folds to a small card ── */
+.fm{font-family:var(--mono); font-size:.84em; color:var(--ink-soft); background:var(--code-bg); padding:0 1em; line-height:1.6; min-height:1.6em}
+.fmcard{
+  display:grid; grid-template-columns:max-content 1fr; gap:.1em 1.2em;
+  font-family:var(--sans); font-size:.8em; color:var(--ink-soft);
+  border:1px solid var(--rule); border-radius:7px; padding:.55em .9em; margin:0 0 1.4em;
+}
+.fmcard b{font-weight:500; color:var(--ink-faint)}
+
+/* ── table of contents: a [TOC] line folds to a list of the document's headings ── */
+ul.toc{list-style:none; padding:0; margin:.3em 0 1em; font-family:var(--sans); font-size:.9em; line-height:1.75}
+ul.toc li{padding-left:calc((var(--d) - 1) * 1.2em)}
+ul.toc a{color:var(--ink); text-decoration:none; border:0; cursor:pointer}
+ul.toc a:hover{color:var(--accent)}
+ul.toc .empty{color:var(--ink-faint)}
+ul.toc .tn{display:none; color:var(--ink-soft)}
+body.hnums ul.toc .tn{display:inline}
+
+/* ── help ────────────────────────────────────────────────────────────── */
+#help{
+  position:fixed; inset:0; z-index:40; display:none;
+  place-items:center; background:color-mix(in srgb,var(--paper) 72%,transparent);
+  backdrop-filter:blur(6px);
+}
+#help.show{display:grid}
+#help .card{
+  background:var(--paper); border:1px solid var(--rule); border-radius:12px;
+  box-shadow:var(--shadow); padding:22px 26px; width:min(560px,90vw);
+  font-family:var(--sans); font-size:13px; color:var(--ink-soft);
+}
+#help h2{font-family:var(--body); font-size:20px; color:var(--ink); margin:0 0 14px}
+#help table{width:100%; border-collapse:collapse}
+#help td{padding:4px 0; vertical-align:top}
+#help td:first-child{width:11em; color:var(--ink)}
+kbd{
+  font-family:var(--mono); font-size:11.5px; background:var(--paper-2);
+  border:1px solid var(--rule); border-radius:4px; padding:1px 5px;
+}
+
+@media (max-width:720px){
+  #editor{padding:12vh min(18px, max(4mm, var(--pmargin))) 60vh}
+  body.outline #wrap,body.docs #wrap{padding-left:0}
+  body.hist #wrap{padding-right:0}
+  #outline,#docs,#hist{width:78vw}
+  #name{width:8em}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{
+  #bar,#outline,#docs,#hist,#diff,#count,#toast,#help,#menu,#find,#emoji,#slash{display:none!important}
+  .fmcard{display:none}
+  html,html[data-theme]{--paper:#fff; --paper-2:#f0f0f0; --ink:#000; --ink-soft:#444; --ink-faint:#777; --rule:#ccc; --code-bg:#f3f3f3; --mark:#efe9a4}
+  /* compact, Typora-like page: sans, 10pt, tight leading, half-height blank lines */
+  body{background:#fff; color:#000; --body:var(--sans); font-size:10pt; --lh:1.4}
+  #wrap,body.outline #wrap,body.docs #wrap,body.hist #wrap{overflow:visible; padding:0}
+  #editor{max-width:none; padding:0}
+  body.nomargin #editor{padding:0 4mm}
+  .tok,.src,.lang{display:none}
+  .line{opacity:1!important; min-height:0}
+  .line.empty{font-size:.5em}
+  .h,html[data-theme] .h{margin:1.1em 0 .15em; color:#000}
+  .line.h::before,.line.h.folded::after{content:none}
+  .line.h1{margin-top:.8em} .line:first-child{margin-top:0}
+  .h1{font-size:1.6em} .h2{font-size:1.3em} .h3{font-size:1.12em}
+  .quote{font-style:normal}
+  .code,.fence{font-size:.84em; line-height:1.45}
+  .prev{margin:.4em 0}
+  .prev{display:block!important}
+  .prev table,.code,.fence,pre{break-inside:avoid}
+  .h{break-after:avoid}
+  p,.para{orphans:3; widows:3}
+  body.pagebreak .h1:not(.first),body.pagebreak .h2:not(.first){break-before:page}
+}
+</style>
+</head>
+<body>
+
+<div id="bar">
+  <input id="name" value="untitled.md" spellcheck="false" aria-label="File name">
+  <span class="sp"></span>
+  <button class="b" id="bView" aria-haspopup="menu" aria-expanded="false" title="Outline, focus, typewriter, source code; width and typeface">View</button>
+  <button class="b" id="bEdit" aria-haspopup="menu" aria-expanded="false" title="Find, lists, tables">Edit</button>
+  <button class="b" id="bTheme" aria-haspopup="menu" aria-expanded="false" title="Theme — Cmd Shift D flips light/dark">Theme</button>
+  <button class="b" id="bPage" aria-haspopup="menu" aria-expanded="false" title="Margin, page breaks, numbering">Page</button>
+  <button class="b" id="bFile" aria-haspopup="menu" aria-expanded="false" title="Open, save, copy, export, print">File</button>
+  <button class="b" id="bHelp" title="Shortcuts — Cmd /">?</button>
+</div>
+
+<nav id="outline" aria-label="Document outline"></nav>
+<nav id="docs" aria-label="Documents"></nav>
+<nav id="hist" aria-label="History"></nav>
+<div id="diff" role="dialog" aria-label="Version diff"><div class="card"></div></div>
+<div id="menu" role="menu"></div>
+<div id="emoji" role="listbox" aria-label="Emoji"></div>
+<div id="slash" role="listbox" aria-label="Insert block"></div>
+<div id="find" role="search" aria-label="Find and replace">
+  <div class="row">
+    <input id="fq" placeholder="Find" aria-label="Find" spellcheck="false" autocomplete="off">
+    <span id="fcount"></span>
+    <button type="button" class="fb" id="fprev" title="Previous — Shift Enter, Cmd Shift G">‹</button>
+    <button type="button" class="fb" id="fnext" title="Next — Enter, Cmd G">›</button>
+    <button type="button" class="fb" id="fcase" aria-pressed="false" title="Match case">Aa</button>
+    <button type="button" class="fb" id="fword" aria-pressed="false" title="Whole word">W</button>
+    <button type="button" class="fb" id="fclose" title="Close — Esc">×</button>
+  </div>
+  <div class="row">
+    <input id="fr" placeholder="Replace" aria-label="Replace with" spellcheck="false" autocomplete="off">
+    <button type="button" class="fb" id="frep" title="Replace this match — Enter">Replace</button>
+    <button type="button" class="fb" id="fall" title="Replace every match">All</button>
+  </div>
+</div>
+
+<div id="wrap"><div id="editor" contenteditable="true" spellcheck="true" autocorrect="off" role="textbox" aria-multiline="true"></div></div>
+
+<div id="count"></div>
+<div id="toast"></div>
+
+<div id="help"><div class="card">
+  <h2>Sumi</h2>
+  <table>
+    <tr><td><kbd>⌘B</kbd> <kbd>⌘I</kbd> <kbd>⌘K</kbd></td><td>bold, italic, link</td></tr>
+    <tr><td><kbd>⌘⇧K</kbd></td><td>inline code</td></tr>
+    <tr><td><kbd>⌘1</kbd>–<kbd>⌘6</kbd> <kbd>⌘0</kbd></td><td>heading level, plain paragraph</td></tr>
+    <tr><td><kbd>⌘⇧L</kbd></td><td>cycle list type — bullet, numbered, task, plain</td></tr>
+    <tr><td><kbd>⌘⇧.</kbd></td><td>fold or unfold the section under a heading; the chevron left of a heading does the same. Folded sections still print and export</td></tr>
+    <tr><td><kbd>/</kbd></td><td>on an empty line: a popup inserts a block — heading, list, task, quote, alert, code, diagram, maths, table, TOC, rule, image, link, footnote, date</td></tr>
+    <tr><td><kbd>:smile:</kbd></td><td>emoji shortcodes (GitHub names, a curated set); a popup completes them as you type <kbd>:sm</kbd></td></tr>
+    <tr><td>( [ { " ` * _</td><td>auto-paired: the closer is inserted, a selection is wrapped, typing the closer steps over it, backspace removes an empty pair. Off in code; View ▸ Auto-pair turns it off</td></tr>
+    <tr><td><kbd>⌘F</kbd> <kbd>⌘G</kbd> <kbd>⌘⇧G</kbd></td><td>find and replace; next and previous match. Searches the source, so folded tables and code are included</td></tr>
+    <tr><td><kbd>Tab</kbd> <kbd>⇧Tab</kbd></td><td>indent, outdent list item</td></tr>
+    <tr><td><kbd>⌘\</kbd></td><td>outline</td></tr>
+    <tr><td><kbd>⌘⇧F</kbd> <kbd>⌘⇧T</kbd></td><td>focus mode, typewriter mode</td></tr>
+    <tr><td><kbd>⌘⇧R</kbd></td><td>reveal all markdown syntax, still rendered</td></tr>
+    <tr><td><kbd>⌘⇧U</kbd></td><td>source code mode — raw markdown, monospace, nothing folded</td></tr>
+    <tr><td><kbd>⌘S</kbd> <kbd>⌘O</kbd></td><td>save, open</td></tr>
+    <tr><td><kbd>⌘⇧E</kbd> <kbd>⌘P</kbd></td><td>export HTML, print or save as PDF</td></tr>
+    <tr><td>tables</td><td>fold to a rendered grid when the caret leaves. Inside one: <kbd>Tab</kbd> <kbd>⇧Tab</kbd> move between cells (Tab past the last cell adds a row), <kbd>⌘⏎</kbd> adds a row, <kbd>⌘⇧|</kbd> tidies the source, and leaving the table tidies it on its own (Page ▸ Tidy tables); Edit ▸ adds and deletes rows and columns</td></tr>
+    <tr><td>View</td><td>outline, focus, typewriter, source code; line width and typeface</td></tr>
+    <tr><td>Page</td><td>margin (screen, print, PDF); page break at each # and ##; code line, heading (1.2.3; a lone # title stays unnumbered) and equation numbers</td></tr>
+    <tr><td>Edit</td><td>find, list cycling, copy as rich text (selection or document, pastes formatted into Word and mail), table commands</td></tr>
+    <tr><td>File</td><td>new document, the Documents drawer, open, save, copy markdown, export HTML, print or PDF</td></tr>
+    <tr><td>Documents</td><td>every document you write is kept in this browser (IndexedDB); the drawer lists them by last edit — click to switch, × twice to delete, double-click to rename; File ▸ Rename or the name field at the top left renames the open one</td></tr>
+    <tr><td>History</td><td>versions of the open document: automatic after a pause, on save and when you leave it; name one, diff it against the current text, restore it (restoring keeps a version of what you had)</td></tr>
+    <tr><td>Backup</td><td>File ▸ Backup downloads every document and version as one .json; import it here or in another browser</td></tr>
+    <tr><td><kbd>---</kbd> at the top</td><td>YAML front matter folds to a card and is left out of exports</td></tr>
+    <tr><td><kbd>[^1]</kbd></td><td>footnotes; hover a reference to read its definition</td></tr>
+    <tr><td><kbd>[TOC]</kbd></td><td>table of contents built from the headings; <kbd>[text](#heading)</kbd> links jump to a heading</td></tr>
+    <tr><td>Theme</td><td>Paper, Ink, GitHub, Whitey, Newsprint, Sepia, Night — <kbd>⌘⇧D</kbd> flips light/dark</td></tr>
+    <tr><td>Custom theme</td><td>load a .css file from the Theme menu, or drop it on the window; see <kbd>themes/sample.css</kbd></td></tr>
+    <tr><td><kbd>$x$</kbd> <kbd>$$…$$</kbd></td><td>inline and block LaTeX (KaTeX)</td></tr>
+    <tr><td><kbd>```mermaid</kbd></td><td>diagram block, drawn below the source</td></tr>
+    <tr><td><kbd>```js</kbd></td><td>code fences with a language are syntax highlighted (highlight.js)</td></tr>
+    <tr><td><kbd>Esc</kbd></td><td>close this</td></tr>
+  </table>
+</div></div>
+
+<input type="file" id="picker" accept=".md,.markdown,.mdown,.txt,text/plain" hidden>
+<input type="file" id="csspicker" accept=".css,text/css" hidden>
+<input type="file" id="jsonpicker" accept=".json,application/json" hidden>
+
+<script>
+(() => {
+"use strict";
+const $ = s => document.querySelector(s);
+const editor = $('#editor'), wrap = $('#wrap');
+
+/* ── text helpers ─────────────────────────────────────────────────────── */
+const esc = s => s.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const att = s => s.replace(/["&<>]/g, c => ({'"':'&quot;','&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const safeURL = u => /^(https?:|mailto:|data:image\/|#|\.|\/)/i.test(u) ? u : '#';
+
+/* ── GFM inline ────────────────────────────────────────────────────────
+   clean=false → editor mode: syntax stays in the text, wrapped in .tok
+   clean=true  → export mode: syntax dropped
+   Anything rendered that is NOT part of the source carries data-x, so the
+   text walkers skip it.                                                  */
+/* Emoji shortcodes: a curated subset of GitHub's names (about 300). Rendered
+   as a data-x glyph next to the folded :name: token, plain glyph on export. */
+const EMOJI = Object.fromEntries(`smile 😄|smiley 😃|grinning 😀|grin 😁|laughing 😆|satisfied 😆|joy 😂|rofl 🤣|sweat_smile 😅|blush 😊|innocent 😇|slightly_smiling_face 🙂|upside_down_face 🙃|wink 😉|relieved 😌|heart_eyes 😍|kissing_heart 😘|kissing 😗|yum 😋|stuck_out_tongue 😛|stuck_out_tongue_winking_eye 😜|zany_face 🤪|stuck_out_tongue_closed_eyes 😝|money_mouth_face 🤑|hugs 🤗|hand_over_mouth 🤭|shushing_face 🤫|thinking 🤔|zipper_mouth_face 🤐|raised_eyebrow 🤨|neutral_face 😐|expressionless 😑|no_mouth 😶|smirk 😏|unamused 😒|roll_eyes 🙄|grimacing 😬|lying_face 🤥|relaxed ☺️|pensive 😔|sleepy 😪|drooling_face 🤤|sleeping 😴|mask 😷|face_with_thermometer 🤒|face_with_head_bandage 🤕|nauseated_face 🤢|vomiting_face 🤮|sneezing_face 🤧|hot_face 🥵|cold_face 🥶|woozy_face 🥴|dizzy_face 😵|exploding_head 🤯|cowboy_hat_face 🤠|partying_face 🥳|sunglasses 😎|nerd_face 🤓|monocle_face 🧐|confused 😕|worried 😟|slightly_frowning_face 🙁|frowning_face ☹️|open_mouth 😮|hushed 😯|astonished 😲|flushed 😳|pleading_face 🥺|frowning 😦|anguished 😧|fearful 😨|cold_sweat 😰|disappointed_relieved 😥|cry 😢|sob 😭|scream 😱|confounded 😖|persevere 😣|disappointed 😞|sweat 😓|weary 😩|tired_face 😫|yawning_face 🥱|triumph 😤|rage 😡|pout 😡|angry 😠|cursing_face 🤬|smiling_imp 😈|imp 👿|skull 💀|skull_and_crossbones ☠️|poop 💩|hankey 💩|clown_face 🤡|ghost 👻|alien 👽|robot 🤖|smiley_cat 😺|smile_cat 😸|joy_cat 😹|heart_eyes_cat 😻|see_no_evil 🙈|hear_no_evil 🙉|speak_no_evil 🙊|kiss 💋|love_letter 💌|heart ❤️|orange_heart 🧡|yellow_heart 💛|green_heart 💚|blue_heart 💙|purple_heart 💜|black_heart 🖤|white_heart 🤍|brown_heart 🤎|broken_heart 💔|heartbeat 💓|heartpulse 💗|sparkling_heart 💖|two_hearts 💕|revolving_hearts 💞|cupid 💘|gift_heart 💝|heart_decoration 💟|100 💯|anger 💢|boom 💥|collision 💥|dizzy 💫|sweat_drops 💦|dash 💨|hole 🕳️|bomb 💣|speech_balloon 💬|thought_balloon 💭|zzz 💤|wave 👋|raised_back_of_hand 🤚|hand ✋|raised_hand ✋|vulcan_salute 🖖|ok_hand 👌|pinching_hand 🤏|v ✌️|crossed_fingers 🤞|love_you_gesture 🤟|metal 🤘|call_me_hand 🤙|point_left 👈|point_right 👉|point_up_2 👆|middle_finger 🖕|point_down 👇|point_up ☝️|+1 👍|thumbsup 👍|-1 👎|thumbsdown 👎|fist ✊|facepunch 👊|punch 👊|fist_left 🤛|fist_right 🤜|clap 👏|raised_hands 🙌|open_hands 👐|palms_up_together 🤲|handshake 🤝|pray 🙏|writing_hand ✍️|nail_care 💅|selfie 🤳|muscle 💪|eyes 👀|eye 👁️|brain 🧠|tongue 👅|lips 👄|ear 👂|nose 👃|baby 👶|boy 👦|girl 👧|man 👨|woman 👩|older_man 👴|older_woman 👵|police_officer 👮|detective 🕵️|guard 💂|construction_worker 👷|prince 🤴|princess 👸|santa 🎅|mage 🧙|superhero 🦸|zombie 🧟|bow 🙇|shrug 🤷|facepalm 🤦|raising_hand 🙋|dancer 💃|man_dancing 🕺|walking 🚶|running 🏃|family 👪|couple 👫|two_men_holding_hands 👬|two_women_holding_hands 👭|footprints 👣|dog 🐶|cat 🐱|mouse 🐭|hamster 🐹|rabbit 🐰|fox_face 🦊|bear 🐻|panda_face 🐼|koala 🐨|tiger 🐯|lion 🦁|cow 🐮|pig 🐷|frog 🐸|monkey_face 🐵|monkey 🐒|chicken 🐔|penguin 🐧|bird 🐦|baby_chick 🐤|hatching_chick 🐣|duck 🦆|eagle 🦅|owl 🦉|bat 🦇|wolf 🐺|boar 🐗|horse 🐴|unicorn 🦄|bee 🐝|bug 🐛|butterfly 🦋|snail 🐌|ant 🐜|spider 🕷️|turtle 🐢|snake 🐍|lizard 🦎|octopus 🐙|squid 🦑|shrimp 🦐|crab 🦀|fish 🐟|tropical_fish 🐠|dolphin 🐬|whale 🐳|shark 🦈|crocodile 🐊|elephant 🐘|camel 🐪|giraffe 🦒|kangaroo 🦘|sheep 🐑|goat 🐐|dragon 🐉|dinosaur 🦕|t-rex 🦖|bouquet 💐|cherry_blossom 🌸|rose 🌹|hibiscus 🌺|sunflower 🌻|tulip 🌷|seedling 🌱|evergreen_tree 🌲|deciduous_tree 🌳|palm_tree 🌴|cactus 🌵|herb 🌿|shamrock ☘️|four_leaf_clover 🍀|maple_leaf 🍁|fallen_leaf 🍂|leaves 🍃|mushroom 🍄|apple 🍎|green_apple 🍏|pear 🍐|tangerine 🍊|lemon 🍋|banana 🍌|watermelon 🍉|grapes 🍇|strawberry 🍓|cherries 🍒|peach 🍑|pineapple 🍍|kiwi_fruit 🥝|avocado 🥑|tomato 🍅|eggplant 🍆|carrot 🥕|corn 🌽|hot_pepper 🌶️|potato 🥔|bread 🍞|croissant 🥐|cheese 🧀|egg 🥚|bacon 🥓|hamburger 🍔|fries 🍟|pizza 🍕|hotdog 🌭|taco 🌮|burrito 🌯|ramen 🍜|spaghetti 🍝|sushi 🍣|rice 🍚|curry 🍛|bento 🍱|cookie 🍪|cake 🍰|birthday 🎂|cupcake 🧁|pie 🥧|chocolate_bar 🍫|candy 🍬|lollipop 🍭|doughnut 🍩|ice_cream 🍨|icecream 🍦|honey_pot 🍯|coffee ☕|tea 🍵|beer 🍺|beers 🍻|wine_glass 🍷|cocktail 🍸|tropical_drink 🍹|champagne 🍾|clinking_glasses 🥂|milk_glass 🥛|cup_with_straw 🥤|fork_and_knife 🍴|plate_with_cutlery 🍽️|earth_africa 🌍|earth_americas 🌎|earth_asia 🌏|globe_with_meridians 🌐|world_map 🗺️|mountain ⛰️|volcano 🌋|camping 🏕️|beach_umbrella 🏖️|desert 🏜️|house 🏠|office 🏢|hospital 🏥|school 🏫|castle 🏰|church ⛪|mosque 🕌|statue_of_liberty 🗽|tokyo_tower 🗼|bridge_at_night 🌉|sunrise 🌅|city_sunset 🌇|night_with_stars 🌃|rainbow 🌈|sunny ☀️|cloud ☁️|partly_sunny ⛅|zap ⚡|snowflake ❄️|snowman ⛄|fire 🔥|droplet 💧|ocean 🌊|umbrella ☔|wind_face 🌬️|tornado 🌪️|fog 🌫️|full_moon 🌕|new_moon 🌑|crescent_moon 🌙|star ⭐|star2 🌟|stars 🌠|sparkles ✨|comet ☄️|milky_way 🌌|jack_o_lantern 🎃|christmas_tree 🎄|fireworks 🎆|sparkler 🎇|balloon 🎈|tada 🎉|confetti_ball 🎊|gift 🎁|ribbon 🎀|ticket 🎫|trophy 🏆|medal_sports 🏅|1st_place_medal 🥇|2nd_place_medal 🥈|3rd_place_medal 🥉|soccer ⚽|basketball 🏀|football 🏈|baseball ⚾|tennis 🎾|volleyball 🏐|8ball 🎱|ping_pong 🏓|golf ⛳|ski 🎿|dart 🎯|video_game 🎮|joystick 🕹️|game_die 🎲|chess_pawn ♟️|jigsaw 🧩|art 🎨|musical_note 🎵|notes 🎶|microphone 🎤|headphones 🎧|guitar 🎸|violin 🎻|drum 🥁|trumpet 🎺|saxophone 🎷|piano 🎹|clapper 🎬|movie_camera 🎥|camera 📷|video_camera 📹|tv 📺|radio 📻|car 🚗|taxi 🚕|bus 🚌|truck 🚚|tractor 🚜|bike 🚲|motorcycle 🏍️|rocket 🚀|airplane ✈️|helicopter 🚁|ship 🚢|sailboat ⛵|anchor ⚓|train 🚋|steam_locomotive 🚂|bullettrain_front 🚅|metro 🚇|traffic_light 🚥|construction 🚧|fuelpump ⛽|watch ⌚|hourglass ⌛|alarm_clock ⏰|stopwatch ⏱️|clock1 🕐|calendar 📆|date 📅|iphone 📱|telephone ☎️|phone ☎️|computer 💻|desktop_computer 🖥️|keyboard ⌨️|printer 🖨️|floppy_disk 💾|cd 💿|dvd 📀|battery 🔋|electric_plug 🔌|bulb 💡|flashlight 🔦|candle 🕯️|satellite 📡|microscope 🔬|telescope 🔭|books 📚|book 📖|notebook 📓|page_facing_up 📄|newspaper 📰|bookmark 🔖|label 🏷️|moneybag 💰|dollar 💵|euro 💶|pound 💷|yen 💴|credit_card 💳|chart_with_upwards_trend 📈|chart_with_downwards_trend 📉|bar_chart 📊|clipboard 📋|pushpin 📌|paperclip 📎|scissors ✂️|straight_ruler 📏|triangular_ruler 📐|lock 🔒|unlock 🔓|key 🔑|old_key 🗝️|hammer 🔨|pick ⛏️|hammer_and_wrench 🛠️|wrench 🔧|nut_and_bolt 🔩|gear ⚙️|link 🔗|chains ⛓️|magnet 🧲|test_tube 🧪|dna 🧬|pill 💊|syringe 💉|stethoscope 🩺|bath 🛁|toilet 🚽|shower 🚿|bed 🛏️|door 🚪|package 📦|mailbox 📫|email 📧|envelope ✉️|inbox_tray 📥|outbox_tray 📤|memo 📝|pencil2 ✏️|pen 🖊️|fountain_pen 🖋️|paintbrush 🖌️|crayon 🖍️|mag 🔍|mag_right 🔎|file_folder 📁|open_file_folder 📂|card_index_dividers 🗂️|wastebasket 🗑️|shield 🛡️|crossed_swords ⚔️|bow_and_arrow 🏹|gun 🔫|crystal_ball 🔮|gem 💎|ring 💍|crown 👑|tophat 🎩|mortar_board 🎓|eyeglasses 👓|dark_sunglasses 🕶️|necktie 👔|shirt 👕|tshirt 👕|jeans 👖|dress 👗|kimono 👘|bikini 👙|high_heel 👠|athletic_shoe 👟|boot 👢|handbag 👜|briefcase 💼|school_satchel 🎒|lipstick 💄|heavy_check_mark ✔️|white_check_mark ✅|ballot_box_with_check ☑️|x ❌|negative_squared_cross_mark ❎|heavy_plus_sign ➕|heavy_minus_sign ➖|heavy_multiplication_x ✖️|heavy_division_sign ➗|question ❓|grey_question ❔|exclamation ❗|grey_exclamation ❕|bangbang ‼️|interrobang ⁉️|warning ⚠️|no_entry ⛔|no_entry_sign 🚫|recycle ♻️|copyright ©️|registered ®️|tm ™️|hash #️⃣|zero 0️⃣|one 1️⃣|two 2️⃣|three 3️⃣|arrow_up ⬆️|arrow_down ⬇️|arrow_left ⬅️|arrow_right ➡️|arrow_upper_right ↗️|arrow_lower_right ↘️|arrows_counterclockwise 🔄|repeat 🔁|infinity ♾️|checkered_flag 🏁|triangular_flag_on_post 🚩|rainbow_flag 🏳️‍🌈|white_flag 🏳️|black_flag 🏴|red_circle 🔴|orange_circle 🟠|yellow_circle 🟡|green_circle 🟢|large_blue_circle 🔵|purple_circle 🟣|black_circle ⚫|white_circle ⚪|red_square 🟥|green_square 🟩|blue_square 🟦|black_large_square ⬛|white_large_square ⬜|small_red_triangle 🔺|small_red_triangle_down 🔻|diamond_shape_with_a_dot_inside 💠|loud_sound 🔊|mute 🔇|bell 🔔|no_bell 🔕|mega 📣|loudspeaker 📢|hourglass_flowing_sand ⏳|wheelchair ♿|denmark 🇩🇰|jp 🇯🇵|us 🇺🇸|gb 🇬🇧|de 🇩🇪|fr 🇫🇷|es 🇪🇸|it 🇮🇹|se 🇸🇪|no 🇳🇴|fi 🇫🇮|eu 🇪🇺|cn 🇨🇳|kr 🇰🇷|in 🇮🇳|br 🇧🇷|ca 🇨🇦|au 🇦🇺`.split('|').map(x => { const i = x.indexOf(' '); return [x.slice(0, i), x.slice(i + 1)]; }));
+const EMOJI_NAMES = Object.keys(EMOJI);
+
+const ESCAPABLE = '\\`*_{}[]()#+-.!|>~=$"\'<:/';
+let refs = {}, fnDefs = [], fnNum = {}, headings = [];
+
+/* Heading text without inline syntax, and GitHub-style slugs (lowercase, punctuation
+   dropped, spaces to dashes, duplicates suffixed -1, -2 …). scan() and the export
+   walk the headings in the same order, so the ids agree. */
+function plainText(t) {
+  return t.replace(/!?\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/\[\^[^\]]*\]/g, '').replace(/[*_~=`]+/g, '').trim();
+}
+function slugify(t, seen) {
+  let s = plainText(t).toLowerCase().replace(/[^\p{L}\p{N}\s-]/gu, '').trim().replace(/\s+/g, '-') || 'section';
+  if (!(s in seen)) { seen[s] = 0; return s; }
+  return s + '-' + (++seen[s]);
+}
+/* TOC entries carry the same numbers the heading counters produce (h1 counts
+   every h1, h2 shows h1.h2, and so on); CSS shows them only under body.hnums. */
+function tocHtml(items, clean) {
+  if (!items.length) return '<ul class="toc"><li class="empty">Table of contents — headings appear here</li></ul>';
+  const min = Math.min(...items.map(h => h.level));
+  return '<ul class="toc">' + items.map(h => {
+    const num = h.num || '';
+    return `<li style="--d:${h.level - min + 1}"><a href="#${att(h.slug)}"${clean ? '' : ` data-line="${h.i}"`}>${num ? `<span class="tn">${num} </span>` : ''}${esc(plainText(h.text))}</a></li>`;
+  }).join('') + '</ul>';
+}
+
+const key = s => s.trim().toLowerCase().replace(/\s+/g, ' ');
+
+function collectRefs(lines) {
+  refs = {}; fnDefs = []; fnNum = {};
+  let fence = false;
+  for (const l of lines) {
+    if (/^\s*(```|~~~)/.test(l)) { fence = !fence; continue; }
+    if (fence) continue;
+    let m;
+    if ((m = /^\s{0,3}\[\^([^\]\s]+)\]:\s*(.*)$/.exec(l))) {
+      if (!(key(m[1]) in fnNum)) { fnNum[key(m[1])] = fnDefs.length + 1; fnDefs.push({ id: m[1], text: m[2] }); }
+    } else if ((m = /^\s{0,3}\[([^\]^]+)\]:\s*(\S+)(?:\s+"([^"]*)")?\s*$/.exec(l))) {
+      refs[key(m[1])] = { url: m[2], title: m[3] || '' };
+    }
+  }
+}
+
+function autolink(url, clean, T) {
+  const trail = /[.,;:!?)\]'"]+$/.exec(url);
+  let tail = '';
+  if (trail) { tail = trail[0]; url = url.slice(0, -tail.length); }
+  return [`<a href="${att(safeURL(url))}" target="_blank" rel="noreferrer">${esc(url)}</a>` + esc(tail), url.length + tail.length];
+}
+
+function inline(s, clean) {
+  const T = clean ? () => '' : t => `<span class="tok">${esc(t)}</span>`;
+  let out = '', i = 0, m;
+  while (i < s.length) {
+    const r = s.slice(i), c = s[i];
+
+    if (c === '\\' && i + 1 < s.length && ESCAPABLE.includes(s[i + 1])) {
+      out += T('\\') + esc(s[i + 1]); i += 2; continue; }
+
+    if (c === ':' && (m = /^:([a-z0-9_+\-]+):/.exec(r)) && EMOJI[m[1]]) {
+      out += clean ? EMOJI[m[1]] : T(m[0]) + `<span class="emo" data-x contenteditable="false">${EMOJI[m[1]]}</span>`;
+      i += m[0].length; continue; }
+
+    if ((m = /^(`+)([^`]+)\1(?!`)/.exec(r))) {
+      out += T(m[1]) + '<code>' + esc(m[2]) + '</code>' + T(m[1]); i += m[0].length; continue; }
+
+    if ((m = /^<((?:https?|mailto):[^>\s]+)>/.exec(r))) {
+      out += T('<') + `<a href="${att(safeURL(m[1]))}" target="_blank" rel="noreferrer">${esc(m[1])}</a>` + T('>');
+      i += m[0].length; continue; }
+
+    if ((m = /^\$\$([^$\n]+)\$\$/.exec(r))) {
+      out += clean ? mathHtml(m[1], true)
+                   : T('$$') + `<span class="tok">${esc(m[1])}</span>` + T('$$')
+                     + `<span class="kx" data-x contenteditable="false">${mathHtml(m[1], true)}</span>`;
+      i += m[0].length; continue; }
+    if ((m = /^\$([^\s$](?:[^$\n]*[^\s$])?)\$/.exec(r)) && !/^[\d.,]+$/.test(m[1])) {
+      out += clean ? mathHtml(m[1], false)
+                   : T('$') + `<span class="tok">${esc(m[1])}</span>` + T('$')
+                     + `<span class="kx" data-x contenteditable="false">${mathHtml(m[1], false)}</span>`;
+      i += m[0].length; continue; }
+
+    if ((m = /^!\[([^\]]*)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/.exec(r))) {
+      out += clean ? `<img src="${att(safeURL(m[2]))}" alt="${att(m[1])}">`
+                   : T('![') + esc(m[1]) + T(m[0].slice(2 + m[1].length));
+      i += m[0].length; continue; }
+
+    if ((m = /^\[\^([^\]\s]+)\]/.exec(r)) && key(m[1]) in fnNum) {
+      const n = fnNum[key(m[1])];
+      const tip = ` title="${att(fnDefs[n - 1].text)}"`;
+      out += clean ? `<sup id="fnref-${att(m[1])}"><a href="#fn-${att(m[1])}"${tip}>${n}</a></sup>`
+                   : T(m[0]) + `<sup class="fn" data-x contenteditable="false"${tip}>${n}</sup>`;
+      i += m[0].length; continue; }
+
+    if ((m = /^\[([^\]]*)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/.exec(r))) {
+      out += T('[') + `<a href="${att(safeURL(m[2]))}" target="_blank" rel="noreferrer">`
+           + inline(m[1], clean) + '</a>' + T(m[0].slice(1 + m[1].length));
+      i += m[0].length; continue; }
+
+    if ((m = /^\[([^\]]+)\](?:\[([^\]]*)\])?/.exec(r))) {
+      const ref = refs[key(m[2] || m[1])];
+      if (ref) {
+        out += T('[') + `<a href="${att(safeURL(ref.url))}"${ref.title ? ` title="${att(ref.title)}"` : ''} target="_blank" rel="noreferrer">`
+             + inline(m[1], clean) + '</a>' + T(m[0].slice(1 + m[1].length));
+        i += m[0].length; continue; }
+    }
+
+    if ((m = /^\*\*([^\s*](?:[^*]*[^\s*])?)\*\*/.exec(r))) {
+      out += T('**') + '<strong>' + inline(m[1], clean) + '</strong>' + T('**'); i += m[0].length; continue; }
+    if ((m = /^__([^\s_](?:[^_]*[^\s_])?)__/.exec(r)) && !/[A-Za-z0-9]/.test(s[i - 1] || '')) {
+      out += T('__') + '<strong>' + inline(m[1], clean) + '</strong>' + T('__'); i += m[0].length; continue; }
+    if ((m = /^\*([^\s*](?:[^*]*[^\s*])?)\*/.exec(r))) {
+      out += T('*') + '<em>' + inline(m[1], clean) + '</em>' + T('*'); i += m[0].length; continue; }
+    if ((m = /^_([^\s_](?:[^_]*[^\s_])?)_/.exec(r)) && !/[A-Za-z0-9]/.test(s[i - 1] || '')) {
+      out += T('_') + '<em>' + inline(m[1], clean) + '</em>' + T('_'); i += m[0].length; continue; }
+    if ((m = /^~~([^~]+)~~/.exec(r))) {
+      out += T('~~') + '<del>' + inline(m[1], clean) + '</del>' + T('~~'); i += m[0].length; continue; }
+    if ((m = /^==([^=]+)==/.exec(r))) {
+      out += T('==') + '<mark>' + inline(m[1], clean) + '</mark>' + T('=='); i += m[0].length; continue; }
+
+    if ((c === 'h' || c === 'w') && (i === 0 || /[\s(*_~>]/.test(s[i - 1]))
+        && (m = /^(https?:\/\/|www\.)[^\s<>]+/.exec(r))) {
+      const [html, len] = autolink(m[0], clean, T);
+      out += html; i += len; continue; }
+
+    out += esc(c); i++;
+  }
+  return out;
+}
+
+/* ── tables ──────────────────────────────────────────────────────────── */
+function splitRow(row) {
+  let t = row.trim(), cells = [], cur = '';
+  if (t.startsWith('|')) t = t.slice(1);
+  for (let i = 0; i < t.length; i++) {
+    if (t[i] === '\\' && t[i + 1] === '|') { cur += '|'; i++; continue; }
+    if (t[i] === '|') { cells.push(cur); cur = ''; continue; }
+    cur += t[i];
+  }
+  if (cur.trim() || cells.length === 0) cells.push(cur);
+  return cells.map(c => c.trim());
+}
+const isDelimRow = l => /\|/.test(l) && /^[\s|:\-]+$/.test(l) && /-/.test(l);
+const isTableStart = (lines, i) =>
+  /\|/.test(lines[i]) && lines[i].trim() && !isDelimRow(lines[i]) &&
+  i + 1 < lines.length && isDelimRow(lines[i + 1]);
+function tableEnd(lines, i) {
+  let j = i + 2;
+  while (j < lines.length && lines[j].trim() && /\|/.test(lines[j]) && !/^\s*(```|~~~)/.test(lines[j])) j++;
+  return j - 1;
+}
+function tableHtml(rows) {
+  const align = splitRow(rows[1]).map(c =>
+    /^:-+:$/.test(c) ? 'center' : /^-+:$/.test(c) ? 'right' : /^:-+$/.test(c) ? 'left' : '');
+  const cell = (tag, c, n) =>
+    `<${tag}${align[n] ? ` style="text-align:${align[n]}"` : ''}>${inline(c, true)}</${tag}>`;
+  let h = '<table><thead><tr>' + splitRow(rows[0]).map((c, n) => cell('th', c, n)).join('') + '</tr></thead>';
+  const body = rows.slice(2).map(r => '<tr>' + splitRow(r).map((c, n) => cell('td', c, n)).join('') + '</tr>').join('');
+  return h + (body ? '<tbody>' + body + '</tbody>' : '') + '</table>';
+}
+
+/* ── table commands ───────────────────────────────────────────────────────
+   All source rewriting through setText (one undo step each); the folded
+   preview follows on its own. Cells are addressed by cellSpans(), which
+   returns the trimmed content span of each cell in a raw row. */
+function cellSpans(row) {
+  const spans = [], n = row.length;
+  let s = 0; while (s < n && /\s/.test(row[s])) s++;
+  if (row[s] === '|') s++;
+  let cur = s;
+  for (let i = s; i <= n; i++) {
+    if (i < n && row[i] === '\\' && row[i + 1] === '|') { i++; continue; }
+    if (i === n || row[i] === '|') {
+      let a = cur, b = i;
+      while (a < b && /\s/.test(row[a])) a++;
+      while (b > a && /\s/.test(row[b - 1])) b--;
+      spans.push({ start: a, end: b, from: cur, to: i });
+      cur = i + 1;
+    }
+  }
+  const last = spans[spans.length - 1];
+  if (spans.length > 1 && last.start === last.end && row.slice(0, last.from).trimEnd().endsWith('|')) spans.pop();
+  return spans;
+}
+const escPipe = c => c.replace(/\|/g, '\\|');
+function tidyRows(rows) {
+  const cells = rows.map(splitRow);
+  const cols = Math.max(...cells.map(c => c.length));
+  const len = t => [...t].length;
+  const width = Array.from({ length: cols }, (_, k) => Math.max(3, ...cells.map((r, ri) => ri === 1 ? 0 : len(escPipe(r[k] || '')))));
+  const align = (cells[1] || []).map(c => /^:-+:$/.test(c) ? 'c' : /^-+:$/.test(c) ? 'r' : /^:-+$/.test(c) ? 'l' : '');
+  return rows.map((row, ri) => {
+    const parts = [];
+    for (let k = 0; k < cols; k++) {
+      const w = width[k], a = align[k] || '';
+      if (ri === 1) parts.push((a === 'l' || a === 'c' ? ':' : '-') + '-'.repeat(w - 2) + (a === 'r' || a === 'c' ? ':' : '-'));
+      else {
+        const t = escPipe(cells[ri][k] || ''), pad = w - len(t), half = Math.floor(pad / 2);
+        parts.push(a === 'r' ? ' '.repeat(pad) + t : a === 'c' ? ' '.repeat(half) + t + ' '.repeat(pad - half) : t + ' '.repeat(pad));
+      }
+    }
+    return '| ' + parts.join(' | ') + ' |';
+  });
+}
+function tableCtx() {
+  const sel = selRange(); if (!sel) return null;
+  const lines = text.split('\n');
+  const li = text.slice(0, sel.start).split('\n').length - 1;
+  const f = flags[li]; if (!f || f.type !== 'table') return null;
+  let a = li, b = li;
+  while (a > 0 && flags[a - 1].type === 'table' && flags[a - 1].blk === f.blk) a--;
+  while (b + 1 < flags.length && flags[b + 1].type === 'table' && flags[b + 1].blk === f.blk) b++;
+  const lineStart = lines.slice(0, li).reduce((n, l) => n + l.length + 1, 0);
+  const col = sel.start - lineStart, spans = cellSpans(lines[li]);
+  let cell = spans.findIndex(sp => col <= sp.to); if (cell < 0) cell = spans.length - 1;
+  return { a, b, li, row: li - a, cell, lines, rows: lines.slice(a, b + 1) };
+}
+function replaceTable(c, rows, rowIdx, cellIdx) {
+  const lines = c.lines.slice(); lines.splice(c.a, c.b - c.a + 1, ...rows);
+  rowIdx = Math.max(0, Math.min(rowIdx, rows.length - 1));
+  const start = lines.slice(0, c.a + rowIdx).reduce((n, l) => n + l.length + 1, 0);
+  const spans = cellSpans(rows[rowIdx]), sp = spans[Math.max(0, Math.min(cellIdx, spans.length - 1))];
+  setText(lines.join('\n'), start + sp.start, start + sp.end);
+}
+const noTable = () => { toast('The caret is not in a table'); };
+function tableTidy() { const c = tableCtx(); if (!c) return noTable(); replaceTable(c, tidyRows(c.rows), c.row, c.cell); }
+function tableAddRow() {
+  const c = tableCtx(); if (!c) return noTable();
+  const cols = splitRow(c.rows[0]).length, at = Math.max(c.row, 1) + 1, rows = c.rows.slice();
+  rows.splice(at, 0, '|' + ' |'.repeat(cols));
+  replaceTable(c, tidyRows(rows), at, 0);
+}
+function tableDelRow() {
+  const c = tableCtx(); if (!c) return noTable();
+  if (c.row < 2) { toast('The header and its divider stay'); return; }
+  const rows = c.rows.slice(); rows.splice(c.row, 1);
+  replaceTable(c, tidyRows(rows), Math.min(c.row, rows.length - 1), c.cell);
+}
+function tableAddCol() {
+  const c = tableCtx(); if (!c) return noTable();
+  const rows = c.rows.map((r, i) => { const cells = splitRow(r); cells.splice(c.cell + 1, 0, i === 1 ? '---' : ''); return '| ' + cells.map(escPipe).join(' | ') + ' |'; });
+  replaceTable(c, tidyRows(rows), c.row, c.cell + 1);
+}
+function tableDelCol() {
+  const c = tableCtx(); if (!c) return noTable();
+  if (splitRow(c.rows[0]).length <= 1) { toast('A table keeps at least one column'); return; }
+  const rows = c.rows.map(r => { const cells = splitRow(r); if (c.cell < cells.length) cells.splice(c.cell, 1); return '| ' + cells.map(escPipe).join(' | ') + ' |'; });
+  replaceTable(c, tidyRows(rows), c.row, Math.max(0, c.cell - 1));
+}
+/* Tab / Shift-Tab: next or previous cell, skipping the divider row; Tab past the last cell adds a row. */
+function tableNav(back) {
+  const c = tableCtx(); if (!c) return false;
+  let row = c.row, cell = c.cell + (back ? -1 : 1);
+  if (row === 1) { row = back ? 0 : 2; cell = back ? cellSpans(c.rows[0]).length - 1 : 0; }
+  if (cell < 0) { if (row === 0) return true; row = row === 2 ? 0 : row - 1; cell = cellSpans(c.rows[row]).length - 1; }
+  const cols = splitRow(c.rows[0]).length;
+  if (cell >= cols) {
+    row = row === 0 ? 2 : row + 1; cell = 0;
+    if (row > c.rows.length - 1) { tableAddRow(); return true; }
+  }
+  /* a row shorter than the header: tidy pads it, then land in the new cell */
+  if (cell >= cellSpans(c.rows[row]).length) { replaceTable(c, tidyRows(c.rows), row, cell); return true; }
+  const start = c.lines.slice(0, c.a + row).reduce((n, l) => n + l.length + 1, 0), sp = cellSpans(c.rows[row])[cell];
+  setSel(start + sp.start, start + sp.end); updateActive();
+  return true;
+}
+
+/* ── line classification ─────────────────────────────────────────────── */
+const ALERTS = ['NOTE', 'TIP', 'IMPORTANT', 'WARNING', 'CAUTION'];
+
+function classify(t) {
+  const f = {};
+  let m;
+  if (!t.trim()) { f.type = 'empty'; f.cls = 'empty'; return f; }
+  if ((m = /^(#{1,6})\s+/.exec(t))) {
+    f.type = 'h'; f.level = m[1].length; f.marker = m[0];
+    f.cls = 'h h' + f.level; f.text = t.slice(m[0].length); return f; }
+  if (/^\s{0,3}(-{3,}|\*{3,}|_{3,})\s*$/.test(t)) { f.type = 'hr'; f.cls = 'hr'; return f; }
+  if ((m = /^(\s*)>\s?/.exec(t))) {
+    f.type = 'quote'; f.marker = m[0]; f.cls = 'quote';
+    f.ind = Math.floor(m[1].length / 2); f.text = t.slice(m[0].length);
+    const a = /^\[!(\w+)\]\s*$/.exec(f.text.trim());
+    if (a && ALERTS.includes(a[1].toUpperCase())) { f.alert = a[1].toUpperCase(); f.cls += ' alert a-' + f.alert.toLowerCase(); }
+    return f; }
+  if ((m = /^\s{0,3}\[\^([^\]\s]+)\]:\s*/.exec(t))) {
+    f.type = 'fndef'; f.marker = m[0]; f.cls = 'refdef'; f.text = t.slice(m[0].length); return f; }
+  if ((m = /^\s{0,3}\[([^\]^]+)\]:\s*\S+/.exec(t))) {
+    f.type = 'refdef'; f.cls = 'refdef'; return f; }
+  if ((m = /^(\s*)([-*+])\s+\[([ xX])\]\s+/.exec(t))) {
+    f.type = 'task'; f.marker = m[0]; f.done = m[3] !== ' ';
+    f.cls = 'task' + (f.done ? ' done' : ''); f.ind = Math.floor(m[1].length / 2) + 1;
+    f.text = t.slice(m[0].length); return f; }
+  if ((m = /^(\s*)([-*+])\s+/.exec(t))) {
+    f.type = 'ul'; f.marker = m[0]; f.cls = 'ul';
+    f.ind = Math.floor(m[1].length / 2) + 1; f.text = t.slice(m[0].length); return f; }
+  if ((m = /^(\s*)(\d+[.)])(\s+)/.exec(t))) {
+    f.type = 'ol'; f.pre = m[1]; f.num = m[2]; f.gap = m[3];
+    f.cls = 'ol'; f.ind = Math.floor(m[1].length / 2) + 1;
+    f.text = t.slice(m[0].length); return f; }
+  if (/^\s*<\/?[a-zA-Z][^>]*>/.test(t)) { f.type = 'html'; f.cls = 'rawhtml'; return f; }
+  if (/^\s*!\[[^\]]*\]\([^)\s]+(?:\s+"[^"]*")?\)\s*$/.test(t)) { f.type = 'img'; f.cls = 'para'; return f; }
+  f.type = 'p'; f.cls = 'para'; return f;
+}
+
+/* ── document scan ───────────────────────────────────────────────────── */
+let blkCount = 0;
+function scan(lines) {
+  collectRefs(lines);
+  const out = [];
+  let inCode = false, tick = '', inMath = false, mer = false;
+  let blk = 0, tEnd = -1, listCtx = false, prevBlank = true;
+  let codeFrom = 0, codeLang = '', eq = 0, quoteAlert = null, prevQuote = false, printed = false;
+  let fmEnd = -1;
+  const seen = {}; headings = [];
+  if (lines[0] === '---') fmEnd = lines.findIndex((x, j) => j > 0 && /^(---|\.\.\.)\s*$/.test(x));
+
+  for (let i = 0; i < lines.length; i++) {
+    const l = lines[i];
+    let f;
+    const fence = /^(\s*)(```+|~~~+)(.*)$/.exec(l);
+
+    if (i <= fmEnd) {
+      if (i === 0) blk++;
+      f = { type:'fm', cls:'fm', blk, kind:'front' };
+      if (i === fmEnd) f.last = true;
+    } else if (fence && !inMath && (!inCode || fence[2][0] === tick)) {
+      const opening = !inCode;
+      if (opening && fence[3].trim().toLowerCase() === 'mermaid') { mer = true; blk++; }
+      f = { type:'fence', open:opening, ws:fence[1], ticks:fence[2], lang:fence[3] };
+      f.cls = 'fence ' + (opening ? 'open' : 'close');
+      if (mer) { f.blk = blk; f.kind = 'mermaid'; if (!opening) { f.last = true; mer = false; } }
+      if (opening) { codeFrom = i + 1; codeLang = mer ? '' : hlLang(fence[3]); }
+      else if (codeLang) hlRun(out, lines, codeFrom, i, codeLang);
+      tick = opening ? fence[2][0] : '';
+      inCode = opening;
+    } else if (inCode) {
+      f = { type:'code', cls:'code' };
+      if (mer) { f.blk = blk; f.kind = 'mermaid'; }
+    } else if (/^\s*\$\$\s*$/.test(l)) {
+      if (!inMath) { blk++; eq++; }
+      f = { type:'mathfence', cls:'mathblk ' + (inMath ? 'close' : 'open'), blk, kind:'math' };
+      if (inMath) { f.last = true; f.eq = eq; }
+      inMath = !inMath;
+    } else if (inMath) {
+      f = { type:'mathsrc', cls:'mathblk', blk, kind:'math' };
+    } else if (i <= tEnd) {
+      f = { type:'table', cls:'trow', blk, kind:'table' };
+      if (i === tEnd) { f.last = true; tEnd = -1; }
+    } else if (isTableStart(lines, i)) {
+      blk++; tEnd = tableEnd(lines, i);
+      f = { type:'table', cls:'trow', blk, kind:'table' };
+    } else if (/^\s*\[toc\]\s*$/i.test(l)) {
+      blk++;
+      f = { type:'toc', cls:'toc', blk, kind:'toc', last:true };
+    } else if (/^ {4,}\S/.test(l) && !listCtx && prevBlank) {
+      f = { type:'icode', cls:'code' };
+    } else if (/^ {4,}\S/.test(l) && !listCtx && out.length && out[out.length - 1].type === 'icode') {
+      f = { type:'icode', cls:'code' };
+    } else {
+      f = classify(l);
+      if (f.type === 'p' && i + 1 < lines.length && /^\s{0,3}(=+|-+)\s*$/.test(lines[i + 1])
+          && lines[i + 1].trim().length) {
+        f = { type:'h', level: lines[i + 1].trim()[0] === '=' ? 1 : 2, marker:'', text:l, setext:true };
+        f.cls = 'h h' + f.level;
+      } else if (f.type === 'hr' && out.length && out[out.length - 1].setext) {
+        f = { type:'underline', cls:'setext' };
+      } else if (/^\s{0,3}=+\s*$/.test(l) && out.length && out[out.length - 1].setext) {
+        f = { type:'underline', cls:'setext' };
+      }
+    }
+
+    /* GitHub alerts: [!NOTE] counts only on the first line of a blockquote, and
+       the kind then applies to every following quote line of the same block. */
+    if (f.type === 'quote') {
+      if (f.alert && prevQuote) { f.cls = f.cls.replace(/ alert a-\w+/, ''); delete f.alert; }
+      else if (!f.alert && prevQuote && quoteAlert) { f.akind = quoteAlert; f.cls += ' alert a-' + quoteAlert.toLowerCase(); }
+      quoteAlert = f.alert || (prevQuote ? quoteAlert : null);
+      prevQuote = true;
+    } else { prevQuote = false; quoteAlert = null; }
+    if (f.type === 'h') { f.slug = slugify(f.text, seen); headings.push({ i, level: f.level, text: f.text, slug: f.slug }); }
+    /* the first heading with nothing printable before it must not start a new page (Pages option) */
+    if (f.type === 'h' && !printed) f.cls += ' first';
+    if (f.type !== 'empty' && f.type !== 'fm') printed = true;
+    if (f.type === 'ul' || f.type === 'ol' || f.type === 'task') listCtx = true;
+    else if (f.type === 'empty') prevBlank = true;
+    else { prevBlank = false; if (!/^\s{2,}/.test(l) && f.type !== 'icode') listCtx = false; }
+    if (f.type !== 'empty') prevBlank = false;
+
+    f.k = JSON.stringify(f);
+    out.push(f);
+  }
+  if (inCode && codeLang) hlRun(out, lines, codeFrom, lines.length, codeLang);
+  /* heading numbers: a lone h1 is the title (unnumbered, sections from h2); the
+     TOC and the editor both read h.num, so they cannot disagree */
+  const from = headings.filter(h => h.level === 1).length === 1 ? 2 : 1, c = [0, 0, 0, 0, 0, 0, 0];
+  for (const h of headings) {
+    let num = '';
+    if (h.level >= from) {
+      c[h.level]++; for (let k = h.level + 1; k <= 6; k++) c[k] = 0;
+      num = h.level === from ? c[from] + '.' : c.slice(from, h.level + 1).join('.');
+    }
+    h.num = num; out[h.i].num = num; out[h.i].k = JSON.stringify(out[h.i]);
+  }
+  blkCount = blk;
+  return out;
+}
+
+/* Export code: highlighted when possible; with line numbers on, each line is wrapped so CSS can count them. */
+function codeHtml(info, code) {
+  const html = hlHtml(info, code);
+  if (!document.body.classList.contains('linenos')) return html;
+  return hlSplit(html).map(l => `<span class="ln">${l}</span>`).join('\n');
+}
+function hlHtml(info, code) {
+  const lang = hlLang(info);
+  if (lang) { try { return hljs.highlight(code, { language: lang, ignoreIllegals: true }).value; } catch (e) {} }
+  return esc(code);
+}
+
+/* ── syntax highlighting ─────────────────────────────────────────────────
+   highlight.js loads lazily and may be absent; then code lines stay plain.
+   A fence is highlighted as one block, so comments and strings may span
+   lines, and the result is split back into per-line HTML. Each line's HTML
+   carries exactly the source line's text, only wrapped in spans, so the DOM
+   walkers see nothing new. The per-line HTML lives in f.hl and is part of
+   the render key, so only lines whose colouring changed are rewritten. */
+const hlCache = new Map();
+function hlLang(info) {
+  const l = (info || '').trim().split(/[\s{,:]/)[0].toLowerCase();
+  return l && globalThis.hljs && hljs.getLanguage(l) ? l : '';
+}
+function hlRun(out, lines, from, to, lang) {
+  if (to <= from) return;
+  const v = hlBlock(lang, lines.slice(from, to).join('\n'));
+  if (!v) return;
+  for (let i = from; i < to; i++) { out[i].hl = v[i - from]; out[i].k = JSON.stringify(out[i]); }
+}
+function hlBlock(lang, code) {
+  const ck = lang + '\0' + code;
+  let v = hlCache.get(ck);
+  if (v) return v;
+  if (code.length > 40000) return null;
+  let html;
+  try { html = hljs.highlight(code, { language: lang, ignoreIllegals: true }).value; } catch (e) { return null; }
+  v = hlSplit(html);
+  if (v.length !== code.split('\n').length) return null;
+  if (hlCache.size > 200) hlCache.delete(hlCache.keys().next().value);
+  hlCache.set(ck, v);
+  return v;
+}
+/* Split highlight.js output at newlines: close the open spans at the end of
+   each line and reopen them at the start of the next. Text is entity-escaped
+   by hljs, so a raw '<' only ever starts a tag. Lines with no text become ''. */
+function hlSplit(html) {
+  const out = [], open = [];
+  let cur = '', hasText = false, m;
+  const re = /<span class="([^"]*)">|<\/span>|\n|[^<\n]+/g;
+  while ((m = re.exec(html))) {
+    const t = m[0];
+    if (t === '\n') {
+      out.push(hasText ? cur + '</span>'.repeat(open.length) : '');
+      cur = open.map(c => `<span class="${c}">`).join(''); hasText = false;
+    } else if (t === '</span>') { open.pop(); cur += t; }
+    else if (t[0] === '<') { open.push(m[1]); cur += t; }
+    else { cur += t; hasText = true; }
+  }
+  out.push(hasText ? cur + '</span>'.repeat(open.length) : '');
+  return out;
+}
+const HL_CSS = `
+.hljs-keyword,.hljs-selector-tag,.hljs-literal,.hljs-doctag,.hljs-template-tag{color:var(--hl-kw)}
+.hljs-string,.hljs-regexp,.hljs-char.escape_,.hljs-template-variable,.hljs-addition,.hljs-quote{color:var(--hl-str)}
+.hljs-number,.hljs-symbol,.hljs-bullet,.hljs-link,.hljs-meta{color:var(--hl-num)}
+.hljs-comment{color:var(--hl-cmt);font-style:italic}
+.hljs-title,.hljs-section,.hljs-name,.hljs-selector-id,.hljs-selector-class{color:var(--hl-fn)}
+.hljs-type,.hljs-built_in,.hljs-title.class_,.hljs-deletion,.hljs-variable.language_{color:var(--hl-type)}
+.hljs-attr,.hljs-attribute,.hljs-property,.hljs-variable,.hljs-selector-attr,.hljs-selector-pseudo{color:var(--hl-attr)}
+.hljs-strong{font-weight:700}.hljs-emphasis{font-style:italic}
+`;
+
+/* ── line rendering ──────────────────────────────────────────────────── */
+function renderLine(s, f) {
+  let h = coreLine(s, f);
+  if (f.blk) h = `<span class="src">${h || '&#8203;'}</span>`;
+  if (f.last) h += '<span class="prev" data-x contenteditable="false"></span>';
+  return h;
+}
+
+function coreLine(s, f) {
+  switch (f.type) {
+    case 'mathfence': return `<span class="tok">${esc(s)}</span>`;
+    case 'mathsrc':
+    case 'fm':        return esc(s);
+    case 'underline':
+    case 'toc':       return `<span class="tok">${esc(s)}</span>`;
+    case 'fence':
+      return esc(f.ws) + `<span class="tok">${esc(f.ticks)}</span>` +
+             (f.lang ? `<span class="lang">${esc(f.lang)}</span>` : '');
+    case 'code':  return f.hl !== undefined ? f.hl : esc(s);
+    case 'icode':
+    case 'html':  return esc(s);
+    case 'hr':    return `<span class="tok">${esc(s)}</span><span class="rule"></span>`;
+    case 'h':     return (f.marker ? `<span class="tok">${esc(f.marker)}</span>` : '') + (f.num ? `<span class="hn" data-x>${f.num} </span>` : '') + inline(f.text);
+    case 'quote': return `<span class="tok">${esc(f.marker)}</span>` +
+                         (f.alert ? `<span class="tok">${esc(f.text)}</span><span class="alabel" data-x>${f.alert[0] + f.alert.slice(1).toLowerCase()}</span>`
+                                  : inline(f.text));
+    case 'task':
+    case 'ul':    return `<span class="tok">${esc(f.marker)}</span>` + inline(f.text);
+    case 'ol':    return `<span class="tok">${esc(f.pre)}</span><span class="onum">${esc(f.num)}</span>`
+                       + esc(f.gap) + inline(f.text);
+    /* no literal text around the data-x number: the marker already carries its trailing space */
+    case 'fndef': return `<span class="tok">${esc(f.marker)}</span><span class="fn" data-x>${fnNum[key(/\[\^([^\]\s]+)\]/.exec(f.marker)[1])] || '?'}</span>` + inline(f.text);
+    case 'refdef': return inline(s);
+    case 'table': return esc(s).replace(/\|/g, '<span class="pipe">|</span>');
+    case 'img': {
+      const m = /!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/.exec(s);
+      return inline(s) + `<img class="mdimg" data-x src="${att(safeURL(m[2]))}" alt="${att(m[1])}"${m[3] ? ` title="${att(m[3])}"` : ''}>`; }
+    default:      return inline(s);
+  }
+}
+
+/* ── math & diagrams ──────────────────────────────────────────────────── */
+/* Naive YAML: top-level `key: value` rows, with indented `- item` lines joined onto the key above. */
+function frontCard(lines) {
+  const rows = [];
+  for (const l of lines) {
+    let m;
+    if ((m = /^([\w.-]+):\s*(.*)$/.exec(l))) rows.push([m[1], m[2].replace(/^["']|["']$/g, '')]);
+    else if ((m = /^\s+-\s*(.*)$/.exec(l)) && rows.length) rows[rows.length - 1][1] += (rows[rows.length - 1][1] ? ', ' : '') + m[1];
+  }
+  if (!rows.length) return '<div class="fmcard"><b>front matter</b><span></span></div>';
+  return '<div class="fmcard">' + rows.map(([k, v]) => `<b>${esc(k)}</b><span>${esc(v)}</span>`).join('') + '</div>';
+}
+
+function mathHtml(tex, display) {
+  if (!window.katex) return '';
+  try { return katex.renderToString(tex, { displayMode: display, throwOnError: false }); }
+  catch (e) { return `<span class="err">${esc(String(e.message || e))}</span>`; }
+}
+
+let mid = 0;
+async function drawMermaid(host, code) {
+  if (!window.mermaid) { host.innerHTML = '<span class="err">Mermaid needs a connection the first time it loads.</span>'; return; }
+  const id = 'mm' + (++mid);
+  try {
+    const { svg } = await mermaid.render(id, code);
+    host.innerHTML = svg;
+  } catch (e) {
+    const el = document.getElementById('d' + id); if (el) el.remove();
+    host.innerHTML = `<span class="err">${esc(String((e && e.message) || e).split('\n')[0])}</span>`;
+  }
+}
+
+/* Fill the preview slot at the end of each math or mermaid block.
+   deep=false skips mermaid, so diagrams redraw only when typing pauses. */
+function renderPreviews(deep) {
+  if (!blkCount) return;
+  const kids = editor.children, lines = text.split('\n');
+  for (let i = 0; i < kids.length; i++) {
+    const f = flags[i];
+    if (!f || !f.last) continue;
+    const host = kids[i].querySelector('.prev');
+    if (!host) continue;
+    let a = i;
+    while (a > 0 && flags[a - 1] && flags[a - 1].blk === f.blk) a--;
+    const body = f.kind === 'table' ? lines.slice(a, i + 1).join('\n')
+               : f.kind === 'toc'   ? JSON.stringify(headings.map(h => [h.level, h.text, h.slug])) + (document.body.classList.contains('hfrom2') ? '|2' : '')
+                                    : lines.slice(a + 1, i).join('\n').trim();
+    if (host.dataset.src === body) continue;
+    if (f.kind === 'mermaid') {
+      if (!deep) continue;
+      host.dataset.src = body;
+      if (body) drawMermaid(host, body); else host.innerHTML = '';
+    } else if (f.kind === 'table') {
+      host.dataset.src = body;
+      host.innerHTML = tableHtml(body.split('\n'));
+    } else if (f.kind === 'front') {
+      host.dataset.src = body;
+      host.innerHTML = frontCard(lines.slice(a + 1, i));
+    } else if (f.kind === 'toc') {
+      host.dataset.src = body;
+      host.innerHTML = tocHtml(headings, false);
+    } else {
+      host.dataset.src = body;
+      host.innerHTML = body ? mathHtml(body, true) + `<span class="eqno">(${f.eq})</span>` : '';
+    }
+  }
+}
+
+function forceRender() {
+  const sel = selRange();
+  for (const el of editor.children) el.dataset.k = '';
+  for (const el of editor.querySelectorAll('.prev')) delete el.dataset.src;
+  render(text);
+  if (sel) setSel(sel.start, sel.end);
+  renderPreviews(true);
+  updateActive();
+}
+
+/* ── DOM <-> text ─────────────────────────────────────────────────────── */
+const units = () => [...editor.childNodes];
+/* rendered math and diagrams are marked data-x: they carry text nodes that
+   are NOT part of the document, so every text walk skips them. */
+function unitText(n) {
+  if (n.nodeType === 3) return n.data;
+  if (n.nodeType !== 1) return '';
+  if (n.dataset && n.dataset.x !== undefined) return '';
+  let out = '';
+  for (const c of n.childNodes) out += unitText(c);
+  return out;
+}
+const getText = () => units().map(unitText).join('\n');
+
+function selRange() {
+  const sel = getSelection();
+  if (!sel.rangeCount) return null;
+  const r = sel.getRangeAt(0);
+  if (!editor.contains(r.startContainer)) return null;
+  return { start: offsetOf(r.startContainer, r.startOffset),
+           end:   offsetOf(r.endContainer, r.endOffset) };
+}
+
+function offsetOf(node, off) {
+  const us = units();
+  if (node === editor) { let n = 0; for (let i = 0; i < off; i++) n += unitText(us[i]).length + 1; return n; }
+  let owner = node, idx = -1;
+  while (owner && owner.parentNode !== editor) owner = owner.parentNode;
+  idx = us.indexOf(owner);
+  if (idx < 0) return 0;
+  let base = 0;
+  for (let i = 0; i < idx; i++) base += unitText(us[i]).length + 1;
+  if (owner.nodeType === 3) return base + off;
+  let acc = 0, done = false;
+  (function walk(n) {
+    if (done) return;
+    if (n === node) {
+      if (n.nodeType === 3) { acc += off; }
+      else { for (let i = 0; i < off && i < n.childNodes.length; i++) acc += unitText(n.childNodes[i]).length; }
+      done = true; return;
+    }
+    if (n.nodeType === 1 && n.dataset && n.dataset.x !== undefined) return;
+    if (n.nodeType === 3) { acc += n.data.length; return; }
+    for (const c of n.childNodes) { walk(c); if (done) return; }
+  })(owner);
+  return base + acc;
+}
+
+function locate(pos) {
+  const us = units();
+  let base = 0;
+  for (const u of us) {
+    const len = unitText(u).length;
+    if (pos <= base + len) {
+      if (u.nodeType === 3) return [u, pos - base];
+      let rem = pos - base, res = null;
+      (function walk(n) {
+        if (res) return;
+        if (n.nodeType === 1 && n.dataset && n.dataset.x !== undefined) return;
+        if (n.nodeType === 3) { if (rem <= n.data.length) res = [n, rem]; else rem -= n.data.length; return; }
+        for (const c of n.childNodes) { walk(c); if (res) return; }
+      })(u);
+      return res || [u, 0];
+    }
+    base += len + 1;
+  }
+  const last = editor.lastChild;
+  return last ? [last, last.nodeType === 3 ? last.data.length : last.childNodes.length] : [editor, 0];
+}
+
+function setSel(start, end = start) {
+  const [n1, o1] = locate(start), [n2, o2] = locate(end);
+  const r = document.createRange();
+  try { r.setStart(n1, o1); r.setEnd(n2, o2); } catch (e) { return; }
+  const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+}
+
+/* ── render ───────────────────────────────────────────────────────────── */
+let flags = [];
+function render(text) {
+  const lines = text.split('\n');
+  flags = scan(lines);
+  /* One h1 is the document title: number from h2 and leave it unnumbered. */
+  document.body.classList.toggle('hfrom2', headings.filter(h => h.level === 1).length === 1);
+  for (const n of units()) if (n.nodeType !== 1 || !n.classList.contains('line')) n.remove();
+  const kids = editor.children;
+  while (kids.length > lines.length) editor.removeChild(editor.lastChild);
+  for (let i = 0; i < lines.length; i++) {
+    let el = kids[i];
+    if (!el) { el = document.createElement('div'); editor.appendChild(el); }
+    const key = flags[i].k + '\u0000' + lines[i];
+    if (el.dataset.k === key) continue;
+    el.dataset.k = key;
+    /* keep the caret-state classes through the rewrite: otherwise the new .tok
+       spans start folded and animate open once updateActive() re-adds .active,
+       and the text slides under the caret on every keystroke */
+    const keep = ['active', 'near', 'fold', 'hid', 'folded'].filter(c => el.classList.contains(c)).map(c => ' ' + c).join('');
+    el.className = 'line ' + (flags[i].cls || '') + keep;
+    if (flags[i].ind) el.style.setProperty('--ind', flags[i].ind);
+    else el.style.removeProperty('--ind');
+    el.innerHTML = renderLine(lines[i], flags[i]) || '<br>';
+  }
+}
+
+/* ── state ────────────────────────────────────────────────────────────── */
+let text = '', composing = false, activeLine = -1;
+let hist = [], hi = -1, lastPush = 0;
+
+function record(t, sel) {
+  const now = Date.now();
+  if (hi >= 0 && hist[hi].text === t) { hist[hi].sel = sel; return; }
+  const coalesce = hi > 0 && now - lastPush < 700 && !/\n$/.test(t);
+  if (coalesce) hist[hi] = { text: t, sel };
+  else { hist = hist.slice(0, hi + 1); hist.push({ text: t, sel }); hi = hist.length - 1; }
+  if (hist.length > 300) { hist.shift(); hi--; }
+  lastPush = now;
+}
+function undo() { if (hi > 0) { hi--; apply(hist[hi]); } }
+function redo() { if (hi < hist.length - 1) { hi++; apply(hist[hi]); } }
+function apply(snap) {
+  text = snap.text; render(text);
+  setSel(snap.sel.start, snap.sel.end);
+  afterChange(false);
+}
+
+function setText(t, start, end, push = true) {
+  text = t;
+  render(text);
+  if (start != null) setSel(start, end == null ? start : end);
+  if (push) record(text, selRange() || { start: 0, end: 0 });
+  afterChange();
+}
+
+function sync() {
+  if (composing) return;
+  const t = getText(), sel = selRange() || { start: 0, end: 0 };
+  text = t;
+  render(text);
+  setSel(sel.start, sel.end);
+  record(text, sel);
+  afterChange();
+}
+
+let chromeTimer = null, prevTimer = null, snapTimer = null;
+function afterChange(save = true) {
+  updateActive();
+  updateCount();
+  buildOutline();
+  if (find.open) runFind();
+  slashCheck(); if (!slash.open) emojiCheck();
+  renderPreviews(false);
+  clearTimeout(prevTimer);
+  prevTimer = setTimeout(() => renderPreviews(true), 450);
+  if (save) {
+    clearTimeout(chromeTimer); chromeTimer = setTimeout(store, 900);
+    clearTimeout(snapTimer); snapTimer = setTimeout(() => snapshot(), 30000);
+  }
+}
+
+/* ── active line, focus, typewriter ───────────────────────────────────── */
+let raf = null;
+function updateActive() {
+  const sel = selRange();
+  const kids = editor.children;
+  let idx = -1;
+  if (sel) {
+    let base = 0;
+    for (let i = 0; i < kids.length; i++) {
+      const len = unitText(kids[i]).length;
+      if (sel.start <= base + len) { idx = i; break; }
+      base += len + 1;
+    }
+  }
+  if (kids[activeLine] && activeLine !== idx) kids[activeLine].classList.remove('active');
+  if (kids[idx]) kids[idx].classList.add('active');
+  activeLine = idx;
+  /* leaving a table tidies its source (the grid takes over, so nothing visibly jumps) */
+  const inTable = flags[idx] && flags[idx].type === 'table' ? idx : -1;
+  if (lastTableLine >= 0 && inTable < 0) { const t = lastTableLine; lastTableLine = -1; autoTidy(t); }
+  else lastTableLine = inTable;
+  if (blkCount) {
+    const open = flags[idx] ? flags[idx].blk : null;
+    for (let i = 0; i < kids.length; i++) {
+      const b = flags[i] && flags[i].blk;
+      kids[i].classList.toggle('fold', !!b && b !== open);
+    }
+  }
+  if (document.body.classList.contains('focus')) {
+    let a = idx, b = idx;
+    while (a > 0 && flags[a - 1] && flags[a - 1].type !== 'empty') a--;
+    while (b < kids.length - 1 && flags[b + 1] && flags[b + 1].type !== 'empty') b++;
+    for (let i = 0; i < kids.length; i++) kids[i].classList.toggle('near', i >= a && i <= b);
+  }
+  applySections(idx);
+  if (document.body.classList.contains('typewriter') && kids[idx]) {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      const r = kids[idx].getBoundingClientRect();
+      const delta = r.top + r.height / 2 - innerHeight / 2;
+      if (Math.abs(delta) > 4) wrap.scrollTop += delta;
+    });
+  }
+}
+
+function updateCount() {
+  const plain = text.replace(/```[\s\S]*?```/g, ' ').replace(/[#>*_`~\-\[\]()!|]/g, ' ');
+  const words = plain.split(/\s+/).filter(Boolean).length;
+  const mins = Math.max(1, Math.round(words / 220));
+  $('#count').textContent = `${words.toLocaleString()} words · ${text.length.toLocaleString()} characters · ${mins} min read`;
+}
+
+function jumpToLine(i) {
+  const f = flags[i]; if (!f) return;
+  const lens = text.split('\n').map(l => l.length);
+  let pos = 0; for (let j = 0; j < i; j++) pos += lens[j] + 1;
+  editor.focus(); setSel(pos + (f.marker || '').length);
+  const el = editor.children[i];
+  if (el) wrap.scrollTop += el.getBoundingClientRect().top - innerHeight * 0.28;
+  updateActive();
+}
+function buildOutline() {
+  if (!document.body.classList.contains('outline')) return;
+  const box = $('#outline');
+  const items = [];
+  text.split('\n').forEach((l, i) => {
+    if (flags[i] && flags[i].type === 'h') items.push({ i, level: flags[i].level, t: flags[i].text });
+  });
+  box.innerHTML = '';
+  if (!items.length) { box.innerHTML = '<div class="empty">Headings appear here as you write them.</div>'; return; }
+  /* Structure hints, informational only: a second top-level heading, or a level
+     that skips one (h1 → h3). Both trip accessibility checkers and linters. */
+  let h1s = 0, prev = 0;
+  for (const it of items) {
+    const d = document.createElement('div');
+    d.className = 'd' + it.level;
+    d.textContent = plainText(it.t);
+    if (it.level === 1 && ++h1s > 1) { d.classList.add('warn'); d.title = 'Second top-level heading. Convention is one h1 as the title, then ##.'; }
+    else if (prev && it.level > prev + 1) { d.classList.add('warn'); d.title = `Skips from h${prev} to h${it.level}. Screen readers and linters expect no gaps.`; }
+    prev = it.level;
+    d.onclick = () => jumpToLine(it.i);
+    box.appendChild(d);
+  }
+}
+
+/* ── editing commands ─────────────────────────────────────────────────── */
+function lineBounds(pos) {
+  const a = text.lastIndexOf('\n', pos - 1) + 1;
+  let b = text.indexOf('\n', pos); if (b < 0) b = text.length;
+  return [a, b];
+}
+
+function insert(str, sel) {
+  sel = sel || selRange(); if (!sel) return;
+  setText(text.slice(0, sel.start) + str + text.slice(sel.end), sel.start + str.length);
+}
+
+function wrapSel(l, r = l, placeholder = '') {
+  const sel = selRange(); if (!sel) return;
+  const inner = text.slice(sel.start, sel.end) || placeholder;
+  const already = text.slice(sel.start - l.length, sel.start) === l &&
+                  text.slice(sel.end, sel.end + r.length) === r;
+  if (already) {
+    setText(text.slice(0, sel.start - l.length) + inner + text.slice(sel.end + r.length),
+            sel.start - l.length, sel.end - l.length);
+    return;
+  }
+  const out = text.slice(0, sel.start) + l + inner + r + text.slice(sel.end);
+  if (sel.start === sel.end && !placeholder) setText(out, sel.start + l.length);
+  else setText(out, sel.start + l.length, sel.start + l.length + inner.length);
+}
+
+function heading(n) {
+  const sel = selRange(); if (!sel) return;
+  const [a, b] = lineBounds(sel.start);
+  const cur = text.slice(a, b);
+  const stripped = cur.replace(/^#{1,6}\s+/, '');
+  const pre = n ? '#'.repeat(n) + ' ' : '';
+  setText(text.slice(0, a) + pre + stripped + text.slice(b),
+          a + pre.length + Math.max(0, sel.start - a - (cur.length - stripped.length)));
+}
+
+function handleEnter() {
+  const sel = selRange(); if (!sel) return;
+  const [a] = lineBounds(sel.start);
+  const cur = text.slice(a, sel.start);
+  const m = /^(\s*)(?:([-*+])\s+(\[[ xX]\]\s+)?|(\d+)([.)])\s+|(>\s?))/.exec(cur);
+  if (m) {
+    const rest = cur.slice(m[0].length);
+    if (!rest.trim() && sel.start === sel.end) {   // empty item: clear the marker
+      setText(text.slice(0, a) + text.slice(sel.start), a);
+      return;
+    }
+    let pre;
+    if (m[6]) pre = m[1] + '> ';
+    else if (m[2]) pre = m[1] + m[2] + ' ' + (m[3] ? '[ ] ' : '');
+    else pre = m[1] + (parseInt(m[4], 10) + 1) + m[5] + ' ';
+    setText(text.slice(0, sel.start) + '\n' + pre + text.slice(sel.end), sel.start + 1 + pre.length);
+    return;
+  }
+  setText(text.slice(0, sel.start) + '\n' + text.slice(sel.end), sel.start + 1);
+}
+
+/* ⌘⇧L: bullet → numbered → task → plain, on every line the selection touches. */
+function cycleList() {
+  const sel = selRange(); if (!sel) return;
+  const [a] = lineBounds(sel.start);
+  const [, b] = lineBounds(sel.end > sel.start ? sel.end - 1 : sel.end);
+  const parse = l => /^(\s*)(?:([-*+])\s+(\[[ xX]\]\s+)?|(\d+)[.)]\s+)?(.*)$/.exec(l);
+  const first = parse(text.slice(a, b).split('\n')[0]);
+  const kind = first[3] ? 'task' : first[2] ? 'ul' : first[4] ? 'ol' : 'none';
+  const next = { none: 'ul', ul: 'ol', ol: 'task', task: 'none' }[kind];
+  let n = 0;
+  const out = text.slice(a, b).split('\n').map(l => {
+    if (!l.trim()) return l;
+    const m = parse(l);
+    const pre = next === 'ul' ? '- ' : next === 'ol' ? (++n) + '. ' : next === 'task' ? '- [ ] ' : '';
+    return m[1] + pre + m[5];
+  }).join('\n');
+  if (sel.start === sel.end) {
+    const delta = out.split('\n')[0].length - (text.slice(a, b).split('\n')[0]).length;
+    setText(text.slice(0, a) + out + text.slice(b), Math.max(a, sel.start + delta));
+  } else setText(text.slice(0, a) + out + text.slice(b), a, a + out.length);
+}
+
+function indent(out) {
+  const sel = selRange(); if (!sel) return;
+  const [a, b] = lineBounds(sel.start);
+  const line = text.slice(a, b);
+  const isList = /^\s*(?:[-*+]|\d+[.)])\s/.test(line);
+  if (!isList && !out && sel.start === sel.end) { insert('  ', sel); return; }
+  if (out) {
+    const n = /^ {1,2}/.exec(line);
+    if (!n) return;
+    setText(text.slice(0, a) + line.slice(n[0].length) + text.slice(b), Math.max(a, sel.start - n[0].length));
+  } else {
+    setText(text.slice(0, a) + '  ' + line + text.slice(b), sel.start + 2);
+  }
+}
+
+/* ── events ───────────────────────────────────────────────────────────── */
+/* ── auto-pairing ─────────────────────────────────────────────────────────
+   Typing an opener inserts its closer after the caret, or wraps the selection;
+   typing a closer that is already there steps over it; backspace inside an
+   empty pair removes both. Off inside code and maths blocks, off for * and _
+   next to a letter or digit (2*3, snake_case), and off entirely with
+   body.nopair (View ▸ Auto-pair). */
+const PAIRS = { '(': ')', '[': ']', '{': '}', '"': '"', '`': '`', '*': '*', '_': '_' };
+const CLOSERS = new Set(Object.values(PAIRS));
+function autoPair(e) {
+  if (composing || document.body.classList.contains('nopair')) return false;
+  const sel = selRange(); if (!sel) return false;
+  const line = flags[text.slice(0, sel.start).split('\n').length - 1];
+  if (line && /^(code|fence|icode|mathsrc|mathfence|fm)$/.test(line.type)) return false;
+  const ch = e.data, prev = text[sel.start - 1] || '', next = text[sel.end] || '';
+  const wordy = c => /[\p{L}\p{N}]/u.test(c);
+  if (e.inputType === 'insertText' && ch && ch.length === 1) {
+    if (sel.end > sel.start) {                            /* wrap the selection */
+      if (!(ch in PAIRS)) return false;
+      const inner = text.slice(sel.start, sel.end);
+      setText(text.slice(0, sel.start) + ch + inner + PAIRS[ch] + text.slice(sel.end), sel.start + 1, sel.end + 1);
+      return true;
+    }
+    if (CLOSERS.has(ch) && next === ch && (ch in PAIRS ? prev !== '' : true)) {   /* step over */
+      if (ch in PAIRS && !CLOSERS.has(prev) && ch !== prev && !/[\p{L}\p{N}\s]/u.test(prev) && prev !== PAIRS[ch]) { /* fall through to pairing */ }
+      else { setSel(sel.start + 1); return true; }
+    }
+    if (!(ch in PAIRS)) return false;
+    if ((ch === '*' || ch === '_') && (wordy(prev) || wordy(next))) return false;
+    if (ch === '"' && wordy(prev)) return false;
+    if (wordy(next) && ch !== '(' && ch !== '[' && ch !== '{') return false;
+    setText(text.slice(0, sel.start) + ch + PAIRS[ch] + text.slice(sel.start), sel.start + 1);
+    return true;
+  }
+  if (e.inputType === 'deleteContentBackward' && sel.start === sel.end && prev in PAIRS && next === PAIRS[prev]) {
+    setText(text.slice(0, sel.start - 1) + text.slice(sel.start + 1), sel.start - 1);
+    return true;
+  }
+  return false;
+}
+editor.addEventListener('beforeinput', e => {
+  if (e.inputType === 'historyUndo') { e.preventDefault(); undo(); }
+  else if (e.inputType === 'historyRedo') { e.preventDefault(); redo(); }
+  else if (e.inputType === 'insertParagraph' || e.inputType === 'insertLineBreak') {
+    e.preventDefault(); handleEnter();
+  }
+  else if ((e.inputType === 'insertText' || e.inputType === 'deleteContentBackward') && autoPair(e)) e.preventDefault();
+});
+editor.addEventListener('input', sync);
+editor.addEventListener('compositionstart', () => composing = true);
+editor.addEventListener('compositionend', () => { composing = false; sync(); });
+editor.addEventListener('paste', e => {
+  e.preventDefault();
+  const t = (e.clipboardData || window.clipboardData).getData('text/plain');
+  if (t) insert(t.replace(/\r\n?/g, '\n'));
+});
+document.addEventListener('selectionchange', () => {
+  if (document.activeElement === editor) { updateActive(); if (slash.open) slashCheck(); if (emo.open) emojiCheck(); }
+});
+editor.addEventListener('click', e => {
+  const hd = e.target.closest && e.target.closest('.line.h');
+  if (hd && e.clientX < hd.getBoundingClientRect().left) { foldSection([...editor.children].indexOf(hd)); return; }
+  const link = e.target.closest && e.target.closest('a[href^="#"]');
+  if (link && editor.contains(link)) {
+    e.preventDefault();
+    let slug; try { slug = decodeURIComponent(link.getAttribute('href').slice(1)); } catch (err) { slug = link.getAttribute('href').slice(1); }
+    const h = link.dataset.line !== undefined ? { i: +link.dataset.line } : headings.find(x => x.slug === slug);
+    if (h) jumpToLine(h.i); else toast('No heading "' + slug + '"');
+    return;
+  }
+  const li = e.target.closest && e.target.closest('.task');
+  if (!li) return;
+  if (e.clientX > li.getBoundingClientRect().left) return;   // only the checkbox gutter
+  const i = [...editor.children].indexOf(li);
+  const lens = text.split('\n').map(l => l.length);
+  let pos = 0; for (let j = 0; j < i; j++) pos += lens[j] + 1;
+  const [a, b] = lineBounds(pos);
+  const line = text.slice(a, b);
+  setText(text.slice(0, a) + line.replace(/\[([ xX])\]/, (_, c) => c === ' ' ? '[x]' : '[ ]') + text.slice(b), pos);
+});
+
+const mod = e => e.metaKey || e.ctrlKey;
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { $('#help').classList.remove('show'); $('#diff').classList.remove('show'); closeMenu(); if (find.open) closeFind(); emojiClose(); slashClose(); return; }
+  if (slash.open && document.activeElement === editor) {
+    if (e.key === 'ArrowDown') { e.preventDefault(); slashMove(1); return; }
+    if (e.key === 'ArrowUp') { e.preventDefault(); slashMove(-1); return; }
+    if (e.key === 'Enter' || e.key === 'Tab') { e.preventDefault(); slashAccept(); return; }
+  }
+  if (emo.open && document.activeElement === editor) {
+    if (e.key === 'ArrowDown') { e.preventDefault(); emojiMove(1); return; }
+    if (e.key === 'ArrowUp') { e.preventDefault(); emojiMove(-1); return; }
+    if (e.key === 'Enter' || e.key === 'Tab') { e.preventDefault(); emojiAccept(); return; }
+  }
+  if (!mod(e)) {
+    if (e.key === 'Tab' && document.activeElement === editor) { e.preventDefault(); if (!tableNav(e.shiftKey)) indent(e.shiftKey); }
+    return;
+  }
+  const k = e.key.toLowerCase();
+  if (k === 'z') { e.preventDefault(); e.shiftKey ? redo() : undo(); return; }
+  if (k === 'y') { e.preventDefault(); redo(); return; }
+  if (k === 's') { e.preventDefault(); saveMd(); return; }
+  if (k === 'o') { e.preventDefault(); $('#picker').click(); return; }
+  if (k === '\\') { e.preventDefault(); toggle('outline'); return; }
+  if (k === '/') { e.preventDefault(); $('#help').classList.toggle('show'); return; }
+  if (k === 'e' && e.shiftKey) { e.preventDefault(); exportHtml(); return; }
+  if (k === 'f' && e.shiftKey) { e.preventDefault(); toggle('focus'); return; }
+  if (k === 't' && e.shiftKey) { e.preventDefault(); toggle('typewriter'); return; }
+  if (k === 'd' && e.shiftKey) { e.preventDefault(); toggleDark(); return; }
+  if (k === 'r' && e.shiftKey) { e.preventDefault(); document.documentElement.classList.toggle('reveal'); return; }
+  if (k === 'f' && !e.shiftKey && !e.altKey) { e.preventDefault(); openFind(); return; }
+  if (k === 'g' && !e.altKey) { e.preventDefault(); if (!find.open) openFind(); else gotoMatch(find.cur + (e.shiftKey ? -1 : 1)); return; }
+  if (k === 'u' && e.shiftKey) { e.preventDefault(); toggle('source'); return; }
+  if (document.activeElement !== editor) return;
+  if (k === 'b') { e.preventDefault(); wrapSel('**'); return; }
+  if (k === 'i') { e.preventDefault(); wrapSel('*'); return; }
+  if (k === 'k' && e.shiftKey) { e.preventDefault(); wrapSel('`'); return; }
+  if (k === 'l' && e.shiftKey) { e.preventDefault(); cycleList(); return; }
+  if (e.code === 'Period' && e.shiftKey) { e.preventDefault(); foldSection(caretLineIndex()); return; }
+  if (k === '|' || (k === '\\' && e.shiftKey)) { e.preventDefault(); tableTidy(); return; }
+  if (e.key === 'Enter') { e.preventDefault(); tableAddRow(); return; }
+  if (k === 'k') {
+    e.preventDefault();
+    const sel = selRange(); if (!sel) return;
+    const inner = text.slice(sel.start, sel.end) || 'text';
+    const out = text.slice(0, sel.start) + '[' + inner + '](url)' + text.slice(sel.end);
+    setText(out, sel.start + inner.length + 3, sel.start + inner.length + 6);
+    return;
+  }
+  if (/^[0-6]$/.test(e.key)) { e.preventDefault(); heading(+e.key); return; }
+});
+
+/* ── emoji completion ─────────────────────────────────────────────────────
+   After each edit, if the text before the caret ends in :na (two letters or
+   more), a popup lists matching shortcodes; ↑ ↓ choose, Enter or Tab insert
+   :name:, Esc closes. It never writes anything until accepted. */
+const emo = { open: false, items: [], sel: 0, start: 0 };
+function emojiCheck() {
+  const s = selRange(); if (!s || s.start !== s.end || composing) return emojiClose();
+  const lineStart = text.lastIndexOf('\n', s.start - 1) + 1;
+  const m = /(^|[^a-z0-9_+\-]):([a-z0-9_+\-]{2,})$/i.exec(text.slice(lineStart, s.start));
+  if (!m) return emojiClose();
+  const f = flags[text.slice(0, s.start).split('\n').length - 1];
+  if (f && /^(code|fence|icode|mathsrc|mathfence|fm)$/.test(f.type)) return emojiClose();
+  const q = m[2].toLowerCase();
+  const items = EMOJI_NAMES.filter(n => n.startsWith(q)).concat(EMOJI_NAMES.filter(n => !n.startsWith(q) && n.includes(q))).slice(0, 8);
+  if (!items.length) return emojiClose();
+  emo.open = true; emo.items = items; emo.sel = 0; emo.start = s.start - q.length - 1;
+  const box = $('#emoji');
+  box.innerHTML = items.map((n, i) => `<div class="${i === 0 ? 'on' : ''}" data-i="${i}"><span>${EMOJI[n]}</span><span>:${n}:</span></div>`).join('');
+  const rect = getSelection().getRangeAt(0).getBoundingClientRect();
+  box.classList.add('show');
+  box.style.left = Math.min(rect.left, innerWidth - box.offsetWidth - 12) + 'px';
+  box.style.top = (rect.bottom + 6 + box.offsetHeight > innerHeight ? rect.top - box.offsetHeight - 6 : rect.bottom + 6) + 'px';
+}
+function emojiClose() { if (!emo.open) return; emo.open = false; $('#emoji').classList.remove('show'); }
+function emojiAccept(i = emo.sel) {
+  const name = emo.items[i]; if (!name) return;
+  const s = selRange(); if (!s) return;
+  const rep = ':' + name + ':';
+  emojiClose();
+  setText(text.slice(0, emo.start) + rep + text.slice(s.start), emo.start + rep.length);
+}
+function emojiMove(dir) {
+  emo.sel = (emo.sel + dir + emo.items.length) % emo.items.length;
+  $('#emoji').querySelectorAll('div').forEach((el, i) => el.classList.toggle('on', i === emo.sel));
+}
+$('#emoji').onmousedown = e => { const it = e.target.closest('[data-i]'); if (it) { e.preventDefault(); emojiAccept(+it.dataset.i); } };
+
+/* ── section folding ──────────────────────────────────────────────────────
+   `folded` holds heading slugs. applySections() runs from updateActive():
+   lines after a folded heading get .hid until the next heading of the same
+   or a higher level; the caret landing inside a hidden section unfolds it. */
+const folded = new Set();
+function applySections(caretLine) {
+  const kids = editor.children;
+  let hiding = 0, owner = -1;
+  for (let i = 0; i < kids.length; i++) {
+    const f = flags[i];
+    if (f && f.type === 'h' && hiding && f.level <= hiding) { hiding = 0; owner = -1; }
+    const hid = hiding > 0;
+    if (hid && i === caretLine) { folded.delete(flags[owner].slug); return applySections(caretLine); }
+    if (f && f.type === 'h') {
+      const on = folded.has(f.slug);
+      kids[i].classList.toggle('folded', on);
+      if (on && !hiding) { hiding = f.level; owner = i; }
+    }
+    kids[i].classList.toggle('hid', hid);
+  }
+}
+function sectionEnd(i) {
+  const lvl = flags[i].level; let j = i + 1;
+  while (j < flags.length && !(flags[j].type === 'h' && flags[j].level <= lvl)) j++;
+  return j - 1;
+}
+function foldSection(i) {
+  let f = flags[i];
+  if (!f || f.type !== 'h') {                       /* fold the section the caret is in */
+    while (i > 0 && (!flags[i] || flags[i].type !== 'h')) i--;
+    f = flags[i]; if (!f || f.type !== 'h') return;
+  }
+  if (folded.has(f.slug)) folded.delete(f.slug);
+  else {
+    folded.add(f.slug);
+    const sel = selRange();
+    if (sel) {                                          /* keep the caret visible: park it at the heading's end */
+      const lines = text.split('\n');
+      const start = lines.slice(0, i).reduce((n, l) => n + l.length + 1, 0), end = start + lines[i].length;
+      const caretLine = text.slice(0, sel.start).split('\n').length - 1;
+      if (caretLine > i && caretLine <= sectionEnd(i)) setSel(end);
+    }
+  }
+  updateActive();
+}
+function unfoldAll() { folded.clear(); updateActive(); }
+const caretLineIndex = () => { const s = selRange(); return s ? text.slice(0, s.start).split('\n').length - 1 : -1; };
+
+/* ── automatic table tidy ─────────────────────────────────────────────────
+   updateActive() remembers the table line the caret was on; when the caret
+   is no longer in a table, that table's source is rewritten with tidyRows()
+   if that changes anything, the caret offset shifted by the difference when
+   it sits after the table. Off with body.notidy (Page ▸ Tidy tables). */
+let lastTableLine = -1;
+function autoTidy(line) {
+  if (document.body.classList.contains('notidy')) return;
+  const f = flags[line]; if (!f || f.type !== 'table') return;
+  let a = line, b = line;
+  while (a > 0 && flags[a - 1].type === 'table' && flags[a - 1].blk === f.blk) a--;
+  while (b + 1 < flags.length && flags[b + 1].type === 'table' && flags[b + 1].blk === f.blk) b++;
+  const lines = text.split('\n'), rows = lines.slice(a, b + 1), tidy = tidyRows(rows);
+  if (tidy.join('\n') === rows.join('\n')) return;
+  const start = lines.slice(0, a).reduce((n, l) => n + l.length + 1, 0), end = start + rows.join('\n').length;
+  const delta = tidy.join('\n').length - rows.join('\n').length;
+  const sel = selRange();
+  const shift = p => p >= end ? p + delta : p;
+  setText(text.slice(0, start) + tidy.join('\n') + text.slice(end), sel ? shift(sel.start) : start, sel ? shift(sel.end) : start);
+}
+
+/* ── slash commands ───────────────────────────────────────────────────────
+   "/" on an otherwise empty line opens a popup of block templates, filtered
+   by what follows the slash. Accepting replaces the line with the template;
+   "§" in a template marks where the caret goes (no template contains one). Same keys as the emoji popup. */
+const SLASH = [
+  ['h1', 'Heading 1', '# §'], ['h2', 'Heading 2', '## §'], ['h3', 'Heading 3', '### §'],
+  ['ul', 'Bullet list', '- §'], ['ol', 'Numbered list', '1. §'], ['task', 'Task list', '- [ ] §'],
+  ['quote', 'Quote', '> §'],
+  ['note', 'Note alert', '> [!NOTE]\n> §'], ['tip', 'Tip alert', '> [!TIP]\n> §'], ['important', 'Important alert', '> [!IMPORTANT]\n> §'],
+  ['warning', 'Warning alert', '> [!WARNING]\n> §'], ['caution', 'Caution alert', '> [!CAUTION]\n> §'],
+  ['code', 'Code block', '```§\n\n```'], ['mermaid', 'Mermaid diagram', '```mermaid\nflowchart LR\n  A[§] --> B[ ]\n```'],
+  ['math', 'Maths block', '$$\n§\n$$'],
+  ['table', 'Table', '| §       |        |\n| ------ | ------ |\n|        |        |'],
+  ['toc', 'Table of contents', '[TOC]§'], ['hr', 'Horizontal rule', '---§'],
+  ['image', 'Image', '![§](url)'], ['link', 'Link', '[§](url)'], ['footnote', 'Footnote definition', '[^§]: '],
+  ['front', 'Front matter', '---\ntitle: §\n---'], ['date', 'Today\'s date', () => new Date().toISOString().slice(0, 10) + '§'],
+];
+const slash = { open: false, items: [], sel: 0, lineStart: 0 };
+function slashCheck() {
+  const s = selRange(); if (!s || s.start !== s.end || composing) return slashClose();
+  const lineStart = text.lastIndexOf('\n', s.start - 1) + 1, lineEnd = (i => i < 0 ? text.length : i)(text.indexOf('\n', s.start));
+  const m = /^\/([a-z0-9 ]*)$/i.exec(text.slice(lineStart, s.start));
+  if (!m || s.start !== lineEnd) return slashClose();
+  const f = flags[text.slice(0, s.start).split('\n').length - 1];
+  if (f && /^(code|fence|icode|mathsrc|mathfence|fm)$/.test(f.type)) return slashClose();
+  const q = m[1].trim().toLowerCase();
+  const byKey = SLASH.filter(([k]) => !q || k.startsWith(q));
+  const byWord = SLASH.filter(([k, label]) => q && !k.startsWith(q) && label.toLowerCase().split(/\s+/).some(wd => wd.startsWith(q)));
+  const items = byKey.concat(byWord).filter(([k]) => k !== 'front' || lineStart === 0);
+  if (!items.length) return slashClose();
+  emojiClose();
+  slash.open = true; slash.items = items; slash.sel = 0; slash.lineStart = lineStart;
+  const box = $('#slash');
+  box.innerHTML = items.map(([k, label], i) => `<div class="${i === 0 ? 'on' : ''}" data-i="${i}"><span>/${k}</span><span>${label}</span></div>`).join('');
+  const rect = getSelection().getRangeAt(0).getBoundingClientRect();
+  box.classList.add('show');
+  box.style.left = Math.min(rect.left, innerWidth - box.offsetWidth - 12) + 'px';
+  box.style.top = (rect.bottom + 6 + box.offsetHeight > innerHeight ? rect.top - box.offsetHeight - 6 : rect.bottom + 6) + 'px';
+}
+function slashClose() { if (!slash.open) return; slash.open = false; $('#slash').classList.remove('show'); }
+function slashAccept(i = slash.sel) {
+  const it = slash.items[i]; if (!it) return;
+  const s = selRange(); if (!s) return;
+  let tpl = typeof it[2] === 'function' ? it[2]() : it[2];
+  const caret = tpl.indexOf('§'); tpl = tpl.replace('§', '');
+  slashClose();
+  setText(text.slice(0, slash.lineStart) + tpl + text.slice(s.start), slash.lineStart + (caret < 0 ? tpl.length : caret));
+}
+function slashMove(dir) {
+  slash.sel = (slash.sel + dir + slash.items.length) % slash.items.length;
+  $('#slash').querySelectorAll('div').forEach((el, i) => { el.classList.toggle('on', i === slash.sel); if (i === slash.sel) el.scrollIntoView({ block: 'nearest' }); });
+}
+$('#slash').onmousedown = e => { const it = e.target.closest('[data-i]'); if (it) { e.preventDefault(); slashAccept(+it.dataset.i); } };
+
+/* ── find & replace ───────────────────────────────────────────────────────
+   Searches the raw source, so matches inside folded tables and code count.
+   Matches are painted with the CSS Custom Highlight API over the existing
+   text nodes: nothing is inserted, so the walkers and render keys are
+   untouched. Replacements go through setText, one undo step each. Without
+   the API the current match is still shown by the selection. */
+const find = { open: false, matches: [], cur: -1 };
+const fq = $('#fq'), fr = $('#fr');
+const hlAPI = typeof Highlight === 'function' && 'highlights' in CSS;
+function findRegex() {
+  const q = fq.value; if (!q) return null;
+  const pat = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const word = $('#fword').getAttribute('aria-pressed') === 'true';
+  const cs = $('#fcase').getAttribute('aria-pressed') === 'true';
+  return new RegExp(word ? `(?<![\\p{L}\\p{N}_])${pat}(?![\\p{L}\\p{N}_])` : pat, 'gu' + (cs ? '' : 'i'));
+}
+function runFind() {
+  const re = findRegex();
+  find.matches = [];
+  if (re) { let m; while ((m = re.exec(text))) { if (!m[0].length) { re.lastIndex++; continue; } find.matches.push([m.index, m.index + m[0].length]); } }
+  if (!find.matches.length) find.cur = -1;
+  else { const sel = selRange(), from = sel ? sel.start : 0; find.cur = find.matches.findIndex(x => x[0] >= from); if (find.cur < 0) find.cur = 0; }
+  paintFind(); findCount();
+}
+function findCount() {
+  $('#fcount').textContent = find.matches.length ? `${find.cur + 1} of ${find.matches.length}` : fq.value ? 'no match' : '';
+}
+/* every text node in document order with its offset in `text`, data-x skipped */
+function textNodeMap() {
+  const map = []; let base = 0;
+  for (const u of units()) {
+    (function walk(n) {
+      if (n.nodeType === 3) { map.push({ node: n, start: base }); base += n.data.length; return; }
+      if (n.nodeType !== 1 || (n.dataset && n.dataset.x !== undefined)) return;
+      for (const c of n.childNodes) walk(c);
+    })(u);
+    base += 1;
+  }
+  return map;
+}
+function paintFind() {
+  if (!hlAPI) return;
+  if (!find.open || !find.matches.length) { CSS.highlights.delete('sumi-find'); CSS.highlights.delete('sumi-find-current'); return; }
+  const map = textNodeMap(), all = new Highlight(), cur = new Highlight();
+  cur.priority = 1;
+  if (!map.length) return;
+  const endOf = k => map[k].start + map[k].node.data.length;
+  let k = 0;
+  find.matches.forEach(([s, e], i) => {
+    while (k < map.length - 1 && endOf(k) < s) k++;
+    let k2 = k; while (k2 < map.length - 1 && endOf(k2) < e) k2++;
+    const r = new Range();
+    try {
+      r.setStart(map[k].node, Math.min(Math.max(0, s - map[k].start), map[k].node.data.length));
+      r.setEnd(map[k2].node, Math.min(Math.max(0, e - map[k2].start), map[k2].node.data.length));
+    } catch (err) { return; }
+    (i === find.cur ? cur : all).add(r);
+  });
+  CSS.highlights.set('sumi-find', all); CSS.highlights.set('sumi-find-current', cur);
+}
+function gotoMatch(i) {
+  const n = find.matches.length; if (!n) return;
+  find.cur = ((i % n) + n) % n;
+  const [s, e] = find.matches[find.cur];
+  setSel(s, e); updateActive();
+  const [node] = locate(s), line = (node.nodeType === 3 ? node.parentElement : node).closest('.line');
+  if (line) { const r = line.getBoundingClientRect(); if (r.top < 70 || r.bottom > innerHeight - 40) wrap.scrollTop += r.top - innerHeight * 0.4; }
+  paintFind(); findCount();
+}
+function openFind() {
+  find.open = true; $('#find').classList.add('show');
+  const sel = selRange();
+  if (sel && sel.end > sel.start && sel.end - sel.start < 200) { const t = text.slice(sel.start, sel.end); if (!t.includes('\n')) fq.value = t; }
+  fq.focus(); fq.select(); runFind();
+}
+function closeFind() {
+  find.open = false; $('#find').classList.remove('show'); paintFind();
+  editor.focus();
+  if (find.cur >= 0 && find.matches[find.cur]) setSel(...find.matches[find.cur]);
+  updateActive();
+}
+function replaceOne() {
+  if (find.cur < 0 || !find.matches[find.cur]) return;
+  const [s, e] = find.matches[find.cur], r = fr.value;
+  setText(text.slice(0, s) + r + text.slice(e), s + r.length);
+  if (find.cur >= 0) gotoMatch(find.cur);
+}
+function replaceAll() {
+  const n = find.matches.length; if (!n) return;
+  let out = text; const r = fr.value;
+  for (let i = n - 1; i >= 0; i--) { const [s, e] = find.matches[i]; out = out.slice(0, s) + r + out.slice(e); }
+  setText(out, 0);
+  toast(`Replaced ${n} ${n === 1 ? 'match' : 'matches'}`);
+}
+fq.addEventListener('input', runFind);
+fq.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); gotoMatch(find.cur + (e.shiftKey ? -1 : 1)); } });
+fr.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); replaceOne(); } });
+$('#fnext').onclick = () => gotoMatch(find.cur + 1);
+$('#fprev').onclick = () => gotoMatch(find.cur - 1);
+$('#frep').onclick = replaceOne;
+$('#fall').onclick = replaceAll;
+$('#fclose').onclick = closeFind;
+for (const id of ['fcase', 'fword']) $('#' + id).onclick = e => { const b = e.currentTarget; b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') !== 'true'); runFind(); fq.focus(); };
+
+/* ── chrome behaviour ─────────────────────────────────────────────────── */
+addEventListener('mousemove', e => $('#bar').classList.toggle('show', e.clientY < 70));
+$('#bar').addEventListener('mouseenter', () => $('#bar').classList.add('show'));
+/* View-state classes on body. The menus read them back, so there is no button
+   state to keep in sync; the persisted ones are written on every change. */
+const PERSISTED = ['pagebreak', 'linenos', 'hnums', 'eqnos', 'nopair', 'notidy'];
+function toggle(cls) {
+  const on = document.body.classList.toggle(cls);
+  if (PERSISTED.includes(cls)) storeSettings();
+  if (cls === 'focus' && !on) for (const el of editor.children) el.classList.remove('near');
+  if (cls === 'focus' || cls === 'typewriter') updateActive();
+  if (cls === 'outline') { if (on) document.body.classList.remove('docs'); buildOutline(); }
+  if (cls === 'docs') { if (on) document.body.classList.remove('outline'); buildDocs(); }
+  if (cls === 'hist') buildHist();
+  return on;
+}
+
+/* One popup shared by the bar's menu buttons. openMenu(btn, build) calls
+   build() for the items each time the menu (re)renders: {label, act, on?,
+   radio?, hint?, keep?, data?}; '-' is a separator. `on` draws a check mark,
+   `hint` a shortcut, `keep` re-renders instead of closing (value cyclers),
+   `data` adds attributes for tests. */
+let menuBtn = null, menuBuild = null;
+function renderMenu() {
+  const items = menuBuild(), m = $('#menu');
+  m.innerHTML = items.map((it, i) => it === '-' ? '<hr>' :
+    `<button class="mi${it.on ? ' on' : ''}" role="${it.radio ? 'menuitemradio' : it.on === undefined ? 'menuitem' : 'menuitemcheckbox'}"` +
+    `${it.on === undefined ? '' : ` aria-checked="${it.on}"`} data-i="${i}"${it.data ? ' ' + it.data : ''}>` +
+    `<span>${it.label}</span>${it.hint ? `<kbd>${it.hint}</kbd>` : ''}</button>`).join('');
+  m.onclick = e => {
+    const b = e.target.closest('.mi'); if (!b) return;
+    e.stopPropagation();
+    const it = items[+b.dataset.i];
+    if (it.keep) { it.act(); renderMenu(); } else { closeMenu(); it.act(); }
+  };
+}
+function openMenu(btn, build) {
+  const m = $('#menu');
+  if (menuBtn === btn && m.classList.contains('show')) { closeMenu(); return; }
+  closeMenu();
+  menuBtn = btn; menuBuild = build; renderMenu();
+  m.classList.add('show'); btn.setAttribute('aria-expanded', 'true');
+  m.style.left = Math.max(8, Math.min(btn.getBoundingClientRect().left, innerWidth - m.offsetWidth - 8)) + 'px';
+  $('#bar').classList.add('show');
+  (m.querySelector('.mi.on') || m.querySelector('.mi'))?.focus();
+}
+function closeMenu() {
+  $('#menu').classList.remove('show');
+  if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+  menuBtn = null;
+}
+addEventListener('click', closeMenu);
+const menuButton = (id, build) => { $('#' + id).onclick = e => { e.stopPropagation(); openMenu($('#' + id), build); }; };
+const check = (cls, label, hint) => ({ label, hint, on: document.body.classList.contains(cls), data: `data-n="${cls}"`, act: () => toggle(cls) });
+const cycle = (key, label, act) => ({ label, keep: true, data: `data-v="${key}"`, act });
+
+const NUMS = [['linenos', 'Code line numbers'], ['hnums', 'Heading numbers'], ['eqnos', 'Equation numbers']];
+menuButton('bView', () => [
+  check('outline', 'Outline', '⌘\\'),
+  check('focus', 'Focus mode', '⌘⇧F'),
+  check('typewriter', 'Typewriter', '⌘⇧T'),
+  check('source', 'Source code', '⌘⇧U'),
+  '-',
+  { label: 'Auto-pair brackets and quotes', on: !document.body.classList.contains('nopair'), data: 'data-n="pair"', act: () => toggle('nopair') },
+  cycle('width', 'Width: ' + widthLabel(), () => { wi = (wi + 1) % WIDTHS.length; applyWidth(); storeSettings(); }),
+  cycle('font', 'Typeface: ' + fontLabel(), () => { fi = (fi + 1) % FONTS.length; applyFont(); storeSettings(); }),
+]);
+menuButton('bEdit', () => [
+  { label: 'Find and replace', hint: '⌘F', data: 'data-act="find"', act: openFind },
+  { label: 'Cycle list type', hint: '⌘⇧L', data: 'data-act="list"', act: cycleList },
+  { label: 'Copy as rich text', data: 'data-act="rich"', act: copyRich },
+  '-',
+  { label: 'Fold or unfold section', hint: '⌘⇧.', data: 'data-act="fold"', act: () => foldSection(caretLineIndex()) },
+  { label: 'Unfold all', data: 'data-act="unfold"', act: unfoldAll },
+  '-',
+  { label: 'Tidy table', hint: '⌘⇧|', data: 'data-act="tidy"', act: tableTidy },
+  { label: 'Add row below', hint: '⌘⏎', data: 'data-act="addrow"', act: tableAddRow },
+  { label: 'Add column after', data: 'data-act="addcol"', act: tableAddCol },
+  { label: 'Delete row', data: 'data-act="delrow"', act: tableDelRow },
+  { label: 'Delete column', data: 'data-act="delcol"', act: tableDelCol },
+]);
+menuButton('bPage', () => [
+  cycle('margin', 'Margin: ' + MARGINS[mgi][0], () => { mgi = (mgi + 1) % MARGINS.length; applyMargin(); storeSettings(); }),
+  '-',
+  { label: 'Tidy tables when leaving them', on: !document.body.classList.contains('notidy'), data: 'data-n="tidy"', act: () => toggle('notidy') },
+  check('pagebreak', 'Page break at # and ##'),
+  ...NUMS.map(([cls, label]) => check(cls, label)),
+]);
+menuButton('bFile', () => [
+  { label: 'New document', data: 'data-act="new"', act: () => createDoc('untitled.md', '') },
+  { label: 'Rename document', data: 'data-act="rename"', act: renameCurrent },
+  check('docs', 'Documents'),
+  check('hist', 'History'),
+  '-',
+  { label: 'Open…', hint: '⌘O', data: 'data-act="open"', act: () => $('#picker').click() },
+  { label: 'Save', hint: '⌘S', data: 'data-act="save"', act: saveMd },
+  '-',
+  { label: 'Copy markdown', data: 'data-act="copy"', act: copySource },
+  { label: 'Export HTML', hint: '⌘⇧E', data: 'data-act="html"', act: exportHtml },
+  { label: 'Print or PDF', hint: '⌘P', data: 'data-act="print"', act: () => print() },
+  '-',
+  { label: 'Backup all documents', data: 'data-act="backup"', act: backup },
+  { label: 'Import backup…', data: 'data-act="import"', act: () => $('#jsonpicker').click() },
+]);
+/* Copy as rich text: the selection (or the whole document) rendered with the
+   export renderer goes on the clipboard as HTML, with the markdown as the
+   plain-text alternative, so Word, Outlook and mail clients paste it formatted. */
+async function copyRich() {
+  const sel = selRange();
+  const src = sel && sel.end > sel.start ? text.slice(sel.start, sel.end) : text;
+  const html = '<!DOCTYPE html><html><head><meta charset="utf-8"></head><body>' + mdToHtml(src, true) + '</body></html>';
+  try {
+    await navigator.clipboard.write([new ClipboardItem({
+      'text/html': new Blob([html], { type: 'text/html' }),
+      'text/plain': new Blob([src], { type: 'text/plain' }),
+    })]);
+    toast((sel && sel.end > sel.start ? 'Selection' : 'Document') + ' copied as rich text');
+  } catch (e) {
+    try { await navigator.clipboard.writeText(src); toast('Copied as markdown; this browser refused rich text'); }
+    catch (err) { toast('Copy failed: the browser refused clipboard access'); }
+  }
+}
+async function copySource() {
+  try { await navigator.clipboard.writeText(text); toast('Copied markdown, ' + text.length + ' characters'); }
+  catch (e) { toast('Copy failed: the browser refused clipboard access'); }
+}
+
+/* The margin is shown on screen as the editor's side padding (via --pmargin) and
+   applied to the printed page via @page. @page can't be switched with a class,
+   so its rule is rewritten in place. */
+const MARGINS = [['wide', '2.5cm'], ['narrow', '1.2cm'], ['none', '0cm']];
+let mgi = 1;
+const pageStyle = document.head.appendChild(document.createElement('style'));
+function applyMargin() {
+  pageStyle.textContent = '@page{margin:' + MARGINS[mgi][1] + '}';
+  document.documentElement.style.setProperty('--pmargin', MARGINS[mgi][1]);
+  document.body.classList.toggle('nomargin', mgi === 2);
+}
+applyMargin();
+
+/* Width is the page measure on screen: the text column plus the side margins,
+   so Width and Margin both change the column. Print ignores it (max-width:none). */
+const WIDTHS = [['narrow', '44em'], ['regular', '56em'], ['wide', '68em'], ['max', '80em']];
+let wi = 1;
+function applyWidth() {
+  document.documentElement.style.setProperty('--measure', WIDTHS[wi][1]);
+}
+const widthLabel = () => wi < 0 ? 'theme' : WIDTHS[wi][0];
+applyWidth();
+const FONTS = [['Serif', 'var(--serif)'], ['Sans', 'var(--sans)'], ['Mono', 'var(--mono)']];
+let fi = 0;
+function applyFont() {
+  document.documentElement.style.setProperty('--body', FONTS[fi][1]);
+}
+const fontLabel = () => fi < 0 ? 'theme' : FONTS[fi][0];
+
+/* ── themes ──────────────────────────────────────────────────────────────
+   Built-in themes are CSS blocks on html[data-theme]; this table only names
+   them and says which counterpart ⌘⇧D flips to. A user .css file is appended
+   as the last stylesheet so it overrides tokens and rules alike. The theme
+   name and the custom CSS are persisted; everything else is per session. */
+const THEMES = {
+  paper:     { label: 'Paper',     dark: false, pair: 'ink' },
+  ink:       { label: 'Ink',       dark: true,  pair: 'paper' },
+  github:    { label: 'GitHub',    dark: false, pair: 'night' },
+  whitey:    { label: 'Whitey',    dark: false, pair: 'night' },
+  newsprint: { label: 'Newsprint', dark: false, pair: 'ink' },
+  sepia:     { label: 'Sepia',     dark: false, pair: 'ink' },
+  night:     { label: 'Night',     dark: true,  pair: 'github' },
+};
+let themeName = 'paper', userCSS = '';
+document.head.appendChild(document.createElement('style')).textContent = HL_CSS;
+const userStyle = document.head.appendChild(document.createElement('style'));
+const isDark = () => THEMES[themeName].dark;
+
+/* Themes choose their own typeface and measure. The Font and Width buttons
+   override those with inline properties, so a theme change clears the
+   overrides and re-reads the buttons' state from the computed values. */
+function syncTypography() {
+  const cs = getComputedStyle(document.documentElement), v = n => cs.getPropertyValue(n).trim();
+  const body = v('--body');
+  fi = FONTS.findIndex(f => v(f[1].slice(4, -1)) === body);
+  wi = WIDTHS.findIndex(w => w[1] === v('--measure'));
+}
+function refreshDiagrams() {
+  initMermaid();
+  if (window.mermaid) { for (const el of editor.querySelectorAll('.prev')) delete el.dataset.src; renderPreviews(true); }
+}
+function setTheme(name, save = true) {
+  if (!THEMES[name]) name = 'paper';
+  themeName = name;
+  document.documentElement.setAttribute('data-theme', name);
+  document.documentElement.style.removeProperty('--body');
+  document.documentElement.style.removeProperty('--measure');
+  syncTypography();
+  refreshDiagrams();
+  if (save) storeSettings();
+}
+function setUserCSS(css, save = true) {
+  userCSS = css || '';
+  userStyle.textContent = userCSS;
+  syncTypography();
+  refreshDiagrams();
+  if (save) storeSettings();
+}
+function toggleDark() { setTheme(THEMES[themeName].pair); }
+
+menuButton('bTheme', () => {
+  const items = Object.entries(THEMES).map(([k, t]) =>
+    ({ label: t.label, on: k === themeName, radio: true, data: `data-t="${k}"`, act: () => setTheme(k) }));
+  items.push('-', { label: 'Load .css theme…', data: 'data-act="css"', act: () => $('#csspicker').click() });
+  if (userCSS) items.push({ label: 'Remove custom css', on: true, data: 'data-act="clear"', act: () => { setUserCSS(''); toast('Custom css removed'); } });
+  return items;
+});
+$('#csspicker').onchange = e => {
+  const f = e.target.files[0]; if (!f) return;
+  f.text().then(t => { setUserCSS(t); toast('Loaded theme ' + f.name); });
+  e.target.value = '';
+};
+setTheme('paper', false);
+$('#bHelp').onclick = () => $('#help').classList.toggle('show');
+$('#help').onclick = e => { if (e.target.id === 'help') $('#help').classList.remove('show'); };
+
+function toast(msg) {
+  const t = $('#toast'); t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1600);
+}
+
+/* ── files ────────────────────────────────────────────────────────────── */
+const fileName = () => ($('#name').value || 'untitled').replace(/\.md$/i, '');
+function download(blob, name) {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = name;
+  a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
+let handle = null;
+async function saveMd() {
+  const data = text;
+  try {
+    /* a handle restored from the database needs its permission renewed once per session */
+    if (handle && handle.queryPermission && await handle.queryPermission({ mode: 'readwrite' }) !== 'granted'
+        && await handle.requestPermission({ mode: 'readwrite' }) !== 'granted') handle = null;
+    if (handle) {
+      const w = await handle.createWritable(); await w.write(data); await w.close();
+      toast('Saved to ' + handle.name); store(); snapshot('Saved'); return;
+    }
+    if (window.showSaveFilePicker) {
+      handle = await showSaveFilePicker({
+        suggestedName: fileName() + '.md',
+        types: [{ description: 'Markdown', accept: { 'text/markdown': ['.md'] } }]
+      });
+      const w = await handle.createWritable(); await w.write(data); await w.close();
+      $('#name').value = handle.name; toast('Saved to ' + handle.name); store(); snapshot('Saved'); return;
+    }
+  } catch (err) { if (err && err.name === 'AbortError') return; }
+  download(new Blob([data], { type: 'text/markdown' }), fileName() + '.md');
+  toast('Downloaded ' + fileName() + '.md'); snapshot('Saved');
+}
+/* An opened or dropped file becomes a document of its own (or reopens the one
+   with the same name and text). */
+async function openFile(f) {
+  const t = (await f.text()).replace(/\r\n?/g, '\n');
+  let same = null;
+  try { same = (await idb.all('docs')).find(d => d.name === f.name && d.text === t); } catch (e) {}
+  if (same) await openDoc(same.id); else await createDoc(f.name, t);
+}
+$('#picker').onchange = e => { const f = e.target.files[0]; if (f) openFile(f); e.target.value = ''; };
+addEventListener('dragover', e => e.preventDefault());
+addEventListener('drop', e => {
+  e.preventDefault();
+  const f = e.dataTransfer.files[0];
+  if (f && /\.css$/i.test(f.name)) { f.text().then(t => { setUserCSS(t); toast('Loaded theme ' + f.name); }); return; }
+  if (f && /\.json$/i.test(f.name)) { importBackup(f); return; }
+  if (f && /\.(md|markdown|mdown|txt)$/i.test(f.name)) openFile(f);
+});
+
+/* ── export ─────────────────────────────────────────────────────────── */
+/* ── export renderer (GFM) ───────────────────────────────────────────── */
+function nestList(items) {
+  const root = { children: [] }, stack = [{ ind: -1, node: root }];
+  for (const it of items) {
+    while (stack.length > 1 && it.ind <= stack[stack.length - 1].ind) stack.pop();
+    const node = Object.assign({ children: [] }, it);
+    stack[stack.length - 1].node.children.push(node);
+    stack.push({ ind: it.ind, node });
+  }
+  return root.children;
+}
+function listHtml(nodes) {
+  let html = '', run = [];
+  const flush = () => {
+    if (!run.length) return;
+    const ord = run[0].ord;
+    const start = ord && +run[0].num !== 1 ? ` start="${+run[0].num}"` : '';
+    html += `<${ord ? 'ol' : 'ul'}${start}${run.some(n => n.task != null) ? ' class="task-list"' : ''}>`
+         + run.map(n => {
+             let inner = (n.task != null ? `<input type="checkbox" disabled${n.task ? ' checked' : ''}> ` : '')
+                       + inline(n.text, true);
+             if (n.children.length) inner += listHtml(n.children);
+             return `<li>${inner}</li>`;
+           }).join('')
+         + `</${ord ? 'ol' : 'ul'}>`;
+    run = [];
+  };
+  for (const n of nodes) { if (run.length && run[0].ord !== n.ord) flush(); run.push(n); }
+  flush();
+  return html;
+}
+
+let eqN = 0, expSeen = {};
+function mdToHtml(src, top) {
+  const lines = src.split('\n');
+  const out = [];
+  let i = 0, para = [];
+  if (top) {
+    eqN = 0; expSeen = {};
+    if (lines[0] === '---') { const e = lines.findIndex((x, j) => j > 0 && /^(---|\.\.\.)\s*$/.test(x)); if (e > 0) i = e + 1; }
+  }
+  const flush = () => {
+    if (!para.length) return;
+    let h = '';
+    for (let n = 0; n < para.length; n++) {
+      if (n) h += /(\s{2,}|\\)$/.test(para[n - 1]) ? '<br>\n' : ' ';
+      h += inline(para[n].trim().replace(/\\$/, ''), true);
+    }
+    out.push('<p>' + h + '</p>');
+    para = [];
+  };
+
+  while (i < lines.length) {
+    const l = lines[i];
+    let m;
+
+    if ((m = /^\s*(```+|~~~+)(.*)$/.exec(l))) {
+      flush(); const close = m[1][0]; i++;
+      const buf = [];
+      while (i < lines.length && !new RegExp('^\\s*' + close + '{3,}\\s*$').test(lines[i])) buf.push(lines[i++]);
+      i++;
+      out.push(m[2].trim().toLowerCase() === 'mermaid'
+        ? '<pre class="mermaid">' + esc(buf.join('\n')) + '</pre>'
+        : `<pre${document.body.classList.contains('linenos') ? ' class="linenos"' : ''}><code${m[2].trim() ? ' class="language-' + att(m[2].trim()) + '"' : ''}>` + codeHtml(m[2], buf.join('\n')) + '</code></pre>');
+      continue; }
+
+    if (/^\s*\$\$\s*$/.test(l)) {
+      flush(); i++;
+      const buf = [];
+      while (i < lines.length && !/^\s*\$\$\s*$/.test(lines[i])) buf.push(lines[i++]);
+      i++;
+      out.push('<div class="mathblock">' + mathHtml(buf.join('\n'), true) + `<span class="eqno">(${++eqN})</span></div>`);
+      continue; }
+
+    if (!l.trim()) { flush(); i++; continue; }
+
+    if (/^\s{0,3}\[\^([^\]\s]+)\]:/.test(l) || /^\s{0,3}\[([^\]^]+)\]:\s*\S+/.test(l)) { flush(); i++; continue; }
+
+    if (/^\s*\[toc\]\s*$/i.test(l)) { flush(); out.push(tocHtml(headings, true)); i++; continue; }
+
+    if ((m = /^\s{0,3}(#{1,6})\s+(.*?)\s*#*\s*$/.exec(l))) {
+      flush(); out.push(`<h${m[1].length}${top ? ` id="${att(slugify(m[2], expSeen))}"` : ''}>` + inline(m[2], true) + `</h${m[1].length}>`); i++; continue; }
+
+    if (i + 1 < lines.length && l.trim() && /^\s{0,3}(=+|-+)\s*$/.test(lines[i + 1])
+        && !/^\s*[-*+>#]/.test(l) && !/\|/.test(l) && !para.length) {
+      const lvl = lines[i + 1].trim()[0] === '=' ? 1 : 2;
+      out.push(`<h${lvl}${top ? ` id="${att(slugify(l.trim(), expSeen))}"` : ''}>` + inline(l.trim(), true) + `</h${lvl}>`); i += 2; continue; }
+
+    if (/^\s{0,3}(-{3,}|\*{3,}|_{3,})\s*$/.test(l)) { flush(); out.push('<hr>'); i++; continue; }
+
+    if (isTableStart(lines, i)) {
+      flush(); const end = tableEnd(lines, i);
+      out.push(tableHtml(lines.slice(i, end + 1))); i = end + 1; continue; }
+
+    if (/^\s*>/.test(l)) {
+      flush(); const buf = [];
+      while (i < lines.length && /^\s*>/.test(lines[i])) buf.push(lines[i++].replace(/^\s*>\s?/, ''));
+      const alert = /^\[!(\w+)\]\s*$/.exec(buf[0] || '');
+      if (alert && ALERTS.includes(alert[1].toUpperCase())) {
+        const kind = alert[1].toUpperCase();
+        out.push(`<blockquote class="alert a-${kind.toLowerCase()}"><p class="alert-label">${kind[0] + kind.slice(1).toLowerCase()}</p>`
+                 + mdToHtml(buf.slice(1).join('\n')) + '</blockquote>');
+      } else out.push('<blockquote>' + mdToHtml(buf.join('\n')) + '</blockquote>');
+      continue; }
+
+    if (/^ {4,}\S/.test(l) && !para.length && !/<\/(ul|ol)>$/.test(out[out.length - 1] || '')) {
+      flush(); const buf = [];
+      while (i < lines.length && (/^ {4,}/.test(lines[i]) || !lines[i].trim())) {
+        if (!lines[i].trim() && !/^ {4,}/.test(lines[i + 1] || '')) break;
+        buf.push(lines[i++].replace(/^ {4}/, ''));
+      }
+      out.push('<pre><code>' + esc(buf.join('\n')) + '</code></pre>'); continue; }
+
+    if (/^\s*(?:[-*+]|\d+[.)])\s+/.test(l)) {
+      flush(); const items = [];
+      while (i < lines.length && /^\s*(?:[-*+]|\d+[.)])\s+/.test(lines[i])) {
+        const mm = /^(\s*)(?:([-*+])|(\d+)[.)])\s+(.*)$/.exec(lines[i++]);
+        let text = mm[4], task = null;
+        const tk = /^\[([ xX])\]\s+/.exec(text);
+        if (tk) { task = tk[1] !== ' '; text = text.slice(tk[0].length); }
+        while (i < lines.length && lines[i].trim() && !/^\s*(?:[-*+]|\d+[.)])\s+/.test(lines[i])
+               && /^\s{2,}/.test(lines[i])) text += ' ' + lines[i++].trim();
+        items.push({ ind: mm[1].length, ord: !mm[2], num: mm[3], task, text });
+      }
+      out.push(listHtml(nestList(items))); continue; }
+
+    if (/^\s*<\/?[a-zA-Z][^>]*>/.test(l)) {
+      flush(); const buf = [];
+      while (i < lines.length && lines[i].trim()) buf.push(lines[i++]);
+      out.push(buf.join('\n')); continue; }
+
+    para.push(l); i++;
+  }
+  flush();
+
+  if (top && fnDefs.length) {
+    out.push('<hr class="fn-rule"><ol class="footnotes">' + fnDefs.map(d =>
+      `<li id="fn-${att(d.id)}">${inline(d.text, true)} <a href="#fnref-${att(d.id)}" class="fn-back">&#8617;</a></li>`).join('') + '</ol>');
+  }
+  return out.join('\n');
+}
+
+function exportHtml() {
+  const title = fileName();
+  const pages = document.body.classList.contains('pagebreak');
+  const hasMath = /\$[^$\n]+\$/.test(text);
+  const hasMermaid = /```\s*mermaid/i.test(text);
+  const head =
+    (hasMath ? `<link rel="stylesheet" href="${KATEX_CSS}" crossorigin="anonymous">\n` : '') +
+    (hasMermaid ? `<script type="module">import m from '${MERMAID_ESM}';m.initialize({startOnLoad:true,theme:'neutral'});<\/script>\n` : '');
+  /* The export carries the active theme's tokens (including Font/Width overrides and a custom css file's token values). */
+  const cs = getComputedStyle(document.documentElement);
+  const tokens = ['paper', 'paper-2', 'ink', 'ink-soft', 'ink-faint', 'rule', 'accent', 'code-bg', 'mark', 'sans', 'mono', 'body', 'size', 'lh', 'measure', 'scheme',
+                  'hl-kw', 'hl-str', 'hl-num', 'hl-cmt', 'hl-fn', 'hl-type', 'hl-attr']
+    .map(t => `--${t}:${cs.getPropertyValue('--' + t).trim()}`).join(';');
+  const doc = `<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${att(title)}</title>
+${head}<style>
+:root{${tokens}}
+html{color-scheme:var(--scheme)}
+body{max-width:var(--measure);margin:6vh auto;padding:0 24px;
+ font-family:var(--body);font-size:var(--size);line-height:var(--lh);
+ color:var(--ink);background:var(--paper)}
+h1,h2,h3,h4{line-height:1.28;letter-spacing:-.015em;margin:1.6em 0 .3em}
+h1{font-size:1.85em}h2{font-size:1.45em}h3{font-size:1.2em}
+a{color:var(--accent)}
+blockquote{border-left:2px solid var(--accent);margin:1em 0;padding-left:1em;color:var(--ink-soft);font-style:italic}
+pre{background:var(--code-bg);padding:1em;border-radius:7px;overflow:auto}
+code{font-family:var(--mono);font-size:.86em;background:var(--code-bg);padding:.1em .32em;border-radius:4px}
+pre code{background:none;padding:0}
+img{max-width:100%;border-radius:6px}
+table{border-collapse:collapse;width:100%;table-layout:auto;font-size:.92em}
+th,td{white-space:normal;overflow-wrap:anywhere;hyphens:auto}
+th,td{border:1px solid var(--rule);padding:.45em .7em;text-align:left}
+thead th{background:var(--paper-2)}
+tbody tr:nth-child(even){background:color-mix(in srgb,var(--paper-2) 45%,transparent)}
+table{font-family:var(--sans);font-size:.86em}
+ul.task-list{list-style:none;padding-left:1.2em}
+blockquote.alert{font-style:normal}
+.alert-label{font-weight:600;margin:0 0 .3em}
+.a-note{border-left-color:#4a7d9e}.a-note .alert-label{color:#4a7d9e}
+.a-tip{border-left-color:#4a7d6f}.a-tip .alert-label{color:#4a7d6f}
+.a-important{border-left-color:#7a5aa0}.a-important .alert-label{color:#7a5aa0}
+.a-warning{border-left-color:#b08b3a}.a-warning .alert-label{color:#b08b3a}
+.a-caution{border-left-color:#b4544a}.a-caution .alert-label{color:#b4544a}
+.footnotes{font-size:.88em;color:var(--ink-soft)}
+.fn-rule{margin-top:3em}
+sup a{text-decoration:none}
+hr{border:0;border-top:1px solid var(--rule);margin:2em 0}
+mark{background:var(--mark)}
+ul.toc{list-style:none;padding:0;margin:1em 0;font-family:var(--sans);font-size:.92em;line-height:1.75}
+ul.toc li{padding-left:calc((var(--d) - 1) * 1.2em)}
+ul.toc a{color:var(--ink);text-decoration:none}ul.toc a:hover{color:var(--accent)}
+ul.toc .tn{display:none;color:var(--ink-soft)}body.hnums ul.toc .tn{display:inline}
+h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]{scroll-margin-top:1em}
+.mathblock{margin:1.2em 0;overflow-x:auto;position:relative}
+.eqno{display:none;position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:var(--sans);font-size:.85em;color:var(--ink-soft)}
+body.eqnos .eqno{display:block}
+pre.linenos{counter-reset:code}
+pre.linenos .ln::before{counter-increment:code;content:counter(code);display:inline-block;width:2.2em;margin-right:1em;text-align:right;color:var(--ink-faint);user-select:none}
+body.hnums{counter-reset:h1 h2 h3 h4 h5 h6}
+body.hnums h1{counter-increment:h1;counter-reset:h2 h3 h4 h5 h6}body.hnums h2{counter-increment:h2;counter-reset:h3 h4 h5 h6}
+body.hnums h3{counter-increment:h3;counter-reset:h4 h5 h6}body.hnums h4{counter-increment:h4;counter-reset:h5 h6}
+body.hnums h5{counter-increment:h5;counter-reset:h6}body.hnums h6{counter-increment:h6}
+body.hnums h1::before{content:counter(h1) '. '}body.hnums h2::before{content:counter(h1) '.' counter(h2) ' '}
+body.hnums h3::before{content:counter(h1) '.' counter(h2) '.' counter(h3) ' '}
+body.hnums h4::before{content:counter(h1) '.' counter(h2) '.' counter(h3) '.' counter(h4) ' '}
+body.hnums h5::before{content:counter(h1) '.' counter(h2) '.' counter(h3) '.' counter(h4) '.' counter(h5) ' '}
+body.hnums h6::before{content:counter(h1) '.' counter(h2) '.' counter(h3) '.' counter(h4) '.' counter(h5) '.' counter(h6) ' '}
+body.hnums.hfrom2 h1{counter-increment:none;counter-reset:none}body.hnums.hfrom2 h1::before{content:none}
+body.hnums.hfrom2 h2::before{content:counter(h2) '. '}body.hnums.hfrom2 h3::before{content:counter(h2) '.' counter(h3) ' '}
+body.hnums.hfrom2 h4::before{content:counter(h2) '.' counter(h3) '.' counter(h4) ' '}
+body.hnums.hfrom2 h5::before{content:counter(h2) '.' counter(h3) '.' counter(h4) '.' counter(h5) ' '}
+body.hnums.hfrom2 h6::before{content:counter(h2) '.' counter(h3) '.' counter(h4) '.' counter(h5) '.' counter(h6) ' '}
+pre.mermaid{background:none;text-align:center}${HL_CSS}@page{margin:${MARGINS[mgi][1]}}
+@media print{
+ :root{--paper:#fff;--paper-2:#f0f0f0;--ink:#000;--ink-soft:#444;--ink-faint:#777;--rule:#ccc;--code-bg:#f3f3f3;--mark:#efe9a4}
+ body{background:#fff;color:#000;margin:0;padding:${mgi === 2 ? '0 4mm' : '0'};max-width:none;font-family:var(--sans);font-size:10pt;line-height:1.4}
+ h1,h2,h3,h4,h5,h6{margin:1.1em 0 .15em;color:#000} h1:first-child{margin-top:0}
+ h1{font-size:1.6em}h2{font-size:1.3em}h3{font-size:1.12em}
+ p,ul,ol,blockquote{margin:.5em 0} blockquote{font-style:normal}
+ pre{padding:.6em .8em;font-size:.84em;line-height:1.45}
+ table,pre,.mathblock{break-inside:avoid}
+ h1,h2,h3,h4{break-after:avoid}
+ p{orphans:3;widows:3}
+${pages ? ' h1,h2{break-before:page}\n h1:first-child,h2:first-child{break-before:auto}\n' : ''}}
+</style></head><body class="${['hnums', 'hfrom2', 'eqnos'].filter(c => document.body.classList.contains(c)).join(' ')}">
+${mdToHtml(text, true)}
+</body></html>`;
+  download(new Blob([doc], { type: 'text/html' }), title + '.html');
+  toast('Exported ' + title + '.html');
+}
+$('#name').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); editor.focus(); } });
+$('#name').addEventListener('input', () => { clearTimeout(chromeTimer); chromeTimer = setTimeout(store, 900); });
+
+/* ── documents ────────────────────────────────────────────────────────────
+   Documents live in IndexedDB, store `docs`: {id, name, text, created,
+   updated, handle?}. Settings and the id of the open document stay in the
+   small key/value layer below (window.storage if the host provides one,
+   else localStorage). If IndexedDB is unavailable the editor falls back to
+   the single-draft key it always had, so nothing is lost, just not listed. */
+const KEY = 'sumi:draft', SKEY = 'sumi:settings', CUR = 'sumi:current';
+async function persist(key, value) {
+  const payload = JSON.stringify(value);
+  try {
+    if (window.storage) { await window.storage.set(key, payload); return; }
+    localStorage.setItem(key, payload);
+  } catch (e) { /* running somewhere without storage: settings stay in memory */ }
+}
+async function recall(key) {
+  try {
+    if (window.storage) { const r = await window.storage.get(key); return r ? JSON.parse(r.value) : null; }
+    const raw = localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : null;
+  } catch (e) { return null; }
+}
+async function forget(key) {
+  try { if (window.storage) await window.storage.delete(key); else localStorage.removeItem(key); } catch (e) {}
+}
+const storeSettings = () => persist(SKEY, {
+  theme: themeName, css: userCSS, width: wi, font: fi, margin: mgi,
+  pages: document.body.classList.contains('pagebreak'),
+  ...Object.fromEntries(NUMS.map(([cls]) => [cls, document.body.classList.contains(cls)])),
+  nopair: document.body.classList.contains('nopair'),
+  notidy: document.body.classList.contains('notidy'),
+});
+
+let dbp = null;
+function db() {
+  if (dbp) return dbp;
+  dbp = new Promise((res, rej) => {
+    if (!window.indexedDB) return rej(new Error('no IndexedDB'));
+    const r = indexedDB.open('sumi', 1);
+    r.onupgradeneeded = () => {
+      const d = r.result;
+      d.createObjectStore('docs', { keyPath: 'id' }).createIndex('updated', 'updated');
+      d.createObjectStore('versions', { keyPath: 'id', autoIncrement: true }).createIndex('doc', ['docId', 'at']);
+    };
+    r.onsuccess = () => res(r.result);
+    r.onerror = () => rej(r.error);
+    r.onblocked = () => rej(new Error('blocked'));
+  });
+  dbp.catch(() => { dbp = null; });
+  return dbp;
+}
+/* run fn(objectStore) in a transaction; resolves with the request's result once the transaction completes */
+const tx = (store, mode, fn) => db().then(d => new Promise((res, rej) => {
+  const t = d.transaction(store, mode), out = fn(t.objectStore(store));
+  t.oncomplete = () => res(out instanceof IDBRequest ? out.result : out);
+  t.onerror = () => rej(t.error); t.onabort = () => rej(t.error);
+}));
+const idb = {
+  get: (store, key) => tx(store, 'readonly', s => s.get(key)),
+  all: (store, index, range) => tx(store, 'readonly', s => (index ? s.index(index) : s).getAll(range)),
+  put: (store, val) => tx(store, 'readwrite', s => s.put(val)),
+  delete: (store, key) => tx(store, 'readwrite', s => s.delete(key)),
+  deleteRange: (store, index, range) => tx(store, 'readwrite', s => {
+    const req = s.index(index).openCursor(range);
+    req.onsuccess = () => { const c = req.result; if (c) { c.delete(); c.continue(); } };
+    return null;
+  }),
+};
+const newId = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+
+let doc = null, lastStored = '', docsOK = true;
+const bc = 'BroadcastChannel' in window ? new BroadcastChannel('sumi') : null;
+
+/* Autosave. Refuses to overwrite a record another tab has updated since this
+   tab last read it, and pauses until the document is reopened. */
+async function store() {
+  if (!doc) return;
+  doc.name = $('#name').value || 'untitled.md';
+  if (!docsOK) return persist(KEY, { name: doc.name, text });
+  if (doc.conflict) return;
+  try {
+    const cur = await idb.get('docs', doc.id);
+    if (cur && cur.updated > doc.updated) { doc.conflict = true; toast('Changed in another tab. Autosave paused here; reopen it from Documents.'); return; }
+    if (cur && cur.text === text && cur.name === doc.name && !!cur.handle === !!handle) return;
+    doc.updated = Date.now();
+    await idb.put('docs', { id: doc.id, name: doc.name, text, created: doc.created, updated: doc.updated, handle: handle || undefined });
+    lastStored = text;
+    if (bc) bc.postMessage({ id: doc.id, updated: doc.updated });
+    if (document.body.classList.contains('docs')) buildDocs();
+  } catch (e) { docsOK = false; persist(KEY, { name: doc.name, text }); }
+}
+const flush = () => { clearTimeout(chromeTimer); clearTimeout(snapTimer); return store().then(() => snapshot()); };
+
+function showDoc(d) {
+  doc = d; handle = d.handle || null; lastStored = d.text;
+  $('#name').value = d.name;
+  hist = []; hi = -1;
+  setText(d.text, 0, 0, false);
+  record(text, { start: 0, end: 0 });
+  persist(CUR, d.id);
+  wrap.scrollTop = 0;
+  editor.focus(); setSel(0); updateActive();
+  buildHist();
+}
+async function openDoc(id) {
+  await flush();
+  let d = null; try { d = await idb.get('docs', id); } catch (e) {}
+  if (!d) return;
+  showDoc(d);
+  buildDocs();
+}
+async function createDoc(name, t) {
+  await flush();
+  const d = { id: newId(), name, text: t, created: Date.now(), updated: Date.now() };
+  if (docsOK) { try { await idb.put('docs', d); } catch (e) { docsOK = false; } }
+  showDoc(d);
+  buildDocs();
+  return d;
+}
+async function deleteDoc(id) {
+  clearTimeout(chromeTimer);
+  try {
+    await idb.delete('docs', id);
+    await idb.deleteRange('versions', 'doc', IDBKeyRange.bound([id, 0], [id, Infinity]));
+  } catch (e) {}
+  if (doc && doc.id === id) {
+    let rest = []; try { rest = (await idb.all('docs', 'updated')).reverse(); } catch (e) {}
+    if (rest.length) showDoc(rest[0]); else await createDoc('untitled.md', '');
+  }
+  buildDocs();
+}
+if (bc) bc.onmessage = async e => {
+  if (!doc || e.data.id !== doc.id) { if (document.body.classList.contains('docs')) buildDocs(); return; }
+  if (text !== lastStored) { doc.conflict = true; toast('Changed in another tab. Autosave paused here; reopen it from Documents.'); return; }
+  let d = null; try { d = await idb.get('docs', doc.id); } catch (err) {}
+  if (d && d.text !== text) { const sel = selRange(); showDoc(d); if (sel) setSel(sel.start, sel.end); toast('Updated from another tab'); }
+  else if (d) doc.updated = d.updated;
+};
+
+function ago(ts) {
+  const s = (Date.now() - ts) / 1000;
+  if (s < 60) return 'now';
+  if (s < 3600) return Math.round(s / 60) + ' min';
+  if (s < 86400) return Math.round(s / 3600) + ' h';
+  if (s < 86400 * 7) return Math.round(s / 86400) + ' d';
+  return new Date(ts).toLocaleDateString();
+}
+async function buildDocs() {
+  if (!document.body.classList.contains('docs')) return;
+  const box = $('#docs');
+  let list = [];
+  try { list = (await idb.all('docs', 'updated')).reverse(); } catch (e) {}
+  box.innerHTML = '<div class="hd"><span>Documents</span><button type="button" data-act="new">+ New</button></div>';
+  if (!docsOK) box.insertAdjacentHTML('beforeend', '<div class="empty">This browser has no document storage; only the current draft is kept.</div>');
+  for (const d of list) {
+    const row = document.createElement('div');
+    row.className = 'doc' + (doc && d.id === doc.id ? ' on' : '');
+    row.dataset.id = d.id;
+    row.innerHTML = `<span class="n">${esc(d.name)}</span><span class="t">${ago(d.updated)}</span><button class="x" type="button" title="Delete">×</button>`;
+    box.appendChild(row);
+  }
+}
+/* Rename: File ▸ Rename selects the name field; a double-click on a drawer
+   row edits that document's name in place (Enter saves, Escape cancels). */
+function renameCurrent() {
+  const n = $('#name'); n.focus();
+  const dot = n.value.lastIndexOf('.');
+  n.setSelectionRange(0, dot > 0 ? dot : n.value.length);
+}
+async function renameDoc(id, name) {
+  name = name.trim(); if (!name) return;
+  if (doc && doc.id === id) { $('#name').value = name; await flush(); }
+  else { try { const d = await idb.get('docs', id); if (d) { d.name = name; await idb.put('docs', d); } } catch (e) {} }
+  buildDocs();
+}
+$('#docs').ondblclick = e => {
+  const row = e.target.closest('.doc'); if (!row || row.querySelector('input')) return;
+  const n = row.querySelector('.n'), old = n.textContent;
+  const inp = document.createElement('input'); inp.value = old; inp.setAttribute('aria-label', 'Document name');
+  n.replaceWith(inp); inp.focus(); const dot = old.lastIndexOf('.'); inp.setSelectionRange(0, dot > 0 ? dot : old.length);
+  let done = false;
+  const finish = save => { if (done) return; done = true; if (save && inp.value.trim() && inp.value.trim() !== old) renameDoc(row.dataset.id, inp.value); else buildDocs(); };
+  inp.onkeydown = ev => { ev.stopPropagation(); if (ev.key === 'Enter') { ev.preventDefault(); finish(true); } else if (ev.key === 'Escape') { ev.preventDefault(); finish(false); } };
+  inp.onblur = () => finish(true);
+  inp.onclick = ev => ev.stopPropagation();
+};
+$('#docs').onclick = e => {
+  if (e.target.closest('[data-act=new]')) { createDoc('untitled.md', ''); return; }
+  const row = e.target.closest('.doc'); if (!row || e.target.tagName === 'INPUT') return;
+  if (e.target.closest('.x')) {
+    if (row.classList.contains('ask')) deleteDoc(row.dataset.id);
+    else { row.classList.add('ask'); row.querySelector('.n').textContent = 'Delete? Click × again'; setTimeout(buildDocs, 4000); }
+    return;
+  }
+  if (!row.classList.contains('on')) openDoc(row.dataset.id);
+};
+
+/* ── history ───────────────────────────────────────────────────────────────
+   Versions are full snapshots in store `versions` {id, docId, at, text, hash,
+   label}. One is taken 30 s after the last edit, whenever the document is
+   left (flush), on Save (labelled), and when the user names one. Equal
+   content is never stored twice. thin() keeps every version from the last
+   hour, one per hour for a day, one per day for a month, one per week beyond
+   that, and every labelled one. Restore first snapshots what is being
+   replaced, so nothing is lost. */
+const hashOf = t => { let h = 2166136261; for (let i = 0; i < t.length; i++) { h ^= t.charCodeAt(i); h = Math.imul(h, 16777619); } return (h >>> 0).toString(36) + '.' + t.length.toString(36); };
+const versionsOf = id => idb.all('versions', 'doc', IDBKeyRange.bound([id, 0], [id, Infinity]));
+async function snapshot(label = '') {
+  if (!doc || !docsOK) return null;
+  const h = hashOf(text);
+  try {
+    const vs = await versionsOf(doc.id), last = vs[vs.length - 1];
+    if (!label && last && last.hash === h) return null;
+    const v = { docId: doc.id, at: Date.now(), text, hash: h, label };
+    v.id = await idb.put('versions', v);
+    await thin(vs.concat(v));
+    buildHist();
+    return v;
+  } catch (e) { return null; }
+}
+async function thin(vs) {
+  const now = Date.now(), keep = new Set(), bucket = new Map();
+  for (const v of vs) {                       /* ascending by time: the latest in each bucket wins */
+    if (v.label) { keep.add(v.id); continue; }
+    const age = now - v.at;
+    const b = age < 36e5 ? 'm' + v.id : age < 864e5 ? 'h' + Math.floor(v.at / 36e5)
+            : age < 30 * 864e5 ? 'd' + Math.floor(v.at / 864e5) : 'w' + Math.floor(v.at / (7 * 864e5));
+    bucket.set(b, v.id);
+  }
+  for (const id of bucket.values()) keep.add(id);
+  for (const v of vs) if (!keep.has(v.id)) await idb.delete('versions', v.id);
+}
+async function restoreVersion(id) {
+  const v = await idb.get('versions', id);
+  if (!v || !doc || v.docId !== doc.id) return;
+  const vs = await versionsOf(doc.id), last = vs[vs.length - 1];
+  if (!last || last.hash !== hashOf(text)) await snapshot('Before restore');
+  setText(v.text, 0);
+  await store();
+  toast('Restored the version from ' + new Date(v.at).toLocaleString());
+  buildHist();
+}
+async function buildHist() {
+  if (!document.body.classList.contains('hist') || !doc) return;
+  const box = $('#hist');
+  let vs = []; try { vs = (await versionsOf(doc.id)).reverse(); } catch (e) {}
+  const cur = hashOf(text);
+  box.innerHTML = '<div class="hd">History</div>'
+    + '<form><input placeholder="Name this version" aria-label="Version label" maxlength="60"><button type="submit">Save</button></form>';
+  if (!vs.length) box.insertAdjacentHTML('beforeend', '<div class="empty">Versions appear after a pause in typing, when you save, and when you leave the document.</div>');
+  vs.forEach((v, i) => {
+    const older = vs[i + 1], delta = older ? v.text.length - older.text.length : v.text.length;
+    const row = document.createElement('div');
+    row.className = 'ver' + (v.hash === cur ? ' same' : '');
+    row.dataset.id = v.id; row.title = new Date(v.at).toLocaleString() + (v.hash === cur ? ' — same as the current text' : '');
+    row.innerHTML = `<span class="n">${v.label ? esc(v.label) : ago(v.at)}</span>`
+      + `<span class="t">${v.label ? ago(v.at) + ' · ' : ''}${delta >= 0 ? '+' : ''}${delta.toLocaleString()}</span>`
+      + '<div class="acts"><button type="button" data-act="restore">Restore</button><button type="button" data-act="diff">Diff</button><button type="button" data-act="del">Delete</button></div>';
+    box.appendChild(row);
+  });
+}
+$('#hist').onclick = async e => {
+  const row = e.target.closest('.ver'); if (!row) return;
+  const act = e.target.closest('[data-act]');
+  if (!act) { const was = row.classList.contains('on'); for (const r of $('#hist').querySelectorAll('.ver.on')) r.classList.remove('on'); row.classList.toggle('on', !was); return; }
+  const id = +row.dataset.id;
+  if (act.dataset.act === 'restore') restoreVersion(id);
+  else if (act.dataset.act === 'diff') { const v = await idb.get('versions', id); if (v) showDiff(v); }
+  else if (act.dataset.act === 'del') { await idb.delete('versions', id); buildHist(); }
+};
+$('#hist').addEventListener('submit', e => {
+  e.preventDefault();
+  const inp = e.target.querySelector('input'), label = inp.value.trim() || 'Named version';
+  snapshot(label).then(() => toast('Version "' + label + '" saved'));
+});
+
+/* Line diff: common prefix and suffix are trimmed, an LCS handles the middle,
+   and very large middles fall back to "all removed, all added". */
+function lineDiff(a, b) {
+  const A = a.split('\n'), B = b.split('\n');
+  let p = 0; while (p < A.length && p < B.length && A[p] === B[p]) p++;
+  let q = 0; while (q < A.length - p && q < B.length - p && A[A.length - 1 - q] === B[B.length - 1 - q]) q++;
+  const a2 = A.slice(p, A.length - q), b2 = B.slice(p, B.length - q);
+  const out = A.slice(0, p).map(l => [' ', l]);
+  if (a2.length * b2.length > 4e6) { out.push(...a2.map(l => ['-', l]), ...b2.map(l => ['+', l])); }
+  else {
+    const n = a2.length, m = b2.length, L = Array.from({ length: n + 1 }, () => new Uint32Array(m + 1));
+    for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--)
+      L[i][j] = a2[i] === b2[j] ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+    let i = 0, j = 0;
+    while (i < n && j < m) {
+      if (a2[i] === b2[j]) { out.push([' ', a2[i]]); i++; j++; }
+      else if (L[i + 1][j] >= L[i][j + 1]) out.push(['-', a2[i++]]);
+      else out.push(['+', b2[j++]]);
+    }
+    while (i < n) out.push(['-', a2[i++]]);
+    while (j < m) out.push(['+', b2[j++]]);
+  }
+  out.push(...A.slice(A.length - q).map(l => [' ', l]));
+  return out;
+}
+function showDiff(v) {
+  const rows = lineDiff(v.text, text);
+  const removed = rows.filter(r => r[0] === '-').length, added = rows.filter(r => r[0] === '+').length;
+  let html = '', run = [];
+  const flushRun = () => {
+    if (run.length > 8) html += run.slice(0, 3).join('') + `<div class="skip">${run.length - 6} unchanged lines</div>` + run.slice(-3).join('');
+    else html += run.join('');
+    run = [];
+  };
+  for (const [k, l] of rows) {
+    const line = `<div class="dl${k === '-' ? ' del' : k === '+' ? ' add' : ''}">${esc(l) || '&nbsp;'}</div>`;
+    if (k === ' ') run.push(line); else { flushRun(); html += line; }
+  }
+  flushRun();
+  $('#diff .card').innerHTML = `<h2><span>${v.label ? esc(v.label) : 'Version'} · ${new Date(v.at).toLocaleString()}</span><small>${removed} removed · ${added} added · Esc closes</small></h2><pre>${html}</pre>`;
+  $('#diff').classList.add('show');
+}
+$('#diff').onclick = e => { if (e.target.id === 'diff') $('#diff').classList.remove('show'); };
+
+/* Backup: one JSON file with every document (without file handles) and version. */
+async function backup() {
+  await flush();
+  let docs = [], versions = [];
+  try { docs = (await idb.all('docs')).map(({ handle, ...d }) => d); versions = await idb.all('versions'); } catch (e) { toast('No document storage to back up'); return; }
+  download(new Blob([JSON.stringify({ sumi: 1, exported: new Date().toISOString(), docs, versions })], { type: 'application/json' }),
+           'sumi-backup-' + new Date().toISOString().slice(0, 10) + '.json');
+  toast(`Backup: ${docs.length} documents, ${versions.length} versions`);
+}
+async function importBackup(f) {
+  let data; try { data = JSON.parse(await f.text()); } catch (e) { data = null; }
+  if (!data || data.sumi !== 1 || !Array.isArray(data.docs)) { toast('Not a Sumi backup'); return; }
+  let added = 0, vadded = 0;
+  try {
+    const have = new Map((await idb.all('docs')).map(d => [d.id, d]));
+    for (const d of data.docs) {
+      const cur = have.get(d.id);
+      if (!d.id || typeof d.text !== 'string' || (cur && cur.updated >= d.updated)) continue;
+      await idb.put('docs', { id: d.id, name: d.name || 'untitled.md', text: d.text, created: d.created || d.updated, updated: d.updated || Date.now() }); added++;
+    }
+    const seen = new Set((await idb.all('versions')).map(v => v.docId + '|' + v.at));
+    for (const v of data.versions || []) {
+      if (!v.docId || typeof v.text !== 'string' || seen.has(v.docId + '|' + v.at)) continue;
+      await idb.put('versions', { docId: v.docId, at: v.at, text: v.text, hash: v.hash || hashOf(v.text), label: v.label || '' }); vadded++;
+    }
+  } catch (e) { toast('Import failed'); return; }
+  toast(`Imported ${added} documents, ${vadded} versions`);
+  if (doc && !document.body.classList.contains('docs')) toggle('docs'); else buildDocs();
+  buildHist();
+}
+$('#jsonpicker').onchange = e => { const f = e.target.files[0]; if (f) importBackup(f); e.target.value = ''; };
+
+const WELCOME = `# Sumi
+
+A markdown editor that shows you the finished page while you write it. The
+document is always plain markdown underneath — the syntax just steps out of
+the way unless your caret is on the line.
+
+Put your caret anywhere in this **bold** sentence and the asterisks come back.
+Move away and they fold up again. Same for *emphasis*, \`inline code\`, ~~cuts~~,
+==highlights==, and [links](https://daringfireball.net/projects/markdown/).
+
+## What's here
+
+- GitHub Flavored Markdown: tables, task lists, footnotes, alerts, autolinks
+- Focus mode, typewriter scrolling, an outline drawer
+- LaTeX and Mermaid, folded the same way as everything else
+- Export to markdown or a clean standalone HTML page
+- Print to PDF with the syntax hidden
+
+1. Type \`- \` and press Enter to keep a list going
+2. Press Enter twice to stop
+3. Press Tab to nest
+
+- [x] Handle task lists
+- [ ] Click the circle in the margin to tick one off
+
+Tables fold like everything else — click into one to get the source back, with
+alignment set by the colons in the divider row:
+
+| Block        | Editing          | Alignment |
+|:-------------|:-----------------|----------:|
+| Table        | folds to a grid  |     right |
+| Mermaid      | folds to a chart |    center |
+| Maths block  | folds to maths   |      left |
+
+> A quote keeps its rule in the margin.
+
+> [!NOTE]
+> GitHub's alert blocks work too — NOTE, TIP, IMPORTANT, WARNING, CAUTION.
+
+Footnotes[^why] and [reference links][gfm] resolve against definitions further
+down the file. Bare URLs like https://commonmark.org link themselves.
+
+[^why]: Definitions can live anywhere; they're numbered in the order defined.
+[gfm]: https://github.github.com/gfm/ "GitHub Flavored Markdown Spec"
+
+\`\`\`python
+def render(line, active):
+    return line if active else fold(line)
+\`\`\`
+
+Inline maths sits in the sentence, like \$e^{i\\pi} + 1 = 0\$, and a block of it
+gets its own line:
+
+\$\$
+\\int_0^\\infty x^{2}e^{-x}\\,dx = 2
+\$\$
+
+Diagrams work the same way — click into the source to edit it, click away and
+the drawing takes over:
+
+\`\`\`mermaid
+flowchart LR
+  A[raw markdown] --> B{caret on this line?}
+  B -->|yes| C[show the syntax]
+  B -->|no| D[fold it away]
+\`\`\`
+
+---
+
+Press <kbd>⌘/</kbd> for shortcuts. Drop a .md file anywhere on the window to open it.
+`;
+
+(async () => {
+  const prefs = await recall(SKEY);
+  if (prefs) {
+    if (prefs.css) setUserCSS(prefs.css, false);
+    setTheme(prefs.theme, false);
+    if (prefs.width >= 0 && prefs.width < WIDTHS.length) { wi = prefs.width; applyWidth(); }
+    if (prefs.font >= 0 && prefs.font < FONTS.length) { fi = prefs.font; applyFont(); }
+    if (prefs.margin >= 0 && prefs.margin < MARGINS.length) { mgi = prefs.margin; applyMargin(); }
+    if (prefs.pages) document.body.classList.add('pagebreak');
+    for (const [cls] of NUMS) if (prefs[cls]) document.body.classList.add(cls);
+    if (prefs.nopair) document.body.classList.add('nopair');
+    if (prefs.notidy) document.body.classList.add('notidy');
+  }
+  let d = null;
+  try {
+    await db();
+    const legacy = await recall(KEY);
+    if (legacy && legacy.text) {   /* the single draft of earlier versions becomes the first document */
+      if (!(await idb.all('docs')).length) await idb.put('docs', d = { id: newId(), name: legacy.name || 'untitled.md', text: legacy.text, created: Date.now(), updated: Date.now() });
+      await forget(KEY);
+    }
+    if (!d) { const id = await recall(CUR); if (id) d = await idb.get('docs', id); }
+    if (!d) { const all = await idb.all('docs', 'updated'); d = all[all.length - 1] || null; }
+    if (!d) await idb.put('docs', d = { id: newId(), name: 'untitled.md', text: WELCOME, created: Date.now(), updated: Date.now() });
+  } catch (e) {
+    docsOK = false;
+    const legacy = await recall(KEY);
+    d = { id: 'draft', name: (legacy && legacy.name) || 'untitled.md', text: (legacy && legacy.text) || WELCOME, created: 0, updated: 0 };
+  }
+  showDoc(d);
+  $('#bar').classList.add('show');
+  setTimeout(() => $('#bar').classList.remove('show'), 2200);
+})();
+
+/* ── lazy dependencies ────────────────────────────────────────────────
+   Everything above works offline. These two only add math and diagrams,
+   and their absence degrades to plain source text. */
+const CDN = 'https://cdnjs.cloudflare.com/ajax/libs/';
+const KATEX_CSS = CDN + 'KaTeX/0.17.0/katex.min.css';
+const MERMAID_ESM = 'https://cdn.jsdelivr.net/npm/mermaid@11.15.0/dist/mermaid.esm.min.mjs';
+function loadScript(src) {
+  return new Promise((res, rej) => {
+    const el = document.createElement('script');
+    el.src = src; el.crossOrigin = 'anonymous';
+    el.onload = res; el.onerror = () => rej(new Error(src));
+    document.head.appendChild(el);
+  });
+}
+function initMermaid() {
+  if (!window.mermaid) return;
+  mermaid.initialize({ startOnLoad: false, securityLevel: 'strict', theme: isDark() ? 'dark' : 'neutral',
+    fontFamily: getComputedStyle(document.body).getPropertyValue('--sans') });
+}
+loadScript(CDN + 'KaTeX/0.17.0/katex.min.js').then(forceRender).catch(() => {});
+loadScript(CDN + 'highlight.js/11.11.1/highlight.min.js').then(forceRender).catch(() => {});
+loadScript(CDN + 'mermaid/11.15.0/mermaid.min.js')
+  .then(() => window.mermaid ? null : import(MERMAID_ESM).then(m => { window.mermaid = m.default; }))
+  .then(() => { initMermaid(); forceRender(); })
+  .catch(() => {});
+
+addEventListener('beforeunload', () => { try { flush(); } catch (e) {} });
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') flush(); });
+})();
+</script>
+</body>
+</html>
