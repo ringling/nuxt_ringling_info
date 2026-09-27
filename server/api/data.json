@@ -107,6 +107,12 @@
       },
       {
         "type": "conferences",
+        "title": "Goatmire 2026",
+        "description": "Varberg, Sweden",
+        "documentation": ""
+      },
+      {
+        "type": "conferences",
         "title": "Goatmire 2025",
         "description": "Varberg, Sweden",
         "documentation": ""
