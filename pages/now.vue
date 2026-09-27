@@ -93,14 +93,14 @@ const cards: NowEntry[] = [
   },
   {
     month: 'August 2026',
-    img: '/img/TODO.jpg',
+    img: '/img/august_2026.png',
     books: [
       { title: 'Make it Clear', author: 'Patrick Henry Winston' },
     ],
   },
   {
     month: 'July 2026',
-    img: '/img/TODO.jpg',
+    img: '/img/july_2026.png',
     interests: ['Rust', 'Qwen Coder 30B'],
     books: [
       { title: 'Small Things Like These', author: 'Claire Keegan' },
