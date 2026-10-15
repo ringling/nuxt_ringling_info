@@ -86,6 +86,7 @@ const cards: NowEntry[] = [
   {
     month: 'October 2026',
     img: '/img/TODO.jpg',
+    interests: ['Hyperframes'],
     books: [
       { title: 'Humankind', author: 'Rutger Bregman' },
     ],
