@@ -14,7 +14,6 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "caniuse-lite": "^1.0.30001629",
     "sass": "^1.89.2"
   }
 }
