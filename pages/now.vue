@@ -52,6 +52,11 @@
                 </li>
               </ul>
             </template>
+
+            <template v-if="card.quote">
+              <div class="section-label">Quote of the month</div>
+              <blockquote class="card-quote">{{ card.quote }}</blockquote>
+            </template>
           </div>
           </div>
         </template>
@@ -75,6 +80,7 @@ interface NowEntry {
   interests?: string[]
   books?: Book[]
   courses?: Course[]
+  quote?: string
 }
 
 function getYear(month: string): string {
@@ -90,6 +96,7 @@ const cards: NowEntry[] = [
     books: [
       { title: 'Humankind', author: 'Rutger Bregman' },
     ],
+    quote: 'For the powerful, a hopeful view of human nature is downright threatening',
   },
   {
     month: 'September 2026',
@@ -691,4 +698,14 @@ const cards: NowEntry[] = [
   font-style: normal;
 }
 .author::before { content: ' '; }
+
+.card-quote {
+  margin: 8px 0 0 0;
+  padding: 8px 12px;
+  border-left: 2px solid #e5e7eb;
+  color: #6b7280;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.55;
+}
 </style>
