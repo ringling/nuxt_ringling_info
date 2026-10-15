@@ -22,7 +22,10 @@
             {{ String(idx + 1).padStart(2, '0') }}
             <span class="row-idx-total">/ {{ String(team.length).padStart(2, '0') }}</span>
           </div>
-          <img :src="member.img" :alt="member.role" class="row-img" />
+          <div class="row-img-wrap">
+            <img :src="member.img" :alt="member.role" class="row-img" />
+            <span v-if="member.layedOff" class="layed-off">layed off</span>
+          </div>
           <div class="row-content">
             <div class="row-discipline">Discipline</div>
             <h3 class="row-title">
@@ -47,28 +50,39 @@ useHead({
 
 const team = [
   {
+    img: '/img/claude_logo.svg',
+    role: 'Feature Development',
+    accent: 'Engineer',
+    body: 'AI-powered feature development engineer. Writes code, reviews architecture, and ships features — faster than you\'d expect and without the stand-up small talk.',
+    layedOff: false,
+  },
+  {
     img: '/img/agile_coach.jpg',
     role: 'Software',
     accent: 'coach',
     body: 'Certified agile coach, over a decade in. Helped teams figure out what actually slows them down — usually not what they think. The framework is the easy part.',
+    layedOff: true,
   },
   {
     img: '/img/frontend.jpg',
     role: 'Frontend',
     accent: 'developer',
     body: 'Frontend developer who\'s worked across enough stacks to have opinions. UI design, JavaScript frameworks, web technologies. Prefers things that work over things that look impressive in a demo.',
+    layedOff: true,
   },
   {
     img: '/img/backend.jpg',
     role: 'Backend',
     accent: 'developer',
     body: 'Backend developer. Databases, APIs, server-side logic — the parts nobody notices until they break. Has kept a few things running that probably shouldn\'t have survived.',
+    layedOff: true,
   },
   {
     img: '/img/dataengineer.jpg',
     role: 'Data',
     accent: 'engineer',
     body: 'Data engineer. Mostly pipelines — getting data from where it lives to where it\'s useful. Some machine learning when it makes sense.',
+    layedOff: true,
   },
 ]
 </script>
@@ -149,14 +163,35 @@ const team = [
 }
 .row-idx-total { color: #e5e7eb; }
 
+.row-img-wrap {
+  position: relative;
+  width: 200px;
+}
+
 .row-img {
   width: 200px;
   border-radius: 6px;
   display: block;
 }
 
+.layed-off {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background: #dc2626;
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 0 4px 4px 0;
+}
+
 @media (max-width: 768px) {
-  .row-img { width: 100%; max-width: 200px; }
+  .row-img-wrap { width: 100%; max-width: 200px; }
+  .row-img { width: 100%; }
 }
 
 .row-discipline {
