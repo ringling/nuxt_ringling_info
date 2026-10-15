@@ -14,3 +14,6 @@ docker rm   ringling_info 2>/dev/null || true
 
 echo "→ Starting new container..."
 docker run -d --name ringling_info -p 8080:3000 ringling/personal-website
+
+echo "→ Cleaning up unused Docker resources..."
+docker system prune -a -f
