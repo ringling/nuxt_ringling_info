@@ -85,7 +85,7 @@ function getYear(month: string): string {
 const cards: NowEntry[] = [
   {
     month: 'October 2026',
-    img: '/img/TODO.jpg',
+    img: '/img/oktober_2026.jpg',
     interests: ['Hyperframes'],
     books: [
       { title: 'Humankind', author: 'Rutger Bregman' },
