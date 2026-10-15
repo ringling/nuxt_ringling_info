@@ -21,7 +21,7 @@
         <dl class="cv-meta">
           <dt>Based</dt><dd>Copenhagen, DK</dd>
           <dt>Currently</dt><dd>Data Engineer</dd>
-          <dt>Updated</dt><dd>April 2026</dd>
+          <dt>Updated</dt><dd>October 2026</dd>
         </dl>
       </div>
 
