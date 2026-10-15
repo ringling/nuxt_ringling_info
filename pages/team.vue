@@ -50,7 +50,7 @@ useHead({
 
 const team = [
   {
-    img: '/img/claude_logo.svg',
+    img: '/img/ai.jpeg',
     role: 'Feature Development',
     accent: 'Engineer',
     body: 'AI-powered feature development engineer. Writes code, reviews architecture, and ships features — faster than you\'d expect and without the stand-up small talk.',
