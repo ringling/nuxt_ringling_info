@@ -92,7 +92,7 @@ const cards: NowEntry[] = [
   {
     month: 'October 2026',
     img: '/img/oktober_2026.jpg',
-    interests: ['Hyperframes'],
+    interests: ['Hyperframes', 'A2UI'],
     books: [
       { title: 'Humankind', author: 'Rutger Bregman' },
     ],
