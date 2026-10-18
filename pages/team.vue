@@ -32,6 +32,7 @@
               {{ member.role }} <span class="accent">{{ member.accent }}</span>
             </h3>
             <p class="row-body">{{ member.body }}</p>
+            <p v-if="member.note" class="row-note">{{ member.note }}</p>
           </div>
         </div>
         <div class="roster-end-rule" />
@@ -54,6 +55,7 @@ const team = [
     role: 'Feature Development',
     accent: 'Engineer',
     body: 'AI-powered feature development engineer. Writes code, reviews architecture, and ships features — faster than you\'d expect and without the stand-up small talk.',
+    note: 'Not subject to the 50 bps conscious bottleneck. The constraint is on your end.',
     layedOff: false,
   },
   {
@@ -219,6 +221,14 @@ const team = [
   line-height: 1.6;
   max-width: 60ch;
   margin: 0;
+}
+
+.row-note {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #9ca3af;
+  margin: 10px 0 0 0;
+  letter-spacing: 0.02em;
 }
 
 .roster-end-rule {
