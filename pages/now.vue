@@ -92,7 +92,7 @@ const cards: NowEntry[] = [
   {
     month: 'October 2026',
     img: '/img/oktober_2026.jpg',
-    interests: ['Hyperframes', 'A2UI', 'OpenUI'],
+    interests: ['Hyperframes', 'A2UI', 'OpenUI', 'Omarchy'],
     books: [
       { title: 'Humankind', author: 'Rutger Bregman' },
     ],
@@ -101,7 +101,7 @@ const cards: NowEntry[] = [
   {
     month: 'September 2026',
     img: '/img/september_2026.png',
-    interests: ['Claude Opus 5.5', 'Spec Driven Development'],
+    interests: ['Claude Opus 5.5', 'Spec Driven Development', 'Omarchy'],
     books: [
       { title: 'Løveinden', author: 'Tom Buk-Swienty' },
     ],
