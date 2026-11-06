@@ -90,6 +90,13 @@ function getYear(month: string): string {
 
 const cards: NowEntry[] = [
   {
+    month: 'November 2026',
+    img: '/img/november_2026.jpg',
+    books: [
+      { title: 'Learning Systems Thinking', author: 'Diana Montalion' },
+    ],
+  },
+  {
     month: 'October 2026',
     img: '/img/oktober_2026.jpg',
     interests: ['Hyperframes', 'A2UI', 'OpenUI', 'Omarchy'],
