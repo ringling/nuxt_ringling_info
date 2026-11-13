@@ -95,6 +95,7 @@ const cards: NowEntry[] = [
     interests: ['AI SDLC'],
     books: [
       { title: 'Learning Systems Thinking', author: 'Diana Montalion' },
+      { title: 'Out of the Shadows', author: 'Jay Stratton' },
     ],
   },
   {
