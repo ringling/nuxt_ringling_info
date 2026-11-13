@@ -91,7 +91,7 @@ function getYear(month: string): string {
 const cards: NowEntry[] = [
   {
     month: 'November 2026',
-    img: '/img/november_2026.jpg',
+    img: '/img/TODO.jpg',
     interests: ['AI SDLC'],
     books: [
       { title: 'Learning Systems Thinking', author: 'Diana Montalion' },
