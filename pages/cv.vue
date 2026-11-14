@@ -9,7 +9,8 @@
       <!-- Hero header -->
       <div id="main" class="cv-header">
         <div class="cv-eyebrow">
-          Curriculum vitae
+          <span class="eyebrow-rule" />
+          02 — Curriculum vitae
         </div>
         <h1 class="cv-h1">
           Twenty-five years <span class="accent">of</span> shipping software.
@@ -25,7 +26,7 @@
       </div>
 
       <!-- 01 Profile -->
-      <div class="section-rule"><span class="sr-num">Profile</span><span class="sr-line" /></div>
+      <div class="section-rule"><span class="sr-num">01 / Profile</span><span class="sr-line" /></div>
       <div class="prose-2col">
         <p>
           I've been building software for over 25 years and I still write code — that part hasn't changed. What has
@@ -41,7 +42,7 @@
       </div>
 
       <!-- 02 Contact -->
-      <div class="section-rule"><span class="sr-num">Contact</span><span class="sr-line" /></div>
+      <div class="section-rule"><span class="sr-num">02 / Contact</span><span class="sr-line" /></div>
       <div class="contact-row">
         <div class="contact-item">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
@@ -58,7 +59,7 @@
       </div>
 
       <!-- 03 Skills -->
-      <div class="section-rule"><span class="sr-num">Skills</span><span class="sr-line" /></div>
+      <div class="section-rule"><span class="sr-num">03 / Skills</span><span class="sr-line" /></div>
       <p class="section-note">Self-assessment</p>
       <div class="progress-grid">
         <div v-for="skill in skillsOverview" :key="skill.name" class="progress-bar">
@@ -70,9 +71,10 @@
       </div>
 
       <!-- 04 Education -->
-      <div class="section-rule"><span class="sr-num">Education</span><span class="sr-line" /></div>
+      <div class="section-rule"><span class="sr-num">04 / Education</span><span class="sr-line" /></div>
       <div class="bf-grid">
         <div v-for="(edu, i) in educations" :key="edu.studyType" class="box-figure">
+          <div class="bf-idx">{{ String(i + 1).padStart(2, '0') }}</div>
           <div class="bf-body">
             <div class="bf-kicker">{{ edu.startDate }} — {{ edu.endDate }}</div>
             <div class="bf-title">{{ edu.studyType }}</div>
@@ -83,7 +85,7 @@
       </div>
 
       <!-- 05 Languages -->
-      <div class="section-rule"><span class="sr-num">Languages</span><span class="sr-line" /></div>
+      <div class="section-rule"><span class="sr-num">05 / Languages</span><span class="sr-line" /></div>
       <div v-if="!pending" class="progress-grid">
         <div v-for="lang in data.cv.languages" :key="lang.language" class="progress-bar">
           <div class="progress-label">{{ lang.language }}</div>
@@ -95,7 +97,7 @@
       </div>
 
       <!-- 06 Experience -->
-      <div class="section-rule"><span class="sr-num">Experience</span><span class="sr-line" /></div>
+      <div class="section-rule"><span class="sr-num">06 / Experience</span><span class="sr-line" /></div>
       <label class="toggle-label">
         <span class="toggle-track" :class="{ on: showDetails }">
           <span class="toggle-thumb" :class="{ on: showDetails }" />
@@ -105,6 +107,7 @@
       </label>
       <div v-if="!pending" class="bf-grid">
         <div v-for="(exp, i) in data.cv.experiences" :key="i" class="box-figure">
+          <div class="bf-idx">{{ String(i + 1).padStart(2, '0') }}</div>
           <div class="bf-body">
             <div class="bf-kicker">{{ exp.startDate }} — {{ exp.endDate || 'present' }}</div>
             <div class="bf-title">{{ exp.companyName }}</div>
@@ -115,25 +118,25 @@
       </div>
 
       <!-- 07 Courses -->
-      <div class="section-rule"><span class="sr-num">Courses</span><span class="sr-line" /></div>
+      <div class="section-rule"><span class="sr-num">07 / Courses</span><span class="sr-line" /></div>
       <div v-if="!pending" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-8">
         <Course v-for="course in getAchievements(data, 'courses')" :item="course" :key="course.title" />
       </div>
 
       <!-- 08 Certifications -->
-      <div class="section-rule"><span class="sr-num">Certifications</span><span class="sr-line" /></div>
+      <div class="section-rule"><span class="sr-num">08 / Certifications</span><span class="sr-line" /></div>
       <div v-if="!pending" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-8">
         <Certification v-for="cert in getAchievements(data, 'certifications')" :item="cert" :key="cert.title" />
       </div>
 
       <!-- 09 Conferences -->
-      <div class="section-rule"><span class="sr-num">Conferences</span><span class="sr-line" /></div>
+      <div class="section-rule"><span class="sr-num">09 / Conferences</span><span class="sr-line" /></div>
       <div v-if="!pending" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-8">
         <Conference v-for="conf in getAchievements(data, 'conferences')" :item="conf" :key="conf.title" />
       </div>
 
       <!-- 10 Hobbies -->
-      <div class="section-rule"><span class="sr-num">Hobbies</span><span class="sr-line" /></div>
+      <div class="section-rule"><span class="sr-num">10 / Hobbies</span><span class="sr-line" /></div>
       <div class="hobbies-grid">
         <div v-for="hobby in hobbies" :key="hobby.title" class="hobby-card">
           <img :src="hobby.img" :alt="hobby.title" class="hobby-img" />
@@ -143,7 +146,7 @@
       </div>
 
       <!-- 11 Technologies -->
-      <div class="section-rule"><span class="sr-num">Technologies</span><span class="sr-line" /></div>
+      <div class="section-rule"><span class="sr-num">11 / Technologies</span><span class="sr-line" /></div>
       <div v-if="!pending && data.cv.skills" class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6 mb-8">
         <Skill v-for="skill in sortSkills(data.cv.skills)" :item="skill" :key="skill.name" />
       </div>
@@ -234,8 +237,8 @@ function getAchievements(data: CVResponse, type: string): Achievement[] {
   padding: 8px 12px;
   background: #111827;
   color: #fff;
-  font-family: var(--font-label);
-  font-size: 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
   z-index: 100;
   background-image: none !important;
 }
@@ -248,19 +251,27 @@ function getAchievements(data: CVResponse, type: string): Achievement[] {
 .cv-header { margin-top: 80px; }
 
 .cv-eyebrow {
-  font-family: var(--font-label);
-  font-size: 13px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
   color: #111827;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 16px;
 }
+.eyebrow-rule {
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: #111827;
+}
 
 .cv-h1 {
   font-size: clamp(48px, 6vw, 72px);
   font-weight: 800;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
   color: #111827;
   line-height: 0.95;
   margin: 0 0 8px 0;
@@ -288,8 +299,10 @@ function getAchievements(data: CVResponse, type: string): Achievement[] {
   max-width: 480px;
 }
 .cv-meta dt {
-  font-family: var(--font-label);
-  font-size: 12px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: #9ca3af;
   padding: 6px 0;
 }
@@ -307,8 +320,10 @@ function getAchievements(data: CVResponse, type: string): Achievement[] {
   margin: 64px 0 24px 0;
 }
 .sr-num {
-  font-family: var(--font-label);
-  font-size: 13px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   color: #111827;
   font-weight: 600;
   white-space: nowrap;
@@ -360,6 +375,7 @@ function getAchievements(data: CVResponse, type: string): Achievement[] {
 .progress-bar {}
 .progress-label {
   margin-bottom: 4px;
+  text-transform: uppercase;
   font-size: 13px;
   color: #4b5563;
 }
@@ -467,8 +483,8 @@ function getAchievements(data: CVResponse, type: string): Achievement[] {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
-  font-family: var(--font-label);
-  font-size: 13px;
+  font-family: var(--font-mono);
+  font-size: 11px;
   color: #6b7280;
 }
 .footer-left, .footer-right { display: flex; gap: 24px; }

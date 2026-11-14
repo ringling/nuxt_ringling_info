@@ -1,5 +1,5 @@
 <template>
-  <div class="m-4 mb-16 text-gray-600 text-sm grid grid-cols-1 gap-4 lg:gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+  <div class="m-4 mb-16 text-gray-600 text-sm grid grid-cols-1 gap-4 lg:gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-8 uppercase">
     <div v-for="skill in skills" :key="skill.name" class="skill">
       <div class="skill-text">
         {{ skill.name }}

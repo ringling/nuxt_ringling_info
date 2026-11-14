@@ -17,8 +17,9 @@ const props = defineProps<ConferenceProps>()
   padding: 4px 0 4px 16px;
 }
 .ach-kicker {
-  font-family: var(--font-label);
-  font-size: 13px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
   color: #6b7280;
   margin-bottom: 6px;
 }
@@ -26,7 +27,7 @@ const props = defineProps<ConferenceProps>()
   color: #111827;
   font-size: 15px;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
   line-height: 1.3;
 }
 .ach-note {

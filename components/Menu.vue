@@ -2,6 +2,7 @@
   <div class="rl-menu">
     <div class="rl-menu-inner">
       <NuxtLink to="/" class="rl-brand">
+        <span class="rl-brand-rule" />
         Thomas&nbsp;Ringling
       </NuxtLink>
 
@@ -13,11 +14,13 @@
           class="rl-nav-link"
           :class="{ active: route.path === link.to }"
         >
+          <span class="rl-nav-num">{{ link.num }}</span>
           {{ link.label }}
         </NuxtLink>
       </nav>
 
       <div class="rl-meta">
+        <span class="rl-status-dot" />
         <span>Updated Nov 2026</span>
       </div>
     </div>
@@ -27,9 +30,9 @@
 <script setup lang="ts">
 const route = useRoute()
 const links = [
-  { to: '/now', label: 'Now' },
-  { to: '/cv', label: 'CV' },
-  { to: '/team', label: 'Team' },
+  { to: '/now', num: '01', label: 'Now' },
+  { to: '/cv',  num: '02', label: 'CV' },
+  { to: '/team', num: '03', label: 'Team' },
 ]
 </script>
 
@@ -56,8 +59,10 @@ const links = [
 }
 
 .rl-brand {
-  font-family: var(--font-label);
-  font-size: 18px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
   color: #111827;
   font-weight: 600;
   display: inline-flex;
@@ -69,6 +74,13 @@ const links = [
 }
 .rl-brand:hover { background-image: none !important; }
 
+.rl-brand-rule {
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  background: #111827;
+}
+
 .rl-nav {
   display: flex;
   gap: 32px;
@@ -76,8 +88,10 @@ const links = [
 }
 
 .rl-nav-link {
-  font-family: var(--font-label);
-  font-size: 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   color: #6b7280;
   text-decoration: none;
   background-image: none !important;
@@ -114,25 +128,33 @@ const links = [
 }
 .rl-nav-link:hover::after { transform: scaleX(1); }
 
+.rl-nav-num {
+  color: #d1d5db;
+  font-weight: 600;
+  transition: color 220ms ease;
+}
+.rl-nav-link.active .rl-nav-num,
+.rl-nav-link.router-link-active .rl-nav-num {
+  color: #111827;
+}
+.rl-nav-link:hover .rl-nav-num { color: #9ca3af; }
+
 .rl-meta {
   justify-self: end;
-  font-family: var(--font-label);
-  font-size: 14px;
-  font-style: italic;
+  font-family: var(--font-mono);
+  font-size: 10px;
   color: #6b7280;
   display: inline-flex;
   align-items: center;
   gap: 8px;
 }
 
-@media (max-width: 640px) {
-  .rl-menu-inner {
-    grid-template-columns: auto auto;
-    justify-content: space-between;
-    padding: 14px 16px;
-  }
-  .rl-brand { font-size: 16px; }
-  .rl-nav { gap: 18px; }
-  .rl-meta { display: none; }
+.rl-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.18);
+  display: inline-block;
 }
 </style>
