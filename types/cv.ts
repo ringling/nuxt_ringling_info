@@ -49,6 +49,7 @@ export interface Skill {
   firstUsed: string
   lastUsed: string
   proficiencyLevel: number
+  pinned?: boolean
 }
 
 export interface Achievement {

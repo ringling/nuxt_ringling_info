@@ -215,8 +215,14 @@ const hobbies = [
   { title: 'Family', img: '/img/family.jpg', body: 'Most of my time outside work goes to family.' },
 ]
 
+// Show technologies used since 2018 (plus pinned ones), most recent first, then by proficiency (1 = best)
 function sortSkills(skills: Skill[]): Skill[] {
-  return skills.filter(skill => skill.lastUsed > '2014')
+  return skills
+    .filter(skill => skill.lastUsed >= '2018' || skill.pinned)
+    .sort((a, b) =>
+      b.lastUsed.localeCompare(a.lastUsed) ||
+      a.proficiencyLevel - b.proficiencyLevel ||
+      a.name.localeCompare(b.name))
 }
 
 function getAchievements(data: CVResponse, type: string): Achievement[] {
