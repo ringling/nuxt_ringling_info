@@ -1,14 +1,10 @@
 export interface CVBasics {
-  dob: string
   name: string
   label: string
   picture: string
   email: string
-  phone: string
   website: string
   location: {
-    address: string
-    postalCode: string
     city: string
     countryCode: string
     region: string

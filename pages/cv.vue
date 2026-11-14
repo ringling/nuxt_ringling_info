@@ -21,7 +21,7 @@
         <dl class="cv-meta">
           <dt>Based</dt><dd>Copenhagen, DK</dd>
           <dt>Currently</dt><dd>Data Engineer</dd>
-          <dt>Updated</dt><dd>October 2026</dd>
+          <dt>Updated</dt><dd>November 2026</dd>
         </dl>
       </div>
 
@@ -199,7 +199,7 @@ const skillsOverview = [
   { name: 'Architecture', percentage: 70 },
   { name: 'Dev Ops', percentage: 60 },
   { name: 'UI design', percentage: 50 },
-  { name: 'Machine Learning', percentage: 20 },
+  { name: 'Machine Learning', percentage: 40 },
 ]
 
 const educations = [

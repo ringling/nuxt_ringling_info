@@ -1,36 +1,27 @@
 {
   "basics": {
-    "dob": "1972-02-12",
     "name": "Thomas Ringling",
     "label": "Software Developer",
     "picture": "",
     "email": "thomas@ringling.info",
-    "phone": "+45 6169 9351",
-    "website": "http://ringling.info",
+    "website": "https://ringling.info",
     "location": {
-      "address": "Nærum Hovedgade 15 st. th. D",
-      "postalCode": "2850",
       "city": "Nærum",
       "countryCode": "DK",
       "region": "Rudersdal"
     },
     "profiles": [
       {
-        "network": "Twitter",
+        "network": "LinkedIn",
         "username": "thomasringling",
-        "url": "http://twitter.com/thomasringling"
-      },
-      {
-        "network": "Linkedin",
-        "username": "thomasringling",
-        "url": "http://linkedin.com/thomasringling"
+        "url": "https://www.linkedin.com/in/thomasringling"
       }
     ],
     "summary": [
-      "Living north of Copenhagen with my wife and my daughters.",
+      "Living north of Copenhagen with my wife and daughters.",
       "Lifetime learner and polyglot software craftsman with a great love for physical training, music and nature.",
       "A long experience implementing and teaching agile methodologies and principles.",
-      "With over 19 years of experience on software development, I span a variety of different technologies, paradigms and programming languages.",
+      "With over 25 years of experience on software development, I span a variety of different technologies, paradigms and programming languages.",
       "I have had many roles within and outside IT, such as developer, coach, teacher, architect, project manager, scrum master, product owner and team lead",
       "As I still do software development, I keep up with new technologies and therefore thrive in environments and cultures who value competences, innovation and creativity."
     ]
@@ -53,8 +44,8 @@
     },
     {
       "language": "Japanese",
-      "fluency": "Elementary proficiency",
-      "proficiency": "20%"
+      "fluency": "Elementary proficiency (A2+)",
+      "proficiency": "30%"
     }
   ],
   "educations": [
@@ -74,7 +65,7 @@
     },
     {
       "institution": "Deutsches Gymnasium für Nordschleswig",
-      "area": "Mathematics and english",
+      "area": "Mathematics and English",
       "studyType": "High school",
       "startDate": "1988",
       "endDate": "1991"
@@ -117,7 +108,7 @@
         "description": "Varberg, Sweden",
         "documentation": ""
       },
-            {
+      {
         "type": "conferences",
         "title": "SAOS 2025",
         "description": "Denmark",
@@ -404,6 +395,46 @@
   "skills": [
     {
       "active": true,
+      "name": "Rust",
+      "type": "programming-language",
+      "proficiencyLevel": 4,
+      "firstUsed": "2026",
+      "lastUsed": "2026",
+      "acquiredDuring": "",
+      "description": "Learning it in 2026"
+    },
+    {
+      "active": true,
+      "name": "Nuxt",
+      "type": "web-framework",
+      "proficiencyLevel": 2,
+      "firstUsed": "2019",
+      "lastUsed": "2026",
+      "acquiredDuring": "",
+      "description": "Vue meta-framework. This site is built with it"
+    },
+    {
+      "active": true,
+      "name": "Pandas",
+      "type": "data-library",
+      "proficiencyLevel": 2,
+      "firstUsed": "2021",
+      "lastUsed": "2026",
+      "acquiredDuring": "",
+      "description": "Daily driver for data work in Python"
+    },
+    {
+      "active": true,
+      "name": "AI-assisted development",
+      "type": "ai-tooling",
+      "proficiencyLevel": 2,
+      "firstUsed": "2025",
+      "lastUsed": "2026",
+      "acquiredDuring": "",
+      "description": "Claude Code, subagents, MCP servers and spec-driven development"
+    },
+    {
+      "active": true,
       "name": "Julia",
       "type": "language",
       "proficiencyLevel": 4,
@@ -416,9 +447,9 @@
       "active": true,
       "name": "Python",
       "type": "language",
-      "proficiencyLevel": 2,
+      "proficiencyLevel": 1,
       "firstUsed": "2019",
-      "lastUsed": "2024",
+      "lastUsed": "2026",
       "acquiredDuring": "",
       "description": ""
     },
@@ -428,7 +459,7 @@
       "type": "containers",
       "proficiencyLevel": 2,
       "firstUsed": "2013",
-      "lastUsed": "2024",
+      "lastUsed": "2026",
       "acquiredDuring": "",
       "description": "I use it in production, but mostly for development and when I try new stuff"
     },
@@ -474,7 +505,7 @@
     },
     {
       "active": true,
-      "name": "Mysql/MarieDB",
+      "name": "MySQL/MariaDB",
       "type": "database",
       "proficiencyLevel": 2,
       "firstUsed": "2001",
@@ -488,7 +519,7 @@
       "type": "database",
       "proficiencyLevel": 2,
       "firstUsed": "2007",
-      "lastUsed": "2024",
+      "lastUsed": "2026",
       "acquiredDuring": "",
       "description": "The preferred RDBMS when in .NET-country."
     },
@@ -577,7 +608,7 @@
       "name": "Vue.js",
       "type": "javascript-framework",
       "firstUsed": "2015",
-      "lastUsed": "2024",
+      "lastUsed": "2026",
       "proficiencyLevel": 1,
       "acquiredDuring": "",
       "description": "Adopted this framework very early, as it combines the simplicity of Ractive.js and a bunch of the good features from Angular, React and even Elm"
@@ -638,9 +669,9 @@
       "type": "programming-language",
       "proficiencyLevel": 2,
       "firstUsed": "2007",
-      "lastUsed": "2020",
+      "lastUsed": "2026",
       "acquiredDuring": "",
-      "description": "C# is 'Lingua franca' in the .NET world. But you should take a look at F# as well."
+      "description": "C# is the 'lingua franca' of the .NET world. But you should take a look at F# as well."
     },
     {
       "active": true,
@@ -650,7 +681,7 @@
       "firstUsed": "1998",
       "lastUsed": "2017",
       "acquiredDuring": "",
-      "description": "Learned it in school and have been using Java throughout my professional carrier. The list of java technologies I have used is long and much of it outdated, so I will not try to sum it all up here"
+      "description": "Learned it in school and have been using Java throughout my professional career. The list of java technologies I have used is long and much of it outdated, so I will not try to sum it all up here"
     },
     {
       "active": true,
@@ -658,7 +689,7 @@
       "type": "programming-language",
       "proficiencyLevel": 2,
       "firstUsed": "2001",
-      "lastUsed": "2024",
+      "lastUsed": "2026",
       "acquiredDuring": "",
       "description": "As I have been doing a lot of frontend development, there is no way to get around this one"
     },
@@ -668,7 +699,7 @@
       "type": "programming-language",
       "proficiencyLevel": 3,
       "firstUsed": "2017",
-      "lastUsed": "2023",
+      "lastUsed": "2026",
       "acquiredDuring": "",
       "description": "Java/C# in the frontend"
     },
@@ -718,7 +749,7 @@
       "type": "operating-system",
       "proficiencyLevel": 2,
       "firstUsed": "1998",
-      "lastUsed": "2024",
+      "lastUsed": "2026",
       "acquiredDuring": "",
       "description": "Together with OS X, Ubuntu is my primary development OS. RedHat, Ubuntu, CoreOS, Raspbian, Mandrake, Debian"
     }
@@ -731,15 +762,16 @@
       "companyName": "PFA",
       "companyLogo": "assets/img/pfa.png",
       "website": "http://pfa.dk",
-      "title": "PFA",
-      "roles": "",
+      "title": "Data Engineer",
+      "roles": "Data Engineer",
       "highlights": [],
       "technologies": [
         "Python",
         "Pandas",
-        "MS SQL"
+        "MS SQL",
+        "Marimo"
       ],
-      "summary": "Something with data and communication"
+      "summary": "Data engineering in Python: building and running data pipelines that combine data from several source systems and prepare it for customer communication"
     },
     {
       "year": "2025",
@@ -790,12 +822,12 @@
         "Python",
         "Nuxt3/Vue.js",
         "Pandas",
-        "Matlibplot"
+        "Matplotlib"
       ],
       "summary": "Part of a program office. Track management, communication, analysis, architecture counseling etc"
     },
     {
-      "year": "2021",
+      "year": "2020",
       "startDate": "November 2020",
       "endDate": "May 2021",
       "companyName": "PFA",
@@ -808,9 +840,9 @@
       "summary": "Agile uplift"
     },
     {
-      "year": "2020",
+      "year": "2019",
       "startDate": "November 2019",
-      "endDate": "Oktober 2020",
+      "endDate": "October 2020",
       "companyName": "PFA",
       "companyLogo": "assets/img/pfa.png",
       "website": "http://pfa.dk",
@@ -826,7 +858,7 @@
     {
       "year": "2019",
       "startDate": "August 2019",
-      "endDate": "Oktober 2019",
+      "endDate": "October 2019",
       "companyName": "Dropboy",
       "companyLogo": "assets/img/dropboy.png",
       "website": "http://dropboy.io",
@@ -847,7 +879,7 @@
       "endDate": "December 2022",
       "companyName": "xwave",
       "companyLogo": "assets/img/xwave.png",
-      "website": "http://company.com",
+      "website": "",
       "title": "Partner",
       "roles": "Software Developer",
       "highlights": [
@@ -863,7 +895,7 @@
     },
     {
       "year": "2018",
-      "startDate": "Apr 2018",
+      "startDate": "April 2018",
       "endDate": "June 2019",
       "companyName": "Danske Spil A/S",
       "companyLogo": "assets/img/ds.png",
@@ -872,19 +904,9 @@
       "summary": "Agile coach in the BI department and helping with the shift towards more agile processes. Facilitating team workshops and introducing scrum. Later scrum master of up to 3 teams"
     },
     {
-      "year": "2016",
-      "startDate": "Okt 2016",
-      "endDate": "June 2022",
-      "companyName": "PrivacyTree",
-      "companyLogo": "assets/img/privactree_logo.png",
-      "title": "Partner",
-      "roles": "SW Architecture, Development, UI",
-      "summary": "Courses, training and software development in relation to the General Data Protection Regulation(GDPR)"
-    },
-    {
       "year": "2017",
-      "startDate": "Jan 2017",
-      "endDate": "Dec 2017",
+      "startDate": "January 2017",
+      "endDate": "December 2017",
       "companyName": "MP Pension",
       "companyLogo": "assets/img/mp.png",
       "title": "Scrum master, product owner",
@@ -897,8 +919,18 @@
     },
     {
       "year": "2016",
+      "startDate": "October 2016",
+      "endDate": "June 2022",
+      "companyName": "PrivacyTree",
+      "companyLogo": "assets/img/privactree_logo.png",
+      "title": "Partner",
+      "roles": "SW Architecture, Development, UI",
+      "summary": "Courses, training and software development in relation to the General Data Protection Regulation(GDPR)"
+    },
+    {
+      "year": "2016",
       "startDate": "May 2016",
-      "endDate": "Nov 2016",
+      "endDate": "November 2016",
       "companyName": "Nykredit",
       "companyLogo": "assets/img/nykredit.png",
       "title": "Developer",
@@ -915,8 +947,8 @@
     },
     {
       "year": "2016",
-      "startDate": "Jan 2016",
-      "endDate": "Apr 2016",
+      "startDate": "January 2016",
+      "endDate": "April 2016",
       "companyName": "Widex A/S",
       "companyLogo": "assets/img/widex.png",
       "title": "Delivery manager",
@@ -932,7 +964,7 @@
     {
       "year": "2015",
       "startDate": "May 2015",
-      "endDate": "Dec 2015",
+      "endDate": "December 2015",
       "companyName": "Macellum",
       "companyLogo": "assets/img/macellum.png",
       "title": "Partner",
@@ -947,8 +979,8 @@
       "summary": "Software solution for the fishing market"
     },
     {
-      "year": "2013",
-      "startDate": "Sep 2012",
+      "year": "2012",
+      "startDate": "September 2012",
       "endDate": "May 2015",
       "companyName": "Lokalebasen.dk A/S",
       "companyLogo": "assets/img/lb.png",
@@ -977,8 +1009,8 @@
     },
     {
       "year": "2012",
-      "startDate": "Jan 2012",
-      "endDate": "Sep 2012",
+      "startDate": "January 2012",
+      "endDate": "September 2012",
       "companyName": "Nykredit",
       "companyLogo": null,
       "title": "Developer",
@@ -994,8 +1026,8 @@
     },
     {
       "year": "2011",
-      "startDate": "Aug 2011",
-      "endDate": "Jan 2012",
+      "startDate": "August 2011",
+      "endDate": "January 2012",
       "companyName": "Danish Defence / Forsvaret",
       "companyLogo": null,
       "title": "Force Protection",
@@ -1003,9 +1035,9 @@
       "summary": "ISAF 12 / OP Herrick 15"
     },
     {
-      "year": "2011",
-      "startDate": "Jun 2009",
-      "endDate": "Aug 2011",
+      "year": "2009",
+      "startDate": "June 2009",
+      "endDate": "August 2011",
       "companyName": "Forca",
       "companyLogo": null,
       "title": "Developer, BA",
@@ -1020,19 +1052,35 @@
       "full": ""
     },
     {
-      "year": "2009",
-      "startDate": "Nov 2008",
-      "endDate": "Apr 2009",
+      "year": "2008",
+      "startDate": "November 2008",
+      "endDate": "April 2009",
       "companyName": "Forsvaret",
       "companyLogo": null,
       "title": "Instructor",
-      "roles": "...",
+      "roles": "Instructor",
       "summary": "Instructor at the army medics course - 'Sygehjælper kursus HLS 408'"
     },
     {
-      "year": "2007",
-      "startDate": "Dec 2007",
-      "endDate": "May 2006",
+      "year": "2008",
+      "startDate": "January 2008",
+      "endDate": "September 2008",
+      "companyName": "Forca",
+      "companyLogo": null,
+      "title": "Developer",
+      "roles": "Developer",
+      "technologies": [
+        "C# 3.0",
+        "ASP.NET",
+        "Edlund LifeCore",
+        "web forms"
+      ],
+      "summary": "My role as a developer, was developing<ul><li>Campaign site</li><li>New functionality in admin UI</li></ul>"
+    },
+    {
+      "year": "2006",
+      "startDate": "May 2006",
+      "endDate": "December 2007",
       "companyName": "Nykredit",
       "companyLogo": null,
       "title": "Developer",
@@ -1045,8 +1093,8 @@
       "summary": "My role as a developer, was frontend development of internal administration systems."
     },
     {
-      "year": "2006",
-      "startDate": "Mar 2005",
+      "year": "2005",
+      "startDate": "March 2005",
       "endDate": "May 2006",
       "companyName": "Omada",
       "companyLogo": null,
@@ -1062,27 +1110,9 @@
       "summary": "Developing on the Omada process modeling product"
     },
     {
-      "year": "2001",
-      "startDate": "Sep 2001",
-      "endDate": "Dec 2000",
-      "companyName": "Ericsson",
-      "companyLogo": null,
-      "title": "Developer, architect",
-      "roles": "Developer, Architect",
-      "summary": "Java and VB developer on a command and voice recognition project",
-      "technologies": [
-        "Java",
-        "VB",
-        "MS COM",
-        "MS DCOM",
-        "JSP"
-      ],
-      "full": "Voice and command controlled car-cockpit of the future"
-    },
-    {
-      "year": "2005",
-      "startDate": "Apr 2003",
-      "endDate": "Mar 2005",
+      "year": "2003",
+      "startDate": "April 2003",
+      "endDate": "March 2005",
       "companyName": "XponCard",
       "companyLogo": null,
       "title": "Developer, architect",
@@ -1098,25 +1128,9 @@
       "summary": "Java developer, architect and project manager on card solutions"
     },
     {
-      "year": "2008",
-      "startDate": "Jan 2008",
-      "endDate": "Sep 2008",
-      "companyName": "Forca",
-      "companyLogo": null,
-      "title": "Developer",
-      "roles": "Developer",
-      "technologies": [
-        "C# 4.0",
-        "ASP.NET",
-        "Edlund LifeCore",
-        "web forms"
-      ],
-      "summary": "My role as a developer, was developing<ul><li>Campain site</li><li>New functionality in admin UI</li></ul>"
-    },
-    {
-      "year": "2003",
-      "startDate": "Aug 2001",
-      "endDate": "Mar 2003",
+      "year": "2001",
+      "startDate": "August 2001",
+      "endDate": "March 2003",
       "companyName": "Nokia",
       "companyLogo": null,
       "title": "Requalification manager",
@@ -1126,6 +1140,24 @@
         "J2ME"
       ],
       "summary": "Requalification manager on a new phone product and some practical testing of mobile phone Java API"
+    },
+    {
+      "year": "2000",
+      "startDate": "December 2000",
+      "endDate": "September 2001",
+      "companyName": "Ericsson",
+      "companyLogo": null,
+      "title": "Developer, architect",
+      "roles": "Developer, Architect",
+      "summary": "Java and VB developer on a command and voice recognition project",
+      "technologies": [
+        "Java",
+        "VB",
+        "MS COM",
+        "MS DCOM",
+        "JSP"
+      ],
+      "full": "Voice and command controlled car-cockpit of the future"
     }
   ],
   "interests": [
@@ -1139,7 +1171,7 @@
       "name": "Nature",
       "keywords": [
         "Nature",
-        "Guitar"
+        "Walking"
       ]
     },
     {
@@ -1149,21 +1181,6 @@
         "Crossfit",
         "Physical training"
       ]
-    }
-  ],
-  "references": [
-    {
-      "name": "Jane Doe",
-      "reference": "Reference..."
-    }
-  ],
-  "publications": [
-    {
-      "name": "Publication",
-      "publisher": "Company",
-      "releaseDate": "2014-10-01",
-      "website": "http://publication.com",
-      "summary": "Description..."
     }
   ]
 }
