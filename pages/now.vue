@@ -13,11 +13,11 @@
 
       <div class="cards-grid">
         <template v-for="(card, idx) in cards" :key="card.month">
-          <div v-if="getYear(card.month) !== getYear(cards[idx - 1]?.month ?? '')" class="year-divider">
+          <div v-if="getYear(card.month) !== getYear(cards[idx - 1]?.month ?? '')" v-reveal class="year-divider">
             <span class="year-num">{{ getYear(card.month) }}</span>
             <span class="year-line" />
           </div>
-          <div class="now-card neu">
+          <div v-reveal class="now-card neu">
           <img :src="card.img" :alt="card.month" class="card-img" />
           <div class="card-body">
             <div class="card-kicker">
@@ -565,9 +565,60 @@ const cards: NowEntry[] = [
     ],
   },
 ]
+
+// Reveal on scroll: elements below the fold fade/slide in as they enter the viewport.
+// Cards already visible on load are left alone (no flicker); reduced-motion users see no animation.
+let revealObserver: IntersectionObserver | null = null
+
+function getRevealObserver(): IntersectionObserver {
+  if (!revealObserver) {
+    revealObserver = new IntersectionObserver((entries) => {
+      let i = 0
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue
+        const el = entry.target as HTMLElement
+        el.style.transitionDelay = `${Math.min(i++, 5) * 70}ms`
+        el.classList.add('reveal-in')
+        revealObserver?.unobserve(el)
+      }
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 })
+  }
+  return revealObserver
+}
+
+const vReveal = {
+  mounted(el: HTMLElement) {
+    if (!('IntersectionObserver' in window)) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    if (el.getBoundingClientRect().top < window.innerHeight) return
+    el.classList.add('reveal-pending')
+    getRevealObserver().observe(el)
+  },
+  unmounted(el: HTMLElement) {
+    revealObserver?.unobserve(el)
+  },
+}
+
+onBeforeUnmount(() => {
+  revealObserver?.disconnect()
+  revealObserver = null
+})
 </script>
 
 <style scoped>
+.reveal-pending {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 550ms ease, transform 550ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal-pending.reveal-in {
+  opacity: 1;
+  transform: none;
+}
+@media print {
+  .reveal-pending { opacity: 1; transform: none; transition: none; }
+}
+
 .page-inner {
   max-width: 1280px;
   margin: 0 auto;
