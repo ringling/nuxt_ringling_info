@@ -7,8 +7,7 @@
       <div class="hero-content reveal">
         <div>
           <div class="eyebrow">
-            <span class="eyebrow-rule" />
-            00 — Thomas Ringling
+            Thomas Ringling
           </div>
           <h1 class="hero-h1">
             Creative technologist
@@ -21,17 +20,14 @@
 
           <div class="link-list reveal d2">
             <NuxtLink to="/cv" class="link-row">
-              <span class="link-num">01</span>
               <span>A little about who I am</span>
               <span class="link-arrow">→</span>
             </NuxtLink>
             <NuxtLink to="/now" class="link-row">
-              <span class="link-num">02</span>
               <span>What I am doing right now</span>
               <span class="link-arrow">→</span>
             </NuxtLink>
             <NuxtLink to="/cv" class="link-row link-row-last">
-              <span class="link-num">03</span>
               <span>And what I have been doing</span>
               <span class="link-arrow">→</span>
             </NuxtLink>
@@ -102,27 +98,19 @@ useHead({
 }
 
 .eyebrow {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+  font-family: var(--font-label);
+  font-size: 13px;
   color: #111827;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 18px;
 }
-.eyebrow-rule {
-  display: inline-block;
-  width: 24px;
-  height: 1px;
-  background: #111827;
-}
 
 .hero-h1 {
   font-size: clamp(40px, 5.2vw, 72px);
   font-weight: 800;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.01em;
   color: #111827;
   line-height: 0.95;
   margin: 0;
@@ -147,7 +135,7 @@ useHead({
 
 .link-row {
   display: grid;
-  grid-template-columns: 32px 1fr auto;
+  grid-template-columns: 1fr auto;
   gap: 16px;
   align-items: center;
   padding: 14px 0;
@@ -171,22 +159,16 @@ useHead({
   color: #111827;
 }
 
-.link-num {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: #9ca3af;
-}
-
 .link-arrow {
-  font-family: var(--font-mono);
-  font-size: 14px;
+  font-family: var(--font-label);
+  font-size: 16px;
   color: #9ca3af;
   transition: transform 220ms ease, color 220ms ease;
 }
 
 .colophon {
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-family: var(--font-label);
+  font-size: 12px;
   color: #6b7280;
   display: flex;
   gap: 24px;
@@ -221,10 +203,8 @@ useHead({
   position: absolute;
   bottom: 24px;
   left: 24px;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-family: var(--font-label);
+  font-size: 12px;
   color: #fff;
   background: rgba(17, 24, 39, 0.7);
   padding: 6px 10px;

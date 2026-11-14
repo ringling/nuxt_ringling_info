@@ -20,10 +20,6 @@
           <div class="now-card neu">
           <img :src="card.img" :alt="card.month" class="card-img" />
           <div class="card-body">
-            <div class="card-kicker">
-              <span class="kicker-rule" />
-              {{ String(idx + 1).padStart(2, '0') }} / {{ card.month.split(' ').pop() }}
-            </div>
             <h5 class="card-month">{{ card.month.replace(' ' + card.month.split(' ').pop(), '') }}</h5>
 
             <template v-if="card.interests && card.interests.length">
@@ -578,7 +574,7 @@ const cards: NowEntry[] = [
   margin: 64px 0 0 0;
   font-size: 56px;
   font-weight: 800;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.01em;
   text-align: center;
   color: #111827;
 }
@@ -614,11 +610,9 @@ const cards: NowEntry[] = [
 .year-divider:first-child { margin-top: 0; }
 
 .year-num {
-  font-family: var(--font-mono);
-  font-size: 11px;
+  font-family: var(--font-label);
+  font-size: 13px;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
   color: #111827;
   white-space: nowrap;
 }
@@ -650,38 +644,19 @@ const cards: NowEntry[] = [
   word-break: break-word;
 }
 
-.card-kicker {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #111827;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.kicker-rule {
-  width: 18px;
-  height: 1px;
-  background: #111827;
-  display: inline-block;
-}
 
 .card-month {
   margin: 8px 0 16px 0;
   font-size: 24px;
   font-weight: 800;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.01em;
   color: #111827;
   line-height: 1.05;
 }
 
 .section-label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-family: var(--font-label);
+  font-size: 12px;
   color: #6b7280;
   margin: 14px 0 6px 0;
 }

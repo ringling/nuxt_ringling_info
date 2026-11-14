@@ -19,18 +19,16 @@ const props = defineProps<SkillProps>()
   padding: 6px 0 6px 12px;
 }
 .skill-name {
-  font-family: var(--font-mono);
-  font-size: 11px;
+  font-family: var(--font-label);
+  font-size: 13px;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
   color: #111827;
   line-height: 1.3;
   margin-bottom: 4px;
 }
 .skill-dates {
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-family: var(--font-label);
+  font-size: 12px;
   color: #9ca3af;
   margin-bottom: 6px;
 }

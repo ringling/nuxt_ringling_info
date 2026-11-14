@@ -5,8 +5,7 @@
 
       <div class="team-header">
         <div class="team-eyebrow">
-          <span class="eyebrow-rule" />
-          03 — Disciplines
+          Disciplines
         </div>
         <h1 class="team-h1">
           Meet <span class="accent">the</span> team.
@@ -18,10 +17,6 @@
 
       <div class="roster">
         <div v-for="(member, idx) in team" :key="member.role" class="roster-row reveal">
-          <div class="row-idx">
-            {{ String(idx + 1).padStart(2, '0') }}
-            <span class="row-idx-total">/ {{ String(team.length).padStart(2, '0') }}</span>
-          </div>
           <div class="row-img-wrap">
             <img :src="member.img" :alt="member.role" class="row-img" />
             <span v-if="member.layedOff" class="layed-off">layed off</span>
@@ -98,27 +93,19 @@ const team = [
 .team-header { margin-top: 80px; }
 
 .team-eyebrow {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+  font-family: var(--font-label);
+  font-size: 13px;
   color: #111827;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 16px;
 }
-.eyebrow-rule {
-  display: inline-block;
-  width: 24px;
-  height: 1px;
-  background: #111827;
-}
 
 .team-h1 {
   font-size: clamp(48px, 6vw, 72px);
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   color: #111827;
   line-height: 0.95;
   margin: 0 0 8px 0;
@@ -142,7 +129,7 @@ const team = [
 
 .roster-row {
   display: grid;
-  grid-template-columns: 80px 200px 1fr;
+  grid-template-columns: 200px 1fr;
   gap: 32px;
   align-items: start;
   padding: 32px 0;
@@ -156,12 +143,6 @@ const team = [
   }
 }
 
-.row-idx {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: #9ca3af;
-}
-.row-idx-total { color: #e5e7eb; }
 
 .row-img-wrap {
   position: relative;
@@ -180,11 +161,9 @@ const team = [
   left: 0;
   background: #dc2626;
   color: white;
-  font-family: var(--font-mono);
-  font-size: 11px;
+  font-family: var(--font-label);
+  font-size: 13px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
   padding: 4px 10px;
   border-radius: 0 4px 4px 0;
 }
@@ -195,10 +174,8 @@ const team = [
 }
 
 .row-discipline {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-family: var(--font-label);
+  font-size: 12px;
   color: #6b7280;
   margin-bottom: 8px;
 }
@@ -207,7 +184,7 @@ const team = [
   margin: 0 0 12px 0;
   font-size: 36px;
   font-weight: 800;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.01em;
   color: #111827;
   line-height: 1;
   text-align: left;

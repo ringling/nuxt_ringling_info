@@ -17,9 +17,8 @@ const props = defineProps<CertificationProps>()
   padding: 4px 0 4px 16px;
 }
 .ach-kicker {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.04em;
+  font-family: var(--font-label);
+  font-size: 13px;
   color: #6b7280;
   margin-bottom: 6px;
 }
@@ -27,14 +26,14 @@ const props = defineProps<CertificationProps>()
   color: #111827;
   font-size: 15px;
   font-weight: 600;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
   line-height: 1.3;
 }
 .ach-link {
   display: inline-block;
   margin-top: 6px;
-  font-family: var(--font-mono);
-  font-size: 11px;
+  font-family: var(--font-label);
+  font-size: 13px;
   color: #6b7280;
   text-decoration: none;
   background-image: none !important;
