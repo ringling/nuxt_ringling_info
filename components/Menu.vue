@@ -21,7 +21,7 @@
 
       <div class="rl-meta">
         <span class="rl-status-dot" />
-        <span>Updated Oct 2026</span>
+        <span>Updated Nov 2026</span>
       </div>
     </div>
   </div>
