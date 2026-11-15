@@ -22,6 +22,7 @@
           <dt>Based</dt><dd>Copenhagen, DK</dd>
           <dt>Currently</dt><dd>Data Engineer</dd>
           <dt>Updated</dt><dd>November 2026</dd>
+          <dt>Print</dt><dd><NuxtLink to="/cv/print">Print / PDF version</NuxtLink></dd>
         </dl>
       </div>
 

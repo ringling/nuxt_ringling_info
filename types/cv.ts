@@ -31,6 +31,9 @@ export interface Education {
   endDate: string
   gpa?: string
   courses?: string[]
+  print?: boolean
+  printTitle?: string
+  printMeta?: string
 }
 
 export interface Experience {
@@ -40,6 +43,10 @@ export interface Experience {
   endDate: string
   summary: string
   technologies: string[]
+  venture?: boolean
+  group?: string
+  note?: string
+  printTitle?: string
 }
 
 export interface Skill {
@@ -50,6 +57,7 @@ export interface Skill {
   lastUsed: string
   proficiencyLevel: number
   pinned?: boolean
+  core?: boolean
 }
 
 export interface Achievement {
@@ -58,6 +66,17 @@ export interface Achievement {
   date: string
   issuer?: string
   url?: string
+  description?: string
+  print?: boolean | 'coursework'
+  printTitle?: string
+  printMeta?: string
+}
+
+export interface PrintSettings {
+  lede: string
+  profile: string[]
+  detailedSince: number
+  earlier: { period: string, text: string }
 }
 
 export interface CVData {
@@ -69,6 +88,7 @@ export interface CVData {
   achievements: {
     list: Achievement[]
   }
+  print: PrintSettings
 }
 
 export interface CVResponse {
