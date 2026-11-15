@@ -1327,7 +1327,7 @@
     }
   ],
   "print": {
-    "lede": "Data engineer and software developer north of Copenhagen, with years behind me as agile coach and tech lead.",
+    "lede": "Data engineer and software developer north of Copenhagen, with years behind me as agile coach, architect and tech lead.",
     "profile": [
       "For twenty-five years I've been writing software, and I still write code. At PFA I build the Python pipelines that decide which customers get which letters, and I help work out how the teams on a new project should use AI in their development process.",
       "I've also led agile transformations at Lokalebasen.dk, Danske Spil and PFA, and co-founded three software companies. I've used Java, C#, Elixir and Python in production, so I tend to pick the tool that fits the problem, not the one I know best."
@@ -1338,7 +1338,7 @@
       "text": "Product owner, Scrum Master and architect at Lokalebasen.dk and MP Pension; delivery manager at Widex; developer and architect at Nykredit, Forca, Omada, XponCard, Nokia and Ericsson; co-founder of Macellum; and a deployment with the Danish Defence (ISAF, Afghanistan)."
     },
     "da": {
-      "lede": "Data engineer og softwareudvikler nord for København, med mange år som agil coach og tech lead bag mig.",
+      "lede": "Data engineer og softwareudvikler nord for København, med mange år som agil coach, arkitekt og tech lead bag mig.",
       "profile": [
         "Jeg har skrevet software i femogtyve år, og jeg skriver stadig kode. Hos PFA bygger jeg de Python-pipelines, der afgør, hvilke kunder der får hvilke breve, og jeg er med til at finde ud af, hvordan teamene på et nyt projekt skal bruge AI i deres udviklingsproces.",
         "Jeg har også stået i spidsen for agile transformationer hos Lokalebasen.dk, Danske Spil og PFA og været med til at stifte tre softwarevirksomheder. Jeg har brugt Java, C#, Elixir og Python i produktion, så jeg vælger det værktøj, der passer til problemet, og ikke bare det, jeg kender bedst."
