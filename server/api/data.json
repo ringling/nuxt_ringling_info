@@ -30,22 +30,38 @@
     {
       "language": "Danish",
       "fluency": "Native speaker",
-      "proficiency": "100%"
+      "proficiency": "100%",
+      "da": {
+        "language": "Dansk",
+        "fluency": "Modersmål"
+      }
     },
     {
       "language": "German",
       "fluency": "Native speaker",
-      "proficiency": "100%"
+      "proficiency": "100%",
+      "da": {
+        "language": "Tysk",
+        "fluency": "Modersmål"
+      }
     },
     {
       "language": "English",
       "fluency": "Full professional proficiency",
-      "proficiency": "90%"
+      "proficiency": "90%",
+      "da": {
+        "language": "Engelsk",
+        "fluency": "Flydende, professionelt niveau"
+      }
     },
     {
       "language": "Japanese",
       "fluency": "Elementary proficiency (A2+)",
-      "proficiency": "30%"
+      "proficiency": "30%",
+      "da": {
+        "language": "Japansk",
+        "fluency": "Begynderniveau (A2+)"
+      }
     }
   ],
   "educations": [
@@ -55,7 +71,11 @@
       "studyType": "Diploma in Information Technology",
       "startDate": "2002",
       "endDate": "2005",
-      "printMeta": "IT University of Copenhagen · 2002–2005"
+      "printMeta": "IT University of Copenhagen · 2002–2005",
+      "da": {
+        "printTitle": "Diplomuddannelse i informationsteknologi",
+        "printMeta": "IT-Universitetet i København · 2002–2005"
+      }
     },
     {
       "institution": "Lyngby Uddannelsescenter",
@@ -64,7 +84,11 @@
       "startDate": "1998",
       "endDate": "2000",
       "printTitle": "AP Degree in Computer Science (Datamatiker)",
-      "printMeta": "Lyngby Uddannelsescenter · 1998–2000"
+      "printMeta": "Lyngby Uddannelsescenter · 1998–2000",
+      "da": {
+        "printTitle": "Datamatiker",
+        "printMeta": "Lyngby Uddannelsescenter · 1998–2000"
+      }
     },
     {
       "institution": "Deutsches Gymnasium für Nordschleswig",
@@ -323,7 +347,10 @@
         "documentation": "",
         "print": true,
         "printTitle": "Japanese A1–A2+ (Marugoto)",
-        "printMeta": "FOF · 2021–2027"
+        "printMeta": "FOF · 2021–2027",
+        "da": {
+          "printTitle": "Japansk A1–A2+ (Marugoto)"
+        }
       },
       {
         "type": "courses",
@@ -463,7 +490,10 @@
       "lastUsed": "2026",
       "acquiredDuring": "",
       "description": "Claude Code, subagents, MCP servers and spec-driven development",
-      "core": true
+      "core": true,
+      "da": {
+        "name": "AI-assisteret udvikling"
+      }
     },
     {
       "active": true,
@@ -794,7 +824,10 @@
         "SQL Server",
         "Marimo"
       ],
-      "summary": "Build and run Python data pipelines (Pandas, Marimo, MS SQL) that merge agreement data from several source systems, apply business rules and decide which customers get which notification letters. Each run produces a report that shows the business what happened at every step. Also subject matter expert on a new project, covering data and technical questions and helping define the AI-assisted development process (AI SDLC) for the teams."
+      "summary": "Build and run Python data pipelines (Pandas, Marimo, MS SQL) that merge agreement data from several source systems, apply business rules and decide which customers get which notification letters. Each run produces a report that shows the business what happened at every step. Also subject matter expert on a new project, covering data and technical questions and helping define the AI-assisted development process (AI SDLC) for the teams.",
+      "da": {
+        "summary": "Bygger og driver Python-datapipelines (Pandas, Marimo, MS SQL), der samler aftaledata fra flere kildesystemer, anvender forretningsregler og afgør, hvilke kunder der får hvilke varslingsbreve. Hver kørsel giver en rapport, der viser forretningen, hvad der skete i hvert trin. Desuden fagekspert på et nyt projekt, hvor jeg dækker data og teknik og er med til at definere den AI-understøttede udviklingsproces (AI SDLC) for teamene."
+      }
     },
     {
       "year": "2025",
@@ -814,7 +847,11 @@
         "e-Boks",
         "Polaris - Life and Pension platform"
       ],
-      "summary": "Consultant on the Polaris life and pension platform for several clients. Most recently PBU, where I helped integrate Polaris output management and built the e-Boks integration, so PBU can send letters from Polaris straight to customers' e-Boks. Also set up document workflows and designed letter templates. Mostly C# and Handlebars, some Angular, and Pandas for pulling test data."
+      "summary": "Consultant on the Polaris life and pension platform for several clients. Most recently PBU, where I helped integrate Polaris output management and built the e-Boks integration, so PBU can send letters from Polaris straight to customers' e-Boks. Also set up document workflows and designed letter templates. Mostly C# and Handlebars, some Angular, and Pandas for pulling test data.",
+      "da": {
+        "title": "Softwarekonsulent",
+        "summary": "Konsulent på life- og pensionsplatformen Polaris for flere kunder. Senest PBU, hvor jeg hjalp med at integrere Polaris' output management og byggede e-Boks-integrationen, så PBU kan sende breve direkte fra Polaris til kundernes e-Boks. Satte også dokumentworkflows op og designede brevskabeloner. Primært C# og Handlebars, lidt Angular, og Pandas til at trække testdata."
+      }
     },
     {
       "year": "2023",
@@ -833,7 +870,10 @@
         "SQL Server"
       ],
       "summary": "Built a letter engine for PFA's price and product letters to customers. Designed and wrote the Python pipelines that combine data from several source systems and decide who gets which letter. Also did the data analysis, architecture and requirements work with the business.",
-      "group": "pfa-2019"
+      "group": "pfa-2019",
+      "da": {
+        "summary": "Byggede en brevmotor til PFA's pris- og produktbreve til kunderne. Designede og skrev de Python-pipelines, der samler data fra flere kildesystemer og afgør, hvem der får hvilket brev. Stod også for dataanalyse, arkitektur og kravarbejde sammen med forretningen."
+      }
     },
     {
       "year": "2021",
@@ -853,7 +893,10 @@
         "Matplotlib"
       ],
       "summary": "Part of the program office for a program that introduced a new agreement flow at PFA. Ran the data track, which meant planning, coordination, stakeholder communication, data analysis and architecture advice. Built a Vue/Nuxt app that lets business users create bulk update XML files themselves, and used Python, Pandas and Matplotlib for analysis and reporting.",
-      "group": "pfa-2019"
+      "group": "pfa-2019",
+      "da": {
+        "summary": "Del af programkontoret for et program, der indførte et nyt aftaleflow hos PFA. Ansvarlig for datasporet, dvs. planlægning, koordinering, kommunikation med interessenter, dataanalyse og arkitekturrådgivning. Byggede en Vue/Nuxt-applikation, så forretningen selv kan oprette XML-filer til masseopdateringer, og brugte Python, Pandas og Matplotlib til analyse og rapportering."
+      }
     },
     {
       "year": "2020",
@@ -871,7 +914,11 @@
         "Azure DevOps"
       ],
       "summary": "Agile coach for PFA's development Agile Release Train (SAFe). Coached team members and managers, ran training, set up boards and ceremonies, and introduced behaviour-driven development (BDD). Pulled data out of Azure DevOps to show lead time, cycle time and other delivery metrics.",
-      "group": "pfa-2019"
+      "group": "pfa-2019",
+      "da": {
+        "title": "Agil coach",
+        "summary": "Agil coach for PFA's Agile Release Train i udviklingen (SAFe). Coachede teammedlemmer og ledere, holdt træning, satte boards og ceremonier op og introducerede behaviour-driven development (BDD). Trak data ud af Azure DevOps for at vise lead time, cycle time og andre leverancemål."
+      }
     },
     {
       "year": "2019",
@@ -888,7 +935,10 @@
         "BDD"
       ],
       "summary": "Part of an agile team that moved PFA towards more automated testing on the Edlund LivNET pension platform, using behaviour-driven development (BDD) to write and automate the tests.",
-      "group": "pfa-2019"
+      "group": "pfa-2019",
+      "da": {
+        "summary": "Del af et agilt team, der flyttede PFA mod mere automatiseret test på pensionsplatformen Edlund LivNET, med behaviour-driven development (BDD) til at skrive og automatisere testene."
+      }
     },
     {
       "year": "2019",
@@ -907,7 +957,11 @@
         "MongoDB"
       ],
       "summary": "Interim tech lead for a six-person team. Introduced agile practices, assessed the existing codebase and wrote code in the Node.js, TypeScript, React and MongoDB stack.",
-      "note": "planned 3-month engagement"
+      "note": "planned 3-month engagement",
+      "da": {
+        "note": "planlagt forløb på 3 måneder",
+        "summary": "Interim tech lead for et team på seks personer. Indførte agile arbejdsformer, vurderede den eksisterende kodebase og skrev kode i Node.js, TypeScript, React og MongoDB."
+      }
     },
     {
       "year": "2019",
@@ -930,7 +984,11 @@
       ],
       "summary": "Co-founded xwave with one partner to build our own product, <b>Marangu</b>, a business management tool for farriers. Handled the architecture, development and front-end design (Elixir/Phoenix, PostgreSQL, Nuxt/Vue). Farriers use it today.",
       "venture": true,
-      "printTitle": "Co-founder"
+      "printTitle": "Co-founder",
+      "da": {
+        "printTitle": "Medstifter",
+        "summary": "Stiftede xwave sammen med én partner for at bygge vores eget produkt, <b>Marangu</b>, et forretningssystem til beslagsmede. Stod for arkitektur, udvikling og frontend-design (Elixir/Phoenix, PostgreSQL, Nuxt/Vue). Beslagsmede bruger det i dag."
+      }
     },
     {
       "year": "2018",
@@ -940,7 +998,11 @@
       "companyLogo": "assets/img/ds.png",
       "title": "Agile coach",
       "roles": "Agile Coach and Scrum Master",
-      "summary": "Agile coach in the BI department, helping its three teams move to more agile ways of working. Ran team workshops, introduced Scrum and later became Scrum Master for all three teams."
+      "summary": "Agile coach in the BI department, helping its three teams move to more agile ways of working. Ran team workshops, introduced Scrum and later became Scrum Master for all three teams.",
+      "da": {
+        "title": "Agil coach",
+        "summary": "Agil coach i BI-afdelingen, hvor jeg hjalp afdelingens tre teams over i mere agile arbejdsformer. Holdt teamworkshops, introducerede Scrum og blev senere Scrum Master for alle tre teams."
+      }
     },
     {
       "year": "2017",
@@ -972,7 +1034,11 @@
       ],
       "summary": "Co-founded PrivacyTree with four partners. We offered courses, training and software for GDPR compliance. Handled the software architecture, development and UI, with a Vue.js front end on an Elixir backend using PostgreSQL and CouchDB.",
       "venture": true,
-      "printTitle": "Co-founder"
+      "printTitle": "Co-founder",
+      "da": {
+        "printTitle": "Medstifter",
+        "summary": "Stiftede PrivacyTree sammen med fire partnere. Vi tilbød kurser, træning og software til GDPR-compliance. Stod for softwarearkitektur, udvikling og UI med en Vue.js-frontend på en Elixir-backend med PostgreSQL og CouchDB."
+      }
     },
     {
       "year": "2016",
@@ -1025,7 +1091,10 @@
       ],
       "summary": "Software solution for the fishing market",
       "venture": true,
-      "printTitle": "Co-founder"
+      "printTitle": "Co-founder",
+      "da": {
+        "printTitle": "Medstifter"
+      }
     },
     {
       "year": "2012",
@@ -1242,6 +1311,16 @@
     "earlier": {
       "period": "2000 — 2017",
       "text": "Product owner, Scrum Master and architect at Lokalebasen.dk and MP Pension; delivery manager at Widex; developer and architect at Nykredit, Forca, Omada, XponCard, Nokia and Ericsson; co-founder of Macellum; and a deployment with the Danish Defence (ISAF, Afghanistan)."
+    },
+    "da": {
+      "lede": "Data engineer og softwareudvikler nord for København, med mange år som agil coach og tech lead bag mig.",
+      "profile": [
+        "Jeg har skrevet software i femogtyve år, og jeg skriver stadig kode. Hos PFA bygger jeg de Python-pipelines, der afgør, hvilke kunder der får hvilke breve, og jeg er med til at finde ud af, hvordan teamene på et nyt projekt skal bruge AI i deres udviklingsproces.",
+        "Jeg har også stået i spidsen for agile transformationer hos Lokalebasen.dk, Danske Spil og PFA og været med til at stifte tre softwarevirksomheder. Jeg har brugt Java, C#, Elixir og Python i produktion, så jeg vælger det værktøj, der passer til problemet, og ikke bare det, jeg kender bedst."
+      ],
+      "earlier": {
+        "text": "Product owner, Scrum Master og arkitekt hos Lokalebasen.dk og MP Pension; delivery manager hos Widex; udvikler og arkitekt hos Nykredit, Forca, Omada, XponCard, Nokia og Ericsson; medstifter af Macellum; og udsendt med Forsvaret (ISAF, Afghanistan)."
+      }
     }
   }
 }

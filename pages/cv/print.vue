@@ -1,38 +1,42 @@
 <template>
   <div class="pcv-screen">
     <div class="pcv-toolbar">
-      <NuxtLink to="/cv">← Back to CV</NuxtLink>
-      <button type="button" @click="print">Print / Save as PDF</button>
+      <NuxtLink to="/cv">{{ t.back }}</NuxtLink>
+      <div class="pcv-toolbar-right">
+        <NuxtLink v-if="lang === 'da'" :to="{ query: { ...route.query, lang: undefined } }">English</NuxtLink>
+        <NuxtLink v-else :to="{ query: { ...route.query, lang: 'da' } }">Dansk</NuxtLink>
+        <button type="button" @click="print">{{ t.print }}</button>
+      </div>
     </div>
 
-    <main v-if="cv" class="pcv">
+    <main v-if="cv" class="pcv" :lang="lang">
       <header>
         <div class="pcv-masthead">
           <span class="pcv-label">Curriculum Vitae</span>
           <span class="pcv-label">{{ updated }}</span>
         </div>
         <h1>{{ cv.basics.name }}</h1>
-        <p class="pcv-lede">{{ cv.print.lede }}</p>
+        <p class="pcv-lede">{{ settings.lede }}</p>
       </header>
 
       <hr>
 
       <section class="pcv-intro">
         <div class="pcv-profile">
-          <p v-for="(para, i) in cv.print.profile" :key="i">{{ para }}</p>
+          <p v-for="(para, i) in settings.profile" :key="i">{{ para }}</p>
         </div>
         <div>
-          <div class="pcv-label pcv-colhead">Contact</div>
+          <div class="pcv-label pcv-colhead">{{ t.contact }}</div>
           <ul class="pcv-pairs">
-            <li v-if="phone"><span class="k">Phone</span><span class="v">{{ phone }}</span></li>
-            <li><span class="k">Email</span><span class="v">cv@ringling.info</span></li>
+            <li v-if="phone"><span class="k">{{ t.phone }}</span><span class="v">{{ phone }}</span></li>
+            <li><span class="k">{{ t.email }}</span><span class="v">cv@ringling.info</span></li>
             <li><span class="k">Web</span><span class="v">ringling.info</span></li>
-            <li><span class="k">Location</span><span class="v">{{ cv.basics.location.city }}, Denmark</span></li>
+            <li><span class="k">{{ t.location }}</span><span class="v">{{ cv.basics.location.city }}, {{ t.country }}</span></li>
           </ul>
-          <div class="pcv-label pcv-colhead">Languages</div>
+          <div class="pcv-label pcv-colhead">{{ t.languages }}</div>
           <ul class="pcv-pairs pcv-flush">
-            <li v-for="lang in cv.languages" :key="lang.language">
-              <span class="k">{{ lang.language }}</span><span class="v">{{ lang.fluency }}</span>
+            <li v-for="l in cv.languages" :key="l.language">
+              <span class="k">{{ loc(l, 'language') }}</span><span class="v">{{ loc(l, 'fluency') }}</span>
             </li>
           </ul>
         </div>
@@ -41,22 +45,22 @@
       <hr>
 
       <section>
-        <h2>Experience</h2>
+        <h2>{{ t.experience }}</h2>
         <article v-for="block in experienceBlocks" :key="block.key" class="pcv-exp">
           <div class="pcv-exp-meta"><div class="pcv-label">{{ block.period }}</div></div>
           <div class="pcv-exp-body">
             <template v-if="block.roles.length === 1">
-              <h3>{{ block.roles[0].printTitle || block.roles[0].title }}</h3>
-              <div class="pcv-org">{{ block.roles[0].companyName }}<template v-if="block.roles[0].note"> · {{ block.roles[0].note }}</template></div>
-              <p v-html="block.roles[0].summary" />
+              <h3>{{ roleTitle(block.roles[0]) }}</h3>
+              <div class="pcv-org">{{ block.roles[0].companyName }}<template v-if="loc(block.roles[0], 'note')"> · {{ loc(block.roles[0], 'note') }}</template></div>
+              <p v-html="loc(block.roles[0], 'summary')" />
               <div v-if="block.roles[0].technologies?.length" class="pcv-tags">{{ block.roles[0].technologies.join(' · ') }}</div>
             </template>
             <template v-else>
               <h3>{{ block.company }}</h3>
-              <div class="pcv-org">{{ block.roles.length }} roles</div>
+              <div class="pcv-org">{{ block.roles.length }} {{ t.roles }}</div>
               <div v-for="role in block.roles" :key="role.startDate" class="pcv-sub">
-                <div class="pcv-sub-head"><h4>{{ role.title }}</h4><span class="pcv-label">{{ period(role) }}</span></div>
-                <p v-html="role.summary" />
+                <div class="pcv-sub-head"><h4>{{ loc(role, 'title') }}</h4><span class="pcv-label">{{ period(role) }}</span></div>
+                <p v-html="loc(role, 'summary')" />
                 <div v-if="role.technologies?.length" class="pcv-tags">{{ role.technologies.join(' · ') }}</div>
               </div>
             </template>
@@ -65,13 +69,13 @@
       </section>
 
       <section v-if="ventures.length" class="pcv-keep pcv-gap">
-        <h2>Ventures</h2>
+        <h2>{{ t.ventures }}</h2>
         <article v-for="v in ventures" :key="v.companyName" class="pcv-exp">
           <div class="pcv-exp-meta"><div class="pcv-label">{{ period(v) }}</div></div>
           <div class="pcv-exp-body">
-            <h3>{{ v.printTitle || v.title }}</h3>
-            <div class="pcv-org">{{ v.companyName }}<template v-if="alongsideEmployment(v)"> · alongside employment</template></div>
-            <p v-html="v.summary" />
+            <h3>{{ roleTitle(v) }}</h3>
+            <div class="pcv-org">{{ v.companyName }}<template v-if="alongsideEmployment(v)"> · {{ t.alongside }}</template></div>
+            <p v-html="loc(v, 'summary')" />
             <div v-if="v.technologies?.length" class="pcv-tags">{{ v.technologies.join(' · ') }}</div>
           </div>
         </article>
@@ -81,50 +85,50 @@
         <div class="pcv-exp">
           <div class="pcv-exp-meta"><div class="pcv-label">{{ cv.print.earlier.period }}</div></div>
           <div class="pcv-exp-body">
-            <h3>Earlier</h3>
-            <p>{{ cv.print.earlier.text }}</p>
+            <h3>{{ t.earlier }}</h3>
+            <p>{{ settings.earlier }}</p>
           </div>
         </div>
       </section>
 
       <section class="pcv-keep pcv-gap pcv-grid2">
         <div>
-          <h2>Certifications</h2>
+          <h2>{{ t.certifications }}</h2>
           <ul class="pcv-pairs pcv-flush">
-            <li v-for="a in certifications" :key="a.title"><span class="k">{{ a.printTitle || a.title }}</span><span class="v">{{ a.printMeta }}</span></li>
+            <li v-for="a in certifications" :key="a.title"><span class="k">{{ loc(a, 'printTitle') || a.title }}</span><span class="v">{{ loc(a, 'printMeta') }}</span></li>
           </ul>
         </div>
         <div>
-          <h2>Coursework</h2>
+          <h2>{{ t.coursework }}</h2>
           <ul class="pcv-pairs pcv-flush">
-            <li v-for="a in coursework" :key="a.title"><span class="k">{{ a.printTitle || a.title }}</span><span class="v">{{ a.printMeta }}</span></li>
+            <li v-for="a in coursework" :key="a.title"><span class="k">{{ loc(a, 'printTitle') || a.title }}</span><span class="v">{{ loc(a, 'printMeta') }}</span></li>
           </ul>
         </div>
       </section>
 
       <section class="pcv-keep pcv-gap pcv-grid2">
         <div>
-          <h2>Education</h2>
+          <h2>{{ t.education }}</h2>
           <ul class="pcv-pairs pcv-flush">
             <li v-for="edu in education" :key="edu.studyType">
-              <span class="k">{{ edu.printTitle || edu.studyType }}</span>
-              <span class="v">{{ edu.printMeta || `${edu.institution} · ${edu.startDate}–${edu.endDate}` }}</span>
+              <span class="k">{{ loc(edu, 'printTitle') || edu.studyType }}</span>
+              <span class="v">{{ loc(edu, 'printMeta') || `${edu.institution} · ${edu.startDate}–${edu.endDate}` }}</span>
             </li>
           </ul>
         </div>
         <div>
-          <h2>Courses</h2>
+          <h2>{{ t.courses }}</h2>
           <ul class="pcv-pairs pcv-flush">
-            <li v-for="a in courses" :key="a.title"><span class="k">{{ a.printTitle || a.title }}</span><span class="v">{{ a.printMeta || a.description }}</span></li>
+            <li v-for="a in courses" :key="a.title"><span class="k">{{ loc(a, 'printTitle') || a.title }}</span><span class="v">{{ loc(a, 'printMeta') || a.description }}</span></li>
           </ul>
         </div>
       </section>
 
       <section class="pcv-keep pcv-gap">
-        <h2>Technologies</h2>
+        <h2>{{ t.technologies }}</h2>
         <ul class="pcv-pairs pcv-flush pcv-grid3">
           <li v-for="s in coreSkills" :key="s.name">
-            <span class="k">{{ s.name }}</span><span class="v">{{ tier(s.proficiencyLevel) }} · since {{ s.firstUsed }}</span>
+            <span class="k">{{ loc(s, 'name') }}</span><span class="v">{{ t.tiers[s.proficiencyLevel] ?? t.tiers[4] }} · {{ t.since }} {{ s.firstUsed }}</span>
           </li>
         </ul>
       </section>
@@ -139,21 +143,60 @@ const route = useRoute()
 const { data } = await useFetch<CVResponse>('/api/cv')
 const cv = computed(() => data.value?.cv)
 
+const lang = computed<'en' | 'da'>(() => route.query.lang === 'da' ? 'da' : 'en')
+
 // The phone number is never stored in the repo or data.json; it is only passed in when generating the PDF.
 const phone = computed(() => typeof route.query.phone === 'string' ? route.query.phone : '')
 
+const LABELS = {
+  en: {
+    back: '← Back to CV', print: 'Print / Save as PDF', contact: 'Contact', phone: 'Phone', email: 'Email',
+    location: 'Location', country: 'Denmark', languages: 'Languages', experience: 'Experience', roles: 'roles',
+    ventures: 'Ventures', alongside: 'alongside employment', earlier: 'Earlier', certifications: 'Certifications',
+    coursework: 'Coursework', education: 'Education', courses: 'Courses', technologies: 'Technologies',
+    since: 'since', present: 'Present', tiers: { 1: 'Expert', 2: 'Advanced', 3: 'Proficient', 4: 'Basic' } as Record<number, string>,
+  },
+  da: {
+    back: '← Tilbage til CV', print: 'Udskriv / Gem som PDF', contact: 'Kontakt', phone: 'Telefon', email: 'E-mail',
+    location: 'Bopæl', country: 'Danmark', languages: 'Sprog', experience: 'Erfaring', roles: 'roller',
+    ventures: 'Egne virksomheder', alongside: 'ved siden af ansættelse', earlier: 'Tidligere', certifications: 'Certificeringer',
+    coursework: 'Onlinekurser', education: 'Uddannelse', courses: 'Kurser', technologies: 'Teknologier',
+    since: 'siden', present: 'nu', tiers: { 1: 'Ekspert', 2: 'Avanceret', 3: 'Rutineret', 4: 'Grundlæggende' } as Record<number, string>,
+  },
+}
+const t = computed(() => LABELS[lang.value])
+
 useHead({
-  title: 'Thomas Ringling — CV',
+  title: () => lang.value === 'da' ? 'Thomas Ringling — CV (dansk)' : 'Thomas Ringling — CV',
+  htmlAttrs: { lang: () => lang.value },
   meta: [{ name: 'robots', content: 'noindex' }],
   link: [{ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap' }],
   bodyAttrs: { class: 'pcv-body' },
 })
 
-const updated = new Date().toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })
+const updated = computed(() => new Date().toLocaleDateString(lang.value === 'da' ? 'da-DK' : 'en-GB', { month: 'long', year: 'numeric' }))
+
+// Danish text where a translation exists, English otherwise.
+function loc<T extends { da?: Record<string, any> }>(item: T, field: string): string {
+  const da = lang.value === 'da' ? item.da?.[field] : undefined
+  return da ?? (item as Record<string, any>)[field] ?? ''
+}
+const roleTitle = (x: Experience) => loc(x, 'printTitle') || loc(x, 'title')
+
+const settings = computed(() => {
+  const p = cv.value!.print
+  const da = lang.value === 'da' ? p.da : undefined
+  return { lede: da?.lede ?? p.lede, profile: da?.profile ?? p.profile, earlier: da?.earlier?.text ?? p.earlier.text }
+})
+
+const MONTHS_DA: Record<string, string> = {
+  January: 'januar', February: 'februar', March: 'marts', April: 'april', May: 'maj', June: 'juni',
+  July: 'juli', August: 'august', September: 'september', October: 'oktober', November: 'november', December: 'december',
+}
+const date = (s: string) => lang.value === 'da' ? s.replace(/[A-Z][a-z]+/, m => MONTHS_DA[m] ?? m) : s
 
 const year = (s: string) => Number((s || '').match(/\d{4}/)?.[0] ?? 0)
-const period = (x: Experience) => `${x.startDate} — ${x.endDate || 'Present'}`
-const tier = (level: number) => ({ 1: 'Expert', 2: 'Advanced', 3: 'Proficient' } as Record<number, string>)[level] ?? 'Basic'
+const period = (x: Experience) => `${date(x.startDate)} — ${x.endDate ? date(x.endDate) : t.value.present}`
 
 interface Block { key: string, company: string, period: string, roles: Experience[] }
 
@@ -166,7 +209,8 @@ const experienceBlocks = computed<Block[]>(() => {
     const last = blocks[blocks.length - 1]
     if (role.group && last?.key === role.group) {
       last.roles.push(role)
-      last.period = `${role.startDate} — ${last.roles[0].endDate || 'Present'}`
+      const newest = last.roles[0]
+      last.period = `${date(role.startDate)} — ${newest.endDate ? date(newest.endDate) : t.value.present}`
     } else {
       blocks.push({ key: role.group || `${role.companyName}-${role.startDate}`, company: role.companyName, period: period(role), roles: [role] })
     }
@@ -179,8 +223,8 @@ const ventures = computed(() => (cv.value?.experiences ?? []).filter(x =>
   x.venture && (!x.endDate || year(x.endDate) >= cv.value!.print.detailedSince)))
 
 const monthIndex = (s: string) => {
-  const t = Date.parse(`1 ${s}`)
-  return Number.isNaN(t) ? year(s) * 12 : new Date(t).getFullYear() * 12 + new Date(t).getMonth()
+  const ts = Date.parse(`1 ${s}`)
+  return Number.isNaN(ts) ? year(s) * 12 : new Date(ts).getFullYear() * 12 + new Date(ts).getMonth()
 }
 const alongsideEmployment = (v: Experience) => {
   const start = monthIndex(v.startDate)
@@ -240,6 +284,7 @@ body.pcv-body { background: #e9e7e3; }
   font-size: 15px;
 }
 .pcv-toolbar a { color: #3f3f3f; background-image: none; }
+.pcv-toolbar-right { display: flex; align-items: center; gap: 16px; }
 .pcv-toolbar button {
   font: inherit;
   padding: 6px 14px;

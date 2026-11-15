@@ -21,6 +21,7 @@ export interface Language {
   language: string
   fluency: string
   proficiency: string
+  da?: { language?: string, fluency?: string }
 }
 
 export interface Education {
@@ -34,6 +35,7 @@ export interface Education {
   print?: boolean
   printTitle?: string
   printMeta?: string
+  da?: { printTitle?: string, printMeta?: string }
 }
 
 export interface Experience {
@@ -47,6 +49,7 @@ export interface Experience {
   group?: string
   note?: string
   printTitle?: string
+  da?: { title?: string, summary?: string, note?: string, printTitle?: string }
 }
 
 export interface Skill {
@@ -58,6 +61,7 @@ export interface Skill {
   proficiencyLevel: number
   pinned?: boolean
   core?: boolean
+  da?: { name?: string }
 }
 
 export interface Achievement {
@@ -70,6 +74,7 @@ export interface Achievement {
   print?: boolean | 'coursework'
   printTitle?: string
   printMeta?: string
+  da?: { printTitle?: string, printMeta?: string }
 }
 
 export interface PrintSettings {
@@ -77,6 +82,7 @@ export interface PrintSettings {
   profile: string[]
   detailedSince: number
   earlier: { period: string, text: string }
+  da?: { lede?: string, profile?: string[], earlier?: { text?: string } }
 }
 
 export interface CVData {
