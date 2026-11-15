@@ -702,7 +702,7 @@
         "MS SQL",
         "Marimo"
       ],
-      "summary": "Data engineering in Python: building and running data pipelines that combine data from several source systems and prepare it for customer communication"
+      "summary": "Design, build and run Python data pipelines (Pandas, Marimo, MS SQL) that merge agreement data from several source systems, apply business rules and determine which customers receive which notification letters, with run reports that make every step traceable for the business. Also subject matter expert on a new project, covering the data and technical perspectives and helping define the AI-assisted software development lifecycle (AI SDLC) for the teams on the project."
     },
     {
       "year": "2025",
@@ -717,9 +717,12 @@
       "technologies": [
         "C#",
         "Angular",
+        "Handlebars",
+        "Pandas",
+        "e-Boks",
         "Polaris - Life and Pension platform"
       ],
-      "summary": "Software developer, e-Boks integration, testing, and document handling systems"
+      "summary": "Software consultant on the Polaris life and pension platform for several clients, most recently PBU, where I helped integrate Polaris output management. Built the e-Boks integration that lets PBU send letters directly from Polaris to customers' e-Boks. Set up and integrated document workflows and designed letter templates, working mainly in C# and Handlebars with some Angular, and used Pandas to extract data for test cases."
     },
     {
       "year": "2023",
@@ -735,10 +738,9 @@
         "Python",
         "Pandas",
         "Numpy",
-        "MS SQL",
-        "Scikit-learn"
+        "MS SQL"
       ],
-      "summary": "Architecture, programming, data analysis, requirements gathering and more"
+      "summary": "Built a letter engine for PFA's price and product communication to customers. Designed and developed Python data pipelines that combine data from several source systems and determine which customers receive which letters, and handled the architecture, data analysis and requirements gathering with the business."
     },
     {
       "year": "2021",
@@ -756,7 +758,7 @@
         "Pandas",
         "Matplotlib"
       ],
-      "summary": "Part of a program office. Track management, communication, analysis, architecture counseling etc"
+      "summary": "Member of the program office for a program introducing a new agreement flow at PFA, responsible for the data track, including planning, coordination, stakeholder communication, data analysis and architecture advice. Built a Vue/Nuxt application that lets business users create bulk update XML files themselves, and used Python, Pandas and Matplotlib for data analysis and reporting."
     },
     {
       "year": "2020",
@@ -768,8 +770,12 @@
       "title": "Agile coach",
       "roles": "Agile Coach",
       "highlights": [],
-      "technologies": [],
-      "summary": "Agile uplift"
+      "technologies": [
+        "SAFe",
+        "BDD",
+        "Azure DevOps"
+      ],
+      "summary": "Agile coach for PFA's development Agile Release Train (SAFe). Coached team members and managers, ran training, set up boards and ceremonies, and introduced behaviour-driven development (BDD). Extracted data from Azure DevOps to make the development lifecycle transparent, with metrics such as lead time and cycle time."
     },
     {
       "year": "2019",
@@ -785,7 +791,7 @@
         "Edlund LivNET",
         "BDD"
       ],
-      "summary": "Help PFA move towards more test automation"
+      "summary": "Member of an agile team driving PFA's move towards more test automation on the Edlund LivNET pension platform, using behaviour-driven development (BDD) to define and automate tests."
     },
     {
       "year": "2019",
@@ -803,7 +809,7 @@
         "React",
         "MongoDB"
       ],
-      "summary": "Maturing SW department, and doing technical assessments"
+      "summary": "Tech lead for a six-person software team, maturing the department by introducing agile practices. Carried out technical assessments of the existing codebase and contributed code to the Node.js, TypeScript, React and MongoDB stack."
     },
     {
       "year": "2019",
@@ -823,7 +829,7 @@
         "Elixir",
         "Phoenix"
       ],
-      "summary": "Delivering the right software. Working on our product <b>Marangu</b>"
+      "summary": "Co-founded xwave with one partner to build our own product, <b>Marangu</b>, a business management tool for farriers. Responsible for the architecture, development and front-end design, using Elixir/Phoenix, PostgreSQL and Nuxt/Vue. Marangu is in use by farriers today."
     },
     {
       "year": "2018",
@@ -833,7 +839,7 @@
       "companyLogo": "assets/img/ds.png",
       "title": "Agile coach",
       "roles": "Agile Coach and Scrum Master",
-      "summary": "Agile coach in the BI department and helping with the shift towards more agile processes. Facilitating team workshops and introducing scrum. Later scrum master of up to 3 teams"
+      "summary": "Agile coach in the BI department, supporting its three teams in the shift towards more agile ways of working. Facilitated team workshops and introduced Scrum, and later served as Scrum Master for all three teams."
     },
     {
       "year": "2017",
@@ -847,7 +853,7 @@
         "C#",
         "Angular"
       ],
-      "summary": "Agile coach, product owner, scrum master and temporary product owner. Front-end development in .NET(Angular & TypeScript)"
+      "summary": "Split my time evenly between agile roles and development on MP Pension's member portal. Worked as agile coach and Scrum Master, and stepped in as product owner when needed. Developed front-end features in Angular and TypeScript on a C#/.NET backend."
     },
     {
       "year": "2016",
@@ -857,7 +863,13 @@
       "companyLogo": "assets/img/privactree_logo.png",
       "title": "Partner",
       "roles": "SW Architecture, Development, UI",
-      "summary": "Courses, training and software development in relation to the General Data Protection Regulation(GDPR)"
+      "technologies": [
+        "Vue.js",
+        "Elixir",
+        "PostgreSQL",
+        "CouchDB"
+      ],
+      "summary": "Co-founded PrivacyTree with four partners, offering courses, training and software for compliance with the EU General Data Protection Regulation (GDPR). Responsible for the software architecture, development and UI, building a Vue.js front end on an Elixir backend with PostgreSQL and CouchDB."
     },
     {
       "year": "2016",
@@ -875,7 +887,7 @@
         "Oracle WLS",
         "JBoss Wildfly"
       ],
-      "summary": "Java developer, architectural sparring. Helping the team scrum master and product owners with agile software development in practice"
+      "summary": "Java developer in Nykredit's mortgage lending (realkredit) area, building RESTful microservices with Java, ActiveMQ and Angular on Oracle WebLogic and JBoss WildFly. Acted as an architectural sparring partner for the team and supported the Scrum Master and product owners in putting agile development into practice."
     },
     {
       "year": "2016",
@@ -936,8 +948,8 @@
         "Elixir"
       ],
       "roles": "Product Owner, Scrum Master, Architect, Software Developer",
-      "summary": "Developer, architect, product owner, scrum master and daily manager of the development team",
-      "full": "<h5>Product Owner</h5><h6>Jul 2014 – May 2015</h6><p>My role was primarily Product Owner, but I also acted as SW architect and daily manager of the development team. Hereunder performing recruitment of further staff and coaching of the new scrum master. I furthermore facilitated all workshops within the company</p><h5>Projectmanager/Scrum Master</h5><h6>Feb 2012 – Jul 2014</h6>Scrum master/Project manager/Facilitator: Responsible for introducing the agile transformation via SCRUM to the development team and the rest of the company.<br>SW architect: Designing the new distributed architecture in cooperation with the dev team.<br>Developer: Ruby(on Rails), Elixir/Erlang"
+      "summary": "Introduced Scrum and led the agile transformation of the development team and the wider company as Scrum Master and project manager, and designed a new distributed architecture together with the team. Later became Product Owner and day-to-day manager of the development team, recruiting new staff, coaching the new Scrum Master and facilitating company-wide workshops. Developed in Ruby on Rails and Elixir/Erlang throughout.",
+      "full": "<h5>Product Owner</h5><h6>Jul 2014 – May 2015</h6><p>My role was primarily Product Owner, but I also acted as SW architect and daily manager of the development team. Hereunder performing recruitment of further staff and coaching of the new scrum master. I furthermore facilitated all workshops within the company</p><h5>Projectmanager/Scrum Master</h5><h6>Sep 2012 – Jul 2014</h6>Scrum master/Project manager/Facilitator: Responsible for introducing the agile transformation via SCRUM to the development team and the rest of the company.<br>SW architect: Designing the new distributed architecture in cooperation with the dev team.<br>Developer: Ruby(on Rails), Elixir/Erlang"
     },
     {
       "year": "2012",
@@ -953,7 +965,7 @@
         "WebServices",
         "Oracle WLS"
       ],
-      "summary": "Java developer on a new loan/financing product",
+      "summary": "Java developer building J2EE web services on Oracle WebLogic to support a new loan and financing product.",
       "full": "My role as a Java developer, was developing web services in J2EE supporting a new loan/financing product. Using technologies, such as J2EE, WebServices, Oracle WLS"
     },
     {
@@ -964,7 +976,7 @@
       "companyLogo": null,
       "title": "Force Protection",
       "roles": "",
-      "summary": "ISAF 12 / OP Herrick 15"
+      "summary": "Deployed to Helmand, Afghanistan, with the Danish ISAF contingent (ISAF 12, Operation Herrick 15), providing force protection for explosive ordnance disposal (EOD) teams."
     },
     {
       "year": "2009",
@@ -980,7 +992,7 @@
         "Edlund LifeCore",
         "web forms"
       ],
-      "summary": "Team lead on a 3 man team, defining and developing the technical architecture for integrating pension payout",
+      "summary": "Team lead for a three-person team, defining the technical architecture for integrating pension payouts and developing it in C# and ASP.NET on the Edlund LifeCore pension platform. Also worked as business analyst, gathering and clarifying requirements with the business.",
       "full": ""
     },
     {
@@ -991,7 +1003,7 @@
       "companyLogo": null,
       "title": "Instructor",
       "roles": "Instructor",
-      "summary": "Instructor at the army medics course - 'Sygehjælper kursus HLS 408'"
+      "summary": "Instructor on the Danish Army's medic course (Sygehjælperkursus HLS 408), training soldiers in military first aid and casualty care."
     },
     {
       "year": "2008",
@@ -1007,7 +1019,7 @@
         "Edlund LifeCore",
         "web forms"
       ],
-      "summary": "My role as a developer, was developing<ul><li>Campaign site</li><li>New functionality in admin UI</li></ul>"
+      "summary": "Developed a campaign website and new functionality in the administration UI, using C# and ASP.NET Web Forms on the Edlund LifeCore pension platform."
     },
     {
       "year": "2006",
@@ -1022,7 +1034,7 @@
         "JSP",
         "J2EE"
       ],
-      "summary": "My role as a developer, was frontend development of internal administration systems."
+      "summary": "Front-end developer on Nykredit's internal administration systems, using Java, JSP and J2EE."
     },
     {
       "year": "2005",
@@ -1039,7 +1051,7 @@
         "SAP",
         "MIIS"
       ],
-      "summary": "Developing on the Omada process modeling product"
+      "summary": "Developer and solution architect on Omada's process modelling product, working in C# and ASP.NET with integrations to BizTalk, SAP and Microsoft Identity Integration Server (MIIS)."
     },
     {
       "year": "2003",
@@ -1057,7 +1069,7 @@
         "JSP",
         "Java Servlets"
       ],
-      "summary": "Java developer, architect and project manager on card solutions"
+      "summary": "Java developer, architect and technical project manager on card solutions, building J2EE applications with JSP and Servlets on Oracle Application Server and Oracle Database."
     },
     {
       "year": "2001",
@@ -1071,7 +1083,7 @@
         "Java",
         "J2ME"
       ],
-      "summary": "Requalification manager on a new phone product and some practical testing of mobile phone Java API"
+      "summary": "Requalification manager for a new mobile phone product and responsible for TRUE testing, including hands-on testing of the phone's Java (J2ME) API."
     },
     {
       "year": "2000",
@@ -1081,7 +1093,7 @@
       "companyLogo": null,
       "title": "Developer, architect",
       "roles": "Developer, Architect",
-      "summary": "Java and VB developer on a command and voice recognition project",
+      "summary": "Java and Visual Basic developer and architect on a research project for a voice- and command-controlled car cockpit of the future, using COM/DCOM and JSP.",
       "technologies": [
         "Java",
         "VB",
