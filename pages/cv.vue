@@ -113,6 +113,9 @@
             <div class="bf-title">{{ exp.companyName }}</div>
             <div class="bf-subtitle">{{ exp.title }}</div>
             <div v-if="showDetails && exp.summary" class="bf-note" v-html="exp.summary" />
+            <ul v-if="showDetails && exp.technologies?.length" class="bf-tags" aria-label="Technologies">
+              <li v-for="tech in exp.technologies" :key="tech" class="bf-tag">{{ tech }}</li>
+            </ul>
           </div>
         </div>
       </div>

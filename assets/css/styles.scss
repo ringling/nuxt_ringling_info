@@ -200,6 +200,24 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
   font-size: 13px;
   line-height: 1.5;
 }
+.box-figure .bf-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.box-figure .bf-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.4;
+  color: #4b5563;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 3px;
+  padding: 2px 6px;
+}
 
 /* Progress bar (self-assessment & languages) */
 .progress-bar .progress-label {
