@@ -913,11 +913,11 @@
         "BDD",
         "Azure DevOps"
       ],
-      "summary": "Agile coach for PFA's development Agile Release Train (SAFe) of around 120 people. Coached team members and managers, ran training, set up boards and ceremonies, and introduced behaviour-driven development (BDD). Extracted delivery data from Azure DevOps to show lead time, cycle time and other metrics.",
+      "summary": "Agile coach in an agile team within PFA's development Agile Release Train (SAFe), a train of around 120 people. Coached team members and managers, ran training, set up boards and ceremonies, and introduced behaviour-driven development (BDD). Extracted delivery data from Azure DevOps to show lead time, cycle time and other metrics.",
       "group": "pfa-2019",
       "da": {
         "title": "Agil coach",
-        "summary": "Agil coach for PFA's Agile Release Train i udviklingen (SAFe) med omkring 120 personer. Coachede teammedlemmer og ledere, holdt træning, satte boards og ceremonier op og introducerede behaviour-driven development (BDD). Udtrak leverancedata fra Azure DevOps for at vise lead time, cycle time og andre målinger."
+        "summary": "Agil coach i et agilt team i PFA's Agile Release Train i udviklingen (SAFe), et tog med omkring 120 personer. Coachede teammedlemmer og ledere, holdt træning, satte boards og ceremonier op og introducerede behaviour-driven development (BDD). Udtrak leverancedata fra Azure DevOps for at vise lead time, cycle time og andre målinger."
       }
     },
     {
