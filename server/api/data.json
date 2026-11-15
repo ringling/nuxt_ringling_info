@@ -827,7 +827,8 @@
       "summary": "Build and run Python data pipelines that combine agreement data from four source systems, apply business rules and decide which of more than 4,000 business customers get which notification letters. The pipelines have reduced errors and uncovered data variations nobody knew about, and each run produces a report that shows the business what happened at every step. Also subject matter expert on a new project, covering data and technical questions and helping define the AI-assisted development process (AI SDLC) for the teams.",
       "da": {
         "summary": "Bygger og driver Python-datapipelines, der samler aftaledata fra fire kildesystemer, anvender forretningsregler og afgør, hvilke af over 4.000 erhvervskunder der får hvilke varslingsbreve. Pipelines har nedbragt antallet af fejl og afdækket datavariationer, som ingen kendte til, og hver kørsel giver en rapport, der viser forretningen, hvad der skete i hvert trin. Desuden fagekspert på et nyt projekt med fokus på data og teknik og med til at definere den AI-understøttede udviklingsproces (AI SDLC) for teamene."
-      }
+      },
+      "domain": "pension"
     },
     {
       "year": "2025",
@@ -851,7 +852,8 @@
       "da": {
         "title": "Softwarekonsulent",
         "summary": "Konsulent på life- og pensionsplatformen Polaris for tre kunder. Senest PBU med integration af Polaris' output management og udvikling af e-Boks-integrationen, som nu leverer alle PBU's kundebreve fra Polaris til kundernes e-Boks. Byggede over 80 brevskabeloner og dokumentworkflows. Arbejdede primært i C# og Handlebars, med lidt Angular, og brugte Pandas til at udtrække testdata."
-      }
+      },
+      "domain": "pension"
     },
     {
       "year": "2023",
@@ -873,7 +875,8 @@
       "group": "pfa-2019",
       "da": {
         "summary": "Byggede en brevmotor til PFA's pris- og produktbreve til omkring 8.000 kunder. Designede og skrev de Python-pipelines, der samler data fra flere kildesystemer og afgør, hvem der får hvilket brev. Havde også ansvaret for dataanalyse og arkitektur og indsamlede krav sammen med forretningen."
-      }
+      },
+      "domain": "pension"
     },
     {
       "year": "2021",
@@ -896,7 +899,8 @@
       "group": "pfa-2019",
       "da": {
         "summary": "Ansvarlig for datasporet i programkontoret for et program med fire delprojekter, der indførte et nyt aftaleflow hos PFA, herunder planlægning, koordinering, kommunikation med interessenter, dataanalyse og arkitekturrådgivning. Byggede en Vue/Nuxt-applikation, så forretningen selv kan oprette XML-filer til masseopdateringer; før krævede det teknisk hjælp uden for afdelingen. Brugte Python, Pandas og Matplotlib til analyse og rapportering."
-      }
+      },
+      "domain": "pension"
     },
     {
       "year": "2020",
@@ -918,7 +922,8 @@
       "da": {
         "title": "Agil coach",
         "summary": "Agil coach i et agilt team i PFA's Agile Release Train i udviklingen (SAFe), et tog med omkring 120 personer. Coachede teammedlemmer og ledere, holdt træning, satte boards og ceremonier op og introducerede behaviour-driven development (BDD). Udtrak leverancedata fra Azure DevOps for at vise lead time, cycle time og andre målinger."
-      }
+      },
+      "domain": "pension"
     },
     {
       "year": "2019",
@@ -938,7 +943,8 @@
       "group": "pfa-2019",
       "da": {
         "summary": "Automatiserede test sammen med et agilt team på PFA's pensionsplatform Edlund LivNET, med behaviour-driven development (BDD) til at definere testene."
-      }
+      },
+      "domain": "pension"
     },
     {
       "year": "2019",
@@ -961,7 +967,8 @@
       "da": {
         "note": "planlagt forløb på 3 måneder",
         "summary": "Interim tech lead for et team på seks personer. Indførte agile arbejdsformer, vurderede den eksisterende kodebase og skrev kode i Node.js, TypeScript, React og MongoDB."
-      }
+      },
+      "domain": "logistics"
     },
     {
       "year": "2019",
@@ -988,7 +995,8 @@
       "da": {
         "printTitle": "Medstifter",
         "summary": "Stiftede xwave sammen med én partner for at bygge vores eget produkt, <b>Marangu</b>, et forretningssystem til beslagsmede. Stod for arkitektur, udvikling og frontend-design (Elixir/Phoenix, PostgreSQL, Nuxt/Vue). Beslagsmede bruger det i dag."
-      }
+      },
+      "domain": "agriculture"
     },
     {
       "year": "2018",
@@ -1002,7 +1010,8 @@
       "da": {
         "title": "Agil coach",
         "summary": "Agil coach i BI-afdelingen med fokus på at få afdelingens tre teams med omkring 20 personer over i mere agile arbejdsformer. Holdt teamworkshops, introducerede Scrum og blev senere Scrum Master for alle tre teams."
-      }
+      },
+      "domain": "gaming"
     },
     {
       "year": "2017",
@@ -1016,7 +1025,8 @@
         "C# / .NET",
         "Angular"
       ],
-      "summary": "Half agile roles, half development on MP Pension's member portal. Agile coach and Scrum Master, and product owner when needed. Built front-end features in Angular and TypeScript on a C#/.NET backend."
+      "summary": "Half agile roles, half development on MP Pension's member portal. Agile coach and Scrum Master, and product owner when needed. Built front-end features in Angular and TypeScript on a C#/.NET backend.",
+      "domain": "pension"
     },
     {
       "year": "2016",
@@ -1038,7 +1048,8 @@
       "da": {
         "printTitle": "Medstifter",
         "summary": "Stiftede PrivacyTree sammen med fire partnere. Vi tilbød kurser, træning og software til GDPR-compliance. Stod for softwarearkitektur, udvikling og UI med en Vue.js-frontend på en Elixir-backend med PostgreSQL og CouchDB."
-      }
+      },
+      "domain": "privacy"
     },
     {
       "year": "2016",
@@ -1056,7 +1067,8 @@
         "Oracle WLS",
         "JBoss Wildfly"
       ],
-      "summary": "Java developer in Nykredit's mortgage lending (realkredit) area, building RESTful microservices with Java, ActiveMQ and Angular on Oracle WebLogic and JBoss WildFly. Also the team's sparring partner on architecture, and helped the Scrum Master and product owners make agile development work in practice."
+      "summary": "Java developer in Nykredit's mortgage lending (realkredit) area, building RESTful microservices with Java, ActiveMQ and Angular on Oracle WebLogic and JBoss WildFly. Also the team's sparring partner on architecture, and helped the Scrum Master and product owners make agile development work in practice.",
+      "domain": "mortgage"
     },
     {
       "year": "2016",
@@ -1072,7 +1084,8 @@
         "SQL Server",
         "CouchDB"
       ],
-      "summary": "Responsible for implementing a more agile delivery pipeline. Scrum master for 2 teams"
+      "summary": "Responsible for implementing a more agile delivery pipeline. Scrum master for 2 teams",
+      "domain": "medtech"
     },
     {
       "year": "2015",
@@ -1094,7 +1107,8 @@
       "printTitle": "Co-founder",
       "da": {
         "printTitle": "Medstifter"
-      }
+      },
+      "domain": "seafood"
     },
     {
       "year": "2012",
@@ -1123,7 +1137,8 @@
       ],
       "roles": "Product Owner, Scrum Master, Architect, Software Developer",
       "summary": "Introduced Scrum and led the agile transformation as Scrum Master and project manager, first in the development team and then across the company. Designed a new distributed architecture with the team. Later became Product Owner and day-to-day manager of the development team, hiring new people, coaching the new Scrum Master and running company-wide workshops. Wrote Ruby on Rails and Elixir/Erlang throughout.",
-      "full": "<h5>Product Owner</h5><h6>Jul 2014 – May 2015</h6><p>My role was primarily Product Owner, but I also acted as SW architect and daily manager of the development team. Hereunder performing recruitment of further staff and coaching of the new scrum master. I furthermore facilitated all workshops within the company</p><h5>Projectmanager/Scrum Master</h5><h6>Sep 2012 – Jul 2014</h6>Scrum master/Project manager/Facilitator: Responsible for introducing the agile transformation via SCRUM to the development team and the rest of the company.<br>SW architect: Designing the new distributed architecture in cooperation with the dev team.<br>Developer: Ruby(on Rails), Elixir/Erlang"
+      "full": "<h5>Product Owner</h5><h6>Jul 2014 – May 2015</h6><p>My role was primarily Product Owner, but I also acted as SW architect and daily manager of the development team. Hereunder performing recruitment of further staff and coaching of the new scrum master. I furthermore facilitated all workshops within the company</p><h5>Projectmanager/Scrum Master</h5><h6>Sep 2012 – Jul 2014</h6>Scrum master/Project manager/Facilitator: Responsible for introducing the agile transformation via SCRUM to the development team and the rest of the company.<br>SW architect: Designing the new distributed architecture in cooperation with the dev team.<br>Developer: Ruby(on Rails), Elixir/Erlang",
+      "domain": "realestate"
     },
     {
       "year": "2012",
@@ -1140,7 +1155,8 @@
         "Oracle WLS"
       ],
       "summary": "Java developer building J2EE web services on Oracle WebLogic to support a new loan and financing product.",
-      "full": "My role as a Java developer, was developing web services in J2EE supporting a new loan/financing product. Using technologies, such as J2EE, WebServices, Oracle WLS"
+      "full": "My role as a Java developer, was developing web services in J2EE supporting a new loan/financing product. Using technologies, such as J2EE, WebServices, Oracle WLS",
+      "domain": "mortgage"
     },
     {
       "year": "2011",
@@ -1150,7 +1166,8 @@
       "companyLogo": null,
       "title": "Force Protection",
       "roles": "",
-      "summary": "Deployed to Helmand, Afghanistan, with the Danish ISAF contingent (ISAF 12, Operation Herrick 15), providing force protection for explosive ordnance disposal (EOD) teams."
+      "summary": "Deployed to Helmand, Afghanistan, with the Danish ISAF contingent (ISAF 12, Operation Herrick 15), providing force protection for explosive ordnance disposal (EOD) teams.",
+      "domain": "defence"
     },
     {
       "year": "2009",
@@ -1167,7 +1184,8 @@
         "web forms"
       ],
       "summary": "Team lead for a three-person team, defining the technical architecture for integrating pension payouts and developing it in C# and ASP.NET on the Edlund LifeCore pension platform. Also worked as business analyst, gathering and clarifying requirements with the business.",
-      "full": ""
+      "full": "",
+      "domain": "pension"
     },
     {
       "year": "2008",
@@ -1177,7 +1195,8 @@
       "companyLogo": null,
       "title": "Instructor",
       "roles": "Instructor",
-      "summary": "Instructor on the Danish Army's medic course (Sygehjælperkursus HLS 408), training soldiers in military first aid and casualty care."
+      "summary": "Instructor on the Danish Army's medic course (Sygehjælperkursus HLS 408), training soldiers in military first aid and casualty care.",
+      "domain": "defence"
     },
     {
       "year": "2008",
@@ -1193,7 +1212,8 @@
         "Edlund LifeCore",
         "web forms"
       ],
-      "summary": "Developed a campaign website and new functionality in the administration UI, using C# and ASP.NET Web Forms on the Edlund LifeCore pension platform."
+      "summary": "Developed a campaign website and new functionality in the administration UI, using C# and ASP.NET Web Forms on the Edlund LifeCore pension platform.",
+      "domain": "pension"
     },
     {
       "year": "2006",
@@ -1208,7 +1228,8 @@
         "JSP",
         "J2EE"
       ],
-      "summary": "Front-end developer on Nykredit's internal administration systems, using Java, JSP and J2EE."
+      "summary": "Front-end developer on Nykredit's internal administration systems, using Java, JSP and J2EE.",
+      "domain": "mortgage"
     },
     {
       "year": "2005",
@@ -1225,7 +1246,8 @@
         "SAP",
         "MIIS"
       ],
-      "summary": "Developer and solution architect on Omada's process modelling product, working in C# and ASP.NET with integrations to BizTalk, SAP and Microsoft Identity Integration Server (MIIS)."
+      "summary": "Developer and solution architect on Omada's process modelling product, working in C# and ASP.NET with integrations to BizTalk, SAP and Microsoft Identity Integration Server (MIIS).",
+      "domain": "iam"
     },
     {
       "year": "2003",
@@ -1243,7 +1265,8 @@
         "JSP",
         "Java Servlets"
       ],
-      "summary": "Java developer, architect and technical project manager on card solutions, building J2EE applications with JSP and Servlets on Oracle Application Server and Oracle Database."
+      "summary": "Java developer, architect and technical project manager on card solutions, building J2EE applications with JSP and Servlets on Oracle Application Server and Oracle Database.",
+      "domain": "payments"
     },
     {
       "year": "2001",
@@ -1257,7 +1280,8 @@
         "Java",
         "J2ME"
       ],
-      "summary": "Requalification manager for a new mobile phone product and responsible for TRUE testing, including hands-on testing of the phone's Java (J2ME) API."
+      "summary": "Requalification manager for a new mobile phone product and responsible for TRUE testing, including hands-on testing of the phone's Java (J2ME) API.",
+      "domain": "telecom"
     },
     {
       "year": "2000",
@@ -1275,7 +1299,8 @@
         "MS DCOM",
         "JSP"
       ],
-      "full": "Voice and command controlled car-cockpit of the future"
+      "full": "Voice and command controlled car-cockpit of the future",
+      "domain": "telecom"
     }
   ],
   "interests": [
@@ -1321,6 +1346,73 @@
       "earlier": {
         "text": "Product owner, Scrum Master og arkitekt hos Lokalebasen.dk og MP Pension; delivery manager hos Widex; udvikler og arkitekt hos Nykredit, Forca, Omada, XponCard, Nokia og Ericsson; medstifter af Macellum; og udsendt med Forsvaret (ISAF, Afghanistan)."
       }
-    }
+    },
+    "domains": [
+      {
+        "key": "pension",
+        "en": "Pension and life insurance",
+        "da": "Pension og livsforsikring"
+      },
+      {
+        "key": "mortgage",
+        "en": "Mortgage lending and banking",
+        "da": "Realkredit og bank"
+      },
+      {
+        "key": "realestate",
+        "en": "Commercial real estate",
+        "da": "Erhvervsejendomme"
+      },
+      {
+        "key": "telecom",
+        "en": "Telecom",
+        "da": "Telekommunikation"
+      },
+      {
+        "key": "payments",
+        "en": "Payment cards",
+        "da": "Betalingskort"
+      },
+      {
+        "key": "gaming",
+        "en": "Gaming and lotteries",
+        "da": "Spil og lotteri"
+      },
+      {
+        "key": "iam",
+        "en": "Identity and access management",
+        "da": "Identitets- og adgangsstyring"
+      },
+      {
+        "key": "medtech",
+        "en": "Medical devices",
+        "da": "Medicinsk udstyr"
+      },
+      {
+        "key": "logistics",
+        "en": "Logistics",
+        "da": "Logistik"
+      },
+      {
+        "key": "defence",
+        "en": "Defence",
+        "da": "Forsvar"
+      },
+      {
+        "key": "privacy",
+        "en": "Data protection",
+        "da": "Databeskyttelse"
+      },
+      {
+        "key": "agriculture",
+        "en": "Farriery",
+        "da": "Hovbeslag"
+      },
+      {
+        "key": "seafood",
+        "en": "Seafood trade",
+        "da": "Fiskehandel"
+      }
+    ]
   }
 }

@@ -34,9 +34,15 @@
             <li><span class="k">{{ t.location }}</span><span class="v">{{ cv.basics.location.city }}, {{ t.country }}</span></li>
           </ul>
           <div class="pcv-label pcv-colhead">{{ t.languages }}</div>
-          <ul class="pcv-pairs pcv-flush">
+          <ul class="pcv-pairs">
             <li v-for="l in cv.languages" :key="l.language">
               <span class="k">{{ loc(l, 'language') }}</span><span class="v">{{ loc(l, 'fluency') }}</span>
+            </li>
+          </ul>
+          <div v-if="domains.length" class="pcv-label pcv-colhead">{{ t.domains }}</div>
+          <ul class="pcv-pairs pcv-flush">
+            <li v-for="dm in domains" :key="dm.key">
+              <span class="k">{{ dm.label }}</span><span class="v">{{ dm.years }} {{ dm.years === 1 ? t.year : t.years }}</span>
             </li>
           </ul>
         </div>
@@ -154,6 +160,7 @@ const LABELS = {
     location: 'Location', country: 'Denmark', languages: 'Languages', experience: 'Experience', roles: 'roles',
     ventures: 'Ventures', alongside: 'alongside employment', earlier: 'Earlier', certifications: 'Certifications',
     coursework: 'Coursework', education: 'Education', courses: 'Courses', technologies: 'Technologies',
+    domains: 'Domains', year: 'year', years: 'years',
     since: 'since', present: 'Present', tiers: { 1: 'Expert', 2: 'Advanced', 3: 'Proficient', 4: 'Basic' } as Record<number, string>,
   },
   da: {
@@ -161,6 +168,7 @@ const LABELS = {
     location: 'Bopæl', country: 'Danmark', languages: 'Sprog', experience: 'Erfaring', roles: 'roller',
     ventures: 'Egne virksomheder', alongside: 'ved siden af ansættelse', earlier: 'Tidligere', certifications: 'Certificeringer',
     coursework: 'Onlinekurser', education: 'Uddannelse', courses: 'Kurser', technologies: 'Teknologier',
+    domains: 'Brancher', year: 'år', years: 'år',
     since: 'siden', present: 'nu', tiers: { 1: 'Ekspert', 2: 'Avanceret', 3: 'Rutineret', 4: 'Grundlæggende' } as Record<number, string>,
   },
 }
@@ -233,6 +241,27 @@ const alongsideEmployment = (v: Experience) => {
     && monthIndex(x.startDate) <= end
     && (x.endDate ? monthIndex(x.endDate) : Infinity) >= start)
 }
+
+// Years per business domain from regular roles (side ventures excluded), counting overlapping months once.
+// Shows the top five with at least one year.
+const domains = computed(() => {
+  if (!cv.value) return []
+  const now = new Date()
+  const nowIndex = now.getFullYear() * 12 + now.getMonth()
+  const months = new Map<string, Set<number>>()
+  for (const x of cv.value.experiences) {
+    if (x.venture || !x.domain) continue
+    const set = months.get(x.domain) ?? new Set<number>()
+    const end = x.endDate ? monthIndex(x.endDate) : nowIndex
+    for (let m = monthIndex(x.startDate); m <= end; m++) set.add(m)
+    months.set(x.domain, set)
+  }
+  return cv.value.print.domains
+    .map(dm => ({ key: dm.key, label: lang.value === 'da' ? dm.da : dm.en, years: Math.round((months.get(dm.key)?.size ?? 0) / 12) }))
+    .filter(dm => dm.years >= 1)
+    .sort((a, b) => b.years - a.years)
+    .slice(0, 5)
+})
 
 const achievements = computed<Achievement[]>(() => cv.value?.achievements.list ?? [])
 const certifications = computed(() => achievements.value.filter(a => a.type === 'certifications' && a.print === true))

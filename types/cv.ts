@@ -46,6 +46,7 @@ export interface Experience {
   summary: string
   technologies: string[]
   venture?: boolean
+  domain?: string
   group?: string
   note?: string
   printTitle?: string
@@ -82,6 +83,7 @@ export interface PrintSettings {
   profile: string[]
   detailedSince: number
   earlier: { period: string, text: string }
+  domains: Array<{ key: string, en: string, da: string }>
   da?: { lede?: string, profile?: string[], earlier?: { text?: string } }
 }
 
