@@ -395,16 +395,6 @@
   "skills": [
     {
       "active": true,
-      "name": "Rust",
-      "type": "programming-language",
-      "proficiencyLevel": 4,
-      "firstUsed": "2026",
-      "lastUsed": "2026",
-      "acquiredDuring": "",
-      "description": "Learning it in 2026"
-    },
-    {
-      "active": true,
       "name": "Nuxt",
       "type": "web-framework",
       "proficiencyLevel": 2,
@@ -432,16 +422,6 @@
       "lastUsed": "2026",
       "acquiredDuring": "",
       "description": "Claude Code, subagents, MCP servers and spec-driven development"
-    },
-    {
-      "active": true,
-      "name": "Julia",
-      "type": "programming-language",
-      "proficiencyLevel": 4,
-      "firstUsed": "2020",
-      "lastUsed": "2022",
-      "acquiredDuring": "",
-      "description": ""
     },
     {
       "active": true,
@@ -549,7 +529,7 @@
       "type": "database",
       "proficiencyLevel": 1,
       "firstUsed": "2012",
-      "lastUsed": "2024",
+      "lastUsed": "2026",
       "acquiredDuring": "",
       "description": "My preferred open-source RDBMS database"
     },
@@ -569,7 +549,7 @@
       "type": "web-framework",
       "proficiencyLevel": 1,
       "firstUsed": "2015",
-      "lastUsed": "2024",
+      "lastUsed": "2026",
       "acquiredDuring": "",
       "description": "A functional web framework build on Elixir. Simplicity, stability, distribution, channels and performance baked in. Some things, just come with the language and platform(VM) itself"
     },
@@ -582,16 +562,6 @@
       "proficiencyLevel": 1,
       "acquiredDuring": "",
       "description": "Adopted this framework very early, as it combines the simplicity of Ractive.js and a bunch of the good features from Angular, React and even Elm"
-    },
-    {
-      "active": true,
-      "name": "Elm",
-      "type": "javascript-framework",
-      "firstUsed": "2017",
-      "lastUsed": "2020",
-      "proficiencyLevel": 4,
-      "acquiredDuring": "",
-      "description": "After working with javascript for many years, I like the purity of a Haskell-like language and the 'no runtime errors' part"
     },
     {
       "active": true,
@@ -619,7 +589,7 @@
       "type": "programming-language",
       "proficiencyLevel": 1,
       "firstUsed": "2014",
-      "lastUsed": "2024",
+      "lastUsed": "2026",
       "acquiredDuring": "",
       "description": "My goto dynamic, functional, distributed language. Together with Erlang, Elixir opened my eyes for the world of distributed systems"
     },
@@ -683,6 +653,76 @@
       "lastUsed": "2026",
       "acquiredDuring": "",
       "description": "Together with OS X, Ubuntu is my primary development OS. RedHat, Ubuntu, CoreOS, Raspbian, Mandrake, Debian"
+    },
+    {
+      "active": true,
+      "name": "Marimo",
+      "type": "data-library",
+      "proficiencyLevel": 2,
+      "firstUsed": "2026",
+      "lastUsed": "2026",
+      "acquiredDuring": "",
+      "description": "Reactive Python notebooks for data pipelines"
+    },
+    {
+      "active": true,
+      "name": "Handlebars",
+      "type": "templating",
+      "proficiencyLevel": 2,
+      "firstUsed": "2025",
+      "lastUsed": "2026",
+      "acquiredDuring": "",
+      "description": "Letter templates for document generation"
+    },
+    {
+      "active": true,
+      "name": "NumPy",
+      "type": "data-library",
+      "proficiencyLevel": 3,
+      "firstUsed": "2023",
+      "lastUsed": "2024",
+      "acquiredDuring": "",
+      "description": ""
+    },
+    {
+      "active": true,
+      "name": "Matplotlib",
+      "type": "data-library",
+      "proficiencyLevel": 3,
+      "firstUsed": "2021",
+      "lastUsed": "2023",
+      "acquiredDuring": "",
+      "description": ""
+    },
+    {
+      "active": true,
+      "name": "Azure DevOps",
+      "type": "devops-tool",
+      "proficiencyLevel": 3,
+      "firstUsed": "2020",
+      "lastUsed": "2021",
+      "acquiredDuring": "",
+      "description": ""
+    },
+    {
+      "active": true,
+      "name": "React",
+      "type": "javascript-framework",
+      "proficiencyLevel": 4,
+      "firstUsed": "2019",
+      "lastUsed": "2019",
+      "acquiredDuring": "",
+      "description": ""
+    },
+    {
+      "active": true,
+      "name": "MongoDB",
+      "type": "database",
+      "proficiencyLevel": 4,
+      "firstUsed": "2019",
+      "lastUsed": "2019",
+      "acquiredDuring": "",
+      "description": ""
     }
   ],
   "experiences": [
@@ -699,7 +739,7 @@
       "technologies": [
         "Python",
         "Pandas",
-        "MS SQL",
+        "SQL Server",
         "Marimo"
       ],
       "summary": "Design, build and run Python data pipelines (Pandas, Marimo, MS SQL) that merge agreement data from several source systems, apply business rules and determine which customers receive which notification letters, with run reports that make every step traceable for the business. Also subject matter expert on a new project, covering the data and technical perspectives and helping define the AI-assisted software development lifecycle (AI SDLC) for the teams on the project."
@@ -715,7 +755,7 @@
       "roles": "",
       "highlights": [],
       "technologies": [
-        "C#",
+        "C# / .NET",
         "Angular",
         "Handlebars",
         "Pandas",
@@ -737,8 +777,8 @@
       "technologies": [
         "Python",
         "Pandas",
-        "Numpy",
-        "MS SQL"
+        "NumPy",
+        "SQL Server"
       ],
       "summary": "Built a letter engine for PFA's price and product communication to customers. Designed and developed Python data pipelines that combine data from several source systems and determine which customers receive which letters, and handled the architecture, data analysis and requirements gathering with the business."
     },
@@ -754,7 +794,8 @@
       "highlights": [],
       "technologies": [
         "Python",
-        "Nuxt3/Vue.js",
+        "Nuxt",
+        "Vue.js",
         "Pandas",
         "Matplotlib"
       ],
@@ -804,8 +845,8 @@
       "roles": "Tech lead, Software Developer",
       "highlights": [],
       "technologies": [
-        "NodeJS",
-        "Typescript",
+        "Node.js",
+        "TypeScript",
         "React",
         "MongoDB"
       ],
@@ -824,7 +865,8 @@
         "Started the company"
       ],
       "technologies": [
-        "Nuxt3/Vue.js",
+        "Nuxt",
+        "Vue.js",
         "PostgreSQL",
         "Elixir",
         "Phoenix"
@@ -850,7 +892,7 @@
       "title": "Scrum master, product owner",
       "roles": "Agile Coach, product owner and scrum master",
       "technologies": [
-        "C#",
+        "C# / .NET",
         "Angular"
       ],
       "summary": "Split my time evenly between agile roles and development on MP Pension's member portal. Worked as agile coach and Scrum Master, and stepped in as product owner when needed. Developed front-end features in Angular and TypeScript on a C#/.NET backend."
@@ -899,8 +941,8 @@
       "roles": "Solution delivery manager, scrum master",
       "technologies": [
         "Azure Document DB",
-        "C#",
-        "MS SQL",
+        "C# / .NET",
+        "SQL Server",
         "CouchDB"
       ],
       "summary": "Responsible for implementing a more agile delivery pipeline. Scrum master for 2 teams"
@@ -987,7 +1029,7 @@
       "title": "Developer, BA",
       "roles": "Developer, Business Analyst",
       "technologies": [
-        "C# 4.0",
+        "C# / .NET",
         "ASP.NET",
         "Edlund LifeCore",
         "web forms"
@@ -1014,7 +1056,7 @@
       "title": "Developer",
       "roles": "Developer",
       "technologies": [
-        "C# 3.0",
+        "C# / .NET",
         "ASP.NET",
         "Edlund LifeCore",
         "web forms"
@@ -1045,7 +1087,7 @@
       "title": "Developer",
       "roles": "Developer, Solution Architect",
       "technologies": [
-        "C# 2.0",
+        "C# / .NET",
         "ASP.NET",
         "Biztalk",
         "SAP",
