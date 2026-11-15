@@ -824,9 +824,9 @@
         "SQL Server",
         "Marimo"
       ],
-      "summary": "Build and run Python data pipelines (Pandas, Marimo, MS SQL) that merge agreement data from several source systems, apply business rules and decide which customers get which notification letters. Each run produces a report that shows the business what happened at every step. Also subject matter expert on a new project, covering data and technical questions and helping define the AI-assisted development process (AI SDLC) for the teams.",
+      "summary": "Build and run Python data pipelines that merge agreement data from several source systems, apply business rules and decide which customers get which notification letters. Each run produces a report that shows the business what happened at every step. Also subject matter expert on a new project, covering data and technical questions and helping define the AI-assisted development process (AI SDLC) for the teams.",
       "da": {
-        "summary": "Bygger og driver Python-datapipelines (Pandas, Marimo, MS SQL), der samler aftaledata fra flere kildesystemer, anvender forretningsregler og afgør, hvilke kunder der får hvilke varslingsbreve. Hver kørsel giver en rapport, der viser forretningen, hvad der skete i hvert trin. Desuden fagekspert på et nyt projekt, hvor jeg dækker data og teknik og er med til at definere den AI-understøttede udviklingsproces (AI SDLC) for teamene."
+        "summary": "Bygger og driver Python-datapipelines, der samler aftaledata fra flere kildesystemer, anvender forretningsregler og afgør, hvilke kunder der får hvilke varslingsbreve. Hver kørsel giver en rapport, der viser forretningen, hvad der skete i hvert trin. Desuden fagekspert på et nyt projekt med fokus på data og teknik og med til at definere den AI-understøttede udviklingsproces (AI SDLC) for teamene."
       }
     },
     {
@@ -847,10 +847,10 @@
         "e-Boks",
         "Polaris - Life and Pension platform"
       ],
-      "summary": "Consultant on the Polaris life and pension platform for several clients. Most recently PBU, where I helped integrate Polaris output management and built the e-Boks integration, so PBU can send letters from Polaris straight to customers' e-Boks. Also set up document workflows and designed letter templates. Mostly C# and Handlebars, some Angular, and Pandas for pulling test data.",
+      "summary": "Consultant on the Polaris life and pension platform for several clients. Most recently PBU, helping integrate Polaris output management and building the e-Boks integration that lets PBU send letters from Polaris straight to customers' e-Boks. Also set up document workflows and designed letter templates. Worked mainly in C# and Handlebars, with some Angular, and used Pandas to extract test data.",
       "da": {
         "title": "Softwarekonsulent",
-        "summary": "Konsulent på life- og pensionsplatformen Polaris for flere kunder. Senest PBU, hvor jeg hjalp med at integrere Polaris' output management og byggede e-Boks-integrationen, så PBU kan sende breve direkte fra Polaris til kundernes e-Boks. Satte også dokumentworkflows op og designede brevskabeloner. Primært C# og Handlebars, lidt Angular, og Pandas til at trække testdata."
+        "summary": "Konsulent på life- og pensionsplatformen Polaris for flere kunder. Senest PBU med integration af Polaris' output management og udvikling af e-Boks-integrationen, så PBU kan sende breve direkte fra Polaris til kundernes e-Boks. Satte også dokumentworkflows op og designede brevskabeloner. Arbejdede primært i C# og Handlebars, med lidt Angular, og brugte Pandas til at udtrække testdata."
       }
     },
     {
@@ -869,10 +869,10 @@
         "NumPy",
         "SQL Server"
       ],
-      "summary": "Built a letter engine for PFA's price and product letters to customers. Designed and wrote the Python pipelines that combine data from several source systems and decide who gets which letter. Also did the data analysis, architecture and requirements work with the business.",
+      "summary": "Built a letter engine for PFA's price and product letters to customers. Designed and wrote the Python pipelines that combine data from several source systems and decide who gets which letter. Also owned the data analysis and architecture, and gathered requirements with the business.",
       "group": "pfa-2019",
       "da": {
-        "summary": "Byggede en brevmotor til PFA's pris- og produktbreve til kunderne. Designede og skrev de Python-pipelines, der samler data fra flere kildesystemer og afgør, hvem der får hvilket brev. Stod også for dataanalyse, arkitektur og kravarbejde sammen med forretningen."
+        "summary": "Byggede en brevmotor til PFA's pris- og produktbreve til kunderne. Designede og skrev de Python-pipelines, der samler data fra flere kildesystemer og afgør, hvem der får hvilket brev. Havde også ansvaret for dataanalyse og arkitektur og indsamlede krav sammen med forretningen."
       }
     },
     {
@@ -892,10 +892,10 @@
         "Pandas",
         "Matplotlib"
       ],
-      "summary": "Part of the program office for a program that introduced a new agreement flow at PFA. Ran the data track, which meant planning, coordination, stakeholder communication, data analysis and architecture advice. Built a Vue/Nuxt app that lets business users create bulk update XML files themselves, and used Python, Pandas and Matplotlib for analysis and reporting.",
+      "summary": "Ran the data track in the program office for a program that introduced a new agreement flow at PFA, covering planning, coordination, stakeholder communication, data analysis and architecture advice. Built a Vue/Nuxt app that lets business users create bulk update XML files themselves, and used Python, Pandas and Matplotlib for analysis and reporting.",
       "group": "pfa-2019",
       "da": {
-        "summary": "Del af programkontoret for et program, der indførte et nyt aftaleflow hos PFA. Ansvarlig for datasporet, dvs. planlægning, koordinering, kommunikation med interessenter, dataanalyse og arkitekturrådgivning. Byggede en Vue/Nuxt-applikation, så forretningen selv kan oprette XML-filer til masseopdateringer, og brugte Python, Pandas og Matplotlib til analyse og rapportering."
+        "summary": "Ansvarlig for datasporet i programkontoret for et program, der indførte et nyt aftaleflow hos PFA, herunder planlægning, koordinering, kommunikation med interessenter, dataanalyse og arkitekturrådgivning. Byggede en Vue/Nuxt-applikation, så forretningen selv kan oprette XML-filer til masseopdateringer, og brugte Python, Pandas og Matplotlib til analyse og rapportering."
       }
     },
     {
@@ -913,11 +913,11 @@
         "BDD",
         "Azure DevOps"
       ],
-      "summary": "Agile coach for PFA's development Agile Release Train (SAFe). Coached team members and managers, ran training, set up boards and ceremonies, and introduced behaviour-driven development (BDD). Pulled data out of Azure DevOps to show lead time, cycle time and other delivery metrics.",
+      "summary": "Agile coach for PFA's development Agile Release Train (SAFe). Coached team members and managers, ran training, set up boards and ceremonies, and introduced behaviour-driven development (BDD). Extracted delivery data from Azure DevOps to show lead time, cycle time and other metrics.",
       "group": "pfa-2019",
       "da": {
         "title": "Agil coach",
-        "summary": "Agil coach for PFA's Agile Release Train i udviklingen (SAFe). Coachede teammedlemmer og ledere, holdt træning, satte boards og ceremonier op og introducerede behaviour-driven development (BDD). Trak data ud af Azure DevOps for at vise lead time, cycle time og andre leverancemål."
+        "summary": "Agil coach for PFA's Agile Release Train i udviklingen (SAFe). Coachede teammedlemmer og ledere, holdt træning, satte boards og ceremonier op og introducerede behaviour-driven development (BDD). Udtrak leverancedata fra Azure DevOps for at vise lead time, cycle time og andre målinger."
       }
     },
     {
@@ -934,10 +934,10 @@
         "Edlund LivNET",
         "BDD"
       ],
-      "summary": "Part of an agile team that moved PFA towards more automated testing on the Edlund LivNET pension platform, using behaviour-driven development (BDD) to write and automate the tests.",
+      "summary": "Automated tests together with an agile team on PFA's Edlund LivNET pension platform, using behaviour-driven development (BDD) to define the tests.",
       "group": "pfa-2019",
       "da": {
-        "summary": "Del af et agilt team, der flyttede PFA mod mere automatiseret test på pensionsplatformen Edlund LivNET, med behaviour-driven development (BDD) til at skrive og automatisere testene."
+        "summary": "Automatiserede test sammen med et agilt team på PFA's pensionsplatform Edlund LivNET, med behaviour-driven development (BDD) til at definere testene."
       }
     },
     {
@@ -1001,7 +1001,7 @@
       "summary": "Agile coach in the BI department, helping its three teams move to more agile ways of working. Ran team workshops, introduced Scrum and later became Scrum Master for all three teams.",
       "da": {
         "title": "Agil coach",
-        "summary": "Agil coach i BI-afdelingen, hvor jeg hjalp afdelingens tre teams over i mere agile arbejdsformer. Holdt teamworkshops, introducerede Scrum og blev senere Scrum Master for alle tre teams."
+        "summary": "Agil coach i BI-afdelingen med fokus på at få afdelingens tre teams over i mere agile arbejdsformer. Holdt teamworkshops, introducerede Scrum og blev senere Scrum Master for alle tre teams."
       }
     },
     {
