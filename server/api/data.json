@@ -308,7 +308,9 @@
         "type": "certifications",
         "title": "Certified SAFe Agilist",
         "description": "Issued June 2016",
-        "documentation": ""
+        "documentation": "",
+        "print": true,
+        "printMeta": "Scaled Agile · 2016"
       },
       {
         "type": "certifications",
