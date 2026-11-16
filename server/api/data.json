@@ -1331,8 +1331,8 @@
   "print": {
     "lede": "Senior software engineer north of Copenhagen, with years behind me as architect, agile coach and tech lead.",
     "profile": [
-      "For twenty-five years I've been writing software, and I still write code. Right now I build Python pipelines that decide which customers get which letters, and I help work out how development teams should use AI in their work.",
-      "Along the way I've led agile transformations and co-founded three software companies. I've used Java, C#, Elixir and Python in production, so I tend to pick the tool that fits the problem, not the one I know best."
+      "For twenty-five years I've been writing software, and I still write code. Right now I build pipelines that decide which customers get which letters, and I help work out how development teams should use AI in their work.",
+      "Along the way I've led agile transformations and co-founded three software companies. I've used languages such as Java, C#, Elixir and Python in production, so I tend to pick the tool that fits the problem, not the one I know best."
     ],
     "detailedSince": 2018,
     "earlier": {
@@ -1342,8 +1342,8 @@
     "da": {
       "lede": "Senior softwareudvikler nord for København, med mange år som arkitekt, agil coach og tech lead bag mig.",
       "profile": [
-        "Jeg har skrevet software i femogtyve år, og jeg skriver stadig kode. Lige nu bygger jeg Python-pipelines, der afgør, hvilke kunder der får hvilke breve, og jeg er med til at finde ud af, hvordan udviklingsteams skal bruge AI i deres arbejde.",
-        "Undervejs har jeg stået i spidsen for agile transformationer og været med til at stifte tre softwarevirksomheder. Jeg har brugt Java, C#, Elixir og Python i produktion, så jeg vælger det værktøj, der passer til problemet, og ikke bare det, jeg kender bedst."
+        "Jeg har skrevet software i femogtyve år, og jeg skriver stadig kode. Lige nu bygger jeg pipelines, der afgør, hvilke kunder der får hvilke breve, og jeg er med til at finde ud af, hvordan udviklingsteams skal bruge AI i deres arbejde.",
+        "Undervejs har jeg stået i spidsen for agile transformationer og været med til at stifte tre softwarevirksomheder. Jeg har brugt sprog som Java, C#, Elixir og Python i produktion, så jeg vælger det værktøj, der passer til problemet, og ikke bare det, jeg kender bedst."
       ],
       "earlier": {
         "text": "Product owner, Scrum Master og arkitekt hos Lokalebasen.dk og MP Pension; delivery manager hos Widex; udvikler og arkitekt hos Nykredit, Forca, Omada, XponCard, Nokia og Ericsson; medstifter af Macellum; og udsendt med Forsvaret (ISAF, Afghanistan)."
