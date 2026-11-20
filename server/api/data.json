@@ -739,17 +739,6 @@
     },
     {
       "active": true,
-      "name": "Marimo",
-      "type": "data-library",
-      "proficiencyLevel": 2,
-      "firstUsed": "2026",
-      "lastUsed": "2026",
-      "acquiredDuring": "",
-      "description": "Reactive Python notebooks for data pipelines",
-      "core": true
-    },
-    {
-      "active": true,
       "name": "Handlebars",
       "type": "templating",
       "proficiencyLevel": 2,
@@ -823,8 +812,7 @@
       "technologies": [
         "Python",
         "Pandas",
-        "SQL Server",
-        "Marimo"
+        "SQL Server"
       ],
       "summary": "Build and run Python data pipelines that combine agreement data from four source systems, apply business rules and decide which of more than 4,000 business customers get which notification letters. The pipelines have reduced errors and uncovered data variations nobody knew about, and each run produces a report that shows the business what happened at every step. Also subject matter expert on a new project, covering data and technical questions and helping define the AI-assisted development process (AI SDLC) for the teams.",
       "da": {
