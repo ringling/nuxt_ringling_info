@@ -9,7 +9,7 @@ This is a personal portfolio website for Thomas Ringling built with Nuxt 3, show
 - **Framework**: Nuxt 3 with TypeScript
 - **Styling**: Tailwind CSS with custom SCSS
 - **Data**: JSON-based data structure for CV information
-- **Deployment**: Docker-based deployment to DigitalOcean
+- **Deployment**: Docker container on a Hetzner server, behind Nginx Proxy Manager
 - **Content**: Server-side API serves JSON data for dynamic rendering
 
 ## Key Commands
@@ -25,7 +25,7 @@ npm run generate     # Generate static site
 
 ### Deployment
 ```bash
-npm run deploy       # Execute deployment script (requires doctl)
+npm run deploy       # Runs deploy.sh (meant to run on the server, see Deployment)
 ```
 
 ## Project Structure
@@ -71,10 +71,16 @@ The main data source is `server/api/data.json` which contains structured CV info
 - Certificates and documentation are stored in `public/` as PDFs
 
 ## Deployment
-The site is deployed using Docker and DigitalOcean. The deployment process involves:
-1. Building Docker image: `docker build -t ringling/personal-website .`
-2. Pushing to registry: `docker push ringling/personal-website`
-3. Triggering deployment via DigitalOcean dashboard
+The site runs as a Docker container on the server (157.180.64.13), with Nginx Proxy Manager in front of it handling TLS.
+
+```bash
+ssh root@157.180.64.13 'cd nuxt_ringling_info && ./deploy.sh'
+```
+
+`deploy.sh` pulls from git, builds the image (`--pull` refreshes the Node base image), replaces the `ringling_info` container (port 8080 -> 3000, `--restart unless-stopped`) and prunes old Docker resources. Changes must be pushed before deploying, since the server builds from git. `server/api/data.json` is baked into the image, so data changes also need a deploy.
+
+### Print CV
+`/cv/print` (and `/cv/print?lang=da`) is a print-friendly CV. `scripts/cv-pdf.sh` renders it to PDF with headless Chromium. The phone number is passed in via `CV_PHONE` and must never be committed, because the repo is public.
 
 ## Content Management
-CV data is managed through the JSON structure in `server/api/data.json`. When updating professional information, modify this file and redeploy.
+CV data is managed through the JSON structure in `server/api/data.json`. When updating professional information, modify this file and redeploy.
