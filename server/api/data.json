@@ -469,8 +469,7 @@
       "firstUsed": "2019",
       "lastUsed": "2026",
       "acquiredDuring": "",
-      "description": "Vue meta-framework. This site is built with it",
-      "core": true
+      "description": "Vue meta-framework. This site is built with it"
     },
     {
       "active": true,
@@ -480,8 +479,7 @@
       "firstUsed": "2021",
       "lastUsed": "2026",
       "acquiredDuring": "",
-      "description": "Daily driver for data work in Python",
-      "core": true
+      "description": "Daily driver for data work in Python"
     },
     {
       "active": true,
@@ -527,7 +525,8 @@
       "firstUsed": "2012",
       "lastUsed": "2020",
       "acquiredDuring": "",
-      "description": "My goto message broker, be it via Docker, CloudAMQP or on-prem. Programmed in Erlang ;)"
+      "description": "My goto message broker, be it via Docker, CloudAMQP or on-prem. Programmed in Erlang ;)",
+      "core": true
     },
     {
       "active": false,
@@ -619,7 +618,8 @@
       "firstUsed": "2012",
       "lastUsed": "2019",
       "acquiredDuring": "",
-      "description": "My first meeting with Ruby and the power of metaprogramming"
+      "description": "My first meeting with Ruby and the power of metaprogramming",
+      "core": true
     },
     {
       "active": true,
@@ -661,7 +661,8 @@
       "firstUsed": "2012",
       "lastUsed": "2020",
       "acquiredDuring": "",
-      "description": "My goto scripting language. Also using Crystal(https://crystal-lang.org/) combining performance and Ruby expressiveness"
+      "description": "My goto scripting language. Also using Crystal(https://crystal-lang.org/) combining performance and Ruby expressiveness",
+      "core": true
     },
     {
       "active": true,
@@ -694,7 +695,8 @@
       "lastUsed": "2017",
       "acquiredDuring": "",
       "description": "Learned it in school and have been using Java throughout my professional career. The list of java technologies I have used is long and much of it outdated, so I will not try to sum it all up here",
-      "pinned": true
+      "pinned": true,
+      "core": true
     },
     {
       "active": true,
@@ -704,7 +706,9 @@
       "firstUsed": "2001",
       "lastUsed": "2026",
       "acquiredDuring": "",
-      "description": "As I have been doing a lot of frontend development, there is no way to get around this one"
+      "description": "As I have been doing a lot of frontend development, there is no way to get around this one",
+      "core": true,
+      "printName": "JavaScript / TypeScript"
     },
     {
       "active": true,
@@ -714,8 +718,7 @@
       "firstUsed": "2017",
       "lastUsed": "2026",
       "acquiredDuring": "",
-      "description": "Java/C# in the frontend",
-      "core": true
+      "description": "Java/C# in the frontend"
     },
     {
       "active": true,
@@ -735,7 +738,8 @@
       "firstUsed": "1998",
       "lastUsed": "2026",
       "acquiredDuring": "",
-      "description": "Together with OS X, Ubuntu is my primary development OS. RedHat, Ubuntu, CoreOS, Raspbian, Mandrake, Debian"
+      "description": "Together with OS X, Ubuntu is my primary development OS. RedHat, Ubuntu, CoreOS, Raspbian, Mandrake, Debian",
+      "core": true
     },
     {
       "active": true,
@@ -1325,7 +1329,7 @@
     "detailedSince": 2018,
     "earlier": {
       "period": "2000 — 2017",
-      "text": "Product owner, Scrum Master and architect at Lokalebasen.dk and MP Pension; delivery manager at Widex; developer and architect at Nykredit, Forca, Omada, XponCard, Nokia and Ericsson; co-founder of Macellum; and a deployment with the Danish Defence (ISAF, Afghanistan)."
+      "text": "Product owner, Scrum Master and architect at <b>Lokalebasen.dk</b> and <b>MP Pension</b>; delivery manager at <b>Widex</b>; developer and architect at <b>Nykredit</b>, <b>Forca</b>, <b>Omada</b>, <b>XponCard</b>, <b>Nokia</b> and <b>Ericsson</b>; co-founder of <b>Macellum</b>; and a deployment with the <b>Danish Defence</b> (ISAF, Afghanistan)."
     },
     "da": {
       "lede": "Senior softwareudvikler nord for København, med mange år som arkitekt, agil coach og tech lead bag mig.",
@@ -1334,7 +1338,7 @@
         "Undervejs har jeg stået i spidsen for agile transformationer og været med til at stifte tre softwarevirksomheder. Jeg har brugt sprog som Java, C#, Elixir og Python i produktion, så jeg vælger det værktøj, der passer til problemet, og ikke bare det, jeg kender bedst."
       ],
       "earlier": {
-        "text": "Product owner, Scrum Master og arkitekt hos Lokalebasen.dk og MP Pension; delivery manager hos Widex; udvikler og arkitekt hos Nykredit, Forca, Omada, XponCard, Nokia og Ericsson; medstifter af Macellum; og udsendt med Forsvaret (ISAF, Afghanistan)."
+        "text": "Product owner, Scrum Master og arkitekt hos <b>Lokalebasen.dk</b> og <b>MP Pension</b>; delivery manager hos <b>Widex</b>; udvikler og arkitekt hos <b>Nykredit</b>, <b>Forca</b>, <b>Omada</b>, <b>XponCard</b>, <b>Nokia</b> og <b>Ericsson</b>; medstifter af <b>Macellum</b>; og udsendt med <b>Forsvaret</b> (ISAF, Afghanistan)."
       }
     },
     "domains": [

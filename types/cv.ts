@@ -61,8 +61,10 @@ export interface Skill {
   lastUsed: string
   proficiencyLevel: number
   pinned?: boolean
+  type?: string
   core?: boolean
-  da?: { name?: string }
+  printName?: string
+  da?: { name?: string, printName?: string }
 }
 
 export interface Achievement {

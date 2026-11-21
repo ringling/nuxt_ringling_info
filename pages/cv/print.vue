@@ -92,7 +92,7 @@
           <div class="pcv-exp-meta"><div class="pcv-label">{{ cv.print.earlier.period }}</div></div>
           <div class="pcv-exp-body">
             <h3>{{ t.earlier }}</h3>
-            <p>{{ settings.earlier }}</p>
+            <p v-html="settings.earlier" />
           </div>
         </div>
       </section>
@@ -132,11 +132,16 @@
 
       <section class="pcv-keep pcv-gap">
         <h2>{{ t.technologies }}</h2>
-        <ul class="pcv-pairs pcv-flush pcv-grid3">
-          <li v-for="s in coreSkills" :key="s.name">
-            <span class="k">{{ loc(s, 'name') }}</span><span class="v">{{ t.tiers[s.proficiencyLevel] ?? t.tiers[4] }} · {{ t.since }} {{ s.firstUsed }}</span>
-          </li>
-        </ul>
+        <div class="pcv-skill-groups">
+          <div v-for="g in skillGroups" :key="g.key" class="pcv-skill-group">
+            <div class="pcv-label">{{ t.skillGroups[g.key] }}</div>
+            <ul class="pcv-pairs pcv-flush pcv-inline">
+              <li v-for="s in g.skills" :key="s.name">
+                <span class="k">{{ loc(s, 'printName') || loc(s, 'name') }}</span><span class="v">{{ t.tiers[s.proficiencyLevel] ?? t.tiers[4] }} · {{ t.since }} {{ s.firstUsed }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
     </main>
   </div>
@@ -161,6 +166,7 @@ const LABELS = {
     ventures: 'Ventures', alongside: 'alongside employment', earlier: 'Earlier', certifications: 'Certifications',
     coursework: 'Coursework', education: 'Education', courses: 'Courses', technologies: 'Technologies',
     domains: 'Domains', year: 'year', years: 'years',
+    skillGroups: { languages: 'Programming languages', web: 'Web', data: 'Data & messaging', platform: 'Platform & tools' } as Record<string, string>,
     since: 'since', present: 'Present', tiers: { 1: 'Expert', 2: 'Advanced', 3: 'Proficient', 4: 'Basic' } as Record<number, string>,
   },
   da: {
@@ -169,6 +175,7 @@ const LABELS = {
     ventures: 'Egne virksomheder', alongside: 'ved siden af ansættelse', earlier: 'Tidligere', certifications: 'Certificeringer',
     coursework: 'Onlinekurser', education: 'Uddannelse', courses: 'Kurser', technologies: 'Teknologier',
     domains: 'Brancher', year: 'år', years: 'år',
+    skillGroups: { languages: 'Programmeringssprog', web: 'Web', data: 'Data og messaging', platform: 'Platform og værktøjer' } as Record<string, string>,
     since: 'siden', present: 'nu', tiers: { 1: 'Ekspert', 2: 'Avanceret', 3: 'Rutineret', 4: 'Grundlæggende' } as Record<number, string>,
   },
 }
@@ -268,9 +275,23 @@ const certifications = computed(() => achievements.value.filter(a => a.type === 
 const coursework = computed(() => achievements.value.filter(a => a.type === 'certifications' && a.print === 'coursework'))
 const courses = computed(() => achievements.value.filter(a => a.type === 'courses' && a.print !== false))
 const education = computed(() => (cv.value?.educations ?? []).filter(x => x.print !== false))
-const coreSkills = computed(() => (cv.value?.skills ?? [])
-  .filter(s => s.core)
-  .sort((a, b) => a.proficiencyLevel - b.proficiencyLevel || a.name.localeCompare(b.name)))
+// Core skills grouped by type; within a group, strongest first, then longest-held first.
+const SKILL_GROUPS: { key: string, types: string[] }[] = [
+  { key: 'languages', types: ['programming-language'] },
+  { key: 'web', types: ['javascript-framework', 'web-framework'] },
+  { key: 'data', types: ['database', 'message-broker', 'data-library'] },
+  { key: 'platform', types: ['containers', 'operating-system', 'devops-tool', 'ai-tooling'] },
+]
+const skillGroups = computed(() => {
+  const core = (cv.value?.skills ?? []).filter(s => s.core)
+  return SKILL_GROUPS
+    .map(g => ({
+      key: g.key,
+      skills: core.filter(s => g.types.includes(s.type ?? ''))
+        .sort((a, b) => a.proficiencyLevel - b.proficiencyLevel || Number(a.firstUsed) - Number(b.firstUsed)),
+    }))
+    .filter(g => g.skills.length)
+})
 
 function print() {
   window.print()
@@ -373,10 +394,15 @@ body.pcv-body { background: #e9e7e3; }
 .pcv-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 12mm; }
 .pcv-grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 8mm; }
 .pcv-keep { break-inside: avoid; }
+.pcv-skill-group { display: grid; grid-template-columns: 32mm 1fr; gap: 7mm; margin-bottom: 2mm; }
+.pcv-inline { display: flex; flex-wrap: wrap; column-gap: 6mm; }
+.pcv-inline li { margin-bottom: 1.2mm; }
+.pcv-inline li { white-space: nowrap; }
 
 @media screen and (max-width: 640px) {
   .pcv { padding: 24px 16px; }
-  .pcv-intro, .pcv-grid2, .pcv-grid3, .pcv-exp { grid-template-columns: 1fr; gap: 4mm; }
+  .pcv-intro, .pcv-grid2, .pcv-grid3, .pcv-exp, .pcv-skill-group { grid-template-columns: 1fr; gap: 4mm; }
+  .pcv-inline li { white-space: normal; }
 }
 
 @media print {
