@@ -6,13 +6,10 @@
       <!-- LEFT — content -->
       <div class="hero-content reveal">
         <div>
-          <div class="eyebrow">
-            <span class="eyebrow-rule" />
-            00 — Thomas Ringling
-          </div>
+          <div class="eyebrow">Thomas Ringling · Nærum, Denmark</div>
           <h1 class="hero-h1">
             Creative technologist
-            <span class="accent">&amp;</span>
+            <em>&amp;</em>
             software enthusiast.
           </h1>
           <p class="hero-lede">
@@ -39,9 +36,8 @@
         </div>
 
         <div class="colophon">
-          <span class="colophon-site">ringling.info</span>
-          <span>© 2026</span>
-          <span>Hetzner / Docker</span>
+          <span>ringling.info · © 2026</span>
+          <span>Built with Nuxt 3 · Hetzner / Docker</span>
         </div>
       </div>
 
@@ -87,112 +83,98 @@ useHead({
   }
 }
 
-/* LEFT */
+/* LEFT: same typography as the print CV and the /cv, /now and /team pages */
 .hero-content {
-  padding: 64px 64px 48px 64px;
+  --ink: #1c1c1c; --soft: #3f3f3f; --mute: #6b6b6b; --rule: #d0d0d0;
+  padding: 72px 64px 48px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-width: 0;
   background: #f8f8f8;
+  color: var(--ink);
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 20px;
+  line-height: 1.55;
 }
 
 @media (max-width: 768px) {
-  .hero-content { padding: 40px 24px 32px; }
+  .hero-content { padding: 40px 16px 32px; font-size: 18px; }
 }
 
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: 11px;
+.eyebrow, .link-num, .colophon {
+  font-size: 13px;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #111827;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 18px;
+  color: var(--mute);
 }
-.eyebrow-rule {
-  display: inline-block;
-  width: 24px;
-  height: 1px;
-  background: #111827;
-}
+.eyebrow { margin-bottom: 28px; }
 
 .hero-h1 {
-  font-size: clamp(40px, 5.2vw, 72px);
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  color: #111827;
-  line-height: 0.95;
+  font-family: inherit;
+  font-size: clamp(48px, 5.6vw, 80px);
+  font-weight: 300;
+  letter-spacing: normal;
+  color: var(--ink);
+  line-height: 1.05;
   margin: 0;
-  max-width: 14ch;
+  max-width: 13ch;
   text-align: left;
 }
+.hero-h1 em { color: var(--mute); }
 
 .hero-lede {
-  color: #4b5563;
-  font-size: 16px;
-  line-height: 1.6;
-  max-width: 46ch;
-  margin-top: 22px;
-  margin-bottom: 0;
+  font-style: italic;
+  color: var(--soft);
+  font-size: 24px;
+  line-height: 1.4;
+  max-width: 28em;
+  margin: 24px 0 0;
 }
 
 /* Indexed link list */
 .link-list {
-  margin-top: 36px;
-  max-width: 480px;
+  margin-top: 48px;
+  max-width: 520px;
 }
 
 .link-row {
   display: grid;
-  grid-template-columns: 32px 1fr auto;
+  grid-template-columns: 40px 1fr auto;
   gap: 16px;
-  align-items: center;
+  align-items: baseline;
   padding: 14px 0;
-  border-top: 1px solid #e5e7eb;
-  color: #111827;
+  border-top: 1px solid var(--rule);
+  color: var(--ink);
   text-decoration: none;
   background-image: none !important;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 22px;
   transition: padding-left 220ms ease;
 }
-.link-row-last {
-  border-bottom: 1px solid #e5e7eb;
-}
+.link-row-last { border-bottom: 1px solid var(--rule); }
 .link-row:hover {
   padding-left: 8px;
   background-image: none !important;
 }
 .link-row:hover .link-arrow {
   transform: translateX(4px);
-  color: #111827;
-}
-
-.link-num {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: #9ca3af;
+  color: var(--ink);
 }
 
 .link-arrow {
-  font-family: var(--font-mono);
-  font-size: 14px;
-  color: #9ca3af;
+  font-size: 20px;
+  color: var(--mute);
   transition: transform 220ms ease, color 220ms ease;
 }
 
 .colophon {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: #6b7280;
   display: flex;
-  gap: 24px;
-  margin-top: 32px;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
 }
-.colophon-site { color: #111827; }
 
 /* RIGHT */
 .hero-image {
@@ -221,10 +203,10 @@ useHead({
   position: absolute;
   bottom: 24px;
   left: 24px;
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: #fff;
   background: rgba(17, 24, 39, 0.7);
   padding: 6px 10px;

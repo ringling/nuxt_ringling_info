@@ -1,67 +1,58 @@
 <template>
   <div>
     <Menu />
-    <div class="page-inner">
-      <h1 class="page-h1">Now</h1>
-      <p class="lede">
-        This page is a living document that I try to update every month. It's a way for me to keep track of
-        what I've been doing and what I've learned. It's also a way for me to share what I've learned with others.
-      </p>
-      <p class="meta-line">
-        Built with TypeScript, Vue 3, Nuxt 3 &amp; TailwindCSS. Deployed on Hetzner as a Docker image. <span class="updated">Last updated: November 14, 2026</span>
-      </p>
+    <main class="pp">
+      <header>
+        <div class="pp-masthead">
+          <span class="pp-label">Now</span>
+          <span class="pp-label">Updated November 14, 2026</span>
+        </div>
+        <h1>What I'm doing now.</h1>
+        <p class="pp-lede">
+          A living document I try to update every month, to keep track of what I've been doing and learning, and
+          to share it with others.
+        </p>
+      </header>
 
-      <div class="cards-grid">
+      <hr>
+
+      <div ref="timeline" class="tl">
+        <div class="tl-line" aria-hidden="true"><div class="tl-progress" :style="{ height: progress + 'px' }" /></div>
         <template v-for="(card, idx) in cards" :key="card.month">
-          <div v-if="getYear(card.month) !== getYear(cards[idx - 1]?.month ?? '')" v-reveal class="year-divider">
-            <span class="year-num">{{ getYear(card.month) }}</span>
-            <span class="year-line" />
+          <div v-if="getYear(card.month) !== getYear(cards[idx - 1]?.month ?? '')" class="tl-year">
+            <span>{{ getYear(card.month) }}</span>
           </div>
-          <div v-reveal class="now-card neu">
-          <img :src="card.img" :alt="card.month" class="card-img" />
-          <div class="card-body">
-            <div class="card-kicker">
-              <span class="kicker-rule" />
-              {{ String(idx + 1).padStart(2, '0') }} / {{ card.month.split(' ').pop() }}
+          <article v-reveal class="tl-entry" :class="{ flip: idx % 2 === 1 }">
+            <div class="tl-text">
+              <h3>{{ monthName(card.month) }}</h3>
+
+              <div v-if="card.interests?.length" class="tl-group">
+                <div class="pp-label">Interests</div>
+                <p>{{ card.interests.join(' · ') }}</p>
+              </div>
+              <div v-if="card.books?.length" class="tl-group">
+                <div class="pp-label">{{ card.books.length === 1 ? 'Book' : 'Books' }}</div>
+                <p v-for="book in card.books" :key="book.title">{{ book.title }} <em>— {{ book.author }}</em></p>
+              </div>
+              <div v-if="card.courses?.length" class="tl-group">
+                <div class="pp-label">{{ card.courses.length === 1 ? 'Course' : 'Courses' }}</div>
+                <p v-for="course in card.courses" :key="course.title">{{ course.title }} <em>— {{ course.institution }}</em></p>
+              </div>
+              <blockquote v-if="card.quote" class="tl-quote">“{{ card.quote }}”</blockquote>
             </div>
-            <h5 class="card-month">{{ card.month.replace(' ' + card.month.split(' ').pop(), '') }}</h5>
-
-            <template v-if="card.interests && card.interests.length">
-              <div class="section-label">Areas of interest</div>
-              <ul class="item-list">
-                <li v-for="item in card.interests" :key="item" class="item-row">{{ item }}</li>
-              </ul>
-            </template>
-
-            <template v-if="card.books && card.books.length">
-              <div class="section-label">Books</div>
-              <ul class="item-list">
-                <li v-for="book in card.books" :key="book.title" class="item-row">
-                  <b>{{ book.title }}</b>
-                  <em class="author">— {{ book.author }}</em>
-                </li>
-              </ul>
-            </template>
-
-            <template v-if="card.courses && card.courses.length">
-              <div class="section-label">Courses</div>
-              <ul class="item-list">
-                <li v-for="course in card.courses" :key="course.title" class="item-row">
-                  <b>{{ course.title }}</b>
-                  <em class="author">— {{ course.institution }}</em>
-                </li>
-              </ul>
-            </template>
-
-            <template v-if="card.quote">
-              <div class="section-label">Quote of the month</div>
-              <blockquote class="card-quote">{{ card.quote }}</blockquote>
-            </template>
-          </div>
-          </div>
+            <span class="tl-dot" aria-hidden="true" />
+            <div class="tl-media">
+              <img :src="card.img" :alt="card.month" loading="lazy">
+            </div>
+          </article>
         </template>
       </div>
-    </div>
+
+      <footer class="pp-footer">
+        <span class="pp-label">ringling.info · © 2026</span>
+        <span class="pp-label">Built with Nuxt 3 · Hetzner / Docker</span>
+      </footer>
+    </main>
   </div>
 </template>
 
@@ -81,6 +72,11 @@ interface NowEntry {
   books?: Book[]
   courses?: Course[]
   quote?: string
+}
+
+// "November 2026" -> "November"; ranges like "June 2021 – January 2022" are kept whole.
+function monthName(month: string): string {
+  return /^\S+ \d{4}$/.test(month) ? month.split(' ')[0] : month
 }
 
 function getYear(month: string): string {
@@ -599,7 +595,34 @@ const vReveal = {
   },
 }
 
+// Timeline: the dark line grows down to the middle of the viewport, and dots it has reached fill in.
+const timeline = ref<HTMLElement | null>(null)
+const progress = ref(0)
+let frame = 0
+
+function updateTimeline() {
+  frame = 0
+  const el = timeline.value
+  if (!el) return
+  const middle = window.innerHeight * 0.55
+  const rect = el.getBoundingClientRect()
+  progress.value = Math.max(0, Math.min(rect.height, middle - rect.top))
+  el.querySelectorAll<HTMLElement>('.tl-dot').forEach((dot) => {
+    dot.classList.toggle('reached', dot.getBoundingClientRect().top < middle)
+  })
+}
+const onScroll = () => { if (!frame) frame = requestAnimationFrame(updateTimeline) }
+
+onMounted(() => {
+  window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('resize', onScroll)
+  updateTimeline()
+})
+
 onBeforeUnmount(() => {
+  window.removeEventListener('scroll', onScroll)
+  window.removeEventListener('resize', onScroll)
+  if (frame) cancelAnimationFrame(frame)
   revealObserver?.disconnect()
   revealObserver = null
 })
@@ -608,164 +631,49 @@ onBeforeUnmount(() => {
 <style scoped>
 .reveal-pending {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 550ms ease, transform 550ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transform: translateY(12px);
+  transition: opacity 500ms ease, transform 500ms ease;
 }
-.reveal-pending.reveal-in {
-  opacity: 1;
-  transform: none;
-}
-@media print {
+.reveal-pending.reveal-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
   .reveal-pending { opacity: 1; transform: none; transition: none; }
 }
 
-.page-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
+.tl { position: relative; padding: 8px 0 40px; }
+.tl-line { position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; margin-left: -.5px; background: var(--rule); }
+.tl-progress { width: 2px; margin-left: -.5px; background: var(--ink); }
 
-.page-h1 {
-  margin: 64px 0 0 0;
-  font-size: 56px;
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  text-align: center;
-  color: #111827;
-}
+.tl-year { position: relative; display: flex; justify-content: center; margin: 24px 0 56px; }
+.tl-year span { position: relative; background: var(--bg2, #f8f8f8); padding: 8px 0; font-weight: 300; font-size: 64px; line-height: 1; color: var(--ink); }
 
-.lede {
-  margin-top: 32px;
-  margin-bottom: 0;
-  color: #374151;
-}
+.tl-entry { position: relative; display: grid; grid-template-columns: 1fr 120px 1fr; align-items: start; margin-bottom: 88px; }
+.tl-text { grid-column: 1; grid-row: 1; text-align: right; }
+.tl-media { grid-column: 3; grid-row: 1; }
+.tl-entry.flip .tl-text { grid-column: 3; text-align: left; }
+.tl-entry.flip .tl-media { grid-column: 1; display: flex; justify-content: flex-end; }
 
-.meta-line {
-  margin-top: 12px;
-  margin-bottom: 64px;
-  font-size: 12px;
-  color: #6b7280;
-}
-.updated { margin-left: 12px; }
+.tl-dot { grid-column: 2; grid-row: 1; justify-self: center; position: relative; z-index: 1; margin-top: 22px; width: 13px; height: 13px; border-radius: 50%; background: var(--bg2, #f8f8f8); border: 1px solid var(--mute); transition: background 300ms ease, border-color 300ms ease, transform 300ms ease; }
+.tl-dot.reached { background: var(--ink); border-color: var(--ink); transform: scale(1.15); }
 
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 16px;
-  padding-bottom: 64px;
-}
+.tl-media img { display: block; width: 100%; max-width: 380px; aspect-ratio: 4 / 5; object-fit: cover; }
 
-.year-divider {
-  grid-column: 1 / -1;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin: 32px 0 8px 0;
-}
-.year-divider:first-child { margin-top: 0; }
+.tl .tl-text h3 { font-size: 52px; font-weight: 300; line-height: 1.1; }
+.tl .tl-text h3 + * { margin-top: 20px; }
+.tl-group { margin-bottom: 16px; }
+.tl-group .pp-label { margin-bottom: 4px; }
+.tl-group p { margin: 0 0 2px; }
+.tl-group em { color: var(--mute); }
+.tl-quote { margin: 20px 0 0; font-style: italic; font-size: 22px; line-height: 1.4; color: var(--soft); }
 
-.year-num {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #111827;
-  white-space: nowrap;
-}
-.year-line {
-  flex: 1;
-  height: 1px;
-  background: #e5e7eb;
-}
-
-.now-card {
-  padding: 24px;
-  display: flex;
-  gap: 20px;
-  overflow: hidden;
-}
-
-.card-img {
-  width: 96px;
-  height: 96px;
-  flex: none;
-  border-radius: 6px;
-  object-fit: cover;
-}
-
-.card-body {
-  flex: 1;
-  min-width: 0;
-  overflow-wrap: break-word;
-  word-break: break-word;
-}
-
-.card-kicker {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #111827;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.kicker-rule {
-  width: 18px;
-  height: 1px;
-  background: #111827;
-  display: inline-block;
-}
-
-.card-month {
-  margin: 8px 0 16px 0;
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  color: #111827;
-  line-height: 1.05;
-}
-
-.section-label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #6b7280;
-  margin: 14px 0 6px 0;
-}
-
-.item-list {
-  padding-left: 0;
-  margin: 0;
-  list-style: none;
-  color: #374151;
-  font-size: 14px;
-  line-height: 1.55;
-}
-
-.item-row {
-  padding: 4px 0;
-  border-top: 1px solid #f3f4f6;
-}
-.item-row:first-child { border-top: none; }
-
-.author {
-  color: #6b7280;
-  font-size: 13px;
-  font-style: normal;
-}
-.author::before { content: ' '; }
-
-.card-quote {
-  margin: 8px 0 0 0;
-  padding: 8px 12px;
-  border-left: 2px solid #e5e7eb;
-  color: #6b7280;
-  font-size: 13px;
-  font-style: italic;
-  line-height: 1.55;
+@media screen and (max-width: 800px) {
+  .tl-line { left: 6px; }
+  .tl-year { justify-content: flex-start; margin: 8px 0 32px; padding-left: 28px; }
+  .tl-year span { font-size: 44px; }
+  .tl-entry, .tl-entry.flip { grid-template-columns: 12px 1fr; column-gap: 16px; margin-bottom: 56px; }
+  .tl-dot { grid-column: 1; margin-top: 16px; }
+  .tl-text, .tl-entry.flip .tl-text { grid-column: 2; text-align: left; }
+  .tl-media, .tl-entry.flip .tl-media { grid-column: 2; grid-row: 2; justify-content: flex-start; margin-top: 16px; }
+  .tl-media img { max-width: 280px; }
+  .tl .tl-text h3 { font-size: 40px; }
 }
 </style>

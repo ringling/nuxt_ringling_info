@@ -1,43 +1,40 @@
 <template>
   <div>
     <Menu />
-    <div class="page-inner">
-
-      <div class="team-header">
-        <div class="team-eyebrow">
-          <span class="eyebrow-rule" />
-          03 — Disciplines
+    <main class="pp">
+      <header>
+        <div class="pp-masthead">
+          <span class="pp-label">Team</span>
+          <span class="pp-label">{{ team.length }} disciplines · 1 person</span>
         </div>
-        <h1 class="team-h1">
-          Meet <span class="accent">the</span> team.
-        </h1>
-        <p class="team-lede">
-          A small, deeply versatile team of one. Each discipline is a hat I've worn for years — sometimes simultaneously.
+        <h1>Meet the team.</h1>
+        <p class="pp-lede">
+          A small, deeply versatile team of one. Each discipline is a hat I've worn for years, sometimes several at once.
         </p>
-      </div>
+      </header>
 
-      <div class="roster">
-        <div v-for="(member, idx) in team" :key="member.role" class="roster-row reveal">
-          <div class="row-idx">
-            {{ String(idx + 1).padStart(2, '0') }}
-            <span class="row-idx-total">/ {{ String(team.length).padStart(2, '0') }}</span>
-          </div>
-          <div class="row-img-wrap">
-            <img :src="member.img" :alt="member.role" class="row-img" />
-            <span v-if="member.layedOff" class="layed-off">layed off</span>
-          </div>
-          <div class="row-content">
-            <div class="row-discipline">Discipline</div>
-            <h3 class="row-title">
-              {{ member.role }} <span class="accent">{{ member.accent }}</span>
-            </h3>
-            <p class="row-body">{{ member.body }}</p>
-          </div>
+      <hr>
+
+      <article v-for="(member, idx) in team" :key="member.role" class="team-row">
+        <div class="team-meta">
+          <div class="pp-label">{{ String(idx + 1).padStart(2, '0') }} / {{ String(team.length).padStart(2, '0') }}</div>
+          <div class="pp-label">Discipline</div>
         </div>
-        <div class="roster-end-rule" />
-      </div>
+        <figure class="team-figure">
+          <img :src="member.img" :alt="member.role">
+          <span v-if="member.layedOff" class="team-stamp">Laid off</span>
+        </figure>
+        <div>
+          <h2 class="team-title">{{ member.role }} <em>{{ member.accent }}</em></h2>
+          <p class="team-body">{{ member.body }}</p>
+        </div>
+      </article>
 
-    </div>
+      <footer class="pp-footer">
+        <span class="pp-label">ringling.info · © 2026</span>
+        <span class="pp-label">Built with Nuxt 3 · Hetzner / Docker</span>
+      </footer>
+    </main>
   </div>
 </template>
 
@@ -45,7 +42,7 @@
 useHead({
   title: 'Thomas Ringling — Team',
   link: [{ rel: 'canonical', href: 'https://www.ringling.info/team' }],
-  meta: [{ name: 'description', content: 'Meet the team — one developer, many disciplines.' }]
+  meta: [{ name: 'description', content: 'Meet the team : one developer, many disciplines.' }]
 })
 
 const team = [
@@ -88,140 +85,43 @@ const team = [
 </script>
 
 <style scoped>
-.page-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-
-/* Header */
-.team-header { margin-top: 80px; }
-
-.team-eyebrow {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #111827;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 16px;
-}
-.eyebrow-rule {
-  display: inline-block;
-  width: 24px;
-  height: 1px;
-  background: #111827;
-}
-
-.team-h1 {
-  font-size: clamp(48px, 6vw, 72px);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  color: #111827;
-  line-height: 0.95;
-  margin: 0 0 8px 0;
-  text-align: left;
-}
-
-.team-lede {
-  font-size: 17px;
-  color: #374151;
-  line-height: 1.6;
-  max-width: 56ch;
-  margin-top: 18px;
-  margin-bottom: 0;
-}
-
-/* Roster */
-.roster {
-  margin-top: 64px;
-  margin-bottom: 64px;
-}
-
-.roster-row {
+.team-row {
   display: grid;
-  grid-template-columns: 80px 200px 1fr;
-  gap: 32px;
+  grid-template-columns: 180px 240px minmax(0, 1fr);
+  gap: 48px;
   align-items: start;
-  padding: 32px 0;
-  border-top: 1px solid #e5e7eb;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--rule);
 }
+.team-row:first-of-type { padding-top: 0; }
+.team-meta { display: grid; gap: 4px; padding-top: 6px; }
 
-@media (max-width: 768px) {
-  .roster-row {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-
-.row-idx {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: #9ca3af;
-}
-.row-idx-total { color: #e5e7eb; }
-
-.row-img-wrap {
-  position: relative;
-  width: 200px;
-}
-
-.row-img {
-  width: 200px;
-  border-radius: 6px;
-  display: block;
-}
-
-.layed-off {
+.team-figure { position: relative; margin: 0; }
+.team-figure img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.team-stamp {
   position: absolute;
-  top: 10px;
-  left: 0;
-  background: #dc2626;
-  color: white;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
+  top: 14px;
+  left: 14px;
+  padding: 3px 10px;
+  background: rgba(255, 255, 255, .92);
+  border: 1px solid #a3271b;
+  color: #a3271b;
+  font-size: 13px;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 4px 10px;
-  border-radius: 0 4px 4px 0;
 }
 
-@media (max-width: 768px) {
-  .row-img-wrap { width: 100%; max-width: 200px; }
-  .row-img { width: 100%; }
-}
+.pp .team-title { font-size: 46px; font-weight: 300; line-height: 1.1; margin: 0 0 16px; }
+.team-title em { color: var(--mute); }
+.team-body { max-width: 34em; margin: 0; }
 
-.row-discipline {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #6b7280;
-  margin-bottom: 8px;
+@media screen and (max-width: 900px) {
+  .team-row { grid-template-columns: 200px minmax(0, 1fr); gap: 32px; }
+  .team-meta { grid-column: 1 / -1; display: flex; gap: 16px; }
 }
-
-.row-title {
-  margin: 0 0 12px 0;
-  font-size: 36px;
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  color: #111827;
-  line-height: 1;
-  text-align: left;
-}
-
-.row-body {
-  color: #374151;
-  font-size: 15px;
-  line-height: 1.6;
-  max-width: 60ch;
-  margin: 0;
-}
-
-.roster-end-rule {
-  border-top: 1px solid #e5e7eb;
+@media screen and (max-width: 600px) {
+  .team-row { grid-template-columns: 1fr; gap: 16px; }
+  .team-figure { max-width: 260px; }
+  .pp .team-title { font-size: 36px; }
 }
 </style>

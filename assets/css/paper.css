@@ -1,0 +1,72 @@
+/* Web version of the print CV typography (pages/cv/print.vue), shared by /cv and /now.
+   Pages wrap their content in <main class="pp">. */
+
+.pp {
+  --ink: #1c1c1c; --soft: #3f3f3f; --mute: #6b6b6b; --rule: #d0d0d0;
+  box-sizing: border-box;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 72px 32px 40px;
+  color: var(--ink);
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 20px;
+  line-height: 1.55;
+}
+.pp *, .pp *::before, .pp *::after { box-sizing: border-box; }
+.pp a { color: var(--ink); background-image: none; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+.pp a:hover { text-decoration-color: var(--ink); background-image: none; }
+
+.pp-label, .pp-tags, .pp-pairs .k, .pp-pairs .v { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; line-height: 1.6; }
+.pp-label, .pp-pairs .v, .pp-tags { color: var(--mute); }
+.pp-pairs .k { color: var(--ink); font-weight: 600; margin-right: 10px; }
+
+.pp-masthead { display: flex; justify-content: space-between; gap: 16px; }
+.pp h1 { font-family: inherit; font-weight: 300; font-size: clamp(48px, 6vw, 76px); line-height: 1.05; letter-spacing: normal; margin: 32px 0 16px; color: var(--ink); text-align: left; }
+.pp-lede { font-style: italic; font-size: 26px; line-height: 1.4; color: var(--soft); max-width: 40em; margin: 0; }
+.pp hr { border: 0; border-top: 1px solid var(--rule); margin: 48px 0; }
+
+.pp h2 { font-family: inherit; font-weight: 300; font-size: 40px; line-height: 1.2; letter-spacing: normal; margin: 0 0 20px; color: var(--ink); }
+.pp h3 { font-family: inherit; font-weight: 500; font-size: 25px; line-height: 1.2; letter-spacing: normal; margin: 0; color: var(--ink); }
+.pp h4 { font-family: inherit; font-weight: 500; font-size: 20px; letter-spacing: normal; margin: 0 0 4px; color: var(--ink); }
+.pp p { color: var(--soft); }
+
+.pp-intro { display: grid; grid-template-columns: 1.6fr 1fr; gap: 80px; }
+.pp-intro .pp-profile { columns: 2; column-gap: 40px; }
+.pp-intro .pp-profile p { break-inside: avoid; }
+.pp-profile p { margin: 0 0 12px; }
+.pp-dropcap p:first-child::first-letter { float: left; font-size: 58px; line-height: .82; padding: 6px 8px 0 0; color: var(--ink); }
+
+.pp-pairs { list-style: none; margin: 0 0 20px; padding: 0; }
+.pp-pairs li { margin: 0 0 6px; }
+.pp-flush { margin: 0; }
+.pp-colhead { margin-bottom: 10px; }
+.pp-inline { display: flex; flex-wrap: wrap; column-gap: 24px; }
+.pp-inline li { white-space: nowrap; }
+
+.pp-section { margin-top: 72px; }
+.pp-row { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; padding: 0 0 26px; }
+.pp-row > :last-child { max-width: 860px; }
+.pp-row-meta { padding-top: 6px; }
+.pp-org { font-style: italic; color: var(--soft); margin-bottom: 6px; }
+.pp-row p { margin: 0 0 6px; }
+.pp-tags { line-height: 1.8; }
+.pp-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px; }
+
+.pp-toggle { font: inherit; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--mute); background: none; border: 0; border-bottom: 1px solid var(--rule); padding: 0 0 2px; margin: 0 0 24px; cursor: pointer; }
+.pp-toggle:hover { color: var(--ink); border-color: var(--ink); }
+
+.pp-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-top: 96px; padding-top: 16px; border-top: 1px solid var(--rule); }
+
+@media screen and (max-width: 1000px) {
+  .pp-intro { grid-template-columns: 1fr; gap: 40px; }
+}
+@media screen and (max-width: 720px) {
+  .pp { padding: 40px 16px 32px; font-size: 18px; }
+  .pp h1 { font-size: 40px; margin-top: 24px; }
+  .pp-intro .pp-profile { columns: 1; }
+  .pp-lede { font-size: 19px; }
+  .pp h2 { font-size: 28px; }
+  .pp-intro, .pp-grid2, .pp-row { grid-template-columns: 1fr; gap: 12px; }
+  .pp-row-meta { padding-top: 0; }
+  .pp-inline li { white-space: normal; }
+}

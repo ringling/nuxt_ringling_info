@@ -59,12 +59,11 @@ const links = [
 }
 
 .rl-brand {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #111827;
-  font-weight: 600;
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 24px;
+  letter-spacing: normal;
+  color: #1c1c1c;
+  font-weight: 400;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -74,12 +73,7 @@ const links = [
 }
 .rl-brand:hover { background-image: none !important; }
 
-.rl-brand-rule {
-  display: inline-block;
-  width: 18px;
-  height: 1px;
-  background: #111827;
-}
+.rl-brand-rule { display: none; }
 
 .rl-nav {
   display: flex;
@@ -88,11 +82,11 @@ const links = [
 }
 
 .rl-nav-link {
-  font-family: var(--font-mono);
-  font-size: 11px;
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #6b7280;
+  letter-spacing: 0.12em;
+  color: #6b6b6b;
   text-decoration: none;
   background-image: none !important;
   padding: 4px 0;
@@ -116,7 +110,7 @@ const links = [
 }
 .rl-nav-link.active,
 .rl-nav-link.router-link-active {
-  color: #111827;
+  color: #1c1c1c;
 }
 .rl-nav-link.active::after,
 .rl-nav-link.router-link-active::after {
@@ -141,9 +135,11 @@ const links = [
 
 .rl-meta {
   justify-self: end;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: #6b7280;
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6b6b6b;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -156,5 +152,12 @@ const links = [
   background: #10b981;
   box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.18);
   display: inline-block;
+}
+
+@media (max-width: 640px) {
+  .rl-menu-inner { grid-template-columns: 1fr auto; padding: 14px 16px; gap: 16px; }
+  .rl-brand { font-size: 20px; }
+  .rl-nav { gap: 18px; }
+  .rl-nav-num, .rl-meta { display: none; }
 }
 </style>
