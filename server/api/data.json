@@ -946,7 +946,8 @@
         "Nuxt",
         "Vue.js",
         "Pandas",
-        "Matplotlib"
+        "Matplotlib",
+        "JavaScript"
       ],
       "summary": "Ran the data track in the program office for a program of four subprojects that introduced a new agreement flow at PFA, covering planning, coordination, stakeholder communication, data analysis and architecture advice. Built a Vue/Nuxt app that lets business users create bulk update XML files themselves; before, they needed technical help from outside their department. Used Python, Pandas and Matplotlib for analysis and reporting.",
       "group": "pfa-2019",
@@ -1040,7 +1041,9 @@
         "Vue.js",
         "PostgreSQL",
         "Elixir",
-        "Phoenix"
+        "Phoenix",
+        "JavaScript",
+        "Linux"
       ],
       "summary": "Co-founded xwave with one partner to build our own product, <b>Marangu</b>, a business management tool for farriers. Handled the architecture, development and front-end design (Elixir/Phoenix, PostgreSQL, Nuxt/Vue). Farriers use it today.",
       "venture": true,
@@ -1064,7 +1067,8 @@
         "title": "Agil coach",
         "summary": "Agil coach i BI-afdelingen med fokus på at få afdelingens tre teams med omkring 20 personer over i mere agile arbejdsformer. Holdt teamworkshops, introducerede Scrum og blev senere Scrum Master for alle tre teams."
       },
-      "domain": "gaming"
+      "domain": "gaming",
+      "technologies": []
     },
     {
       "year": "2017",
@@ -1076,7 +1080,8 @@
       "roles": "Agile Coach, product owner and scrum master",
       "technologies": [
         "C# / .NET",
-        "Angular"
+        "Angular",
+        "JavaScript"
       ],
       "summary": "Half agile roles, half development on MP Pension's member portal. Agile coach and Scrum Master, and product owner when needed. Built front-end features in Angular and TypeScript on a C#/.NET backend.",
       "domain": "pension"
@@ -1093,7 +1098,9 @@
         "Vue.js",
         "Elixir",
         "PostgreSQL",
-        "CouchDB"
+        "CouchDB",
+        "JavaScript",
+        "Linux"
       ],
       "summary": "Co-founded PrivacyTree with four partners. We offered courses, training and software for GDPR compliance. Handled the software architecture, development and UI, with a Vue.js front end on an Elixir backend using PostgreSQL and CouchDB.",
       "venture": true,
@@ -1118,7 +1125,8 @@
         "ActiveMQ",
         "RESTful microservices",
         "Oracle WLS",
-        "JBoss Wildfly"
+        "JBoss Wildfly",
+        "JavaScript"
       ],
       "summary": "Java developer in Nykredit's mortgage lending (realkredit) area, building RESTful microservices with Java, ActiveMQ and Angular on Oracle WebLogic and JBoss WildFly. Also the team's sparring partner on architecture, and helped the Scrum Master and product owners make agile development work in practice.",
       "domain": "mortgage"
@@ -1153,7 +1161,9 @@
         "RactiveJS",
         "PostgreSQL",
         "CouchDB",
-        "Elixir"
+        "Elixir",
+        "JavaScript",
+        "Linux"
       ],
       "summary": "Software solution for the fishing market",
       "venture": true,
@@ -1177,16 +1187,17 @@
         "PostgreSQL",
         "MongoDB",
         "CouchDB",
-        "Elastic Search",
+        "Elasticsearch",
         "KnockoutJS",
-        "AngularJS",
         "RactiveJS",
         "Coffeescript",
         "RabbitMQ",
         "NGinx",
         "Docker",
         "CoreOS",
-        "Elixir"
+        "Elixir",
+        "JavaScript",
+        "Linux"
       ],
       "roles": "Product Owner, Scrum Master, Architect, Software Developer",
       "summary": "Introduced Scrum and led the agile transformation as Scrum Master and project manager, first in the development team and then across the company. Designed a new distributed architecture with the team. Later became Product Owner and day-to-day manager of the development team, hiring new people, coaching the new Scrum Master and running company-wide workshops. Wrote Ruby on Rails and Elixir/Erlang throughout.",
@@ -1220,7 +1231,8 @@
       "title": "Force Protection",
       "roles": "",
       "summary": "Deployed to Helmand, Afghanistan, with the Danish ISAF contingent (ISAF 12, Operation Herrick 15), providing force protection for explosive ordnance disposal (EOD) teams.",
-      "domain": "defence"
+      "domain": "defence",
+      "technologies": []
     },
     {
       "year": "2009",
@@ -1249,7 +1261,8 @@
       "title": "Instructor",
       "roles": "Instructor",
       "summary": "Instructor on the Danish Army's medic course (Sygehjælperkursus HLS 408), training soldiers in military first aid and casualty care.",
-      "domain": "defence"
+      "domain": "defence",
+      "technologies": []
     },
     {
       "year": "2008",
@@ -1313,7 +1326,7 @@
       "technologies": [
         "Java",
         "J2EE",
-        "Oracle DB",
+        "Oracle",
         "Oracle AS",
         "JSP",
         "Java Servlets"
