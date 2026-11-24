@@ -524,6 +524,36 @@
     },
     {
       "active": true,
+      "name": "Claude Code",
+      "type": "ai-tooling",
+      "proficiencyLevel": 2,
+      "firstUsed": "2025",
+      "lastUsed": "2026",
+      "acquiredDuring": "Nes Tech A/S",
+      "description": "Agentic coding in the terminal"
+    },
+    {
+      "active": true,
+      "name": "GitHub Copilot",
+      "type": "ai-tooling",
+      "proficiencyLevel": 3,
+      "firstUsed": "2026",
+      "lastUsed": "2026",
+      "acquiredDuring": "PFA",
+      "description": "AI pair programming in the editor"
+    },
+    {
+      "active": true,
+      "name": "GPT-4",
+      "type": "ai-tooling",
+      "proficiencyLevel": 3,
+      "firstUsed": "2023",
+      "lastUsed": "2024",
+      "acquiredDuring": "PFA",
+      "description": "Large language model used in development work"
+    },
+    {
+      "active": true,
       "name": "Python",
       "type": "programming-language",
       "proficiencyLevel": 1,
@@ -843,7 +873,8 @@
       "technologies": [
         "Python",
         "Pandas",
-        "SQL Server"
+        "SQL Server",
+        "GitHub Copilot"
       ],
       "summary": "Build and run Python data pipelines that combine agreement data from four source systems, apply business rules and decide which of more than 4,000 business customers get which notification letters. The pipelines have reduced errors and uncovered data variations nobody knew about, and each run produces a report that shows the business what happened at every step. Also subject matter expert on a new project, covering data and technical questions and helping define the AI-assisted development process (AI SDLC) for the teams.",
       "da": {
@@ -866,8 +897,8 @@
         "Angular",
         "Handlebars",
         "Pandas",
-        "e-Boks",
-        "Polaris - Life and Pension platform"
+        "Polaris - Life and Pension platform",
+        "Claude Code"
       ],
       "summary": "Consultant on the Polaris life and pension platform for three clients. Most recently PBU, helping integrate Polaris output management and building the e-Boks integration that now delivers all of PBU's customer letters from Polaris to customers' e-Boks. Built more than 80 letter templates and document workflows. Worked mainly in C# and Handlebars, with some Angular, and used Pandas to extract test data.",
       "da": {
@@ -890,7 +921,8 @@
         "Python",
         "Pandas",
         "NumPy",
-        "SQL Server"
+        "SQL Server",
+        "GPT-4"
       ],
       "summary": "Built a letter engine for PFA's price and product letters to around 8,000 customers. Designed and wrote the Python pipelines that combine data from several source systems and decide who gets which letter. Also owned the data analysis and architecture, and gathered requirements with the business.",
       "group": "pfa-2019",

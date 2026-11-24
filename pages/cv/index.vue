@@ -110,7 +110,7 @@
         <h2>Technologies</h2>
         <ul class="pp-pairs pp-flush pp-inline">
           <li v-for="skill in sortSkills(data.cv.skills)" :key="skill.name">
-            <span class="k">{{ skill.name }}</span><span class="v">{{ skill.firstUsed }}–{{ skill.lastUsed }}</span>
+            <span class="k">{{ skill.name }}</span><span class="v">{{ skill.firstUsed === skill.lastUsed ? skill.firstUsed : `${skill.firstUsed}–${skill.lastUsed}` }}</span>
           </li>
         </ul>
       </section>
