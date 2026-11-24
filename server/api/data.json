@@ -226,25 +226,29 @@
         "description": "2025 - DSTB",
         "documentation": "/istqb.pdf",
         "print": true,
-        "printMeta": "DSTB · 2025"
+        "printMeta": "DSTB · 2025",
+        "group": "testing"
       },
       {
         "type": "certifications",
         "title": "Systems Thinking: Essential Concepts",
         "description": "2024 - Udemy",
-        "documentation": "/UdemySystemsThinking.pdf"
+        "documentation": "/UdemySystemsThinking.pdf",
+        "group": "systems"
       },
       {
         "type": "certifications",
         "title": "Beginning Llamafile for Local Large Language Models (LLMs)",
         "description": "2024 - Coursera / Duke University",
-        "documentation": "/CourseraLlamafile.pdf"
+        "documentation": "/CourseraLlamafile.pdf",
+        "group": "ai-data"
       },
       {
         "type": "certifications",
         "title": "Agile Leadership - Introducing Change",
         "description": "2024 - Coursera / University of Colorado",
-        "documentation": "/CourseraAgileLeadership_IntroducingChange.pdf"
+        "documentation": "/CourseraAgileLeadership_IntroducingChange.pdf",
+        "group": "agile"
       },
       {
         "type": "certifications",
@@ -252,7 +256,8 @@
         "description": "2024 - Coursera / University of Colorado Boulder",
         "documentation": "/CourseraDevelopingASystemsMindset.pdf",
         "print": "coursework",
-        "printMeta": "University of Colorado Boulder · 2024"
+        "printMeta": "University of Colorado Boulder · 2024",
+        "group": "systems"
       },
       {
         "type": "certifications",
@@ -261,13 +266,15 @@
         "documentation": "/CourseraML.pdf",
         "print": "coursework",
         "printTitle": "Machine Learning Specialization",
-        "printMeta": "DeepLearning.AI · 2023"
+        "printMeta": "DeepLearning.AI · 2023",
+        "group": "ai-data"
       },
       {
         "type": "certifications",
         "title": "Generative AI for Everyone",
         "description": "2023 - Coursera / DeepLearning.AI",
-        "documentation": "/CourseraGenAI.pdf"
+        "documentation": "/CourseraGenAI.pdf",
+        "group": "ai-data"
       },
       {
         "type": "certifications",
@@ -276,25 +283,29 @@
         "documentation": "/CourseraMLMathematics.pdf",
         "print": "coursework",
         "printTitle": "Mathematics for Machine Learning and Data Science",
-        "printMeta": "DeepLearning.AI · 2023"
+        "printMeta": "DeepLearning.AI · 2023",
+        "group": "ai-data"
       },
       {
         "type": "certifications",
         "title": "FC1x: Fat Chance: Probability from the Ground Up",
         "description": "2023 - edX / HarvardX",
-        "documentation": "https://courses.edx.org/certificates/6bde02f1d18b4479b7cf435bdbb24d3a"
+        "documentation": "https://courses.edx.org/certificates/6bde02f1d18b4479b7cf435bdbb24d3a",
+        "group": "ai-data"
       },
       {
         "type": "certifications",
         "title": "Introduction to Quantum Computing for Everyone",
         "description": "2021 - edX / ChicagoX",
-        "documentation": "https://courses.edx.org/certificates/5ffdb3abc3e544a7bd4d4bcd22f58959"
+        "documentation": "https://courses.edx.org/certificates/5ffdb3abc3e544a7bd4d4bcd22f58959",
+        "group": "systems"
       },
       {
         "type": "certifications",
         "title": "QTM1x: The Quantum Internet and Quantum Computers: How Will They Change the World?",
         "description": "2021 - edX / DelftX",
-        "documentation": "https://courses.edx.org/certificates/28cbc507ba9d4dc5a3fddc7600e710de"
+        "documentation": "https://courses.edx.org/certificates/28cbc507ba9d4dc5a3fddc7600e710de",
+        "group": "systems"
       },
       {
         "type": "certifications",
@@ -302,7 +313,8 @@
         "description": "Issued June 2021",
         "documentation": "",
         "print": true,
-        "printMeta": "2021"
+        "printMeta": "2021",
+        "group": "agile"
       },
       {
         "type": "certifications",
@@ -310,13 +322,15 @@
         "description": "Issued June 2016",
         "documentation": "",
         "print": true,
-        "printMeta": "Scaled Agile · 2016"
+        "printMeta": "Scaled Agile · 2016",
+        "group": "agile"
       },
       {
         "type": "certifications",
         "title": "Maps and the Geospatial Revolution",
         "description": "Coursera 2013",
-        "documentation": "/maps_course.pdf"
+        "documentation": "/maps_course.pdf",
+        "group": "systems"
       },
       {
         "type": "certifications",
@@ -325,7 +339,8 @@
         "documentation": "",
         "print": true,
         "printTitle": "Professional Scrum Master I",
-        "printMeta": "scrum.org · 2013"
+        "printMeta": "scrum.org · 2013",
+        "group": "agile"
       },
       {
         "type": "certifications",
@@ -333,14 +348,16 @@
         "description": "DSDM - Issued Apr 2012",
         "documentation": "",
         "print": true,
-        "printMeta": "DSDM · 2012"
+        "printMeta": "DSDM · 2012",
+        "group": "agile"
       },
       {
         "type": "courses",
         "title": "ISTQB Foundation",
         "description": "2025 Testhuset",
         "documentation": "",
-        "print": false
+        "print": false,
+        "web": false
       },
       {
         "type": "courses",
@@ -352,28 +369,32 @@
         "printMeta": "FOF · 2021–2027",
         "da": {
           "printTitle": "Japansk A1–A2+ (Marugoto)"
-        }
+        },
+        "group": "language"
       },
       {
         "type": "courses",
         "title": "Japanese level A2 (Marugoto)",
         "description": "2023-2025 - FOF",
         "documentation": "",
-        "print": false
+        "print": false,
+        "web": false
       },
       {
         "type": "courses",
         "title": "Japanese level A1 & A1+ (Marugoto)",
         "description": "2022-2023 - FOF",
         "documentation": "",
-        "print": false
+        "print": false,
+        "web": false
       },
       {
         "type": "courses",
         "title": "Japanese beginner (Marugoto)",
         "description": "2021-2022 - FOF",
         "documentation": "",
-        "print": false
+        "print": false,
+        "web": false
       },
       {
         "type": "courses",
@@ -381,14 +402,16 @@
         "description": "2016 and june 2019 - goAgile",
         "documentation": "",
         "print": true,
-        "printMeta": "goAgile · 2016, 2019"
+        "printMeta": "goAgile · 2016, 2019",
+        "group": "agile"
       },
       {
         "type": "courses",
         "title": "Angular 2.0",
         "description": "May 2016 - Trifork",
         "documentation": "",
-        "print": false
+        "print": false,
+        "group": "technical"
       },
       {
         "type": "courses",
@@ -396,7 +419,8 @@
         "description": "2018 - goAgile",
         "documentation": "",
         "print": true,
-        "printMeta": "goAgile · 2018"
+        "printMeta": "goAgile · 2018",
+        "group": "agile"
       },
       {
         "type": "courses",
@@ -404,7 +428,8 @@
         "description": "2016 - Stillwater",
         "documentation": "",
         "print": true,
-        "printMeta": "Stillwater · 2016"
+        "printMeta": "Stillwater · 2016",
+        "group": "agile"
       },
       {
         "type": "courses",
@@ -412,7 +437,8 @@
         "description": "2016 - Future Factory",
         "documentation": "",
         "print": true,
-        "printMeta": "Future Factory · 2016"
+        "printMeta": "Future Factory · 2016",
+        "group": "agile"
       },
       {
         "type": "courses",
@@ -420,7 +446,8 @@
         "description": "2012 - goAgile",
         "documentation": "",
         "print": true,
-        "printMeta": "goAgile · 2012"
+        "printMeta": "goAgile · 2012",
+        "group": "agile"
       },
       {
         "type": "teaching",

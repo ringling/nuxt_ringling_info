@@ -84,32 +84,16 @@
         </article>
       </section>
 
-      <section v-if="data" class="pp-section pp-grid2">
-        <div>
-          <h2>Certifications</h2>
+      <section v-for="list in achievementSections" :key="list.title" class="pp-section">
+        <h2>{{ list.title }}</h2>
+        <div v-for="g in list.groups" :key="g.label" class="pp-row cv-group">
+          <div class="pp-row-meta"><div class="pp-label">{{ g.label }}</div></div>
           <ul class="pp-pairs pp-flush">
-            <li v-for="a in getAchievements(data, 'certifications')" :key="a.title">
-              <span class="k">{{ a.title }}</span><span class="v">{{ a.description }}<template v-if="a.documentation?.startsWith('/')"> · <a :href="a.documentation" target="_blank">Certificate</a></template></span>
+            <li v-for="item in g.items" :key="item.name">
+              <span class="k">{{ item.name }}</span><span class="v">{{ item.meta }}<template v-if="item.link"> · <a :href="item.link" target="_blank" rel="noreferrer">Certificate</a></template></span>
             </li>
           </ul>
         </div>
-        <div>
-          <h2>Courses</h2>
-          <ul class="pp-pairs pp-flush">
-            <li v-for="a in getAchievements(data, 'courses')" :key="a.title">
-              <span class="k">{{ a.title }}</span><span class="v">{{ a.description }}</span>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section v-if="data" class="pp-section">
-        <h2>Conferences</h2>
-        <ul class="pp-pairs pp-flush">
-          <li v-for="a in getAchievements(data, 'conferences')" :key="a.title">
-            <span class="k">{{ a.title }}</span><span class="v">{{ a.description }}<template v-if="a.documentation"> · {{ a.documentation }}</template></span>
-          </li>
-        </ul>
       </section>
 
       <section class="pp-section">
@@ -210,9 +194,78 @@ function sortSkills(skills: Skill[]): Skill[] {
       a.name.localeCompare(b.name))
 }
 
-function getAchievements(data: CVResponse, type: string): Achievement[] {
-  return data.cv.achievements.list.filter(ach => ach.type === type)
+interface ListItem { name: string, meta: string, link?: string }
+interface ListGroup { label: string, items: ListItem[] }
+
+const achievementsOf = (type: Achievement['type']) =>
+  (data.value?.cv.achievements.list ?? []).filter(a => a.type === type && a.web !== false)
+
+// "2024 - Coursera / Duke University" -> "Coursera / Duke University · 2024", to match the printMeta style.
+const tidyMeta = (s: string) => s.replace(/^(\d{4}) - (.+)$/, '$2 · $1').replace(/ - /g, ' · ')
+
+const item = (a: Achievement): ListItem => ({
+  name: a.printTitle || a.title,
+  meta: a.printMeta || tidyMeta(a.description || ''),
+  link: a.documentation || undefined,
+})
+
+// Certifications and courses carry a `group` in data.json; the order here is the display order.
+function byGroup(type: Achievement['type'], groups: [string, string][]): ListGroup[] {
+  const list = achievementsOf(type)
+  return groups
+    // Formal certifications (print: true) before online course certificates within a group.
+    .map(([key, label]) => ({ label, items: list.filter(a => a.group === key).sort((a, b) => Number(b.print === true) - Number(a.print === true)).map(item) }))
+    .filter(g => g.items.length)
 }
+
+// Conferences: one line per series ("SAOS 2024" -> "SAOS"), newest series first, years listed newest first.
+function conferenceGroups(): ListGroup[] {
+  const series = new Map<string, { latest: number, full: string, entries: { year: string, place: string, organizer: boolean }[] }>()
+  for (const a of achievementsOf('conferences')) {
+    const year = a.title.match(/\d{4}$/)?.[0] ?? ''
+    const name = a.title.replace(/\s*\d{4}$/, '')
+    const desc = a.description ?? ''
+    const s = series.get(name) ?? { latest: 0, full: a.documentation ?? '', entries: [] }
+    s.latest = Math.max(s.latest, Number(year))
+    s.entries.push({ year, place: desc.replace(/\s*-\s*co-organizer/i, ''), organizer: /co-organizer/i.test(desc) })
+    series.set(name, s)
+  }
+  const AGILE = ['Agile Coach Camp', 'SAOS', 'XP Days']
+  const items = [...series.entries()]
+    .sort((x, y) => y[1].latest - x[1].latest)
+    .map(([name, s]) => {
+      const places = new Set(s.entries.map(e => e.place))
+      const years = s.entries
+        .sort((x, y) => Number(y.year) - Number(x.year))
+        .map(e => (places.size > 1 ? `${e.place} ${e.year}` : e.year) + (e.organizer ? ' (co-organizer)' : ''))
+        .join(', ')
+      const meta = [s.full, places.size === 1 ? [...places][0] : '', years].filter(Boolean).join(' · ')
+      return { name, meta, agile: AGILE.includes(name) }
+    })
+  return [
+    { label: 'Agile & architecture', items: items.filter(i => i.agile) },
+    { label: 'Programming', items: items.filter(i => !i.agile) },
+  ].filter(g => g.items.length)
+}
+
+// Teaching: most recent first, by the last year of the period.
+function teachingGroups(): ListGroup[] {
+  const end = (a: Achievement) => Number(a.period?.match(/\d{4}$/)?.[0] ?? 0)
+  const list = achievementsOf('teaching').sort((a, b) => end(b) - end(a))
+  const isMilitary = (a: Achievement) => /army|medic/i.test(a.title)
+  const toItem = (a: Achievement) => ({ name: a.title, meta: [a.description, a.period?.replace('-', '–')].filter(Boolean).join(' · ') })
+  return [
+    { label: 'Software & agile', items: list.filter(a => !isMilitary(a)).map(toItem) },
+    { label: 'Military', items: list.filter(isMilitary).map(toItem) },
+  ].filter(g => g.items.length)
+}
+
+const achievementSections = computed(() => [
+  { title: 'Certifications', groups: byGroup('certifications', [['agile', 'Agile'], ['testing', 'Testing'], ['ai-data', 'AI & Data'], ['systems', 'Systems & more']]) },
+  { title: 'Courses', groups: byGroup('courses', [['agile', 'Agile & leadership'], ['technical', 'Technical'], ['language', 'Language']]) },
+  { title: 'Teaching', groups: teachingGroups() },
+  { title: 'Conferences', groups: conferenceGroups() },
+].filter(s => s.groups.length))
 </script>
 
 <style scoped>
@@ -226,6 +279,8 @@ function getAchievements(data: CVResponse, type: string): Achievement[] {
   background-image: none !important;
 }
 .skip-link:focus { left: 8px; top: 8px; }
+
+.cv-group { padding-bottom: 28px; }
 
 .cv-bars { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px 40px; }
 .cv-bar-label { margin-bottom: 6px; }

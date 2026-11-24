@@ -68,9 +68,15 @@ export interface Skill {
 }
 
 export interface Achievement {
-  type: 'certifications' | 'conferences' | 'courses'
+  type: 'certifications' | 'conferences' | 'courses' | 'teaching'
   title: string
-  date: string
+  date?: string
+  period?: string
+  documentation?: string
+  /** Subgroup on the web CV, see pages/cv/index.vue. */
+  group?: string
+  /** false hides the entry on the web CV. */
+  web?: boolean
   issuer?: string
   url?: string
   description?: string
